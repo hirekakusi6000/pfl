@@ -1,0 +1,18 @@
+/* ヘッダー ブロック */
+.header_title {
+  z-index: 1000;
+  color: white;
+  font-weight: bold;
+  font-family: 'Noto Serif JP', sans-serif;
+}
+
+@media screen and (max-width: 375px) {
+
+  /* ヘッダー 子 ブロック */
+  .header_title {
+    padding-top: 10px;
+    padding-left: 20px;
+    font-size: 30px;
+  }
+
+}

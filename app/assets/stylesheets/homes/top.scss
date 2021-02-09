@@ -1,0 +1,55 @@
+/* トップページ見出し 親 ブロック */
+.top_coment_p {
+  text-align: center;
+  margin-top: 100px;
+}
+
+/* トップページ見出し 子 ブロック */
+.top_coment {
+  font-size: 33px;
+}
+
+/* スタートボタン 子 インラインブロック */
+.top_start_btn {
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 100px;
+  padding-top: 6px;
+  box-shadow: 0 2px 6px #c1ced7;
+  height: 50px;
+  width: 200px;
+  background-color: #A9D0F5;
+  font-weight: bold;
+  font-size: 28px;
+  color: white;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+.top_start_btn:hover {
+  background-color: #CEE3F6;
+  transition: all 0.5s;
+  text-decoration: none;
+  color: white;
+}
+
+.top_start_btn:active {
+  margin-top: 5px;
+  transition: all 0.5s
+}
+
+@media screen and (max-width: 375px) {
+
+  /* トップページ見出し 子 ブロック */
+  .top_coment {
+    font-size: 25px;
+  }
+
+  /* スタートボタン 子 インラインブロック */
+  .top_start_btn {
+    height: 40px;
+    width: 180px;
+    font-size: 21px;
+  }
+
+}

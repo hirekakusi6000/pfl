@@ -1,0 +1,86 @@
+/* フッター 親の親 ブロック */
+.footer_pp {
+  text-align: center;
+  background-color: white;
+  position: fixed;
+  bottom: 0px;
+  padding-top: 7px;
+  width: 100vw;
+  height: 55px;
+  box-shadow: 0 0 1px black;
+  z-index: 1000;
+}
+
+/* フッター 親 ブロック */
+.footer_p {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  margin-top: 4px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.footer_p:hover {
+  transition: all 0.5s;
+  opacity: 0.7;
+}
+
+/* フッター 子 ブロック */
+.footer_p p {
+  height: 24px;
+  margin: 0px 40px 0px;
+}
+
+/* フッター アイコン インラインブロック */
+.footer_icon {
+  display: inline-block;
+  font-size: 22px;
+  color: gray;
+}
+
+/* フッター テキスト インライン */
+.footer_font {
+  text-decoration: none;
+  color: gray;
+  font-size: 11px;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-decoration: none;
+}
+
+.footer_font:hover {
+  color: gray;
+  text-decoration: none;
+  transition: all 0.5s;
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 375px) {
+
+  /* フッター 親の親 ブロック */
+  .footer_pp {
+    height: 45px;
+  }
+
+  /* フッター 親 ブロック */
+  .footer_p {
+    margin-top: 2px;
+    width: 85px;
+  }
+
+  /* フッター 子 ブロック */
+  .footer_p p {
+    height: 19px;
+    margin: 0px 0px 0px;
+  }
+
+  /* フッター アイコン インラインブロック */
+  .footer_icon {
+    font-size: 18px;
+  }
+
+  /* フッター テキスト インライン */
+  .footer_font {
+    font-size: 9px;
+  }
+
+}

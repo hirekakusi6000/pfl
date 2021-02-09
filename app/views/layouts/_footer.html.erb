@@ -1,0 +1,32 @@
+    <div class="footer_pp">
+      <% if session[:user_id]!=nil%>
+        <div class="footer_p" ontouchstart="">
+          <p><a class="footer_font" href="/users/index"><i class="fas fa-users footer_icon"></i></a></p>
+          <p><a class="footer_font" href="/users/index">みんな</a></p>
+        </div>
+        <div class="footer_p" ontouchstart="">
+          <p><a class="footer_font" href="/users/<%= @current_user.id %>"><i class="fas fa-user footer_icon"></i></a></p>
+          <p><a class="footer_font" href="/users/<%= @current_user.id %>"><%= @current_user.name %></a></p>
+        </div>
+        <div class="footer_p" ontouchstart="" ontouchstart="">
+          <p><a class="footer_font" href="/logout"><i class="fas fa-sign-out-alt footer_icon"></i></a></p>
+          <p><a class="footer_font" href="/logout">ログアウト</a></p>
+        </div>
+      <%else%>
+        <div class="footer_p" ontouchstart="">
+          <p><a class="footer_font" href="/"><i class="fas fa-star footer_icon"></i><p>トップ</p></a></p>
+        </div>
+        <div class="footer_p" ontouchstart="">
+          <p><a class="footer_font" href="/users"><i class="fas fa-users footer_icon"></i></a></p>
+          <p><a class="footer_font" href="/users">みんな</a></p>
+        </div>
+        <div class="footer_p" ontouchstart="">
+          <p><a class="footer_font" href="/login"><i class="fas fa-sign-in-alt footer_icon"></i></a></p>
+          <p><a class="footer_font" href="/login">ログイン</a></p>
+        </div>
+        <div class="footer_p" ontouchstart="">
+          <p><a class="footer_font" href="/users/new"><i class="fas fa-user-plus footer_icon"></i></a></p>
+          <a class="footer_font" href="/users/new">新規登録</a>
+        </div>
+      <%end%>
+    </div>

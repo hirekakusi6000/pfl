@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+  </head>
+
+  <body>
+
+<!-- ヘッダー画像-->
+    <img  class="header_image" src="<%= "/user_images/#{@user.header_image}" %>">
+<!-- ヘッダー画像-->
+
+<!-- アイコン画像＆アイコン拡大-->
+    <div class="popup_wrap">
+    <input id="trigger" type="checkbox">
+        <div class="popup_overlay">
+            <label for="trigger" class="close_btn">×</label>
+
+              <%= form_tag("/users/update", {multipart: true}) do %>
+              <% if session[:user_id]%>
+              <% if @current_user.id==@user.id%>
+
+               <a href="/users/pfl_edit" class="image_edit">変更</a>
+
+              <%end%>
+              <%end%>
+              <%end%>
+
+            <label for="trigger" class="popup_trigger"></label>
+
+            <div class="popup_content">
+
+<img  class="icon_image_kakudai" style=border: 10px solid red;  src="<%= "/user_images/#{@user.icon_image}" %>">
+            </div>
+        </div>
+    </div>
+
+    <label for="trigger" class="open_btn">
+      <div class="icon_image_oya">
+        <img  class="icon_image" src="<%= "/user_images/#{@user.icon_image}" %>">
+      </div>
+    </label>
+<!-- アイコン画像＆アイコン拡大-->
+
+<!-- 名前-->
+    <p class="pfl_user_name"><%=@user.name%></p>
+<!-- 名前-->
+
+<!-- 編集へのリンク-->
+    <% if session[:user_id]%>
+    <% if @current_user.id==@user.id%>
+    <div class="pen_oya">
+    <a href="/users/<%= @current_user.id %>/edit"><i class="fa fa-edit pen"></i></a>
+    </div>
+    <%end%>
+    <%end%>
+<!-- 編集へのリンク-->
+
+<!-- indexへのリンク-->
+<div class="retuan_index_oya">
+    <a class="retuan_index" href="/users">＜</a>
+</div>
+<!-- indexへのリンク-->
+
+<style>
+    /*画像拡大からの編集*/
+  .image_edit{
+   color:white;
+   font-size:30px;
+   z-index: 11;
+   margin-top:100px;
+   position: absolute;
+   bottom: 25px;
+   left: 50px;
+   text-decoration: none;
+   font-weight: bold;
+  }
+
+/*編集へのリンク*/
+  .pen_oya{
+  padding-top: 4.5px;
+  padding-right: 8px;
+  margin-top: 10px;
+  margin-right: 18px;
+  background-color: rgba(0,0,0,0.6);
+  border-radius: 100%;
+  text-align:right;
+  font-size:25px;
+  position: absolute;
+  top:13px;
+  right: 0px;
+  height:50px;
+  width:50px;　
+  text-align:center;
+  }
+  .pen{
+  color: white;
+  }
+
+  /*indexへのリンク*/
+  .retuan_index_oya{
+    padding-top:4px;
+    padding-left:9px;
+    margin-top: 10px;
+    margin-right: 18px;
+    border-radius: 100%;
+    background-color: rgba(0,0,0,0.6);
+    font-size:25px;
+    color: white;
+    position: absolute;
+    top:13px;
+    left: 20px;
+    height:50px;
+    width:50px;　
+   }
+   .retuan_index{
+text-decoration: none;
+color: white;
+    }
+
+      /*名前*/
+    .pfl_user_name{
+      font-size: 20px;
+      margin-top:100px;
+      text-align:center;
+      font-weight: bold;
+      height:0px;
+    }
+    /*プロフィール文章 親　ブロック*/
+        .pfl_user_text_p{
+          font-size: 16px;
+          width:900px;
+          text-align:center;
+          margin: auto;
+          margin-top:0px;
+        }
+  /*プロフィール文章　子　インライン*/
+      .pfl_user_text{
+        font-size: 16px;
+      }
+
+  @media screen and (max-width: 375px) {
+      /*画像拡大からの編集*/
+    .image_edit{
+      color:white;
+      font-size:25px;
+      z-index: 11;
+      margin-top:100px;
+      position: absolute;
+      bottom: 22px;
+      left: 30px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+      /*編集へのリンク*/
+      .pen_oya{
+      padding-top: 0.8px;
+      padding-right: 2.4px;
+      text-align:right;
+      font-size:17px;
+      position: absolute;
+      top:3px;
+      right: 0px;
+      height:31px;
+      width:31px;　
+      }
+
+          /*indexへのリンク*/
+      .retuan_index_oya{
+        padding-top:2px;
+        padding-left:6px;
+        font-size:17px;
+        position: absolute;
+        top:3px;
+        left: 15px;
+        height:31px;
+        width:31px;　
+       }
+       .pfl_user_name{
+         font-size: 15px;
+         margin-top:60px;
+         margin-bottom:0px;
+         text-align:center;
+         font-weight: bold;
+         height:0px;
+       }
+           /*プロフィール文章 親　ブロック*/
+               .pfl_user_text_p{
+                 width:330px;
+                 text-align:center;
+                 margin: auto;
+               }
+         /*プロフィール文章　子　インライン*/
+             .pfl_user_text{
+               font-size: 14px;
+             }
+    }
+
+  /*全体*/
+    body{
+    background-color:  #<%= @user.background_color%>;
+    padding-bottom:150px;
+    }
+  /*全体*/
+
+  p{
+    white-space: pre-wrap;
+
+    }
+
+  /*ポップアップここから*/
+  .popup_wrap input {
+    display: none;
+  }
+
+  .popup_overlay {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.5s, transform 0s 0.5s;
+    transform: scale(0);
+  }
+
+  .popup_content {
+    position: relative;
+    align-self: center;
+    width: 90%;
+    max-width: 800px;
+    padding: 30px 30px 15px;
+    box-sizing: border-box;
+    line-height: 1.4em;
+    transition: 0.5s;
+  }
+
+  .popup_wrap input:checked ~ .popup_overlay {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.5s;
+  }
+
+  /*Twitterアイコン 外側色*/
+.twitter_uti{
+background-color: #<%= @user.twitter_outsidecolor%>;
+}
+  /*Twitterアイコン 内側色*/
+.twitter_soto span{
+color: #<%= @user.twitter_insidecolor%>;
+}
+/*instagramアイコン 外側色*/
+    .instagram_uti{
+      background-color: #<%= @user.instagram_outsidecolor%>;
+     }
+     /*instagramアイコン 内側色*/
+ .instagram_soto span{
+ color: #<%= @user.instagram_insidecolor%>;
+ }
+ /*facebookアイコン 外側色*/
+     .facebook_uti{
+       background-color: #<%= @user.facebook_outsidecolor%>;
+      }
+      /*facebookアイコン 内側色*/
+  .facebook_soto span{
+  color: #<%= @user.facebook_insidecolor%>;
+  }
+  /*youtubeアイコン 外側色*/
+      .youtube_uti{
+        background-color: #<%= @user.youtube_outsidecolor%>;
+       }
+       /*youtubeアイコン 内側色*/
+   .youtube_soto span{
+   color: #<%= @user.youtube_insidecolor%>;
+   }
+   /*tiktokアイコン 外側色*/
+       .tiktok_uti{
+         background-color: #<%= @user.tiktok_outsidecolor%>;
+        }
+        /*tiktokアイコン 内側色*/
+    .tiktok_soto span{
+    color: #<%= @user.tiktok_insidecolor%>;
+    }
+  </style>
+
+<div class="sns_oya_oya">
+
+  <% if @user.twitter_id_1!=""%>
+<div class="sns_soto twitter_soto">
+     <p class="sns_text"><%= @user.twitter_comment_1 %></p>
+     <a href="https://mobile.twitter.com/<%= @user.twitter_id_1 %>"> <span class="fab fa-twitter sns_uti twitter_uti"></span></a>
+</div>
+  <%end%>
+
+  <% if @user.twitter_id_2!=""%>
+  <div class="sns_soto twitter_soto">
+     <p class="sns_text"><%= @user.twitter_comment_2 %></p>
+     <a href="https://mobile.twitter.com/<%= @user.twitter_id_2 %>"> <span class="fab fa-twitter sns_uti twitter_uti"></span></a>
+  </div>
+  <%end%>
+
+  <% if @user.twitter_id_3!=""%>
+<div class="sns_soto twitter_soto">
+     <p class="sns_text"><%= @user.twitter_comment_3 %></p>
+     <a href="https://mobile.twitter.com/<%= @user.twitter_id_3 %>"> <span class="fab fa-twitter sns_uti twitter_uti"></span></a>
+</div>
+    <%end%>
+
+    <% if @user.instagram_id_1!=""%>
+  <div class="sns_soto instagram_soto">
+       <p class="sns_text"><%= @user.instagram_comment_1 %></p>
+       <a href="https://mobile.twitter.com/<%= @user.instagram_id_1 %>"> <span class="fab fa-instagram  sns_uti instagram_uti"></a>
+  </div>
+      <%end%>
+      <% if @user.instagram_id_2!=""%>
+    <div class="sns_soto instagram_soto">
+         <p class="sns_text"><%= @user.instagram_comment_2 %></p>
+         <a href="https://mobile.twitter.com/<%= @user.instagram_id_2 %>"> <span class="fab fa-instagram  sns_uti instagram_uti"></a>
+    </div>
+        <%end%>
+
+          <% if @user.facebook_id_1!=""%>
+        <div class="sns_soto facebook_soto">
+             <p class="sns_text"><%= @user.facebook_comment_1 %></p>
+             <a href="https://mobile.twitter.com/<%= @user.facebook_id_1 %>"> <span class="fab fa-facebook  sns_uti facebook_uti"></a>
+        </div>
+            <%end%>
+            <% if @user.facebook_id_2!=""%>
+          <div class="sns_soto facebook_soto">
+               <p class="sns_text"><%= @user.facebook_comment_2 %></p>
+               <a href="https://mobile.twitter.com/<%= @user.facebook_id_2 %>"> <span class="fab fa-facebook  sns_uti facebook_uti"></a>
+          </div>
+              <%end%>
+
+              <% if @user.youtube_id_1!=""%>
+            <div class="sns_soto youtube_soto">
+                 <p class="sns_text"><%= @user.youtube_comment_1 %></p>
+                 <a href="https://mobile.twitter.com/<%= @user.youtube_id_1 %>"> <span class="fab fa-youtube  sns_uti youtube_uti"></a>
+            </div>
+                <%end%>
+                <% if @user.youtube_id_2!=""%>
+              <div class="sns_soto youtube_soto">
+                   <p class="sns_text"><%= @user.youtube_comment_2 %></p>
+                   <a href="https://mobile.twitter.com/<%= @user.youtube_id_2 %>"> <span class="fab fa-youtube  sns_uti youtube_uti"></a>
+              </div>
+                  <%end%>
+
+                  <% if @user.tiktok_id_1!=""%>
+                <div class="sns_soto tiktok_soto">
+                     <p class="sns_text">&nbsp;<%= @user.tiktok_comment_1 %></p>
+                     <a href="https://mobile.twitter.com/<%= @user.tiktok_id_1 %>"> <span class="fab fa-tiktok  sns_uti tiktok_uti"></a>
+                </div>
+                    <%end%>
+                    <% if @user.tiktok_id_2!=""%>
+                  <div class="sns_soto tiktok_soto">
+                       <p class="sns_text">&nbsp;<%= @user.tiktok_comment_2 %></p>
+                       <a href="https://mobile.twitter.com/<%= @user.tiktok_id_2 %>"> <span class="fab fa-tiktok  sns_uti tiktok_uti"></a>
+                  </div>
+                      <%end%>
+
+</div>
+
+<!-- プロフィール文章-->
+　<div class="pfl_user_text_p">
+    <p class="pfl_user_text"><%=@user.pfl_text%></p>
+</div>
+<!-- リンク-->
+<div class="link_index_oya">
+</div>
+
+  </body>
+
+</html>

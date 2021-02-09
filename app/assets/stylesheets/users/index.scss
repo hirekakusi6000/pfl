@@ -1,0 +1,67 @@
+/* 検索フォーム 親の親 ブロック */
+.input_group_p {
+  margin: 80px 30px 30px 30px;
+  width: 300px;
+}
+
+/* アイコン 親の親 ブロック */
+.index_icon_pp {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+/* アイコン 親 インラインブロック */
+.index_icon_p {
+  display: inline-block;
+  margin: 30px 30px;
+}
+
+/* アイコン 子 ブロック */
+.index_icon_p img {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+}
+
+/* ユーザーネーム ブロック */
+.index_user_name {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* ページ切り替え */
+.paginate {
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+@media screen and (max-width: 375px) {
+
+  /* アイコン 親の親 ブロック */
+  .index_icon_pp {
+    margin-top: 10px;
+  }
+
+  /* アイコン 親 ブロック */
+  .index_icon_p {
+    width: 85px;
+    height: 85px;
+    margin: 10px 10px;
+  }
+
+  /* アイコン 子 インラインブロック */
+  .index_icon_p img {
+    width: 85px;
+    height: 85px;
+  }
+
+  /* ユーザーネーム インラインブロック */
+  .index_user_name {
+    font-size: 12px;
+  }
+}
