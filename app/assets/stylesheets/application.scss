@@ -5,12 +5,12 @@
 @import "bootstrap/scss/bootstrap";
 
 /* エラーメッセージ */
-.error_message {
-  list-style: none;
-  color: red;
-  width: 350px;
-  font-size: 13px;
-  display: inline;
+.alert-notice {
+  @extend .alert-info;
+}
+
+.alert-alert {
+  @extend .alert-danger;
 }
 
 /* 全体 親親 ブロック */

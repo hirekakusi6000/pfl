@@ -10,53 +10,66 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_10_061813) do
+ActiveRecord::Schema.define(version: 2021_02_10_020841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
-    t.string "email"
-    t.string "password"
     t.string "pfl_text"
     t.string "icon_image"
     t.string "header_image"
     t.string "background_color"
-    t.string "twitter_outsidecolor"
-    t.string "twitter_insidecolor"
-    t.string "instagram_outsidecolor"
-    t.string "instagram_insidecolor"
-    t.string "facebook_outsidecolor"
-    t.string "facebook_insidecolor"
-    t.string "youtube_outsidecolor"
-    t.string "youtube_insidecolor"
-    t.string "tiktok_outsidecolor"
-    t.string "tiktok_insidecolor"
     t.string "twitter_id_1"
     t.string "twitter_id_2"
     t.string "twitter_id_3"
     t.string "twitter_comment_1"
     t.string "twitter_comment_2"
     t.string "twitter_comment_3"
-    t.string "youtube_id_1"
-    t.string "youtube_id_2"
-    t.string "youtube_comment_1"
-    t.string "youtube_comment_2"
+    t.string "twitter_outsidecolor"
+    t.string "twitter_insidecolor"
     t.string "instagram_id_1"
     t.string "instagram_id_2"
+    t.string "instagram_id_3"
     t.string "instagram_comment_1"
     t.string "instagram_comment_2"
+    t.string "instagram_comment_3"
+    t.string "instagram_outsidecolor"
+    t.string "instagram_insidecolor"
     t.string "facebook_id_1"
     t.string "facebook_id_2"
+    t.string "facebook_id_3"
     t.string "facebook_comment_1"
     t.string "facebook_comment_2"
+    t.string "facebook_comment_3"
+    t.string "facebook_outsidecolor"
+    t.string "facebook_insidecolor"
+    t.string "youtube_id_1"
+    t.string "youtube_id_2"
+    t.string "youtube_id_3"
+    t.string "youtube_comment_1"
+    t.string "youtube_comment_2"
+    t.string "youtube_comment_3"
+    t.string "youtube_outsidecolor"
+    t.string "youtube_insidecolor"
     t.string "tiktok_id_1"
     t.string "tiktok_id_2"
+    t.string "tiktok_id_3"
     t.string "tiktok_comment_1"
     t.string "tiktok_comment_2"
+    t.string "tiktok_comment_3"
+    t.string "tiktok_outsidecolor"
+    t.string "tiktok_insidecolor"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

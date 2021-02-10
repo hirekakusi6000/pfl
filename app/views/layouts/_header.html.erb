@@ -1,6 +1,10 @@
 <div class='fixed-top'>
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #CEE3F6;" >
-    <a class="navbar-brand header_title" style="color: white;" href="/">✦kakiku-keko</a>
+    <% if user_signed_in? %>
+      <a class="navbar-brand header_title" style="color: white;" href="/">✦kakiku-keko</a>
+    <%else%>
+      <a class="navbar-brand header_title" style="color: white;" href="#">✦kakiku-keko</a>
+    <%end%>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -13,7 +17,9 @@
           <a class="nav-link" style="color: white;" href="#">ご意見箱</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" style="color: white;" href="#">アカウント設定</a>
+        <% if user_signed_in? %>
+          <%= link_to "アカウント設定", edit_user_registration_path,class:"nav-link", style:"color: white;"%>
+       <%end%>
         </li>
       </ul>
     </div>

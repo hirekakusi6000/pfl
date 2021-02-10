@@ -10,13 +10,17 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
   </head>
   
-    <%= yield %>
+
 
   <body>
 
     <header class="sticky-top">
       <%= render "layouts/header" %>
     </header>
+
+     <%= render 'layouts/flash' %>
+     <%= yield %>
+
     <header class="sticky-top">
       <%= render "layouts/footer" %>
     </header>

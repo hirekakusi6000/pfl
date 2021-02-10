@@ -58,3 +58,7 @@ gem 'ransack'
 
 # ログイン機能
 gem 'devise'
+
+# 多言語対応(Rails 6)
+gem 'rails-i18n'
+gem 'devise-i18n'
