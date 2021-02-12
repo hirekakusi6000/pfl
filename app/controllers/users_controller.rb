@@ -1,4 +1,4 @@
-class UsersController < ApplicationControllerclass UsersController < ApplicationController
+class UsersController < ApplicationController
   def new
     @user = User.new
   end
@@ -19,7 +19,7 @@ class UsersController < ApplicationControllerclass UsersController < Application
   end
 
   # 1ページの表示数
-  PER_PAGE = 5
+  PER_PAGE = 20
   def index
     @q = User.ransack(params[:q])
     @users = @q.result.page(params[:page]).per(PER_PAGE)
