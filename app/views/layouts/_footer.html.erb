@@ -6,7 +6,7 @@
         </div>
         <div class="footer_p" ontouchstart="">
           <p><a class="footer_font" href="#"><i class="fas fa-user footer_icon"></i></a></p>
-          <p><a class="footer_font" href="#"></a></p>
+          <p><a class="footer_font" href="#"><% @current_user.name%></a></p>
         </div>
         <div class="footer_p" ontouchstart="" ontouchstart="">
           <p><%= link_to "", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "fas fa-sign-out-alt footer_icon"%></p>

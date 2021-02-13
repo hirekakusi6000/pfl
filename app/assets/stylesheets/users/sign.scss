@@ -9,7 +9,7 @@
   text-align: left;
   margin-top: 50px;
   margin-bottom: 70px;
-  padding: 20px 50px;
+  padding: 50px 50px 20px 50px;
   width: 380px;
   height: auto;
   border: 1px solid #D8D8D8;
@@ -19,4 +19,22 @@
 
 .login_new_edit_title {
   text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 375px) {
+
+  /* 親 ブロック */
+  .login_new_edit_p {
+    margin-top: 50px;
+    margin-bottom: 70px;
+    padding: 40px 20px 20px 20px;
+    width: 310px;
+  }
+
+  .login_new_edit_title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
 }

@@ -65,3 +65,6 @@ gem 'devise-i18n'
 
 # Bootstrap
 gem 'devise-bootstrap-views'
+
+# font-awesomeをrailsコードに適用
+gem 'font-awesome-rails'

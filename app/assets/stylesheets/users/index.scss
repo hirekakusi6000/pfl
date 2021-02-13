@@ -1,7 +1,7 @@
 /* 検索フォーム 親の親 ブロック */
 .input_group_p {
-  margin: 80px 30px 30px 30px;
-  width: 300px;
+  margin: 30px;
+  width: 250px;
 }
 
 /* アイコン 親の親 ブロック */
@@ -41,6 +41,12 @@
 }
 
 @media screen and (max-width: 375px) {
+
+  /* 検索フォーム 親の親 ブロック */
+  .input_group_p {
+    margin: 40px 30px 0px 30px;
+    width: 220px;
+  }
 
   /* アイコン 親の親 ブロック */
   .index_icon_pp {
