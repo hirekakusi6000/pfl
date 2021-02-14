@@ -328,7 +328,7 @@ header {
 }
 
 /* アイコン画像 */
-.icon_image_oya {
+.icon_image_p {
   position: relative;
   width: 100vw;
 }
@@ -348,23 +348,12 @@ header {
   cursor: pointer;
 }
 
-.icon_image_kakudai {
-  display: inline-block;
-  width: 420px;
-  height: 420px;
-  border-radius: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .close_btn {
   font-size: 50px;
   cursor: pointer;
   color: white;
   position: absolute;
+  top: 50px;
   left: 30px;
 }
 

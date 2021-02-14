@@ -15,6 +15,8 @@ require "action_cable/engine"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
+require "csv"
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -25,6 +27,9 @@ module Pfl
     config.load_defaults 6.1
     config.i18n.default_locale = :ja
     config.time_zone = 'Asia/Tokyo'
+
+    # lib/autoloads ディレクトリ配下のファイルを読み込む
+    config.autoload_paths << Rails.root.join("lib/autoloads")
 
     # Configuration for the application, engines, and railties goes here.
     #
