@@ -6,6 +6,11 @@
   font-family: 'Noto Serif JP', sans-serif;
 }
 
+/* ヘッダーの下のスペース 子 ブロック */
+.header_space {
+  height: 40px;
+}
+
 @media screen and (max-width: 375px) {
 
   /* ヘッダー 子 ブロック */
@@ -13,6 +18,11 @@
     padding-top: 10px;
     padding-left: 20px;
     font-size: 30px;
+  }
+
+  /* ヘッダーの下のスペース 子 ブロック */
+  .header_space {
+    height: 40px;
   }
 
 }

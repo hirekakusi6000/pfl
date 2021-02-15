@@ -1,9 +1,4 @@
-/*全体*/
-p {
-  white-space: pre-wrap;
-}
-
-/*ポップアップここから*/
+/*ポップアップ*/
 .popup_wrap input {
   display: none;
 }
@@ -42,6 +37,7 @@ p {
   transition: opacity 0.5s;
 }
 
+/*アイコン画像（拡大時）*/
 .icon_image_enlarge {
   display: inline-block;
   width: 420px;
@@ -54,20 +50,29 @@ p {
   transform: translate(-50%, -50%);
 }
 
-/*画像拡大からの編集*/
+/*画像拡大からの編集 子 インライン*/
 .image_edit {
   color: white;
-  font-size: 30px;
+  font-size: 25px;
   z-index: 11;
-  margin-top: 100px;
-  position: absolute;
-  bottom: 25px;
-  left: 50px;
   text-decoration: none;
   font-weight: bold;
+  position: absolute;
+  top: 80px;
+  right: 50px;
 }
 
-/*編集画面へのリンク ブロック 親*/
+/*画像拡大からの閉じる 子 インライン*/
+.close_btn {
+  font-size: 50px;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  top: 50px;
+  left: 30px;
+}
+
+/*編集画面へのリンク 親 ブロック*/
 .pen_p {
   cursor: pointer;
   width: 50px;
@@ -85,42 +90,44 @@ p {
   color: white;
 }
 
-/*名前*/
+/*ユーザーネーム 単体 ブロック*/
 .pfl_user_name {
+  text-align: center;
   font-size: 20px;
   margin-top: 100px;
-  text-align: center;
   font-weight: bold;
   height: 0px;
 }
 
-/*プロフィール文章 親　ブロック*/
+/*プロフィール文章 親 ブロック*/
 .pfl_user_text_p {
-  font-size: 16px;
-  width: 900px;
   text-align: center;
+  max-width: 500px;
+  min-width: 500px;
   margin: auto;
   margin-top: 0px;
 }
 
-/*プロフィール文章　子　インライン*/
+/*プロフィール文章 子 インライン*/
 .pfl_user_text {
   font-size: 16px;
 }
 
 @media screen and (max-width: 375px) {
 
+  /*アイコン画像（拡大時）*/
+  .icon_image_enlarge {
+    width: 300px;
+    height: 300px;
+  }
+
   /*画像拡大からの編集*/
   .image_edit {
-    color: white;
     font-size: 25px;
     z-index: 11;
-    margin-top: 100px;
     position: absolute;
-    bottom: 22px;
-    left: 30px;
-    text-decoration: none;
-    font-weight: bold;
+    top: 70px;
+    right: 20px;
   }
 
   /*編集へのリンク 親 ブロック*/
@@ -135,36 +142,23 @@ p {
     width: 31px;
   }
 
-  /*indexへのリンク*/
-  .retuan_index_p {
-    padding-top: 2px;
-    padding-left: 6px;
-    font-size: 17px;
-    position: absolute;
-    top: 3px;
-    left: 15px;
-    height: 31px;
-    width: 31px;
-  }
-
+  /*ユーザーネーム 単体 ブロック*/
   .pfl_user_name {
     font-size: 15px;
     margin-top: 60px;
-    margin-bottom: 0px;
-    text-align: center;
-    font-weight: bold;
-    height: 0px;
   }
 
-  /*プロフィール文章 親　ブロック*/
+  /*プロフィール文章 親 ブロック*/
   .pfl_user_text_p {
-    width: 330px;
-    text-align: center;
-    margin: auto;
+    margin-top: 30px;
+    max-width: 300px;
+    min-width: 300px;
   }
 
-  /*プロフィール文章　子　インライン*/
+  /*プロフィール文章 子 インライン*/
   .pfl_user_text {
     font-size: 14px;
+    max-width: 300px;
+    min-width: 300px;
   }
 }

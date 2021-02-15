@@ -1,194 +1,191 @@
-<html lang="en" dir="ltr">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-<!-- ヘッダー画像-->
- <img  class="header_image" src="<%= "/user_images/#{@user.header_image}" %>">
+  <!-- ヘッダー画像-->
+  <img  class="header_image" src="<%= "/user_images/#{@user.header_image}" %>">
 
-<!-- アイコン拡大-->
-<div class="popup_wrap">
-  <input id="trigger" type="checkbox">
-    <div class="popup_overlay">
-      <label for="trigger" class="close_btn">×</label>
-        <%= form_tag("/users/update", {multipart: true}) do %>
-          <% if session[:user_id]%>
-            <% if @current_user.id==@user.id%>
+  <!-- アイコン拡大-->
+  <div class="popup_wrap">
+    <input id="trigger" type="checkbox">
+      <div class="popup_overlay">
+        <label for="trigger" class="close_btn">×</label>
+          <%= form_tag("/users/update", {multipart: true}) do %>
+            <% if current_user.id==@user.id%>
               <a href="/users/pfl_edit" class="image_edit">変更</a>
             <%end%>
           <%end%>
-        <%end%>
-      <label for="trigger" class="popup_trigger"></label>
+        <label for="trigger" class="popup_trigger"></label>
 
-   <div class="popup_content">
-    <img  class="icon_image_enlarge" style=border: 10px solid red;  src="<%= "/user_images/#{@user.icon_image}" %>">
-   </div>
-   
-  </div>
-</div>
-
-<label for="trigger" class="open_btn">
-  <div class="icon_image_p">
-    <img  class="icon_image" src="<%= "/user_images/#{@user.icon_image}" %>">
-  </div>
-</label>
-
-<!-- 名前-->
-<p class="pfl_user_name"><%=@user.name%></p>
-
-<!-- 編集へのリンク-->
-<% if current_user%>
-  <% if @current_user.id == @user.id%>
-   <a href="/users/<%= @current_user.id %>/edit">
-    <div class="pen_p">
-      <i class="fa fa-edit pen"></i>
+    <div class="popup_content">
+      <img  class="icon_image_enlarge" style=border: 10px solid red;  src="<%= "/user_images/#{@user.icon_image}" %>">
     </div>
-   </a>
+    
+    </div>
+  </div>
+
+  <label for="trigger" class="open_btn">
+    <div class="icon_image_p">
+      <img  class="icon_image" src="<%= "/user_images/#{@user.icon_image}" %>">
+    </div>
+  </label>
+
+  <!-- ユーザーネーム-->
+  <p class="pfl_user_name"><%=@user.name%></p>
+
+  <!-- 編集へのリンクアイコン-->
+  <% if current_user%>
+    <% if @current_user.id == @user.id%>
+    <a href="/users/<%= @current_user.id %>/edit">
+      <div class="pen_p">
+        <i class="fa fa-edit pen"></i>
+      </div>
+    </a>
+    <%end%>
   <%end%>
-<%end%>
+
+  <!-- SNSアイコン一覧表示-->
+  <div class="sns_pp">
+    <% if @user.twitter_id_1!=""%>
+      <div class="sns_outside twitter_outside">
+        <p class="sns_text"><%= @user.twitter_comment_1 %></p>
+        <a href="https://mobile.twitter.com/<%= @user.twitter_id_1 %>"> <span class="fab fa-twitter sns_inside twitter_inside"></span></a>
+      </div>
+    <%end%>
+    <% if @user.twitter_id_2!=""%>
+      <div class="sns_outside twitter_outside">
+        <p class="sns_text"><%= @user.twitter_comment_2 %></p>
+        <a href="https://mobile.twitter.com/<%= @user.twitter_id_2 %>"> <span class="fab fa-twitter sns_inside twitter_inside"></span></a>
+      </div>
+    <%end%>
+    <% if @user.twitter_id_3!=""%>
+      <div class="sns_outside twitter_outside">
+      <p class="sns_text"><%= @user.twitter_comment_3 %></p>
+      <a href="https://mobile.twitter.com/<%= @user.twitter_id_3 %>"> <span class="fab fa-twitter sns_inside twitter_inside"></span></a>
+      </div>
+    <%end%>
+    <% if @user.instagram_id_1!=""%>
+      <div class="sns_outside instagram_outside">
+      <p class="sns_text"><%= @user.instagram_comment_1 %></p>
+      <a href="https://mobile.twitter.com/<%= @user.instagram_id_1 %>"> <span class="fab fa-instagram  sns_inside instagram_inside"></a>
+      </div>
+    <%end%>
+    <% if @user.instagram_id_2!=""%>
+      <div class="sns_outside instagram_outside">
+      <p class="sns_text"><%= @user.instagram_comment_2 %></p>
+      <a href="https://mobile.twitter.com/<%= @user.instagram_id_2 %>"> <span class="fab fa-instagram  sns_inside instagram_inside"></a>
+      </div>
+    <%end%>
+    <% if @user.facebook_id_1!=""%>
+      <div class="sns_outside facebook_outside">
+      <p class="sns_text"><%= @user.facebook_comment_1 %></p>
+      <a href="https://mobile.twitter.com/<%= @user.facebook_id_1 %>"> <span class="fab fa-facebook  sns_inside facebook_inside"></a>
+      </div>
+    <%end%>
+    <% if @user.facebook_id_2!=""%>
+      <div class="sns_outside facebook_outside">
+      <p class="sns_text"><%= @user.facebook_comment_2 %></p>
+      <a href="https://mobile.twitter.com/<%= @user.facebook_id_2 %>"> <span class="fab fa-facebook  sns_inside facebook_inside"></a>
+      </div>
+    <%end%>
+    <% if @user.youtube_id_1!=""%>
+      <div class="sns_outside youtube_outside">
+      <p class="sns_text"><%= @user.youtube_comment_1 %></p>
+      <a href="https://mobile.twitter.com/<%= @user.youtube_id_1 %>"> <span class="fab fa-youtube  sns_inside youtube_inside"></a>
+      </div>
+    <%end%>
+    <% if @user.youtube_id_2!=""%>
+      <div class="sns_outside youtube_outside">
+      <p class="sns_text"><%= @user.youtube_comment_2 %></p>
+      <a href="https://mobile.twitter.com/<%= @user.youtube_id_2 %>"> <span class="fab fa-youtube  sns_inside youtube_inside"></a>
+      </div>
+    <%end%>
+    <% if @user.tiktok_id_1!=""%>
+      <div class="sns_outside tiktok_outside">
+      <p class="sns_text">&nbsp;<%= @user.tiktok_comment_1 %></p>
+      <a href="https://mobile.twitter.com/<%= @user.tiktok_id_1 %>"> <span class="fab fa-tiktok  sns_inside tiktok_inside"></a>
+      </div>
+    <%end%>
+    <% if @user.tiktok_id_2!=""%>
+      <div class="sns_outside tiktok_outside">
+      <p class="sns_text">&nbsp;<%= @user.tiktok_comment_2 %></p>
+      <a href="https://mobile.twitter.com/<%= @user.tiktok_id_2 %>"> <span class="fab fa-tiktok  sns_inside tiktok_inside"></a>
+      </div>
+    <%end%>
+  </div>
+
+  <!-- プロフィール文章-->
+  <div class="pfl_user_text_p">
+    <p class="pfl_user_text"><%=@user.pfl_text%></p>
+  </div>
+
+  <!-- リンク一覧表示-->
+  <div class="link_index_p">
+  </div>
+
+</body>
 
 <style>
+
   body {
     background-color: #<%=@user.background_color%>;
-    padding-bottom: 150px;
+    height: auto;
+    margin-bottom:100px;
   }
 
   @media screen and (max-width: 375px) {
-  body {
-    margin-top:15px;
-  }
   }
 
   /*Twitterアイコン 外側色*/
-  .twitter_uti{
+  .twitter_outside{
   background-color: #<%= @user.twitter_outsidecolor%>;
   }
+
   /*Twitterアイコン 内側色*/
-  .twitter_soto span{
+  .twitter_inside span{
   color: #<%= @user.twitter_insidecolor%>;
   }
+
   /*instagramアイコン 外側色*/
-  .instagram_uti{
+  .instagram_outside{
   background-color: #<%= @user.instagram_outsidecolor%>;
   }
+
   /*instagramアイコン 内側色*/
-  .instagram_soto span{
+  .instagram_inside span{
   color: #<%= @user.instagram_insidecolor%>;
   }
+
   /*facebookアイコン 外側色*/
-  .facebook_uti{
+  .facebook_outside{
   background-color: #<%= @user.facebook_outsidecolor%>;
   }
+
   /*facebookアイコン 内側色*/
-  .facebook_soto span{
+  .facebook_inside span{
   color: #<%= @user.facebook_insidecolor%>;
   }
+
   /*youtubeアイコン 外側色*/
-  .youtube_uti{
+  .youtube_outside{
   background-color: #<%= @user.youtube_outsidecolor%>;
   }
+
   /*youtubeアイコン 内側色*/
-  .youtube_soto span{
+  .youtube_inside span{
   color: #<%= @user.youtube_insidecolor%>;
   }
+
   /*tiktokアイコン 外側色*/
-  .tiktok_uti{
+  .tiktok_outside{
   background-color: #<%= @user.tiktok_outsidecolor%>;
   }
+
   /*tiktokアイコン 内側色*/
-  .tiktok_soto span{
+  .tiktok_inside span{
   color: #<%= @user.tiktok_insidecolor%>;
   }
+
 </style>
-
-<div class="sns_oya_oya">
-
-  <% if @user.twitter_id_1!=""%>
-<div class="sns_soto twitter_soto">
-     <p class="sns_text"><%= @user.twitter_comment_1 %></p>
-     <a href="https://mobile.twitter.com/<%= @user.twitter_id_1 %>"> <span class="fab fa-twitter sns_uti twitter_uti"></span></a>
-</div>
-  <%end%>
-
-  <% if @user.twitter_id_2!=""%>
-  <div class="sns_soto twitter_soto">
-     <p class="sns_text"><%= @user.twitter_comment_2 %></p>
-     <a href="https://mobile.twitter.com/<%= @user.twitter_id_2 %>"> <span class="fab fa-twitter sns_uti twitter_uti"></span></a>
-  </div>
-  <%end%>
-
-  <% if @user.twitter_id_3!=""%>
-<div class="sns_soto twitter_soto">
-     <p class="sns_text"><%= @user.twitter_comment_3 %></p>
-     <a href="https://mobile.twitter.com/<%= @user.twitter_id_3 %>"> <span class="fab fa-twitter sns_uti twitter_uti"></span></a>
-</div>
-    <%end%>
-
-    <% if @user.instagram_id_1!=""%>
-  <div class="sns_soto instagram_soto">
-       <p class="sns_text"><%= @user.instagram_comment_1 %></p>
-       <a href="https://mobile.twitter.com/<%= @user.instagram_id_1 %>"> <span class="fab fa-instagram  sns_uti instagram_uti"></a>
-  </div>
-      <%end%>
-      <% if @user.instagram_id_2!=""%>
-    <div class="sns_soto instagram_soto">
-         <p class="sns_text"><%= @user.instagram_comment_2 %></p>
-         <a href="https://mobile.twitter.com/<%= @user.instagram_id_2 %>"> <span class="fab fa-instagram  sns_uti instagram_uti"></a>
-    </div>
-        <%end%>
-
-          <% if @user.facebook_id_1!=""%>
-        <div class="sns_soto facebook_soto">
-             <p class="sns_text"><%= @user.facebook_comment_1 %></p>
-             <a href="https://mobile.twitter.com/<%= @user.facebook_id_1 %>"> <span class="fab fa-facebook  sns_uti facebook_uti"></a>
-        </div>
-            <%end%>
-            <% if @user.facebook_id_2!=""%>
-          <div class="sns_soto facebook_soto">
-               <p class="sns_text"><%= @user.facebook_comment_2 %></p>
-               <a href="https://mobile.twitter.com/<%= @user.facebook_id_2 %>"> <span class="fab fa-facebook  sns_uti facebook_uti"></a>
-          </div>
-              <%end%>
-
-              <% if @user.youtube_id_1!=""%>
-            <div class="sns_soto youtube_soto">
-                 <p class="sns_text"><%= @user.youtube_comment_1 %></p>
-                 <a href="https://mobile.twitter.com/<%= @user.youtube_id_1 %>"> <span class="fab fa-youtube  sns_uti youtube_uti"></a>
-            </div>
-                <%end%>
-                <% if @user.youtube_id_2!=""%>
-              <div class="sns_soto youtube_soto">
-                   <p class="sns_text"><%= @user.youtube_comment_2 %></p>
-                   <a href="https://mobile.twitter.com/<%= @user.youtube_id_2 %>"> <span class="fab fa-youtube  sns_uti youtube_uti"></a>
-              </div>
-                  <%end%>
-
-                  <% if @user.tiktok_id_1!=""%>
-                <div class="sns_soto tiktok_soto">
-                     <p class="sns_text">&nbsp;<%= @user.tiktok_comment_1 %></p>
-                     <a href="https://mobile.twitter.com/<%= @user.tiktok_id_1 %>"> <span class="fab fa-tiktok  sns_uti tiktok_uti"></a>
-                </div>
-                    <%end%>
-                    <% if @user.tiktok_id_2!=""%>
-                  <div class="sns_soto tiktok_soto">
-                       <p class="sns_text">&nbsp;<%= @user.tiktok_comment_2 %></p>
-                       <a href="https://mobile.twitter.com/<%= @user.tiktok_id_2 %>"> <span class="fab fa-tiktok  sns_uti tiktok_uti"></a>
-                  </div>
-                      <%end%>
-
-</div>
-
-<!-- プロフィール文章-->
-　<div class="pfl_user_text_p">
-    <p class="pfl_user_text"><%=@user.pfl_text%></p>
-</div>
-<!-- リンク-->
-<div class="link_index_oya">
-</div>
-
-  </body>
-
-</html>

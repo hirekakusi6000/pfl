@@ -5,5 +5,5 @@ Rails.application.routes.draw do
     passwords: 'users/passwords'
   }
   get "/" => "homes#top"
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show, :edit, :update]
 end
