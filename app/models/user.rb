@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :name, presence: true  
+  mount_uploader :icon_image, ImageUploader
+  mount_uploader :header_image, ImageUploader
 end
 
 User.create(name: "John Doe").valid? # => true

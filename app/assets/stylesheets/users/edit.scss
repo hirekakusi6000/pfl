@@ -1,3 +1,7 @@
+label input {
+  display: none;
+}
+
 /*名前・自己紹介・保存・キャンセルボタン 親要素 ブロック*/
 .edit_pp {
   text-align: center;
@@ -196,12 +200,6 @@
   width: 100vw;
   position: absolute;
   top: 0px;
-}
-
-/* アイコン画像 親 ブロック*/
-.icon_image_p {
-  position: relative;
-  width: 100vw;
 }
 
 /*アイコン画像カメラアイコン　子　インラインブロック*/

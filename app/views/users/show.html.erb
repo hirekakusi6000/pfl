@@ -5,7 +5,9 @@
 
 <body>
   <!-- ヘッダー画像-->
-  <img  class="header_image" src="<%= "/user_images/#{@user.header_image}" %>">
+  <% if @user.header_image? %>
+  <p><%= image_tag @user.header_image.url,class:"header_image"%></p>
+  <% end %>
 
   <!-- アイコン拡大-->
   <div class="popup_wrap">
@@ -20,7 +22,7 @@
         <label for="trigger" class="popup_trigger"></label>
 
     <div class="popup_content">
-      <img  class="icon_image_enlarge" style=border: 10px solid red;  src="<%= "/user_images/#{@user.icon_image}" %>">
+      <%= image_tag @user.icon_image.url,class:"icon_image_enlarge"%>
     </div>
     
     </div>
@@ -28,7 +30,7 @@
 
   <label for="trigger" class="open_btn">
     <div class="icon_image_p">
-      <img  class="icon_image" src="<%= "/user_images/#{@user.icon_image}" %>">
+      <p><%= image_tag @user.icon_image.url,class:"icon_image"%></p>
     </div>
   </label>
 
@@ -37,8 +39,8 @@
 
   <!-- 編集へのリンクアイコン-->
   <% if current_user%>
-    <% if @current_user.id == @user.id%>
-    <a href="/users/<%= @current_user.id %>/edit">
+    <% if current_user.id == @user.id%>
+    <a href="/users/<%= current_user.id %>/edit">
       <div class="pen_p">
         <i class="fa fa-edit pen"></i>
       </div>

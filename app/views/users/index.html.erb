@@ -11,7 +11,7 @@
   <div class="index_icon_pp">
     <% @users.each do |user| %>
       <div class="index_icon_p" ontouchstart="">
-        <a href="/users/<%= user.id %>"><img src="<%= "/user_images/#{user.icon_image}" %>"></a>
+        <a href="/users/<%= user.id %>"><img src="<%= user.icon_image %>"></a>
         <p ><a class="index_user_name" href="/user/<%= user.id %>/pfl"><%= user.name %></a></p>
       </div>
     <% end %>

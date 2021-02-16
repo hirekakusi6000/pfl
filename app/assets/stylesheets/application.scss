@@ -32,6 +32,12 @@ input[type="submit"] {
   object-fit: none;
 }
 
+/* アイコン画像 親 ブロック*/
+.icon_image_p {
+  position: relative;
+  width: 100vw;
+}
+
 /* アイコン画像 子 ブロック*/
 .icon_image {
   z-index: 3;

@@ -1,23 +1,27 @@
-<%= form_with model: @user do |f| %>
+<%= form_with(model: @user, local: true, multipart: true) do |form| %>
 
 <body>
   <!-- ヘッダー画像-->
   <div class="header_image_p">
-    <label for="file_uplod">
-      <img  class="header_image" src="<%= "/user_images/#{@user.header_image}" %>">
+    <label for="header_image_upload">
+      <% if @user.header_image? %>
+      <p><%= image_tag @user.header_image.url,class:"header_image"%></p>
+      <% end %>
       <i class="fas fa-camera camera_header"></i>
       <span class="black_overlay_header"></span>
-      <input name="header_image" type="file" id="file_uplod">
+      <p><%= form.file_field :header_image, accept: "image/png,image/jpeg,image/gif",id:"header_image_upload"%></p>
     </label>
   </div>
 
   <!-- アイコン画像-->
   <div class="icon_image_p">
-    <label for="file_upload" >
+    <label for="icon_image_upload" >
       <i class="fas fa-camera camera_icon"></i>
-      <img  class="icon_image" src="<%= "/user_images/#{@user.icon_image}" %>">
+      <% if @user.icon_image? %>
+      <p><%= image_tag @user.icon_image.url,class:"icon_image"%></p>
+      <% end %>
       <span class="black_overlay_icon"></span>
-      <input name="icon_image" type="file" id="file_upload">
+      <p><%= form.file_field :icon_image, accept: "image/png,image/jpeg,image/gif",id:"icon_image_upload"%></p>
     </label>
   </div>
 
@@ -516,7 +520,7 @@
     <div class="edit_pp">
       <!-- 名前編集フォーム-->  
       <div class="name_edit_p">
-        <p><input class="name_form" name="name" value="<%= @user.name %>"></p>
+        <p><%= form.text_field :name,class:"name_form"%></p>
         <p class="form_title_name">名前</p>
       </div>
       <!-- プロフィールテキスト編集フォーム-->
@@ -527,7 +531,7 @@
       <!-- 保存・キャンセルボタン-->
       <div class="update_cancel_btn_p">
         <a class="cancel_btn" href="/users/<%= current_user.id %>">キャンセル</a>
-        <input class="update_btn" type="submit" value="保存">
+        <%= form.submit "保存",class:"update_btn"%>
       </div>
     </div>
 

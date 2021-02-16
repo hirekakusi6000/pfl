@@ -68,3 +68,6 @@ gem 'devise-bootstrap-views'
 
 # font-awesomeをrailsコードに適用
 gem 'font-awesome-rails'
+
+# 画像投稿機能
+gem 'carrierwave', '~> 2.0'

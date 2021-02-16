@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user=User.find_by(id:current_user.id)
+    @user=User.find_by(id:params[:id])
     @page="mypfl"
   end
 
@@ -19,6 +19,8 @@ class UsersController < ApplicationController
 
 def update
   user=User.find_by(id:current_user.id)
+  user.update!(user_params)
+  
   user.pfl_text=params[:pfl_text]
   user.name=params[:name]
   user.twitter_id_1=params[:twitter]
@@ -128,5 +130,11 @@ def update
   end
     user.save
 end
+
+ private
+
+  def user_params
+    params.require(:user).permit(:name,:icon_image,:header_image)
+  end
 
 end
