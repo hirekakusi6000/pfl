@@ -26,8 +26,20 @@
   object-fit: cover;
 }
 
-/* ユーザーネーム ブロック */
+/* ユーザーネーム 親 ブロック */
+.index_user_name_p {
+  margin-top: 10px;
+}
+
+/* ユーザーネーム 子 ブロック */
 .index_user_name {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+
+.index_user_name:hover {
   color: black;
   font-weight: bold;
   text-decoration: none;
@@ -48,22 +60,22 @@
     width: 220px;
   }
 
-  /* アイコン 親の親 ブロック */
-  .index_icon_pp {
-    margin-top: 10px;
-  }
-
   /* アイコン 親 ブロック */
   .index_icon_p {
     width: 85px;
     height: 85px;
-    margin: 10px 10px;
+    margin: 10px 10px 40px 10px;
   }
 
   /* アイコン 子 インラインブロック */
   .index_icon_p img {
     width: 85px;
     height: 85px;
+  }
+
+  /* ユーザーネーム 親 ブロック */
+  .index_user_name_p {
+    margin-top: 5px;
   }
 
   /* ユーザーネーム インラインブロック */

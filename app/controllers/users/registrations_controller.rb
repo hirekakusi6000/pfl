@@ -10,13 +10,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-   def create
-     super
-    @user = User.find_by(id:current_user.id)
-    @user.icon_image = "d.PNG"
-    @user.header_image = "d.PNG"
-    @user.save
-   end
+  # def create
+  #  super
+  #end
 
   # GET /resource/edit
   # def edit

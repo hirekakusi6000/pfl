@@ -24,6 +24,23 @@ input[type="submit"] {
   border: none;
 }
 
+/*ヘッダー画像 親 ブロック*/
+.header_image_p {
+  position: relative;
+  height: 200px;
+  width: 100vw;
+  text-align: center;
+  background: black;
+}
+
+/*デフォルトヘッダー画像 親 ブロック*/
+.default_header_image {
+  height: 200px;
+  width: 100vw;
+  text-align: center;
+  background: #F2F2F2;
+}
+
 /* ヘッダー画像 子 ブロック*/
 .header_image {
   z-index: 1;
@@ -56,8 +73,18 @@ input[type="submit"] {
 
 @media screen and (max-width: 375px) {
 
+  /*ヘッダー画像 親 ブロック*/
+  .header_image_p {
+    height: 130px;
+  }
+
   /* ヘッダー画像 子 ブロック*/
   .header_image {
+    height: 130px;
+  }
+
+  /*デフォルトヘッダー画像 親 ブロック*/
+  .default_header_image {
     height: 130px;
   }
 

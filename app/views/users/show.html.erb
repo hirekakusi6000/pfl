@@ -5,8 +5,11 @@
 
 <body>
   <!-- ヘッダー画像-->
+   <div class="header_image_p">
   <% if @user.header_image? %>
   <p><%= image_tag @user.header_image.url,class:"header_image"%></p>
+  <% else %>
+  <p class="default_header_image"></p>
   <% end %>
 
   <!-- アイコン拡大-->
@@ -15,8 +18,10 @@
       <div class="popup_overlay">
         <label for="trigger" class="close_btn">×</label>
           <%= form_tag("/users/update", {multipart: true}) do %>
+            <% if current_user%>
             <% if current_user.id==@user.id%>
               <a href="/users/pfl_edit" class="image_edit">変更</a>
+            <%end%>
             <%end%>
           <%end%>
         <label for="trigger" class="popup_trigger"></label>

@@ -167,15 +167,7 @@ label input {
 
 }
 
-/*ヘッダー画像　親　ブロック*/
-.header_image_p {
-  position: relative;
-  height: 240px;
-  width: 100vw;
-  text-align: center;
-}
-
-/*ヘッダー画像カメラアイコン　子　インラインブロック*/
+/*ヘッダー画像カメラアイコン 子 インラインブロック*/
 .camera_header {
   z-index: 200;
   display: inline-block;
