@@ -25,6 +25,7 @@
 
 /*色一覧 子 */
 .color_index {
+  display: block;
   margin: 0px;
   height: 24px;
   width: 24px;
@@ -37,4 +38,40 @@
   height: 5px;
   width: 200px;
   font-size: 20px;
+}
+
+@media screen and (max-width: 375px) {
+
+  /*背景色変更ポップアップ*/
+  .popup_content {
+    padding: 8px 15px 15px 15px;
+    max-height: 220px;
+    min-height: 220px;
+    max-width: 360px;
+    min-width: 360px;
+  }
+
+  /*色一覧 親 */
+  .color_index_p {
+    cursor: pointer;
+    margin: 2px;
+    height: 20px;
+    width: 20px;
+  }
+
+  /*色一覧 子 */
+  .color_index {
+    margin: 0px;
+    height: 20px;
+    width: 20px;
+  }
+
+  /*各色編集ポップアップタイトル 子 ブロック*/
+  .color_edit_title {
+    display: inline-block;
+    font-weight: bold;
+    height: 5px;
+    width: 200px;
+    font-size: 20px;
+  }
 }

@@ -56,69 +56,69 @@
   <!-- SNSアイコン一覧表示-->
   <div class="sns_pp">
     <% if @user.twitter_id_1!=""%>
-      <div class="sns_outside twitter_outside">
+      <div class="sns_outside twitter_outside_color">
         <p class="sns_text"><%= @user.twitter_comment_1 %></p>
-        <a href="https://mobile.twitter.com/<%= @user.twitter_id_1 %>"> <span class="fab fa-twitter sns_inside twitter_inside"></span></a>
+        <a href="https://mobile.twitter.com/<%= @user.twitter_id_1 %>"> <span class="fab fa-twitter sns_inside twitter_inside_color"></span></a>
       </div>
     <%end%>
     <% if @user.twitter_id_2!=""%>
-      <div class="sns_outside twitter_outside">
+      <div class="sns_outside twitter_outside_color">
         <p class="sns_text"><%= @user.twitter_comment_2 %></p>
-        <a href="https://mobile.twitter.com/<%= @user.twitter_id_2 %>"> <span class="fab fa-twitter sns_inside twitter_inside"></span></a>
+        <a href="https://mobile.twitter.com/<%= @user.twitter_id_2 %>"> <span class="fab fa-twitter sns_inside twitter_inside_color"></span></a>
       </div>
     <%end%>
     <% if @user.twitter_id_3!=""%>
-      <div class="sns_outside twitter_outside">
+      <div class="sns_outside twitter_outside_color">
       <p class="sns_text"><%= @user.twitter_comment_3 %></p>
-      <a href="https://mobile.twitter.com/<%= @user.twitter_id_3 %>"> <span class="fab fa-twitter sns_inside twitter_inside"></span></a>
+      <a href="https://mobile.twitter.com/<%= @user.twitter_id_3 %>"> <span class="fab fa-twitter sns_inside twitter_inside_color"></span></a>
       </div>
     <%end%>
     <% if @user.instagram_id_1!=""%>
-      <div class="sns_outside instagram_outside">
+      <div class="sns_outside instagram_outside_color">
       <p class="sns_text"><%= @user.instagram_comment_1 %></p>
-      <a href="https://mobile.twitter.com/<%= @user.instagram_id_1 %>"> <span class="fab fa-instagram  sns_inside instagram_inside"></a>
+      <a href="https://mobile.twitter.com/<%= @user.instagram_id_1 %>"> <span class="fab fa-instagram  sns_inside instagram_inside_color"></a>
       </div>
     <%end%>
     <% if @user.instagram_id_2!=""%>
-      <div class="sns_outside instagram_outside">
+      <div class="sns_outside instagram_outside_color">
       <p class="sns_text"><%= @user.instagram_comment_2 %></p>
-      <a href="https://mobile.twitter.com/<%= @user.instagram_id_2 %>"> <span class="fab fa-instagram  sns_inside instagram_inside"></a>
+      <a href="https://mobile.twitter.com/<%= @user.instagram_id_2 %>"> <span class="fab fa-instagram  sns_inside instagram_inside_color"></a>
       </div>
     <%end%>
     <% if @user.facebook_id_1!=""%>
-      <div class="sns_outside facebook_outside">
+      <div class="sns_outside facebook_outside_color">
       <p class="sns_text"><%= @user.facebook_comment_1 %></p>
-      <a href="https://mobile.twitter.com/<%= @user.facebook_id_1 %>"> <span class="fab fa-facebook  sns_inside facebook_inside"></a>
+      <a href="https://mobile.twitter.com/<%= @user.facebook_id_1 %>"> <span class="fab fa-facebook  sns_inside facebook_inside_color"></a>
       </div>
     <%end%>
     <% if @user.facebook_id_2!=""%>
-      <div class="sns_outside facebook_outside">
+      <div class="sns_outside facebook_outside_color">
       <p class="sns_text"><%= @user.facebook_comment_2 %></p>
-      <a href="https://mobile.twitter.com/<%= @user.facebook_id_2 %>"> <span class="fab fa-facebook  sns_inside facebook_inside"></a>
+      <a href="https://mobile.twitter.com/<%= @user.facebook_id_2 %>"> <span class="fab fa-facebook  sns_inside facebook_inside_color"></a>
       </div>
     <%end%>
     <% if @user.youtube_id_1!=""%>
-      <div class="sns_outside youtube_outside">
+      <div class="sns_outside youtube_outside_color">
       <p class="sns_text"><%= @user.youtube_comment_1 %></p>
-      <a href="https://mobile.twitter.com/<%= @user.youtube_id_1 %>"> <span class="fab fa-youtube  sns_inside youtube_inside"></a>
+      <a href="https://mobile.twitter.com/<%= @user.youtube_id_1 %>"> <span class="fab fa-youtube  sns_inside youtube_inside_color"></a>
       </div>
     <%end%>
     <% if @user.youtube_id_2!=""%>
-      <div class="sns_outside youtube_outside">
+      <div class="sns_outside youtube_outside_color">
       <p class="sns_text"><%= @user.youtube_comment_2 %></p>
-      <a href="https://mobile.twitter.com/<%= @user.youtube_id_2 %>"> <span class="fab fa-youtube  sns_inside youtube_inside"></a>
+      <a href="https://mobile.twitter.com/<%= @user.youtube_id_2 %>"> <span class="fab fa-youtube  sns_inside youtube_inside_color"></a>
       </div>
     <%end%>
     <% if @user.tiktok_id_1!=""%>
-      <div class="sns_outside tiktok_outside">
+      <div class="sns_outside tiktok_outside_color">
       <p class="sns_text">&nbsp;<%= @user.tiktok_comment_1 %></p>
-      <a href="https://mobile.twitter.com/<%= @user.tiktok_id_1 %>"> <span class="fab fa-tiktok  sns_inside tiktok_inside"></a>
+      <a href="https://mobile.twitter.com/<%= @user.tiktok_id_1 %>"> <span class="fab fa-tiktok  sns_inside tiktok_inside_color"></a>
       </div>
     <%end%>
     <% if @user.tiktok_id_2!=""%>
-      <div class="sns_outside tiktok_outside">
+      <div class="sns_outside tiktok_outside_color">
       <p class="sns_text">&nbsp;<%= @user.tiktok_comment_2 %></p>
-      <a href="https://mobile.twitter.com/<%= @user.tiktok_id_2 %>"> <span class="fab fa-tiktok  sns_inside tiktok_inside"></a>
+      <a href="https://mobile.twitter.com/<%= @user.tiktok_id_2 %>"> <span class="fab fa-tiktok  sns_inside tiktok_inside_color"></a>
       </div>
     <%end%>
   </div>
@@ -142,56 +142,53 @@
     margin-bottom:100px;
   }
 
-  @media screen and (max-width: 375px) {
-  }
-
   /*Twitterアイコン 外側色*/
-  .twitter_outside{
-  background-color: #<%= @user.twitter_outsidecolor%>;
+  .twitter_outside_color{
+  background-color: gray;
   }
 
   /*Twitterアイコン 内側色*/
-  .twitter_inside span{
-  color: #<%= @user.twitter_insidecolor%>;
+  .twitter_inside_color span{
+  color: gray;
   }
 
   /*instagramアイコン 外側色*/
-  .instagram_outside{
+  .instagram_outside_color{
   background-color: #<%= @user.instagram_outsidecolor%>;
   }
 
   /*instagramアイコン 内側色*/
-  .instagram_inside span{
+  .instagram_inside_color span{
   color: #<%= @user.instagram_insidecolor%>;
   }
 
   /*facebookアイコン 外側色*/
-  .facebook_outside{
+  .facebook_outside_color{
   background-color: #<%= @user.facebook_outsidecolor%>;
   }
 
   /*facebookアイコン 内側色*/
-  .facebook_inside span{
+  .facebook_inside_color span{
   color: #<%= @user.facebook_insidecolor%>;
   }
 
   /*youtubeアイコン 外側色*/
-  .youtube_outside{
+  .youtube_outside_color{
   background-color: #<%= @user.youtube_outsidecolor%>;
   }
 
   /*youtubeアイコン 内側色*/
-  .youtube_inside span{
+  .youtube_inside_color span{
   color: #<%= @user.youtube_insidecolor%>;
   }
 
   /*tiktokアイコン 外側色*/
-  .tiktok_outside{
+  .tiktok_outside_color{
   background-color: #<%= @user.tiktok_outsidecolor%>;
   }
 
   /*tiktokアイコン 内側色*/
-  .tiktok_inside span{
+  .tiktok_inside_color span{
   color: #<%= @user.tiktok_insidecolor%>;
   }
 

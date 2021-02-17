@@ -1,0 +1,448 @@
+<%= form_with(model: @user, local: true, multipart: true) do |form| %>
+  <!-- ポップアップ twitter-->
+  <div class="popup_wrap">
+    <input id="trigger_twitter" type="checkbox">
+    <div class="popup_overlay">
+      <label for="trigger_twitter" class="popup_trigger"></label>
+      <div class="popup_content_oya">
+
+      <!-- アカウント情報-->
+      <div class="popup_wrap">
+        <input id="trigger_n" type="checkbox">
+          <div class="popup_content_n">
+          <p class="sns_title">Twitter設定<span class="Q"> ※3つまで</p>
+
+            <div class="twitter_edit">
+              <p class="sns_edit_p">TwitterのID</p>
+              <input  class="sns_edit_naka" name="twitter" value="<%= @user.twitter_id_1 %>">
+              <p class="sns_edit_p">アカウントの説明</p>
+              <input class="sns_edit_naka" maTlength='7' name="Twitter_text1" value="<%= @user.twitter_comment_1 %>"><span class="limit"> ※7文字以内</span>
+            </div>
+            <div class="twitter_edit">
+              <p class="sns_edit_p">TwitterのID </p>
+              <input class="sns_edit_naka" name="Twitter2" value="<%= @user.twitter_id_2 %>">
+              <p class="sns_edit_p">アカウントのの説明</p>
+              <input class="sns_edit_naka" maTlength='7' name="Twitter_text2" value="<%= @user.twitter_comment_2 %>"><span class="limit"> ※7文字以内</span>
+            </div>
+            <div class="twitter_edit">
+              <p class="sns_edit_p">TwitterのID</p>
+              <input class="sns_edit_naka" name="Twitter3" value="<%= @user.twitter_id_3 %>">
+              <p class="sns_edit_p">アカウントの説明</p>
+              <input class="sns_edit_naka" maTlength='7' name="Twitter_text3" value="<%= @user.twitter_comment_3 %>"><span class="limit"> ※7文字以内</span>
+            </div>
+
+          <label for="trigger_n" class="edit_close_btn">×</label>
+          <input class="sns_OK" type="submit" value="保存" name="twitter_id_update">
+        </div>
+      </div>
+
+ <!-- 外側カラー-->
+  <div class="popup_wrap">
+    <input id="trigger_c" type="checkbox">
+    <div class="popup_content_c">
+      <p class="color_edit_title">Twitterの外側色</p>
+      <p><label for="trigger_c" class="edit_close_btn">×</label></p>
+        <% @color_index.each do |a| %>
+          <input id="C<%= a%>" type="radio" name="twitter_color_soto" value="<%= a%>" <%= "checked" if @user.twitter_outsidecolor== a%>>
+          <label for="C<%= a%>" class="color_index_oya">
+            <span class="color_index C<%= a%>"></span>
+          </label>
+        <%end%>
+      <input class="OK" type="submit" value="保存" name="twitter_color_soto_update">
+    </div>
+  </div>
+
+    <!-- 内側カラー-->
+    <input id="trigger_uti" type="checkbox">
+    <div class="popup_content_uti">
+      <p class="color_edit_title">Twitterの内側色</p>
+      <p><label for="trigger_uti" class="edit_close_btn">×</label></p>
+        <% @color_index.each do |color| %>
+          <input id="B<%= color%>" type="radio" name="twitter_color_uti" value="<%= color%>" <%= "checked" if @user.twitter_insidecolor== color%>><!-- ピンク　-->
+          <label for="B<%= color%>" class="color_index_oya">
+          <span class="color_index B<%= color%>"></span>
+          </label>
+        <%end%>
+      <input class="sns_OK" type="submit" value="保存" name="twitter_color_uti_update">
+    </div>
+
+    <!-- twitterポップアップ選択画面 -->
+      <div class="popup_content_sentaku">
+        <p><label for="trigger_twitter" class="edit_close_btn">×</label></p>
+        <p><label for="trigger_n" class="open_btn_s">Twitterアカウントを設定する</label></p>
+        <p><label for="trigger_c" class="open_btn_s">Twitterアイコン外側カラー変更</label></p>
+        <p><label for="trigger_uti" class="open_btn_s">Twitterアイコン内側カラー変更</label></p>
+      </div>
+
+    </div>
+   </div>
+  </div>
+
+  <!-- ポップアップ instagram-->
+  <div class="popup_wrap">
+  <input id="trigger_instagram" type="checkbox">
+  <div class="popup_overlay">
+  <label for="trigger_instagram" class="popup_trigger"></label>
+  <div class="popup_content_oya">
+
+  <!-- アカウント情報-->
+  <div class="popup_wrap">
+  <input id="trigger_instagram_account" type="checkbox">
+
+  <div class="popup_content_n">
+  <p class="sns_title">Instagram設定<span class="Q"> ※3つまで</p>
+
+  <div class="twitter_edit">
+  <p class="sns_edit_p">InstagramのID</p>
+  <input  class="sns_edit_naka" name="instagram" value="<%= @user.instagram_id_1 %>">
+  　  <p class="sns_edit_p">アカウントの説明</p>
+  <input class="sns_edit_naka" maTlength='7' name="instagram_text1" value="<%= @user.instagram_comment_1 %>"><span class="limit"> ※7文字以内</span>
+  </div>
+  <div class="twitter_edit">
+  <p class="sns_edit_p">InstagramのID </p>
+  <input class="sns_edit_naka" name="instagram2" value="<%= @user.instagram_id_2 %>">
+  　  <p class="sns_edit_p">アカウントの説明</p>
+  <input class="sns_edit_naka" maTlength='7' name="instagram_text2" value="<%= @user.instagram_comment_2 %>"><span class="limit"> ※7文字以内</span>
+  </div>
+
+  　<label for="trigger_instagram_account" class="edit_close_btn">×</label>
+  <input class="sns_OK" type="submit" value="保存" name="instagram_id_update">
+  </div>
+  </div>
+  <!-- アカウント情報-->
+
+  <!-- 外側カラー-->
+  <div class="popup_wrap">
+  <input id="trigger_instagram_color_soto" type="checkbox">
+  <div class="popup_content_c">
+
+  <p class="color_edit_title">Instagramの外側色</p>
+  <p><label for="trigger_instagram_color_soto" class="edit_close_btn">×</label></p>
+  <% @color_index.each do |a| %>
+  <input id="IS<%= a%>" type="radio" name="instagram_color_soto" value="<%= a%>" <%= "checked" if @user.instagram_outsidecolor== a%>>
+  <label for="IS<%= a%>" class="color_index_oya">
+  <span class="color_index IS<%= a%>"></span>
+  </label>
+  <%end%>
+  <input class="sns_OK" type="submit" value="保存" name="instagram_color_soto_update">
+
+  </div>
+  </div>
+  <!-- 外側カラー -->
+
+  <!-- 内側カラー-->
+
+  <input id="trigger_instagram_color_uti" type="checkbox">
+
+  <div class="popup_content_uti">
+  <p class="color_edit_title">Instagramの内側色</p>
+  <p><label for="trigger_instagram_color_uti" class="edit_close_btn">×</label></p>
+  <% @color_index.each do |a| %>
+  <input id="IU<%= a%>" type="radio" name="instagram_color_uti" value="<%= a%>" <%= "checked" if @user.instagram_insidecolor== a%>><!-- ピンク　-->
+  <label for="IU<%= a%>" class="color_index_oya">
+  <span class="color_index IU<%= a%>"></span>
+  </label>
+  <%end%>
+  <input class="sns_OK" type="submit" value="保存" name="instagram_color_uti_update">
+  </div>
+
+  <!-- 内側カラー -->
+
+  <!-- instagramポップアップ　選択画面 -->
+  <div class="popup_content_sentaku">
+  <p><label for="trigger_instagram" class="edit_close_btn">×</label></p>
+  <p><label for="trigger_instagram_account" class="open_btn_s">Instagramアカウントを設定する</label></p>
+  <p><label for="trigger_instagram_color_soto" class="open_btn_s">Instagramアイコン外側カラー変更</label></p>
+  <p><label for="trigger_instagram_color_uti" class="open_btn_s">Instagramアイコン内側カラー変更</label></p>
+  </div>
+  <!-- 選択画面 -->
+  </div>
+  </div>
+  </div>
+  <!-- ポップアップ instagram-->
+
+  <!-- ポップアップ facebook-->
+  <div class="popup_wrap">
+  <input id="trigger_facebook" type="checkbox">
+  <div class="popup_overlay">
+  <label for="trigger_facebook" class="popup_trigger"></label>
+  <div class="popup_content_oya">
+
+  <!-- アカウント情報-->
+  <div class="popup_wrap">
+  <input id="trigger_facebook_account" type="checkbox">
+
+  <div class="popup_content_n">
+  <p class="sns_title">facebook設定<span class="Q"> ※3つまで</p>
+
+  <div class="twitter_edit">
+  <p class="sns_edit_p">facebookのID</p>
+  <input  class="sns_edit_naka" name="facebook" value="<%= @user.facebook_id_1 %>">
+  　  <p class="sns_edit_p">アカウントの説明</p>
+  <input class="sns_edit_naka" maTlength='7' name="facebook_text1" value="<%= @user.facebook_comment_1 %>"><span class="limit"> ※7文字以内</span>
+  </div>
+  <div class="twitter_edit">
+  <p class="sns_edit_p">facebookのID </p>
+  <input class="sns_edit_naka" name="facebook2" value="<%= @user.facebook_id_2 %>">
+  　  <p class="sns_edit_p">アカウントの説明</p>
+  <input class="sns_edit_naka" maTlength='7' name="facebook_text2" value="<%= @user.facebook_comment_2 %>"><span class="limit"> ※7文字以内</span>
+  </div>
+
+  　<label for="trigger_facebook_account" class="edit_close_btn">×</label>
+  <input class="sns_OK" type="submit" value="保存" name="facebook_id_update">
+  </div>
+  </div>
+  <!-- アカウント情報-->
+
+  <!-- 外側カラー-->
+  <div class="popup_wrap">
+  <input id="trigger_facebook_color_soto" type="checkbox">
+  <div class="popup_content_c">
+
+  <p class="color_edit_title">facebookの外側色</p>
+  <p><label for="trigger_facebook_color_soto" class="edit_close_btn">×</label></p>
+  <% @color_index.each do |a| %>
+  <input id="FS<%= a%>" type="radio" name="facebook_color_soto" value="<%= a%>" <%= "checked" if @user.facebook_outsidecolor== a%>>
+  <label for="FS<%= a%>" class="color_index_oya">
+  <span class="color_index IS<%= a%>"></span>
+  </label>
+  <%end%>
+  <input class="sns_OK" type="submit" value="保存" name="facebook_color_soto_update">
+
+  </div>
+  </div>
+  <!-- 外側カラー -->
+
+  <!-- 内側カラー-->
+
+  <input id="trigger_facebook_color_uti" type="checkbox">
+
+  <div class="popup_content_uti">
+  <p class="color_edit_title">facebookの内側色</p>
+  <p><label for="trigger_facebook_color_uti" class="edit_close_btn">×</label></p>
+  <% @color_index.each do |a| %>
+  <input id="FU<%= a%>" type="radio" name="facebook_color_uti" value="<%= a%>" <%= "checked" if @user.facebook_insidecolor== a%>><!-- ピンク　-->
+  <label for="FU<%= a%>" class="color_index_oya">
+  <span class="color_index IU<%= a%>"></span>
+  </label>
+  <%end%>
+  <input class="sns_OK" type="submit" value="保存" name="facebook_color_uti_update">
+  </div>
+
+  <!-- 内側カラー -->
+
+  <!-- facebookポップアップ　選択画面 -->
+  <div class="popup_content_sentaku">
+  <p><label for="trigger_facebook" class="edit_close_btn">×</label></p>
+  <p><label for="trigger_facebook_account" class="open_btn_s">facebookアカウントを設定する</label></p>
+  <p><label for="trigger_facebook_color_soto" class="open_btn_s">facebookアイコン外側カラー変更</label></p>
+  <p><label for="trigger_facebook_color_uti" class="open_btn_s">facebookアイコン内側カラー変更</label></p>
+  </div>
+  <!-- 選択画面 -->
+  </div>
+  </div>
+  </div>
+  <!-- ポップアップ facebook-->
+
+  <!-- ポップアップ youtube-->
+  <div class="popup_wrap">
+  <input id="trigger_youtube" type="checkbox">
+  <div class="popup_overlay">
+  <label for="trigger_facebook" class="popup_trigger"></label>
+  <div class="popup_content_oya">
+
+  <!-- アカウント情報-->
+  <div class="popup_wrap">
+  <input id="trigger_youtube_account" type="checkbox">
+
+  <div class="popup_content_n">
+  <p class="sns_title">youtube設定<span class="Q"> ※3つまで</p>
+
+  <div class="twitter_edit">
+  <p class="sns_edit_p">YoutubeのID</p>
+  <input  class="sns_edit_naka" name="youtube" value="<%= @user.youtube_id_1 %>">
+  　  <p class="sns_edit_p">アカウントの説明</p>
+  <input class="sns_edit_naka" maTlength='7' name="youtube_text1" value="<%= @user.youtube_comment_1 %>"><span class="limit"> ※7文字以内</span>
+  </div>
+  <div class="twitter_edit">
+  <p class="sns_edit_p">YoutubeのID </p>
+  <input class="sns_edit_naka" name="youtube2" value="<%= @user.youtube_id_2 %>">
+  　  <p class="sns_edit_p">アカウントの説明</p>
+  <input class="sns_edit_naka" maTlength='7' name="youtube_text2" value="<%= @user.youtube_comment_2 %>"><span class="limit"> ※7文字以内</span>
+  </div>
+
+  　<label for="trigger_youtube_account" class="edit_close_btn">×</label>
+  <input class="sns_OK" type="submit" value="保存" name="youtube_id_update">
+  </div>
+  </div>
+  <!-- アカウント情報-->
+
+  <!-- 外側カラー-->
+  <div class="popup_wrap">
+  <input id="trigger_youtube_color_soto" type="checkbox">
+  <div class="popup_content_c">
+
+  <p class="color_edit_title">Youtubeの外側色</p>
+  <p><label for="trigger_youtube_color_soto" class="edit_close_btn">×</label></p>
+  <% @color_index.each do |a| %>
+  <input id="YS<%= a%>" type="radio" name="youtube_color_soto" value="<%= a%>" <%= "checked" if @user.youtube_outsidecolor== a%>>
+  <label for="YS<%= a%>" class="color_index_oya">
+  <span class="color_index IS<%= a%>"></span>
+  </label>
+  <%end%>
+  <input class="sns_OK" type="submit" value="保存" name="youtube_color_soto_update">
+
+  </div>
+  </div>
+  <!-- 外側カラー -->
+
+  <!-- 内側カラー-->
+
+  <input id="trigger_youtube_color_uti" type="checkbox">
+
+  <div class="popup_content_uti">
+  <p class="color_edit_title">Youtubeの内側色</p>
+  <p><label for="trigger_youtube_color_uti" class="edit_close_btn">×</label></p>
+  <% @color_index.each do |a| %>
+  <input id="YU<%= a%>" type="radio" name="youtube_color_uti" value="<%= a%>" <%= "checked" if @user.youtube_insidecolor== a%>><!-- ピンク　-->
+  <label for="YU<%= a%>" class="color_index_oya">
+  <span class="color_index IU<%= a%>"></span>
+  </label>
+  <%end%>
+  <input class="sns_OK" type="submit" value="保存" name="youtube_color_uti_update">
+  </div>
+
+  <!-- 内側カラー -->
+
+  <!-- youtubeポップアップ　選択画面 -->
+  <div class="popup_content_sentaku">
+  <p><label for="trigger_youtube" class="edit_close_btn">×</label></p>
+  <p><label for="trigger_youtube_account" class="open_btn_s">Youtubeアカウントを設定する</label></p>
+  <p><label for="trigger_youtube_color_soto" class="open_btn_s">Youtubeアイコン外側カラー変更</label></p>
+  <p><label for="trigger_youtube_color_uti" class="open_btn_s">Youtubeアイコン内側カラー変更</label></p>
+  </div>
+  <!-- youtubeポップアップ　選択画面 -->
+  </div>
+  </div>
+  </div>
+  <!-- ポップアップ youtube-->
+
+  <!-- ポップアップ tiktok-->
+  <div class="popup_wrap">
+  <input id="trigger_tiktok" type="checkbox">
+  <div class="popup_overlay">
+  <label for="trigger_tiktok" class="popup_trigger"></label>
+  <div class="popup_content_oya">
+
+  <!-- アカウント情報-->
+  <div class="popup_wrap">
+  <input id="trigger_tiktok_account" type="checkbox">
+
+  <div class="popup_content_n">
+  <p class="sns_title">tiktok設定<span class="Q"> ※3つまで</p>
+
+  <div class="twitter_edit">
+  <p class="sns_edit_p">TiktokのID</p>
+  <input  class="sns_edit_naka" name="tiktok" value="<%= @user.tiktok_id_1 %>">
+  　  <p class="sns_edit_p">アカウントの説明</p>
+  <input class="sns_edit_naka" maTlength='7' name="tiktok_text1" value="<%= @user.tiktok_comment_1 %>"><span class="limit"> ※7文字以内</span>
+  </div>
+  <div class="twitter_edit">
+  <p class="sns_edit_p">TiktokのID </p>
+  <input class="sns_edit_naka" name="tiktok2" value="<%= @user.tiktok_id_2 %>">
+  　  <p class="sns_edit_p">アカウントの説明</p>
+  <input class="sns_edit_naka" maTlength='7' name="tiktok_text2" value="<%= @user.tiktok_comment_2 %>"><span class="limit"> ※7文字以内</span>
+  </div>
+
+  　<label for="trigger_tiktok_account" class="edit_close_btn">×</label>
+  <input class="sns_OK" type="submit" value="保存" name="tiktok_id_update">
+  </div>
+  </div>
+  <!-- アカウント情報-->
+
+  <!-- 外側カラー-->
+  <div class="popup_wrap">
+  <input id="trigger_tiktok_color_soto" type="checkbox">
+  <div class="popup_content_c">
+
+  <p class="color_edit_title">Tiktokの外側色</p>
+  <p><label for="trigger_tiktok_color_soto" class="edit_close_btn">×</label></p>
+  <% @color_index.each do |a| %>
+  <input id="TS<%= a%>" type="radio" name="tiktok_color_soto" value="<%= a%>" <%= "checked" if @user.tiktok_outsidecolor== a%>>
+  <label for="TS<%= a%>" class="color_index_oya">
+  <span class="color_index IS<%= a%>"></span>
+  </label>
+  <%end%>
+  <input class="sns_OK" type="submit" value="保存" name="tiktok_color_soto_update">
+
+  </div>
+  </div>
+  <!-- 外側カラー -->
+
+  <!-- 内側カラー-->
+
+  <input id="trigger_tiktok_color_uti" type="checkbox">
+
+  <div class="popup_content_uti">
+  <p class="color_edit_title">Tiktokの内側の色</p>
+  <p><label for="trigger_tiktok_color_uti" class="edit_close_btn">×</label></p>
+  <% @color_index.each do |a| %>
+  <input id="TU<%= a%>" type="radio" name="tiktok_color_uti" value="<%= a%>" <%= "checked" if @user.tiktok_insidecolor== a%>><!-- ピンク　-->
+  <label for="TU<%= a%>" class="color_index_oya">
+  <span class="color_index IU<%= a%>"></span>
+  </label>
+  <%end%>
+  <input class="sns_OK" type="submit" value="保存" name="tiktok_color_uti_update">
+  </div>
+
+  <!-- 内側カラー -->
+
+  <!-- tiktokポップアップ　選択画面 -->
+  <div class="popup_content_sentaku">
+  <p><label for="trigger_tiktok" class="edit_close_btn">×</label></p>
+  <p><label for="trigger_tiktok_account" class="open_btn_s">Tiktokアカウントを設定する</label></p>
+  <p><label for="trigger_tiktok_color_soto" class="open_btn_s">Tiktokアイコン外側カラー変更</label></p>
+  <p><label for="trigger_tiktok_color_uti" class="open_btn_s">Tiktokアイコン内側カラー変更</label></p>
+  </div>
+  <!-- tiktokポップアップ　選択画面 -->
+  </div>
+  </div>
+  </div>
+  <!-- ポップアップ tiktok-->
+
+  <!-- SNSアイコン-->
+  <div class="sns_pp">
+
+    <label for="trigger_twitter">
+      <div class="sns_outside twitter_outside_color">
+         <span class="fab fa-twitter sns_inside twitter_inside_color"></span>
+      </div>
+    </label>
+
+    <label for="trigger_instagram">
+      <div class="sns_outside instagram_outside_color">
+       <span class="fab fa-instagram sns_inside instagram_uti"></span>
+      </div>
+    </label>
+
+    <label for="trigger_facebook">
+      <div class="sns_outside facebook_outside_color">
+        <span class="fab fa-facebook sns_inside facebook_uti"></span>
+      </div>
+    </label>
+
+    <label for="trigger_youtube">
+     <div class="sns_outside youtube_outside_color">
+        <span class="fab fa-youtube sns_inside youtube_uti"></span>
+      </div>
+    </label>
+
+    <label for="trigger_tiktok">
+     <div class="sns_outside tiktok_outside_color">
+       <span class="fab fa-tiktok sns_inside tiktok_uti"></span>
+      </div>
+    </label>
+
+  </div>
+
+<%end%>

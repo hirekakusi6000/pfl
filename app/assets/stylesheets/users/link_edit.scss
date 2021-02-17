@@ -5,3 +5,110 @@
   transition: opacity 0.5s;
   z-index: 1001000;
 }
+
+/* リンク　全体親　ブロック */
+.link_index_p {
+  width: 600px;
+  text-align: center;
+  margin: auto;
+}
+
+/* リンク　各親　ブロック */
+.link {
+  cursor: pointer;
+  text-align: center;
+  border-radius: 50px;
+  background-color: #FAFAFA;
+  padding: 5px 15px;
+  margin: 15px;
+}
+
+/* リンク　子　インライン */
+.link a {
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+}
+
+@media screen and (max-width: 375px) {
+
+  /* リンク　全体親　ブロック */
+  .link_index_p {
+    width: 300px;
+    text-align: center;
+    margin: auto;
+  }
+
+  /* リンク　各親　ブロック */
+  .link {
+    cursor: pointer;
+    text-align: center;
+    border-radius: 50px;
+    background-color: #FAFAFA;
+    padding: 5px 15px;
+    margin: 15px;
+  }
+
+  /* リンク　子　インライン */
+  .link a {
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+  }
+
+}
+
+/*リンク設定全体*/
+.link_edit_oya {
+  list-style: none;
+  text-align: left;
+  margin-top: 0px;
+  margin-bottom: 85px;
+  margin-left: 20px;
+  font-size: 15px;
+  height: 15px;
+  color: gray;
+}
+
+/*リンク　フォームの上のタイトル*/
+.link_edit {
+  margin-top: -5px;
+  padding-top: 0px;
+  padding-bottom: 7px;
+  height: 0px;
+  font-size: 12px;
+}
+
+/*リンク　フォーム*/
+.link_edit_from {
+  border: 0.5px solid gray;
+  border-radius: 3px;
+  color: #2E9AFE;
+  margin-bottom: 5px;
+  height: 25px;
+  width: 200px;
+}
+
+/*リンク編集　ポップアップ*/
+.popup_content_link {
+  margin-top: 0px;
+  padding-top: 50px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 5px;
+  position: relative;
+  height: 560px;
+  width: 340px;
+  box-sizing: border-box;
+  background: white;
+  transition: 0.5s;
+  line-height: 1.4em;
+  border-radius: 10px;
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
