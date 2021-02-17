@@ -1,0 +1,40 @@
+/*背景色変更ポップアップ*/
+.popup_content {
+  z-index: 100;
+  display: inline-block;
+  padding: 8px 20px 30px 20px;
+  position: relative;
+  align-self: center;
+  max-height: 250px;
+  min-height: 250px;
+  max-width: 420px;
+  min-width: 420px;
+  background: white;
+  transition: 0.5s;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/*色一覧 親 */
+.color_index_p {
+  cursor: pointer;
+  margin: 2px;
+  height: 24px;
+  width: 24px;
+}
+
+/*色一覧 子 */
+.color_index {
+  margin: 0px;
+  height: 24px;
+  width: 24px;
+}
+
+/*各色編集ポップアップタイトル 子 ブロック*/
+.color_edit_title {
+  display: inline-block;
+  font-weight: bold;
+  height: 5px;
+  width: 200px;
+  font-size: 20px;
+}

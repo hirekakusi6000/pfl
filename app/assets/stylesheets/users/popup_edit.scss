@@ -1,0 +1,340 @@
+/*保存ボタン*/
+.OK {
+  display: inline-block;
+  width: 70px;
+  height: 38px;
+  color: white;
+  font-weight: bold;
+  background-color: #2E9AFE;
+  font-size: 18px;
+  cursor: pointer;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border-radius: 100px;
+}
+
+/*✕ボタン*/
+.edit_close_btn {
+  height: 15px;
+  width: 15px;
+  color: #2E9AFE;
+  position: absolute;
+  top: -13px;
+  left: 10px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+/*背景色&リンク設定ボタン 親の親 ブロック*/
+.color_and_link_edit_btn_p {
+  text-align: center;
+  width: 100vw;
+}
+
+/*背景色&リンク設定ボタン 親 ブロック*/
+.color_and_link_edit_btn {
+  display: inline-block;
+  z-index: 1;
+  position: relative;
+  width: 180px;
+}
+
+/*背景色&リンク設定ボタン 子 ブロック*/
+.color_and_link_edit_btn p {
+  padding-top: 2px;
+  border-radius: 10px;
+  font-size: 20px;
+  color: #A9D0F5;
+  cursor: pointer;
+  border: 3px solid #A9D0F5;
+  width: 170px;
+  height: 40px;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+label span {
+  display: block;
+  background-color: white;
+  line-height: 40px;
+  text-align: center;
+  z-index: 10;
+}
+
+/*チェックボックス　デザインオフ*/
+.popup_wrap input[type="checkbox"] {
+  display: none;
+}
+
+/*ラジオボタンデザインオフ*/
+.popup_content input[type="radio"] {
+  display: none;
+}
+
+/*ラジオボタンデザインオフ*/
+.popup_content_c input[type="radio"] {
+  display: none;
+}
+
+/*ラジオボタンデザインオフ*/
+.popup_content_uti input[type="radio"] {
+  display: none;
+}
+
+/*ラジオボタン選択時にオレンジ*/
+.popup_content input[type="radio"]:checked+label span {
+  border: 5px solid orange;
+}
+
+/*ラジオボタン選択時にオレンジ*/
+.popup_content_c input[type="radio"]:checked+label span {
+  border: 5px solid orange;
+}
+
+/*ラジオボタン選択時にオレンジ*/
+.popup_content_uti input[type="radio"]:checked+label span {
+  border: 5px solid orange;
+}
+
+
+
+/*全体の薄い黒*/
+.popup_overlay {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1006;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.5s, transform 0s 0.5s;
+  transform: scale(0);
+  text-align: center;
+}
+
+/**/
+.popup_trigger {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/*SNSアイコン内側色　ポップアップ*/
+.popup_content_uti {
+  opacity: 0;
+  display: inline-block;
+  margin-top: 0px;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  padding-left: 18px;
+  padding-right: 15px;
+  text-align: center;
+  position: relative;
+  align-self: center;
+  height: 325px;
+  width: 580px;
+  box-sizing: border-box;
+  background: white;
+  transition: 0.5s;
+  line-height: 1.4em;
+  transition: 0.5s;
+  border-radius: 10px;
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+
+
+/*リンク設定全体*/
+.link_edit_oya {
+  list-style: none;
+  text-align: left;
+  margin-top: 0px;
+  margin-bottom: 85px;
+  margin-left: 20px;
+  font-size: 15px;
+  height: 15px;
+  color: gray;
+}
+
+/*リンク　フォームの上のタイトル*/
+.link_edit {
+  margin-top: -5px;
+  padding-top: 0px;
+  padding-bottom: 7px;
+  height: 0px;
+  font-size: 12px;
+}
+
+/*リンク　フォーム*/
+.link_edit_from {
+  border: 0.5px solid gray;
+  border-radius: 3px;
+  color: #2E9AFE;
+  margin-bottom: 5px;
+  height: 25px;
+  width: 200px;
+}
+
+
+
+
+/*最初の選択ポップアップを開くボタン*/
+.open_btn_s {
+  display: inline-block;
+  background-color: #A9D0F5;
+  color: white;
+  border-radius: 100px;
+  cursor: pointer;
+  font-size: 15px;
+  width: 300px;
+  height: 40px;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 9px
+}
+
+/*最初の選択ポップアップ　*/
+.popup_content_sentaku {
+  padding-top: 28px;
+  width: 320px;
+  height: 230px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/*アカウント情報　ポップアップ*/
+.popup_content_n {
+  opacity: 0;
+  margin-top: 0px;
+  padding-top: 0px;
+  padding-bottom: 30px;
+  padding-left: 0px;
+  padding-right: 5px;
+  position: relative;
+  height: 450px;
+  width: 340px;
+  font-size: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+/*リンク編集　ポップアップ*/
+.popup_content_link {
+  margin-top: 0px;
+  padding-top: 50px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 5px;
+  position: relative;
+  height: 560px;
+  width: 340px;
+  box-sizing: border-box;
+  background: white;
+  transition: 0.5s;
+  line-height: 1.4em;
+  border-radius: 10px;
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+/*SNSアイコン外側色　ポップアップ*/
+.popup_content_c {
+  margin-top: 0px;
+  padding-top: 35px;
+  padding-bottom: 0px;
+  padding-left: 3px;
+  padding-right: 3px;
+  position: relative;
+  height: 240px;
+  width: 350px;
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+/*SNSアイコン内側色　ポップアップ*/
+.popup_content_uti {
+  margin-top: 0px;
+  padding-top: 35px;
+  padding-bottom: 0px;
+  padding-left: 3px;
+  padding-right: 3px;
+  position: relative;
+  height: 240px;
+  width: 350px;
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.popup_content_oya {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/*クリックで全体の薄い黒を表示*/
+.popup_wrap input:checked~.popup_overlay {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.5s;
+}
+
+/*SNSアイコン外側色　ポップアップをクリックして表示*/
+.popup_wrap input:checked~.popup_content_c {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.5s;
+  z-index: 1001;
+}
+
+/*sns情報編集　ポップアップをクリックして表示*/
+.popup_wrap input:checked~.popup_content_n {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.5s;
+  z-index: 1001;
+}
+
+/*SNSアイコン内側色　クリックでポップアップを表示*/
+.popup_wrap input:checked~.popup_content_uti {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.5s;
+  z-index: 1001;
+}

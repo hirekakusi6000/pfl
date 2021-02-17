@@ -16,13 +16,7 @@
   @extend .alert-danger;
 }
 
-/* モバイル版ボタン立体感リセット */
-input[type="submit"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-}
+
 
 /*ヘッダー画像 親 ブロック*/
 .header_image_p {
@@ -43,7 +37,7 @@ input[type="submit"] {
 
 /* ヘッダー画像 子 ブロック*/
 .header_image {
-  z-index: 1;
+  z-index: 5;
   height: 240px;
   width: 100vw;
   object-fit: none;
@@ -57,7 +51,7 @@ input[type="submit"] {
 
 /* アイコン画像 子 ブロック*/
 .icon_image {
-  z-index: 3;
+  z-index: 5;
   display: inline-block;
   width: 180px;
   height: 180px;
@@ -175,11 +169,6 @@ input[type="submit"] {
     color: gray;
     padding-right: 18px;
   }
-}
-
-label>input {
-  display: none;
-  /* アップロードボタンのスタイルを無効にする */
 }
 
 .sns_list {

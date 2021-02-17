@@ -169,7 +169,7 @@ label input {
 
 /*ヘッダー画像カメラアイコン 子 インラインブロック*/
 .camera_header {
-  z-index: 200;
+  z-index: 6;
   display: inline-block;
   color: white;
   font-size: 50px;
@@ -182,7 +182,7 @@ label input {
   transform: translate(-50%, -50%);
 }
 
-/*ヘッダー画像オーバーレイ　子　ブロック*/
+/*ヘッダー画像オーバーレイ 子 ブロック*/
 .black_overlay_header {
   z-index: 2;
   background-color: black;
@@ -194,13 +194,13 @@ label input {
   top: 0px;
 }
 
-/*アイコン画像カメラアイコン　子　インラインブロック*/
+/*アイコン画像カメラアイコン 子 インラインブロック*/
 .camera_icon {
+  z-index: 7;
   display: inline-block;
   color: white;
   cursor: pointer;
   font-size: 50px;
-  z-index: 20;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -208,9 +208,9 @@ label input {
   transform: translate(-50%, -50%);
 }
 
-/*アイコン画像オーバーレイ　子　ブロック*/
+/*アイコン画像オーバーレイ 子 ブロック*/
 .black_overlay_icon {
-  z-index: 5;
+  z-index: 6;
   background-color: black;
   opacity: 0.3;
   cursor: pointer;
@@ -227,12 +227,12 @@ label input {
 
 @media screen and (max-width: 375px) {
 
-  /*ヘッダー画像　親　ブロック*/
+  /*ヘッダー画像 親 ブロック*/
   .header_image_p {
     height: 130px;
   }
 
-  /*ヘッダー画像カメラアイコン　子　インラインブロック*/
+  /*ヘッダー画像カメラアイコン 子 インラインブロック*/
   .camera_header {
     font-size: 35px;
     position: absolute;
@@ -241,473 +241,20 @@ label input {
     transform: translate(-50%, -50%);
   }
 
-  /*ヘッダー画像オーバーレイ　子　ブロック*/
+  /*ヘッダー画像オーバーレイ 子 ブロック*/
   .black_overlay_header {
     height: 130px;
   }
 
-  /*アイコン画像カメラアイコン　子　インラインブロック*/
+  /*アイコン画像カメラアイコン 子 インラインブロック*/
   .camera_icon {
     font-size: 35px;
   }
 
-  /*アイコン画像オーバーレイ　子　ブロック*/
+  /*アイコン画像オーバーレイ 子 ブロック*/
   .black_overlay_icon {
     width: 110px;
     height: 110px;
   }
 
-}
-
-.color_index_oya {
-  cursor: pointer;
-  height: 24px;
-  width: 24px;
-}
-
-.color_index {
-  height: 24px;
-  width: 24px;
-}
-
-/*背景色変更ポップアップを開くボタン*/
-.open_btna {
-  position: relative;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 200px;
-  height: 30px;
-}
-
-/*色の要素*/
-label {
-  display: inline-block;
-}
-
-label span {
-  display: block;
-  background-color: white;
-  line-height: 40px;
-  text-align: center;
-  z-index: 10;
-}
-
-/*チェックボックス　デザインオフ*/
-.popup_wrap input[type="checkbox"] {
-  display: none;
-}
-
-/*ラジオボタンデザインオフ*/
-.popup_content input[type="radio"] {
-  display: none;
-}
-
-/*ラジオボタンデザインオフ*/
-.popup_content_c input[type="radio"] {
-  display: none;
-}
-
-/*ラジオボタンデザインオフ*/
-.popup_content_uti input[type="radio"] {
-  display: none;
-}
-
-/*ラジオボタン選択時にオレンジ*/
-.popup_content input[type="radio"]:checked+label span {
-  border: 5px solid orange;
-}
-
-/*ラジオボタン選択時にオレンジ*/
-.popup_content_c input[type="radio"]:checked+label span {
-  border: 5px solid orange;
-}
-
-/*ラジオボタン選択時にオレンジ*/
-.popup_content_uti input[type="radio"]:checked+label span {
-  border: 5px solid orange;
-}
-
-/*✕ボタン*/
-.close_btn {
-  height: 15px;
-  width: 15px;
-  color: #2E9AFE;
-  position: absolute;
-  top: 20px;
-  left: 15px;
-  font-size: 40px;
-  cursor: pointer;
-}
-
-/*全体の薄い黒*/
-.popup_overlay {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  overflow: auto;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1006;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  opacity: 0;
-  transition: opacity 0.5s, transform 0s 0.5s;
-  transform: scale(0);
-  text-align: center;
-}
-
-/**/
-.popup_trigger {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-/*SNSアイコン内側色　ポップアップ*/
-.popup_content_uti {
-  opacity: 0;
-  display: inline-block;
-  margin-top: 0px;
-  padding-top: 50px;
-  padding-bottom: 30px;
-  padding-left: 18px;
-  padding-right: 15px;
-  text-align: center;
-  position: relative;
-  align-self: center;
-  height: 325px;
-  width: 580px;
-  box-sizing: border-box;
-  background: white;
-  transition: 0.5s;
-  line-height: 1.4em;
-  transition: 0.5s;
-  border-radius: 10px;
-  z-index: 1000;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-}
-
-/*背景色変更ポップアップ*/
-.popup_content {
-  display: inline-block;
-  margin-top: 0px;
-  padding-top: 50px;
-  padding-bottom: 30px;
-  padding-left: 18px;
-  padding-right: 15px;
-  text-align: center;
-  position: relative;
-  align-self: center;
-  height: 325px;
-  width: 580px;
-  box-sizing: border-box;
-  background: white;
-  transition: 0.5s;
-  line-height: 1.4em;
-  transition: 0.5s;
-  border-radius: 10px;
-  z-index: 1000;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-}
-
-/*リンク設定全体*/
-.link_edit_oya {
-  list-style: none;
-  text-align: left;
-  margin-top: 0px;
-  margin-bottom: 85px;
-  margin-left: 20px;
-  font-size: 15px;
-  height: 15px;
-  color: gray;
-}
-
-/*リンク　フォームの上のタイトル*/
-.link_edit {
-  margin-top: -5px;
-  padding-top: 0px;
-  padding-bottom: 7px;
-  height: 0px;
-  font-size: 12px;
-}
-
-/*リンク　フォーム*/
-.link_edit_from {
-  border: 0.5px solid gray;
-  border-radius: 3px;
-  color: #2E9AFE;
-  margin-bottom: 5px;
-  height: 25px;
-  width: 200px;
-}
-
-
-/*各色編集ポップアップタイトル*/
-.color_edit_title {
-  height: 15px;
-  width: 200px;
-  color: #424242;
-  position: absolute;
-  top: 0px;
-  left: 60px;
-  font-size: 17px;
-  cursor: pointer;
-}
-
-
-
-/*保存ボタン*/
-.sns_OK {
-  width: 60px;
-  height: 30px;
-  color: white;
-  font-size: 13px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-/*最初の選択ポップアップを開くボタン*/
-.open_btn_s {
-  display: inline-block;
-  background-color: #A9D0F5;
-  color: white;
-  border-radius: 100px;
-  cursor: pointer;
-  font-size: 15px;
-  width: 300px;
-  height: 40px;
-  text-align: center;
-  font-weight: bold;
-  padding-top: 9px
-}
-
-/*最初の選択ポップアップ　*/
-.popup_content_sentaku {
-  padding-top: 28px;
-  width: 320px;
-  height: 230px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-/*アカウント情報　ポップアップ*/
-.popup_content_n {
-  opacity: 0;
-  margin-top: 0px;
-  padding-top: 0px;
-  padding-bottom: 30px;
-  padding-left: 0px;
-  padding-right: 5px;
-  position: relative;
-  height: 450px;
-  width: 340px;
-  font-size: 10px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-}
-
-/*リンク編集　ポップアップ*/
-.popup_content_link {
-  margin-top: 0px;
-  padding-top: 50px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-  padding-right: 5px;
-  position: relative;
-  height: 560px;
-  width: 340px;
-  box-sizing: border-box;
-  background: white;
-  transition: 0.5s;
-  line-height: 1.4em;
-  border-radius: 10px;
-  z-index: 1000;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-}
-
-/*SNSアイコン外側色　ポップアップ*/
-.popup_content_c {
-  margin-top: 0px;
-  padding-top: 35px;
-  padding-bottom: 0px;
-  padding-left: 3px;
-  padding-right: 3px;
-  position: relative;
-  height: 240px;
-  width: 350px;
-  z-index: 1000;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-}
-
-/*SNSアイコン内側色　ポップアップ*/
-.popup_content_uti {
-  margin-top: 0px;
-  padding-top: 35px;
-  padding-bottom: 0px;
-  padding-left: 3px;
-  padding-right: 3px;
-  position: relative;
-  height: 240px;
-  width: 350px;
-  z-index: 1000;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-}
-
-.popup_content_oya {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-/*クリックで全体の薄い黒を表示*/
-.popup_wrap input:checked~.popup_overlay {
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity 0.5s;
-}
-
-/*SNSアイコン外側色　ポップアップをクリックして表示*/
-.popup_wrap input:checked~.popup_content_c {
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity 0.5s;
-  z-index: 1001;
-}
-
-/*sns情報編集　ポップアップをクリックして表示*/
-.popup_wrap input:checked~.popup_content_n {
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity 0.5s;
-  z-index: 1001;
-}
-
-/*SNSアイコン内側色　クリックでポップアップを表示*/
-.popup_wrap input:checked~.popup_content_uti {
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity 0.5s;
-  z-index: 1001;
-}
-
-/*リンク編集ポップアップ　クリックでポップアップを表示*/
-.popup_wrap input:checked~.popup_content_link {
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity 0.5s;
-  z-index: 1001000;
-}
-
-/*背景色変更 リンク設定　全体親*/
-.edit_content {
-  text-align: center;
-  margin-bottom: 160px;
-  width: 100vw;
-}
-
-/*背景色変更 リンク設定　各親*/
-.background_color_edit {
-  display: inline-block;
-  z-index: 1004;
-  position: relative;
-  width: 180px;
-}
-
-/*背景色変更　リンク設定　フォント*/
-.background_color_edit p {
-  padding-top: 3px;
-  text-align: center;
-  border-radius: 10px;
-  font-size: 20px;
-  color: #04B4AE;
-  cursor: pointer;
-  border: 3px solid #04B4AE;
-  background-color: white;
-  width: 170px;
-  height: 40px;
-  position: absolute;
-  top: 100px;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-/*アカウント設定　タイトル*/
-.sns_title {
-  color: black;
-  font-size: 25px;
-}
-
-/*アカウント設定　「～迄」の文章*/
-.Q {
-  font-size: 20px;
-}
-
-/*アカウント設定全体*/
-.twitter_edit {
-  list-style: none;
-  text-align: left;
-  margin-top: 0px;
-  margin-bottom: 110px;
-  margin-left: 100px;
-  font-size: 15px;
-  height: 15px;
-  color: gray;
-}
-
-/*アカウント設定　ID・説明*/
-.sns_edit_p {
-  margin-top: 0px;
-  padding-top: 0px;
-  padding-bottom: 10px;
-  height: 0px;
-  font-size: 12px;
-}
-
-/*アカウント設定　「※７文字以内」*/
-.limit {
-  font-size: 12px;
-  color: red;
-}
-
-/*SNSアイコンの上のスペース*/
-.space {
-  height: 40px;
 }

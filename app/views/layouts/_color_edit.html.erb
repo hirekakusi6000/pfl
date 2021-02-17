@@ -1,0 +1,21 @@
+<%= form_with(model: @user, local: true, multipart: true) do |form| %>
+  <!-- 背景色変更-->
+  <div class="popup_wrap" >
+    <input id="trigger" type="checkbox" >
+    <div class="popup_overlay">
+      <div class="popup_content">
+        <p class="color_edit_title">背景色設定</p>
+        <p><label for="trigger" class="edit_close_btn">×</label></p>
+        <input class="OK" type="submit" value="保存" name="back_color_update">
+
+        <% @color_index.each do |color| %>
+          <input id="A<%= color%>" type="radio" name="back_color" value="<%= color%>" <%= "checked" if @user.background_color== color%>><!-- ピンク　-->
+          <label for="A<%= color%>" class="color_index_p">
+            <span class="color_index A<%= color%>"></span>
+          </label>
+        <%end%>
+
+      </div>
+    </div>
+  </div>
+<%end%>

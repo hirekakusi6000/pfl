@@ -1,0 +1,42 @@
+/*アカウント設定　タイトル*/
+.sns_title {
+  color: black;
+  font-size: 25px;
+}
+
+/*アカウント設定　「～迄」の文章*/
+.Q {
+  font-size: 20px;
+}
+
+/*アカウント設定全体*/
+.twitter_edit {
+  list-style: none;
+  text-align: left;
+  margin-top: 0px;
+  margin-bottom: 110px;
+  margin-left: 100px;
+  font-size: 15px;
+  height: 15px;
+  color: gray;
+}
+
+/*アカウント設定　ID・説明*/
+.sns_edit_p {
+  margin-top: 0px;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  height: 0px;
+  font-size: 12px;
+}
+
+/*アカウント設定　「※７文字以内」*/
+.limit {
+  font-size: 12px;
+  color: red;
+}
+
+/*SNSアイコンの上のスペース*/
+.space {
+  height: 40px;
+}
