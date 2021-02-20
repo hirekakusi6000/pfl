@@ -1,8 +1,12 @@
 class ApplicationController < ActionController::Base
-  before_action :set_current_user
+  before_action :set_current_user,:set_color_index
 
   def set_current_user
     @current_user = User.find_by(id: session[:user_id])
+  end
+
+  def set_color_index
+    @color_index = ["000000","B40404","8A4B08","868A08","5FB404","04B45F","04B4AE","045FB4","0404B4","8904B1","B4045F","585858","FF0000","FF8000","FFFF00","BFFF00","00FF80","00FFFF","00BFFF","0040FF","BF00FF","FF00BF","BDBDBD","FA5858","FAAC58","F3F781","D8F781","81F7BE","81F7F3","81DAF5","819FF7","DA81F5","F781D8","F2F2F2","F6CECE","F6E3CE","F5F6CE","E3F6CE","CEF6D8","CEF6F5","CEECF5","CED8F6","ECCEF5","F6CEEC","FFFFFF","FBEFEF","FBF5EF","FBFBEF","F5FBEF","EFFBF8","EFFBFB","EFF8FB","EFEFFB","F8EFFB","FBEFF8"]
   end
 
   before_action :configure_permitted_parameters, if: :devise_controller?

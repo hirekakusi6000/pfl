@@ -7,6 +7,3 @@ class User < ApplicationRecord
   mount_uploader :icon_image, ImageUploader
   mount_uploader :header_image, ImageUploader
 end
-
-User.create(name: "John Doe").valid? # => true
-User.create(name: nil).valid? # => false

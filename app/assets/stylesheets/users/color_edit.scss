@@ -2,11 +2,11 @@
 .popup_content {
   z-index: 100;
   display: inline-block;
-  padding: 8px 20px 30px 20px;
+  padding: 15px 20px 30px 20px;
   position: relative;
   align-self: center;
-  max-height: 250px;
-  min-height: 250px;
+  max-height: 310px;
+  min-height: 310px;
   max-width: 420px;
   min-width: 420px;
   background: white;
@@ -31,22 +31,23 @@
   width: 24px;
 }
 
-/*各色編集ポップアップタイトル 子 ブロック*/
-.color_edit_title {
+/*各ポップアップタイトル 子 ブロック*/
+.popup_title {
   display: inline-block;
   font-weight: bold;
-  height: 5px;
+  height: 15px;
   width: 200px;
   font-size: 20px;
+  margin-bottom: 15px;
 }
 
 @media screen and (max-width: 375px) {
 
   /*背景色変更ポップアップ*/
   .popup_content {
-    padding: 8px 15px 15px 15px;
-    max-height: 220px;
-    min-height: 220px;
+    padding: 19px 15px 15px 15px;
+    max-height: 290px;
+    min-height: 290px;
     max-width: 360px;
     min-width: 360px;
   }
@@ -67,11 +68,12 @@
   }
 
   /*各色編集ポップアップタイトル 子 ブロック*/
-  .color_edit_title {
+  .popup_title {
     display: inline-block;
     font-weight: bold;
     height: 5px;
     width: 200px;
     font-size: 20px;
+    margin-bottom: 25px;
   }
 }

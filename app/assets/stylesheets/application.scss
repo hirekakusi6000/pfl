@@ -16,76 +16,34 @@
   @extend .alert-danger;
 }
 
-
-
-/*ヘッダー画像 親 ブロック*/
-.header_image_p {
-  position: relative;
-  height: 200px;
-  width: 100vw;
-  text-align: center;
-  background: black;
-}
-
-/*デフォルトヘッダー画像 親 ブロック*/
-.default_header_image {
-  height: 200px;
-  width: 100vw;
-  text-align: center;
-  background: #F2F2F2;
-}
-
-/* ヘッダー画像 子 ブロック*/
-.header_image {
-  z-index: 5;
-  height: 240px;
-  width: 100vw;
-  object-fit: none;
-}
-
-/* アイコン画像 親 ブロック*/
-.icon_image_p {
-  position: relative;
-  width: 100vw;
-}
-
-/* アイコン画像 子 ブロック*/
-.icon_image {
-  z-index: 5;
-  display: inline-block;
-  width: 180px;
-  height: 180px;
-  border-radius: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+input[type="submit"] {
+  border: none;
   cursor: pointer;
+  outline: none;
+  appearance: none;
 }
 
-@media screen and (max-width: 375px) {
+input[type="submit"]:hover {
+  text-decoration: none;
+  transition: all 0.5s;
+  opacity: 0.7;
+}
 
-  /*ヘッダー画像 親 ブロック*/
-  .header_image_p {
-    height: 130px;
-  }
+input[type="file"] {
+  display: none;
+}
 
-  /* ヘッダー画像 子 ブロック*/
-  .header_image {
-    height: 130px;
-  }
+/*ラジオボタン デフォルトデザイン無効*/
+input[type="radio"] {
+  display: none;
+}
 
-  /*デフォルトヘッダー画像 親 ブロック*/
-  .default_header_image {
-    height: 130px;
-  }
+/*ラジオボタン選択時にオレンジ*/
+input[type="radio"]:checked+label span {
+  border: 5px solid orange;
+}
 
-  /* アイコン画像 子 ブロック*/
-  .icon_image {
-    width: 110px;
-    height: 110px;
-  }
-
+/*チェックボックス デフォルトデザイン無効*/
+input[type="checkbox"] {
+  display: none;
 }

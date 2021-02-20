@@ -1,59 +1,632 @@
 <%= form_with(model: @user, local: true, multipart: true) do |form| %>
 
-<body>
-  <!-- ヘッダー画像-->
+<!-- ヘッダー画像-->
   <div class="header_image_p">
     <label for="header_image_upload">
-      <% if @user.header_image? %>
+    <% if @user.header_image? %>
       <p><%= image_tag @user.header_image.url,class:"header_image"%></p>
-      <% end %>
+    <% else %>
+      <p class="default_header_image"></p>
+    <% end %>
       <i class="fas fa-camera camera_header"></i>
-      <span class="black_overlay_header"></span>
+      <p class="black_overlay_header"></p>
       <p><%= form.file_field :header_image, accept: "image/png,image/jpeg,image/gif",id:"header_image_upload"%></p>
     </label>
   </div>
-
   <!-- アイコン画像-->
-  <div class="icon_image_p">
     <label for="icon_image_upload" >
       <i class="fas fa-camera camera_icon"></i>
-      <% if @user.icon_image? %>
-      <p><%= image_tag @user.icon_image.url,class:"icon_image"%></p>
-      <% end %>
-      <span class="black_overlay_icon"></span>
+      <p class="black_overlay_icon"></p>
       <p><%= form.file_field :icon_image, accept: "image/png,image/jpeg,image/gif",id:"icon_image_upload"%></p>
+
+        <p><%= image_tag @user.icon_image.url,class:"icon_image"%></p>
+
     </label>
+
+    <!-- 背景色変更-->
+  <div class="popup_wrap" >
+    <input id="trigger_background_color" type="checkbox" >
+    <div class="popup_overlay">
+      <div class="popup_content">
+        <p class="popup_title">背景色設定</p>
+        <p><label for="trigger_background_color" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></p>
+
+        <% @color_index.each do |color| %>
+          <input id="A<%= color%>" type="radio" name="background_color" value="<%= color%>" <%= "checked" if @user.background_color== color%>><!-- ピンク　-->
+          <label for="A<%= color%>" class="color_index_p">
+            <span class="color_index A<%= color%>"></span>
+          </label>
+        <%end%>
+
+        <input class="OK" type="submit" value="保存" name="update">
+
+      </div>
+    </div>
   </div>
 
-<!-- 背景色編集ポップアップ-->
-<%= render "layouts/color_edit" %>
+  <div class="color_and_link_edit_btn_p">
+  <!-- 背景色編集ボタン-->
+    <label for="trigger_background_color">
+      <div class="color_and_link_edit_btn">
+        <p>背景色設定</p>
+      </div>
+    </label>
+  <!-- リンク編集ボタン-->
+    <label for="trigger_link">
+      <div class="color_and_link_edit_btn">
+        <p>リンク設定</p>
+      </div>
+    </label>
+  </div>
+  <!-- ポップアップ twitter-->
+  <div class="popup_wrap">
+    <input id="trigger_twitter" type="checkbox">
+    <div class="popup_overlay">
+      <label for="trigger_twitter" class="popup_trigger"></label>
+      <div class="popup_content_p">
+      <!-- アカウント情報-->
+      <div class="popup_wrap">
+        <input id="trigger_acount" type="checkbox">
+          <div class="popup_content_acount">
+            <div class="sns_acount_popup_title">
+             <p class="popup_title">Twitterリンク設定</p>
+            </div>
+          <div class="sns_acount_form_pp">
+            <div class="sns_acount_form_p">
+              <label  class="sns_edit_p">アカウントのID&emsp;</label>
+               <%= form.text_field :twitter_id_1,class:"sns_edit_form",maxlength: "100"%>
+              <label class="sns_edit_p">コメントを追加&emsp;</label>
+               <%= form.text_field :twitter_comment_1,class:"sns_edit_form",maxlength: "7",placeholder:"メールアドレス"%>
+            </div>
+            <div class="sns_acount_form_p">
+              <label  class="sns_edit_p">アカウントのID&emsp;</label>
+               <%= form.text_field :twitter_id_2,class:"sns_edit_form",maxlength: "100"%>
+              <label class="sns_edit_p">コメントを追加&emsp;</label>
+               <%= form.text_field :twitter_comment_2,class:"sns_edit_form",maxlength: "7"%>
+            </div>
+            <div class="sns_acount_form_p">
+              <label  class="sns_edit_p">アカウントのID&emsp;</label>
+               <%= form.text_field :twitter_id_3,class:"sns_edit_form",maxlength: "100"%>
+              <label class="sns_edit_p">コメントを追加&emsp;</label>
+               <%= form.text_field :twitter_comment_3,class:"sns_edit_form",maxlength: "7"%>
+            </div>
+           </div>
+          <label for="trigger_acount" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label>
+          <input class="OK" type="submit" value="保存" name="update">
+        </div>
+      </div>
+ <!-- 外側色-->
+  <div class="popup_wrap">
+    <input id="trigger_outsidecolor" type="checkbox">
+    <div class="popup_content_c">
+      <p class="popup_title">Twitterの外側色</p>
+      <p><label for="trigger_outsidecolor" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
+        <% @color_index.each do |color| %>
+          <input id="C<%= color%>" type="radio" name="twitter_outsidecolor" value="<%= color%>" <%= "checked" if @user.twitter_outsidecolor== color%>>
+          <label for="C<%= color%>" class="color_index_p">
+            <span class="color_index C<%= color%>"></span>
+          </label>
+        <%end%>
+      <input class="OK" type="submit" value="保存" name="update">
+    </div>
+  </div>
+ <!-- 内側色-->
+  <div class="popup_wrap">
+    <input id="trigger_insidecolor" type="checkbox">
+    <div class="popup_content_c">
+      <p class="popup_title">Twitterの内側色</p>
+      <p><label for="trigger_insidecolor" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
+        <% @color_index.each do |color| %>
+          <input id="B<%= color%>" type="radio" name="twitter_insidecolor" value="<%= color%>" <%= "checked" if @user.twitter_insidecolor== color%>>
+          <label for="B<%= color%>" class="color_index_p">
+            <span class="color_index B<%= color%>"></span>
+          </label>
+        <%end%>
+      <input class="OK" type="submit" value="保存" name="update">
+    </div>
+  </div>
+    <!-- twitterポップアップ選択画面 -->
+      <div class="popup_content_select">
+        <p class="popup_title">Twitter設定</p>
+        <p><label for="trigger_twitter" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
+        <p><label for="trigger_acount" class="open_btn_s">Twitterのリンクを設定する</label></p>
+        <p><label for="trigger_outsidecolor" class="open_btn_s">Twitterアイコンの色を設定(外側)</label></p>
+        <p><label for="trigger_insidecolor" class="open_btn_s">Twitterアイコンの色を設定(内側)</label></p>
+      </div>
+    </div>
+   </div>
+  </div>
 
-<!-- 背景色編集ボタン-->
-<div class="color_and_link_edit_btn_p">
-  <label for="trigger">
-    <div class="color_and_link_edit_btn">
-      <p>背景色設定</p>
+<!-- ポップアップ instagram-->
+<div class="popup_wrap">
+  <input id="trigger_instagram" type="checkbox">
+    <div class="popup_overlay">
+    <label for="trigger_instagram" class="popup_trigger"></label>
+     <div class="popup_content_p">
+    <!-- アカウント情報-->
+    <div class="popup_wrap">
+      <input id="trigger_instagram_account" type="checkbox">
+      <div class="popup_content_acount">
+        <p class="popup_title">Instagramリンク設定</p>
+          <div class="sns_acount_form_pp">
+            <div class="sns_acount_form_p">
+              <label  class="sns_edit_p">アカウントのID&emsp;</label>
+               <%= form.text_field :instagram_id_1,class:"sns_edit_form",maxlength: "100"%>
+              <label class="sns_edit_p">コメントを追加&emsp;</label>
+               <%= form.text_field :instagram_comment_1,class:"sns_edit_form",maxlength: "7"%>
+            </div>
+            <div class="sns_acount_form_p">
+              <label  class="sns_edit_p">アカウントのID&emsp;</label>
+               <%= form.text_field :instagram_id_2,class:"sns_edit_form",maxlength: "100"%>
+              <label class="sns_edit_p">コメントを追加&emsp;</label>
+               <%= form.text_field :instagram_comment_2,class:"sns_edit_form",maxlength: "7"%>
+            </div>
+            <div class="sns_acount_form_p">
+              <label  class="sns_edit_p">アカウントのID&emsp;</label>
+               <%= form.text_field :instagram_id_3,class:"sns_edit_form",maxlength: "100"%>
+              <label class="sns_edit_p">コメントを追加&emsp;</label>
+               <%= form.text_field :instagram_comment_3,class:"sns_edit_form",maxlength: "7"%>
+            </div>
+           </div>
+        <label for="trigger_instagram_account" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label>
+        <input class="OK" type="submit" value="保存" name="update">
+        </div>
     </div>
-  </label>
-<!-- リンク編集ボタン-->
-  <label for="trigger_link">
-    <div class="color_and_link_edit_btn">
-      <p>リンク設定</p>
+    <!-- 外側色設定-->
+    <div class="popup_wrap">
+      <input id="trigger_instagram_outsidecolor" type="checkbox">
+        <div class="popup_content_c">
+          <p class="popup_title">Instagramの外側色</p>
+          <p><label for="trigger_instagram_outsidecolor" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
+            <% @color_index.each do |color| %>
+              <input id="IS<%= color%>" type="radio" name="instagram_outsidecolor" value="<%= color%>" <%= "checked" if @user.instagram_outsidecolor== color%>>
+                <label for="IS<%= color%>" class="color_index_p">
+                <span class="color_index IS<%= color%>"></span>
+              </label>
+            <%end%>
+        <input class="OK" type="submit" value="保存" name="update">
+      </div>
     </div>
-  </label>
+    <!-- 内側色設定-->
+    <div class="popup_wrap">
+      <input id="trigger_instagram_insidecolor" type="checkbox">
+        <div class="popup_content_c">
+          <p class="popup_title">Instagramの内側色</p>
+          <p><label for="trigger_instagram_insidecolor" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
+            <% @color_index.each do |color| %>
+              <input id="IU<%= color%>" type="radio" name="instagram_insidecolor" value="<%= color%>" <%= "checked" if @user.instagram_insidecolor== color%>>
+                <label for="IU<%= color%>" class="color_index_p">
+                <span class="color_index IU<%= color%>"></span>
+              </label>
+            <%end%>
+        <input class="OK" type="submit" value="保存" name="update">
+      </div>
+    </div>
+      <!-- instagramポップアップ 選択画面 -->
+        <div class="popup_content_select">
+          <p class="popup_title">Instagram設定</p>
+          <p><label for="trigger_instagram" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
+          <p><label for="trigger_instagram_account" class="open_btn_s">Instagramのリンクを設定する</label></p>
+          <p><label for="trigger_instagram_outsidecolor" class="open_btn_s">Instagramアイコンの色を設定(外側)</label></p>
+          <p><label for="trigger_instagram_insidecolor" class="open_btn_s">Instagramアイコンの色を設定(内側)</label></p>
+        </div>
+    </div>
+  </div>
 </div>
 
-<%= render "layouts/sns_edit" %>
+  <!-- ポップアップ facebook-->
+  <div class="popup_wrap">
+    <input id="trigger_facebook" type="checkbox">
+    <div class="popup_overlay">
+      <label for="trigger_facebook" class="popup_trigger"></label>
+      <div class="popup_content_p">
+      <!-- アカウント情報-->
+      <div class="popup_wrap">
+        <input id="trigger_facebook_account" type="checkbox">
+        <div class="popup_content_acount">
+          <p class="popup_title">facebookリンク設定</p>
+          <div class="sns_acount_form_pp">
+            <div class="sns_acount_form_p">
+              <label  class="sns_edit_p">アカウントのURL&emsp;</label>
+               <%= form.text_field :facebook_id_1,class:"sns_edit_form",maxlength: "100"%>
+              <label class="sns_edit_p">コメントを追加&emsp;&emsp;</label>
+               <%= form.text_field :facebook_comment_1,class:"sns_edit_form",maxlength: "7"%>
+            </div>
+            <div class="sns_acount_form_p">
+              <label  class="sns_edit_p">アカウントのURL&emsp;</label>
+               <%= form.text_field :facebook_id_2,class:"sns_edit_form",maxlength: "100"%>
+              <label class="sns_edit_p">コメントを追加&emsp;&emsp;</label>
+               <%= form.text_field :facebook_comment_2,class:"sns_edit_form",maxlength: "7"%>
+            </div>
+            <div class="sns_acount_form_p">
+              <label  class="sns_edit_p">アカウントのURL&emsp;</label>
+               <%= form.text_field :facebook_id_3,class:"sns_edit_form",maxlength: "100"%>
+              <label class="sns_edit_p">コメントを追加&emsp;&emsp;</label>
+               <%= form.text_field :facebook_comment_3,class:"sns_edit_form",maxlength: "7"%>
+            </div>
+           </div>
+          <label for="trigger_facebook_account" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label>
+          <input class="OK" type="submit" value="保存" name="update">
+        </div>
+      </div>
+      <!-- 外側色-->
+      <div class="popup_wrap">
+
+        <input id="trigger_facebook_outsidecolor" type="checkbox">
+          <div class="popup_content_c">
+            <p class="popup_title">facebookの外側色</p>
+            <p><label for="trigger_facebook_outsidecolor" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
+              <% @color_index.each do |color| %>
+                <input id="FS<%= color%>" type="radio" name="facebook_outsidecolor" value="<%= color%>" <%= "checked" if @user.facebook_outsidecolor== color%>>
+                <label for="FS<%= color%>" class="color_index_p">
+                  <span class="color_index IS<%= color%>"></span>
+                </label>
+              <%end%>
+          <input class="OK" type="submit" value="保存" name="update">
+        </div>
+      </div>
+      <!-- 内側色-->
+      <div class="popup_wrap">
+        <input id="trigger_facebook_insidecolor" type="checkbox">
+        <div class="popup_content_c">
+          <p class="popup_title">facebookの内側色</p>
+          <p><label for="trigger_facebook_insidecolor" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
+            <% @color_index.each do |color| %>
+              <input id="FU<%= color%>" type="radio" name="facebook_insidecolor" value="<%= color%>" <%= "checked" if @user.facebook_insidecolor== color%>><!-- ピンク　-->
+              <label for="FU<%= color%>" class="color_index_p">
+                <span class="color_index IU<%= color%>"></span>
+              </label>
+            <%end%>
+          <input class="OK" type="submit" value="保存" name="update">
+        </div>
+      </div>
+      <!-- facebookポップアップ 選択画面 -->
+      <div class="popup_content_select">
+        <p class="popup_title">Facebook設定</p>
+        <p><label for="trigger_facebook" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
+        <p><label for="trigger_facebook_account" class="open_btn_s">facebookのリンクを設定する</label></p>
+        <p><label for="trigger_facebook_outsidecolor" class="open_btn_s">facebookアイコンの色を設定(外側)</label></p>
+        <p><label for="trigger_facebook_insidecolor" class="open_btn_s">facebookアイコンの色を設定(内側)</label></p>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ポップアップ youtube-->
+  <div class="popup_wrap">
+    <input id="trigger_youtube" type="checkbox">
+    <div class="popup_overlay">
+      <label for="trigger_facebook" class="popup_trigger"></label>
+      <div class="popup_content_p">
+      <!-- アカウント情報-->
+      <div class="popup_wrap">
+        <input id="trigger_youtube_account" type="checkbox">
+        <div class="popup_content_acount">
+          <p class="popup_title">youtubeリンク設定</p>
+          <div class="sns_acount_form_pp">
+            <div class="sns_acount_form_p">
+              <label  class="sns_edit_p">アカウントのURL&emsp;</label>
+               <%= form.text_field :youtube_id_1,class:"sns_edit_form",maxlength: "100"%>
+              <label class="sns_edit_p">コメントを追加&emsp;&emsp;</label>
+               <%= form.text_field :youtube_comment_1,class:"sns_edit_form",maxlength: "7"%>
+            </div>
+            <div class="sns_acount_form_p">
+              <label  class="sns_edit_p">アカウントのURL&emsp;</label>
+               <%= form.text_field :youtube_id_2,class:"sns_edit_form",maxlength: "100"%>
+              <label class="sns_edit_p">コメントを追加&emsp;&emsp;</label>
+               <%= form.text_field :youtube_comment_2,class:"sns_edit_form",maxlength: "7"%>
+            </div>
+            <div class="sns_acount_form_p">
+              <label  class="sns_edit_p">アカウントのURL&emsp;</label>
+               <%= form.text_field :youtube_id_3,class:"sns_edit_form",maxlength: "100"%>
+              <label class="sns_edit_p">コメントを追加&emsp;&emsp;</label>
+               <%= form.text_field :youtube_comment_3,class:"sns_edit_form",maxlength: "7"%>
+            </div>
+           </div>
+          <label for="trigger_youtube_account" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label>
+          <input class="OK" type="submit" value="保存" name="update">
+        </div>
+      </div>
+      <!-- 外側色-->
+      <div class="popup_wrap">
+        <input id="trigger_youtube_outsidecolor" type="checkbox">
+        <div class="popup_content_c">
+          <p class="popup_title">Youtubeの外側色</p>
+          <p><label for="trigger_youtube_outsidecolor" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
+            <% @color_index.each do |color| %>
+              <input id="YS<%= color%>" type="radio" name="youtube_outsidecolor" value="<%= color%>" <%= "checked" if @user.youtube_outsidecolor== color%>>
+              <label for="YS<%= color%>" class="color_index_p">
+                <span class="color_index IS<%= color%>"></span>
+              </label>
+            <%end%>
+        <input class="OK" type="submit" value="保存" name="update">
+        </div>
+      </div>
+      <!-- 内側色-->
+      <div class="popup_wrap">
+        <input id="trigger_youtube_insidecolor" type="checkbox">
+        <div class="popup_content_c">
+        <p class="popup_title">Youtubeの内側色</p>
+        <p><label for="trigger_youtube_insidecolor" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
+            <% @color_index.each do |color| %>
+              <input id="YU<%= color%>" type="radio" name="youtube_insidecolor" value="<%= color%>" <%= "checked" if @user.youtube_insidecolor== color%>><!-- ピンク　-->
+              <label for="YU<%= color%>" class="color_index_p">
+              <span class="color_index IU<%= color%>"></span>
+              </label>
+            <%end%>
+          <input class="OK" type="submit" value="保存" name="update">
+        </div>
+      </div>
+      <!-- youtubeポップアップ 選択画面 -->
+        <div class="popup_content_select">
+          <p class="popup_title">Youtubeリンク設定</p>
+          <p><label for="trigger_youtube" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
+          <p><label for="trigger_youtube_account" class="open_btn_s">Youtubeのリンクを設定する</label></p>
+          <p><label for="trigger_youtube_outsidecolor" class="open_btn_s">Youtubeアイコンの色を設定(外側)</label></p>
+          <p><label for="trigger_youtube_insidecolor" class="open_btn_s">Youtubeアイコンの色を設定(内側)</label></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ポップアップ tiktok-->
+  <div class="popup_wrap">
+    <input id="trigger_tiktok" type="checkbox">
+    <div class="popup_overlay">
+    <label for="trigger_tiktok" class="popup_trigger"></label>
+      <div class="popup_content_p">
+      <!-- アカウント情報-->
+      <div class="popup_wrap">
+        <input id="trigger_tiktok_account" type="checkbox">
+        <div class="popup_content_acount">
+          <p class="popup_title">Tiktokリンク設定</p>
+           <div class="sns_acount_form_pp">
+            <div class="sns_acount_form_p">
+              <label  class="sns_edit_p">アカウントのURL&emsp;</label>
+               <%= form.text_field :tiktok_id_1,class:"sns_edit_form",maxlength: "100"%>
+              <label class="sns_edit_p">コメントを追加&emsp;&emsp;</label>
+               <%= form.text_field :tiktok_comment_1,class:"sns_edit_form",maxlength: "7"%>
+            </div>
+            <div class="sns_acount_form_p">
+              <label  class="sns_edit_p">アカウントのURL&emsp;</label>
+               <%= form.text_field :tiktok_id_2,class:"sns_edit_form",maxlength: "100"%>
+              <label class="sns_edit_p">コメントを追加&emsp;&emsp;</label>
+               <%= form.text_field :tiktok_comment_2,class:"sns_edit_form",maxlength: "7"%>
+            </div>
+            <div class="sns_acount_form_p">
+              <label  class="sns_edit_p">アカウントのURL&emsp;</label>
+               <%= form.text_field :tiktok_id_3,class:"sns_edit_form",maxlength: "100"%>
+              <label class="sns_edit_p">コメントを追加&emsp;&emsp;</label>
+               <%= form.text_field :tiktok_comment_3,class:"sns_edit_form",maxlength: "7"%>
+            </div>
+           </div>
+          <label for="trigger_tiktok_account" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label>
+          <input class="OK" type="submit" value="保存" name="update">
+        </div>
+      </div>
+      <!-- 外側色-->
+      <div class="popup_wrap">
+        <input id="trigger_tiktok_outsidecolor" type="checkbox">
+        <div class="popup_content_c">
+          <p class="popup_title">Tiktokの外側色</p>
+          <p><label for="trigger_tiktok_outsidecolor" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
+            <% @color_index.each do |color| %>
+              <input id="TS<%= color%>" type="radio" name="tiktok_outsidecolor" value="<%= color%>" <%= "checked" if @user.tiktok_outsidecolor== color%>>
+              <label for="TS<%= color%>" class="color_index_p">
+               <span class="color_index IS<%= color%>"></span>
+              </label>
+            <%end%>
+          <input class="OK" type="submit" value="保存" name="update">
+        </div>
+      </div>
+        <!-- 内側色-->
+         <div class="popup_wrap">
+          <input id="trigger_tiktok_insidecolor" type="checkbox">
+          <div class="popup_content_c">
+            <p class="popup_title">Tiktokの内側の色</p>
+            <p><label for="trigger_tiktok_insidecolor" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
+              <% @color_index.each do |color| %>
+                <input id="TU<%= color%>" type="radio" name="tiktok_insidecolor" value="<%= color%>" <%= "checked" if @user.tiktok_insidecolor== color%>><!-- ピンク　-->
+                <label for="TU<%= color%>" class="color_index_p">
+                <span class="color_index IU<%= color%>"></span>
+                </label>
+              <%end%>
+            <input class="OK" type="submit" value="保存" name="update">
+          </div>
+         </div>
+        <!-- tiktokポップアップ 選択画面 -->
+        <div class="popup_content_select">
+          <p class="popup_title">Tiktokリンク設定</p>
+          <p><label for="trigger_tiktok" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
+          <p><label for="trigger_tiktok_account" class="open_btn_s">Tiktokのリンクを設定する</label></p>
+          <p><label for="trigger_tiktok_outsidecolor" class="open_btn_s">Tiktokアイコンの色を設定(外側)</label></p>
+          <p><label for="trigger_tiktok_insidecolor" class="open_btn_s">Tiktokアイコンの色を設定(内側)</label></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style media="screen">
+
+  /*Twitterアイコン 外側色*/
+  .twitter_outsidecolor{
+  background-color: #<%= @user.twitter_outsidecolor%>;
+  }
+
+  /*Twitterアイコン 内側色*/
+  .twitter_insidecolor{
+  color: #<%= @user.twitter_insidecolor%>;
+  }
+
+  /*instagramアイコン 外側色*/
+  .instagram_outsidecolor{
+  background-color: #<%= @user.instagram_outsidecolor%>;
+  }
+
+  /*instagramアイコン 内側色*/
+  .instagram_insidecolor{
+  color: #<%= @user.instagram_insidecolor%>;
+  }
+
+  /*facebookアイコン 外側色*/
+  .facebook_outsidecolor{
+  background-color: #<%= @user.facebook_outsidecolor%>;
+  }
+
+  /*facebookアイコン 内側色*/
+  .facebook_insidecolor{
+  color: #<%= @user.facebook_insidecolor%>;
+  }
+
+  /*youtubeアイコン 外側色*/
+  .youtube_outsidecolor{
+  background-color: #<%= @user.youtube_outsidecolor%>;
+  }
+
+  /*youtubeアイコン 内側色*/
+  .youtube_insidecolor{
+  color: #<%= @user.youtube_insidecolor%>;
+  }
+
+  /*tiktokアイコン 外側色*/
+  .tiktok_outsidecolor{
+  background-color: #<%= @user.tiktok_outsidecolor%>;
+  }
+
+  /*tiktokアイコン 内側色*/
+  .tiktok_insidecolor{
+  color: #<%= @user.tiktok_insidecolor%>;
+  }
+
+  /*色一覧*/
+  <% @color_index.each do |color| %>
+    .C<%= color%>{
+    background-color: #<%= color%>;
+    }
+  <%end%>
+
+  <% @color_index.each do |color| %>
+    .B<%= color%>{
+    background-color: #<%= color%>;
+    }
+  <%end%>
+
+  <% @color_index.each do |color| %>
+    .A<%= color%>{
+    background-color: #<%= color%>;
+    }
+  <%end%>
+
+  <% @color_index.each do |color| %>
+    .IS<%= color%>{
+    background-color: #<%= color%>;
+    }
+  <%end%>
+
+  <% @color_index.each do |color| %>
+    .IU<%= color%>{
+    background-color: #<%= color%>;
+    }
+  <%end%>
+
+  <% @color_index.each do |color| %>
+    .FS<%= color%>{
+    background-color: #<%= color%>;
+    }
+  <%end%>
+
+  <% @color_index.each do |color| %>
+    .FU<%= color%>{
+    background-color: #<%= color%>;
+    }
+  <%end%>
+
+  <% @color_index.each do |color| %>
+    .YS<%= color%>{
+    background-color: #<%= color%>;
+    }
+  <%end%>
+
+  <% @color_index.each do |color| %>
+    .YU<%= color%>{
+    background-color: #<%= color%>;
+    }
+  <%end%>
+
+  <% @color_index.each do |color| %>
+    .TS<%= color%>{
+    background-color: #<%= color%>;
+    }
+  <%end%>
+
+  <% @color_index.each do |color| %>
+    .TU<%= color%>{
+    background-color: #<%= color%>;
+    }
+  <%end%>
+
+    /*全体*/
+    body{
+      background-color:  #<%= @user.background_color%>;
+      height:1300px;
+    }
+
+    @media screen and (max-width: 375px) {
+    }
+
+</style>
+
+  <!-- SNSアイコン-->
+  <div class="sns_pp">
+
+    <label for="trigger_twitter">
+      <div class="sns_outside twitter_outsidecolor">
+         <p class="sns_text"></p>
+         <span class="fab fa-twitter sns_inside twitter_insidecolor"></span>
+      </div>
+    </label>
+
+    <label for="trigger_instagram">
+      <div class="sns_outside instagram_outsidecolor">
+       <p class="sns_text"></p>
+       <span class="fab fa-instagram sns_inside instagram_insidecolor"></span>
+      </div>
+    </label>
+
+    <label for="trigger_facebook">
+      <div class="sns_outside facebook_outsidecolor">
+        <p class="sns_text"></p>
+        <span class="fab fa-facebook sns_inside facebook_insidecolor"></span>
+      </div>
+    </label>
+
+    <label for="trigger_youtube">
+     <div class="sns_outside youtube_outsidecolor">
+        <p class="sns_text"></p>
+        <span class="fab fa-youtube sns_inside youtube_insidecolor"></span>
+      </div>
+    </label>
+
+    <label for="trigger_tiktok">
+     <div class="sns_outside tiktok_outsidecolor">
+       <p class="sns_text"></p>
+       <span class="fab fa-tiktok sns_inside tiktok_insidecolor"></span>
+      </div>
+    </label>
+
+  </div>
+
+
 
     <div class="edit_pp">
       <!-- 名前編集フォーム-->  
-      <div class="name_edit_p">
+      <div class="name_form_p">
         <p><%= form.text_field :name,class:"name_form"%></p>
         <p class="form_title_name">名前</p>
       </div>
       <!-- プロフィールテキスト編集フォーム-->
       <div class="self_introduction_p">
-        <p><textarea class="pfl_user_text_form" name="pfl_text"><%= @user.pfl_text%></textarea></p>
+        <p><%= form.text_area :pfl_text,class:"pfl_user_text_form"%></p>
         <p class="form_title_pfl_text">自己紹介</p>
       </div>
       <!-- 保存・キャンセルボタン-->
@@ -63,148 +636,4 @@
       </div>
     </div>
 
-  </body>
 <%end%>
-
-<style media="screen">
-
-  /*Twitterアイコン 外側色*/
-  .twitter_outside_color{
-  background-color: gray;
-  }
-
-  /*Twitterアイコン 内側色*/
-  .twitter_inside_color span{
-  color: gray;
-  }
-
-  /*instagramアイコン 外側色*/
-  .instagram_outside_color{
-  background-color: gray;
-  }
-
-  /*instagramアイコン 内側色*/
-  .instagram_inside_color span{
-  color: #<%= @user.instagram_insidecolor%>;
-  }
-
-  /*facebookアイコン 外側色*/
-  .facebook_outside_color{
-  background-color: #<%= @user.facebook_outsidecolor%>;
-  }
-
-  /*facebookアイコン 内側色*/
-  .facebook_inside_color span{
-  color: #<%= @user.facebook_insidecolor%>;
-  }
-
-  /*youtubeアイコン 外側色*/
-  .youtube_outside_color{
-  background-color: #<%= @user.youtube_outsidecolor%>;
-  }
-
-  /*youtubeアイコン 内側色*/
-  .youtube_inside_color span{
-  color: #<%= @user.youtube_insidecolor%>;
-  }
-
-  /*tiktokアイコン 外側色*/
-  .tiktok_outside_color{
-  background-color: #<%= @user.tiktok_outsidecolor%>;
-  }
-
-  /*tiktokアイコン 内側色*/
-  .tiktok_inside_color span{
-  color: #<%= @user.tiktok_insidecolor%>;
-  }
-
-
-/*色一覧*/
-<% ba=["000000","B40404","8A4B08","868A08","5FB404","04B45F","04B4AE","045FB4","0404B4","8904B1","B4045F","585858","FF0000","FF8000","FFFF00","BFFF00","00FF80","00FFFF","00BFFF","0040FF","BF00FF","FF00BF","BDBDBD","FA5858","FAAC58","F3F781","D8F781","81F7BE","81F7F3","81DAF5","819FF7","DA81F5","F781D8","F2F2F2","F6CECE","F6E3CE","F5F6CE","E3F6CE","CEF6D8","CEF6F5","CEECF5","CED8F6","ECCEF5","F6CEEC","FFFFFF","FBEFEF","FBF5EF","FBFBEF","F5FBEF","EFFBF8","EFFBFB","EFF8FB","EFEFFB","F8EFFB","FBEFF8"]%>
-<% ba.each do |aaa| %>
-.C<%= aaa%>{
-background-color: #<%= aaa%>;
-margin-right: 20px;
-}
-<%end%>
-
-<% ba.each do |aaa| %>
-.B<%= aaa%>{
-background-color: #<%= aaa%>;
-margin-right: 20px;
-}
-<%end%>
-
-<% ba.each do |aaa| %>
-.A<%= aaa%>{
-background-color: #<%= aaa%>;
-margin-right: 20px;
-}
-<%end%>
-
-<% ba.each do |aaa| %>
-.IS<%= aaa%>{
-background-color: #<%= aaa%>;
-margin-right: 20px;
-}
-<%end%>
-
-<% ba.each do |aaa| %>
-.IU<%= aaa%>{
-background-color: #<%= aaa%>;
-margin-right: 20px;
-}
-<%end%>
-
-<% ba.each do |aaa| %>
-.FS<%= aaa%>{
-background-color: #<%= aaa%>;
-margin-right: 20px;
-}
-<%end%>
-
-<% ba.each do |aaa| %>
-.FU<%= aaa%>{
-background-color: #<%= aaa%>;
-margin-right: 20px;
-}
-<%end%>
-
-<% ba.each do |aaa| %>
-.YS<%= aaa%>{
-background-color: #<%= aaa%>;
-margin-right: 20px;
-}
-<%end%>
-
-<% ba.each do |aaa| %>
-.YU<%= aaa%>{
-background-color: #<%= aaa%>;
-margin-right: 20px;
-}
-<%end%>
-
-<% ba.each do |aaa| %>
-.TS<%= aaa%>{
-background-color: #<%= aaa%>;
-margin-right: 20px;
-}
-<%end%>
-
-<% ba.each do |aaa| %>
-.TU<%= aaa%>{
-background-color: #<%= aaa%>;
-margin-right: 20px;
-}
-<%end%>
-
-  /*全体*/
-  body{
-  background-color:  #<%= @user.background_color%>;
-  height:1300px;
-  }
-
-  @media screen and (max-width: 375px) {
-  }
-
-</style>

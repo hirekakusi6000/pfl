@@ -1,0 +1,239 @@
+/*ヘッダー画像 親 ブロック*/
+.header_image_p {
+  position: relative;
+  height: 200px;
+  width: 100vw;
+  text-align: center;
+  background: black;
+}
+
+/*デフォルトヘッダー画像 親 ブロック*/
+.default_header_image {
+  height: 200px;
+  width: 100vw;
+  text-align: center;
+  background: #F2F2F2;
+}
+
+/* ヘッダー画像 子 ブロック*/
+.header_image {
+  z-index: 5;
+  height: 240px;
+  width: 100vw;
+  object-fit: none;
+}
+
+/* アイコン画像 親 ブロック*/
+.icon_image_p {
+  position: relative;
+  width: 100vw;
+}
+
+/* アイコン画像 子 ブロック*/
+.icon_image {
+  z-index: 5;
+  display: inline-block;
+  width: 180px;
+  height: 180px;
+  border-radius: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  text-align: center;
+  cursor: pointer;
+}
+
+/*ヘッダー画像カメラアイコン 子 インラインブロック*/
+.camera_header {
+  z-index: 6;
+  display: inline-block;
+  color: white;
+  font-size: 50px;
+  cursor: pointer;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*ヘッダー画像オーバーレイ 子 ブロック*/
+.black_overlay_header {
+  z-index: 2;
+  background-color: black;
+  opacity: 0.3;
+  cursor: pointer;
+  height: 240px;
+  width: 100vw;
+  position: absolute;
+  top: 0px;
+}
+
+/*アイコン画像カメラアイコン 子 インラインブロック*/
+.camera_icon {
+  z-index: 7;
+  display: inline-block;
+  color: white;
+  cursor: pointer;
+  font-size: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -110%);
+}
+
+/*アイコン画像オーバーレイ 子 ブロック*/
+.black_overlay_icon {
+  z-index: 6;
+  background-color: black;
+  opacity: 0.3;
+  cursor: pointer;
+  width: 180px;
+  height: 180px;
+  border-radius: 100%;
+  object-fit: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+}
+
+.popup_content_icon_image {
+  position: relative;
+  align-self: center;
+  width: 90%;
+  max-width: 800px;
+  padding: 30px 30px 15px;
+  box-sizing: border-box;
+  line-height: 1.4em;
+  transition: 0.5s;
+}
+
+/*アイコン画像（拡大時）*/
+.icon_image_enlarge {
+  display: inline-block;
+  width: 420px;
+  height: 420px;
+  border-radius: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*画像拡大からの編集 子 インライン*/
+.image_edit {
+  color: white;
+  font-size: 25px;
+  z-index: 11;
+  text-decoration: none;
+  font-weight: bold;
+  position: absolute;
+  top: 80px;
+  right: 50px;
+}
+
+/*画像拡大からの閉じる 子 インライン*/
+.close_btn {
+  font-size: 50px;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  top: 50px;
+  left: 30px;
+}
+
+@media screen and (max-width: 375px) {
+
+  /*ヘッダー画像 親 ブロック*/
+  .header_image_p {
+    height: 130px;
+  }
+
+  /*ヘッダー画像カメラアイコン 子 インラインブロック*/
+  .camera_header {
+    font-size: 35px;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /*ヘッダー画像オーバーレイ 子 ブロック*/
+  .black_overlay_header {
+    height: 130px;
+  }
+
+  /*アイコン画像カメラアイコン 子 インラインブロック*/
+  .camera_icon {
+    font-size: 35px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -270%);
+  }
+
+  /*アイコン画像オーバーレイ 子 ブロック*/
+  .black_overlay_icon {
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -120%);
+  }
+
+  /*アイコン画像（拡大時）*/
+  .icon_image_enlarge {
+    width: 300px;
+    height: 300px;
+  }
+
+  /*画像拡大からの編集*/
+  .image_edit {
+    font-size: 25px;
+    z-index: 11;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+  }
+
+  /*ヘッダー画像 親 ブロック*/
+  .header_image_p {
+    height: 130px;
+  }
+
+  /* ヘッダー画像 子 ブロック*/
+  .header_image {
+    height: 130px;
+  }
+
+  /*デフォルトヘッダー画像 親 ブロック*/
+  .default_header_image {
+    height: 130px;
+  }
+
+  /* アイコン画像 子 ブロック*/
+  .icon_image {
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -120%);
+  }
+
+  .icon_image_m {
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+  }
+
+}
