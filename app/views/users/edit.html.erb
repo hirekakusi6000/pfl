@@ -12,16 +12,18 @@
       <p class="black_overlay_header"></p>
       <p><%= form.file_field :header_image, accept: "image/png,image/jpeg,image/gif",id:"header_image_upload"%></p>
     </label>
-  </div>
-  <!-- アイコン画像-->
+
     <label for="icon_image_upload" >
       <i class="fas fa-camera camera_icon"></i>
       <p class="black_overlay_icon"></p>
-      <p><%= form.file_field :icon_image, accept: "image/png,image/jpeg,image/gif",id:"icon_image_upload"%></p>
-
-        <p><%= image_tag @user.icon_image.url,class:"icon_image"%></p>
-
+      <%= form.file_field :icon_image, accept: "image/png,image/jpeg,image/gif",id:"icon_image_upload"%>
+       <%= image_tag @user.icon_image.url,class:"icon_image"%>
     </label>
+
+  </div>
+
+  <!-- アイコン画像-->
+
 
     <!-- 背景色変更-->
   <div class="popup_wrap" >
@@ -76,19 +78,19 @@
               <label  class="sns_edit_p">アカウントのID&emsp;</label>
                <%= form.text_field :twitter_id_1,class:"sns_edit_form",maxlength: "100"%>
               <label class="sns_edit_p">コメントを追加&emsp;</label>
-               <%= form.text_field :twitter_comment_1,class:"sns_edit_form",maxlength: "7",placeholder:"メールアドレス"%>
+               <%= form.text_field :twitter_comment_1,class:"sns_edit_form",maxlength: "7",placeholder:"7文字以内",placeholder:"7文字以内"%>
             </div>
             <div class="sns_acount_form_p">
               <label  class="sns_edit_p">アカウントのID&emsp;</label>
                <%= form.text_field :twitter_id_2,class:"sns_edit_form",maxlength: "100"%>
               <label class="sns_edit_p">コメントを追加&emsp;</label>
-               <%= form.text_field :twitter_comment_2,class:"sns_edit_form",maxlength: "7"%>
+               <%= form.text_field :twitter_comment_2,class:"sns_edit_form",maxlength: "7",placeholder:"7文字以内"%>
             </div>
             <div class="sns_acount_form_p">
               <label  class="sns_edit_p">アカウントのID&emsp;</label>
                <%= form.text_field :twitter_id_3,class:"sns_edit_form",maxlength: "100"%>
               <label class="sns_edit_p">コメントを追加&emsp;</label>
-               <%= form.text_field :twitter_comment_3,class:"sns_edit_form",maxlength: "7"%>
+               <%= form.text_field :twitter_comment_3,class:"sns_edit_form",maxlength: "7",placeholder:"7文字以内"%>
             </div>
            </div>
           <label for="trigger_acount" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label>
@@ -153,19 +155,19 @@
               <label  class="sns_edit_p">アカウントのID&emsp;</label>
                <%= form.text_field :instagram_id_1,class:"sns_edit_form",maxlength: "100"%>
               <label class="sns_edit_p">コメントを追加&emsp;</label>
-               <%= form.text_field :instagram_comment_1,class:"sns_edit_form",maxlength: "7"%>
+               <%= form.text_field :instagram_comment_1,class:"sns_edit_form",maxlength: "7",placeholder:"7文字以内"%>
             </div>
             <div class="sns_acount_form_p">
               <label  class="sns_edit_p">アカウントのID&emsp;</label>
                <%= form.text_field :instagram_id_2,class:"sns_edit_form",maxlength: "100"%>
               <label class="sns_edit_p">コメントを追加&emsp;</label>
-               <%= form.text_field :instagram_comment_2,class:"sns_edit_form",maxlength: "7"%>
+               <%= form.text_field :instagram_comment_2,class:"sns_edit_form",maxlength: "7",placeholder:"7文字以内"%>
             </div>
             <div class="sns_acount_form_p">
               <label  class="sns_edit_p">アカウントのID&emsp;</label>
                <%= form.text_field :instagram_id_3,class:"sns_edit_form",maxlength: "100"%>
               <label class="sns_edit_p">コメントを追加&emsp;</label>
-               <%= form.text_field :instagram_comment_3,class:"sns_edit_form",maxlength: "7"%>
+               <%= form.text_field :instagram_comment_3,class:"sns_edit_form",maxlength: "7",placeholder:"7文字以内"%>
             </div>
            </div>
         <label for="trigger_instagram_account" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label>
@@ -230,19 +232,19 @@
               <label  class="sns_edit_p">アカウントのURL&emsp;</label>
                <%= form.text_field :facebook_id_1,class:"sns_edit_form",maxlength: "100"%>
               <label class="sns_edit_p">コメントを追加&emsp;&emsp;</label>
-               <%= form.text_field :facebook_comment_1,class:"sns_edit_form",maxlength: "7"%>
+               <%= form.text_field :facebook_comment_1,class:"sns_edit_form",maxlength: "7",placeholder:"7文字以内"%>
             </div>
             <div class="sns_acount_form_p">
               <label  class="sns_edit_p">アカウントのURL&emsp;</label>
                <%= form.text_field :facebook_id_2,class:"sns_edit_form",maxlength: "100"%>
               <label class="sns_edit_p">コメントを追加&emsp;&emsp;</label>
-               <%= form.text_field :facebook_comment_2,class:"sns_edit_form",maxlength: "7"%>
+               <%= form.text_field :facebook_comment_2,class:"sns_edit_form",maxlength: "7",placeholder:"7文字以内"%>
             </div>
             <div class="sns_acount_form_p">
               <label  class="sns_edit_p">アカウントのURL&emsp;</label>
                <%= form.text_field :facebook_id_3,class:"sns_edit_form",maxlength: "100"%>
               <label class="sns_edit_p">コメントを追加&emsp;&emsp;</label>
-               <%= form.text_field :facebook_comment_3,class:"sns_edit_form",maxlength: "7"%>
+               <%= form.text_field :facebook_comment_3,class:"sns_edit_form",maxlength: "7",placeholder:"7文字以内"%>
             </div>
            </div>
           <label for="trigger_facebook_account" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label>
@@ -308,19 +310,19 @@
               <label  class="sns_edit_p">アカウントのURL&emsp;</label>
                <%= form.text_field :youtube_id_1,class:"sns_edit_form",maxlength: "100"%>
               <label class="sns_edit_p">コメントを追加&emsp;&emsp;</label>
-               <%= form.text_field :youtube_comment_1,class:"sns_edit_form",maxlength: "7"%>
+               <%= form.text_field :youtube_comment_1,class:"sns_edit_form",maxlength: "7",placeholder:"7文字以内"%>
             </div>
             <div class="sns_acount_form_p">
               <label  class="sns_edit_p">アカウントのURL&emsp;</label>
                <%= form.text_field :youtube_id_2,class:"sns_edit_form",maxlength: "100"%>
               <label class="sns_edit_p">コメントを追加&emsp;&emsp;</label>
-               <%= form.text_field :youtube_comment_2,class:"sns_edit_form",maxlength: "7"%>
+               <%= form.text_field :youtube_comment_2,class:"sns_edit_form",maxlength: "7",placeholder:"7文字以内"%>
             </div>
             <div class="sns_acount_form_p">
               <label  class="sns_edit_p">アカウントのURL&emsp;</label>
                <%= form.text_field :youtube_id_3,class:"sns_edit_form",maxlength: "100"%>
               <label class="sns_edit_p">コメントを追加&emsp;&emsp;</label>
-               <%= form.text_field :youtube_comment_3,class:"sns_edit_form",maxlength: "7"%>
+               <%= form.text_field :youtube_comment_3,class:"sns_edit_form",maxlength: "7",placeholder:"7文字以内"%>
             </div>
            </div>
           <label for="trigger_youtube_account" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label>
@@ -385,19 +387,19 @@
               <label  class="sns_edit_p">アカウントのURL&emsp;</label>
                <%= form.text_field :tiktok_id_1,class:"sns_edit_form",maxlength: "100"%>
               <label class="sns_edit_p">コメントを追加&emsp;&emsp;</label>
-               <%= form.text_field :tiktok_comment_1,class:"sns_edit_form",maxlength: "7"%>
+               <%= form.text_field :tiktok_comment_1,class:"sns_edit_form",maxlength: "7",placeholder:"7文字以内"%>
             </div>
             <div class="sns_acount_form_p">
               <label  class="sns_edit_p">アカウントのURL&emsp;</label>
                <%= form.text_field :tiktok_id_2,class:"sns_edit_form",maxlength: "100"%>
               <label class="sns_edit_p">コメントを追加&emsp;&emsp;</label>
-               <%= form.text_field :tiktok_comment_2,class:"sns_edit_form",maxlength: "7"%>
+               <%= form.text_field :tiktok_comment_2,class:"sns_edit_form",maxlength: "7",placeholder:"7文字以内"%>
             </div>
             <div class="sns_acount_form_p">
               <label  class="sns_edit_p">アカウントのURL&emsp;</label>
                <%= form.text_field :tiktok_id_3,class:"sns_edit_form",maxlength: "100"%>
               <label class="sns_edit_p">コメントを追加&emsp;&emsp;</label>
-               <%= form.text_field :tiktok_comment_3,class:"sns_edit_form",maxlength: "7"%>
+               <%= form.text_field :tiktok_comment_3,class:"sns_edit_form",maxlength: "7",placeholder:"7文字以内"%>
             </div>
            </div>
           <label for="trigger_tiktok_account" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label>

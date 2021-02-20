@@ -1,0 +1,83 @@
+/*ヘッダー画像 親 ブロック*/
+.header_image_p {
+  position: relative;
+  height: 200px;
+  width: 100vw;
+  text-align: center;
+}
+
+/*デフォルトヘッダー画像 親 ブロック*/
+.default_header_image {
+  height: 200px;
+  width: 100vw;
+  text-align: center;
+  background: #F2F2F2;
+}
+
+/* ヘッダー画像 子 ブロック*/
+.header_image {
+  z-index: 5;
+  height: 240px;
+  width: 100vw;
+  object-fit: none;
+}
+
+/*ヘッダー画像カメラアイコン 子 インラインブロック*/
+.camera_header {
+  z-index: 6;
+  display: inline-block;
+  color: white;
+  font-size: 50px;
+  cursor: pointer;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*ヘッダー画像オーバーレイ 子 ブロック*/
+.black_overlay_header {
+  z-index: 2;
+  background-color: black;
+  opacity: 0.3;
+  cursor: pointer;
+  height: 240px;
+  width: 100vw;
+  position: absolute;
+  top: 0px;
+}
+
+@media screen and (max-width: 375px) {
+
+  /*ヘッダー画像 親 ブロック*/
+  .header_image_p {
+    height: 130px;
+  }
+
+  /*ヘッダー画像カメラアイコン 子 インラインブロック*/
+  .camera_header {
+    font-size: 35px;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /*ヘッダー画像オーバーレイ 子 ブロック*/
+  .black_overlay_header {
+    height: 130px;
+  }
+
+  /* ヘッダー画像 子 ブロック*/
+  .header_image {
+    height: 130px;
+  }
+
+  /*デフォルトヘッダー画像 親 ブロック*/
+  .default_header_image {
+    height: 130px;
+  }
+
+}

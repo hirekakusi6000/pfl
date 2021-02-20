@@ -128,10 +128,10 @@
 
 /*背景色&リンク設定ボタン 親の親 ブロック*/
 .color_and_link_edit_btn_p {
-  margin-top: 20px;
   text-align: center;
   width: 100vw;
-  height: 105px;
+  height: 90px;
+  margin-top: 60px;
 }
 
 /*背景色&リンク設定ボタン 親 ブロック*/
@@ -140,6 +140,7 @@
   z-index: 1;
   position: relative;
   width: 180px;
+  height: 90px;
 }
 
 /*背景色&リンク設定ボタン 子 ブロック*/
