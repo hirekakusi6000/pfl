@@ -55,7 +55,7 @@
 
   <!-- SNSアイコン一覧表示-->
   <div class="sns_pp">
-    <% if @user.twitter_id_1!=""%>
+    <% if @user.twitter_id_1?%>
     <div class="sns_p">
       <p class="sns_text"><%= @user.twitter_comment_1 %></p>
       <div class="sns_outside twitter_outsidecolor">
@@ -63,7 +63,7 @@
       </div>
     </div>
     <%end%>
-    <% if @user.twitter_id_2!=""%>
+    <% if @user.twitter_id_2?%>
     <div class="sns_p">
       <p class="sns_text"><%= @user.twitter_comment_2 %></p>
       <div class="sns_outside twitter_outsidecolor">
@@ -71,7 +71,7 @@
       </div>
     </div>
     <%end%>
-    <% if @user.twitter_id_3!=""%>
+    <% if @user.twitter_id_3?%>
     <div class="sns_p">
       <p class="sns_text"><%= @user.twitter_comment_3 %></p>
       <div class="sns_outside twitter_outsidecolor">
@@ -79,7 +79,7 @@
       </div>
     </div>
     <%end%>
-    <% if @user.instagram_id_1!=""%>
+    <% if @user.instagram_id_1?%>
     <div class="sns_p">
       <p class="sns_text"><%= @user.instagram_comment_1 %></p>
       <div class="sns_outside instagram_outsidecolor">
@@ -87,7 +87,7 @@
       </div>
     </div>
     <%end%>
-    <% if @user.instagram_id_2!=""%>
+    <% if @user.instagram_id_2?%>
     <div class="sns_p">
       <p class="sns_text"><%= @user.instagram_comment_2 %></p>
       <div class="sns_outside instagram_outsidecolor">
@@ -95,7 +95,7 @@
       </div>
     </div>
     <%end%>
-    <% if @user.instagram_id_3!=""%>
+    <% if @user.instagram_id_3?%>
     <div class="sns_p">
       <p class="sns_text"><%= @user.instagram_comment_3 %></p>
       <div class="sns_outside instagram_outsidecolor">
@@ -103,7 +103,7 @@
       </div>
     </div>
     <%end%>
-    <% if @user.facebook_id_1!=""%>
+    <% if @user.facebook_id_1?%>
     <div class="sns_p">
       <p class="sns_text"><%= @user.facebook_comment_1 %></p>
       <div class="sns_outside facebook_outsidecolor">
@@ -111,7 +111,7 @@
       </div>
     </div>
     <%end%>
-    <% if @user.facebook_id_2!=""%>
+    <% if @user.facebook_id_2?%>
     <div class="sns_p">
       <p class="sns_text"><%= @user.facebook_comment_3 %></p>
       <div class="sns_outside facebook_outsidecolor">
@@ -119,7 +119,7 @@
       </div>
     </div>
     <%end%>
-    <% if @user.facebook_id_3!=""%>
+    <% if @user.facebook_id_3?%>
     <div class="sns_p">
       <p class="sns_text"><%= @user.facebook_comment_3 %></p>
       <div class="sns_outside facebook_outsidecolor">
@@ -127,7 +127,7 @@
       </div>
     </div>
     <%end%>
-    <% if @user.youtube_id_1!=""%>
+    <% if @user.youtube_id_1?%>
     <div class="sns_p">
       <p class="sns_text"><%= @user.youtube_comment_1 %></p>
       <div class="sns_outside youtube_outsidecolor">
@@ -135,7 +135,7 @@
       </div>
     </div>
     <%end%>
-    <% if @user.youtube_id_2!=""%>
+    <% if @user.youtube_id_2?%>
     <div class="sns_p">
       <p class="sns_text"><%= @user.youtube_comment_2 %></p>
       <div class="sns_outside youtube_outsidecolor">
@@ -143,7 +143,7 @@
       </div>
     </div>
     <%end%>
-    <% if @user.youtube_id_3!=""%>
+    <% if @user.youtube_id_3?%>
     <div class="sns_p">
       <p class="sns_text"><%= @user.youtube_comment_3 %></p>
       <div class="sns_outside youtube_outsidecolor">
@@ -151,7 +151,7 @@
       </div>
     </div>
     <%end%>
-    <% if @user.tiktok_id_1!=""%>
+    <% if @user.tiktok_id_1?%>
     <div class="sns_p">
       <p class="sns_text"><%= @user.tiktok_comment_1 %></p>
       <div class="sns_outside tiktok_outsidecolor">
@@ -159,7 +159,7 @@
       </div>
     </div>
     <%end%>
-    <% if @user.tiktok_id_2!=""%>
+    <% if @user.tiktok_id_2?%>
     <div class="sns_p">
       <p class="sns_text"><%= @user.tiktok_comment_2 %></p>
       <div class="sns_outside tiktok_outsidecolor">
@@ -167,7 +167,7 @@
       </div>
     </div>
     <%end%>
-    <% if @user.tiktok_id_3!=""%>
+    <% if @user.tiktok_id_3?%>
     <div class="sns_p">
       <p class="sns_text"><%= @user.tiktok_comment_3 %></p>
       <div class="sns_outside tiktok_outsidecolor">

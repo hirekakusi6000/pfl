@@ -10,9 +10,25 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #  super
-  #end
+  def create
+    @user = User.new(sign_up_params)
+    unless @user.valid?
+      render "devise/registrations/new" and return
+    end
+    @user.twitter_outsidecolor = "E0F2F7"
+    @user.twitter_insidecolor = "FFFFFF"
+    @user.instagram_outsidecolor = "F8E0F1"
+    @user.instagram_insidecolor = "FFFFFF"
+    @user.facebook_outsidecolor = "ECE0F8"
+    @user.facebook_insidecolor = "FFFFFF"
+    @user.youtube_outsidecolor = "F8E0E0"
+    @user.youtube_insidecolor = "FFFFFF"
+    @user.tiktok_outsidecolor = "000000"
+    @user.tiktok_insidecolor = "FFFFFF"
+    @user.save
+    sign_in(:user, @user)
+    redirect_to("/users/#{@user.id}")
+  end
 
   # GET /resource/edit
   # def edit

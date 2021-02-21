@@ -32,9 +32,8 @@
       <div class="popup_content">
         <p class="popup_title">背景色設定</p>
         <p><label for="trigger_background_color" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></p>
-
         <% @color_index.each do |color| %>
-          <input id="A<%= color%>" type="radio" name="background_color" value="<%= color%>" <%= "checked" if @user.background_color== color%>><!-- ピンク　-->
+          <%= form.radio_button :background_color, color,id:"A#{color}"%>
           <label for="A<%= color%>" class="color_index_p">
             <span class="color_index A<%= color%>"></span>
           </label>
@@ -104,8 +103,8 @@
       <p class="popup_title">Twitterの外側色</p>
       <p><label for="trigger_outsidecolor" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
         <% @color_index.each do |color| %>
-          <input id="C<%= color%>" type="radio" name="twitter_outsidecolor" value="<%= color%>" <%= "checked" if @user.twitter_outsidecolor== color%>>
-          <label for="C<%= color%>" class="color_index_p">
+         <%= form.radio_button :twitter_outsidecolor, color,id:"C#{color}"%>
+         <label for="C<%= color%>" class="color_index_p">
             <span class="color_index C<%= color%>"></span>
           </label>
         <%end%>
@@ -119,7 +118,7 @@
       <p class="popup_title">Twitterの内側色</p>
       <p><label for="trigger_insidecolor" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
         <% @color_index.each do |color| %>
-          <input id="B<%= color%>" type="radio" name="twitter_insidecolor" value="<%= color%>" <%= "checked" if @user.twitter_insidecolor== color%>>
+          <%= form.radio_button :twitter_insidecolor, color,id:"B#{color}"%>
           <label for="B<%= color%>" class="color_index_p">
             <span class="color_index B<%= color%>"></span>
           </label>
@@ -181,8 +180,8 @@
           <p class="popup_title">Instagramの外側色</p>
           <p><label for="trigger_instagram_outsidecolor" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
             <% @color_index.each do |color| %>
-              <input id="IS<%= color%>" type="radio" name="instagram_outsidecolor" value="<%= color%>" <%= "checked" if @user.instagram_outsidecolor== color%>>
-                <label for="IS<%= color%>" class="color_index_p">
+              <%= form.radio_button :instagram_outsidecolor, color,id:"IS#{color}"%>
+              <label for="IS<%= color%>" class="color_index_p">
                 <span class="color_index IS<%= color%>"></span>
               </label>
             <%end%>
@@ -196,7 +195,7 @@
           <p class="popup_title">Instagramの内側色</p>
           <p><label for="trigger_instagram_insidecolor" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
             <% @color_index.each do |color| %>
-              <input id="IU<%= color%>" type="radio" name="instagram_insidecolor" value="<%= color%>" <%= "checked" if @user.instagram_insidecolor== color%>>
+                <%= form.radio_button :instagram_insidecolor, color,id:"IU#{color}"%>
                 <label for="IU<%= color%>" class="color_index_p">
                 <span class="color_index IU<%= color%>"></span>
               </label>
@@ -259,7 +258,7 @@
             <p class="popup_title">facebookの外側色</p>
             <p><label for="trigger_facebook_outsidecolor" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
               <% @color_index.each do |color| %>
-                <input id="FS<%= color%>" type="radio" name="facebook_outsidecolor" value="<%= color%>" <%= "checked" if @user.facebook_outsidecolor== color%>>
+                <%= form.radio_button :facebook_outsidecolor, color,id:"FS#{color}"%>
                 <label for="FS<%= color%>" class="color_index_p">
                   <span class="color_index IS<%= color%>"></span>
                 </label>
@@ -274,7 +273,7 @@
           <p class="popup_title">facebookの内側色</p>
           <p><label for="trigger_facebook_insidecolor" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
             <% @color_index.each do |color| %>
-              <input id="FU<%= color%>" type="radio" name="facebook_insidecolor" value="<%= color%>" <%= "checked" if @user.facebook_insidecolor== color%>><!-- ピンク　-->
+              <%= form.radio_button :facebook_insidecolor, color,id:"FU#{color}"%>
               <label for="FU<%= color%>" class="color_index_p">
                 <span class="color_index IU<%= color%>"></span>
               </label>
@@ -336,7 +335,7 @@
           <p class="popup_title">Youtubeの外側色</p>
           <p><label for="trigger_youtube_outsidecolor" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
             <% @color_index.each do |color| %>
-              <input id="YS<%= color%>" type="radio" name="youtube_outsidecolor" value="<%= color%>" <%= "checked" if @user.youtube_outsidecolor== color%>>
+              <%= form.radio_button :youtube_outsidecolor, color,id:"YS#{color}"%>
               <label for="YS<%= color%>" class="color_index_p">
                 <span class="color_index IS<%= color%>"></span>
               </label>
@@ -351,7 +350,7 @@
         <p class="popup_title">Youtubeの内側色</p>
         <p><label for="trigger_youtube_insidecolor" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
             <% @color_index.each do |color| %>
-              <input id="YU<%= color%>" type="radio" name="youtube_insidecolor" value="<%= color%>" <%= "checked" if @user.youtube_insidecolor== color%>><!-- ピンク　-->
+              <%= form.radio_button :youtube_insidecolor, color,id:"YU#{color}"%>
               <label for="YU<%= color%>" class="color_index_p">
               <span class="color_index IU<%= color%>"></span>
               </label>
@@ -413,7 +412,7 @@
           <p class="popup_title">Tiktokの外側色</p>
           <p><label for="trigger_tiktok_outsidecolor" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
             <% @color_index.each do |color| %>
-              <input id="TS<%= color%>" type="radio" name="tiktok_outsidecolor" value="<%= color%>" <%= "checked" if @user.tiktok_outsidecolor== color%>>
+              <%= form.radio_button :tiktok_outsidecolor, color,id:"TS#{color}"%>
               <label for="TS<%= color%>" class="color_index_p">
                <span class="color_index IS<%= color%>"></span>
               </label>
@@ -428,7 +427,7 @@
             <p class="popup_title">Tiktokの内側の色</p>
             <p><label for="trigger_tiktok_insidecolor" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
               <% @color_index.each do |color| %>
-                <input id="TU<%= color%>" type="radio" name="tiktok_insidecolor" value="<%= color%>" <%= "checked" if @user.tiktok_insidecolor== color%>><!-- ピンク　-->
+                <%= form.radio_button :tiktok_insidecolor, color,id:"TU#{color}"%>
                 <label for="TU<%= color%>" class="color_index_p">
                 <span class="color_index IU<%= color%>"></span>
                 </label>
@@ -567,14 +566,8 @@
     }
   <%end%>
 
-    /*全体*/
     body{
       background-color:  #<%= @user.background_color%>;
-      height:auto;
-      margin-bottom:80px;
-    }
-
-    @media screen and (max-width: 375px) {
     }
 
 </style>

@@ -3,13 +3,11 @@ class UsersController < ApplicationController
   PER_PAGE = 20
   def index
     @q = User.ransack(params[:q])
-    @users = @q.result.page(params[:page]).per(PER_PAGE)
-    @page = "index"
+    @users = @q.result.order("created_at DESC").page(params[:page]).per(PER_PAGE)
   end
 
   def show
     @user=User.find_by(id:params[:id])
-    @page="mypfl"
   end
 
   def edit
@@ -37,8 +35,8 @@ class UsersController < ApplicationController
       :icon_image,
       :header_image,
       :background_color,
+      :twitter_insidecolor,
       :twitter_outsidecolor,
-      :instagram_outsidecolor,
       :twitter_id_1,
       :twitter_comment_1,
       :twitter_id_2,
