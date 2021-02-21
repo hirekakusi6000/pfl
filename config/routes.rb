@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   }
   get "/" => "homes#top"
   resources :users, only: [:index, :show, :edit, :update]
+  resources :links, only: [:index, :show, :edit, :update,:create]
 end

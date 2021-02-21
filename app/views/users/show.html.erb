@@ -53,6 +53,10 @@
   <!-- ユーザーネーム-->
   <p class="pfl_user_name"><%=@user.name%></p>
 
+      <% @links.each do |link| %>
+     <%= link.coment%>
+    <%end%>
+
   <!-- SNSアイコン一覧表示-->
   <div class="sns_pp">
     <% if @user.twitter_id_1?%>

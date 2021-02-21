@@ -1,2 +1,10 @@
-<h1>Links#show</h1>
-<p>Find me in app/views/links/show.html.erb</p>
+<h1>投稿詳細</h1>
+<p>【メールアドレス】 <%= @link.user.email %></p>
+<p>【内容】 <%= @link.coment %></p>
+<p>【作成日時】 <%= l @link.created_at %></p>
+<p>
+  <%= link_to "編集", edit_link_path(@link) %>
+  <%= link_to "削除", link_path(@link), method: :delete, data: { confirm: "削除しますか？" } %>
+</p>
+<p><%= link_to "投稿一覧へ", links_path %></p>
+
