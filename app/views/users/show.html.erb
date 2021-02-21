@@ -11,15 +11,13 @@
     <% else %>
       <p class="default_header_image"></p>
     <% end %>
-
- <!-- アイコン-->
-  <label for="trigger" class="open_btn">
-    <div class="icon_image_p">
-      <%= image_tag @user.icon_image.url,class:"icon_image"%>
-    </div>
-  </label>
- <!-- アイコン-->
-
+    <!-- アイコン-->
+      <label for="trigger" class="open_btn">
+        <div class="icon_image_p">
+          <%= image_tag @user.icon_image.url,class:"icon_image"%>
+        </div>
+      </label>
+    <!-- アイコン-->
   </div>
 
   <!-- アイコン拡大-->
@@ -35,18 +33,13 @@
             <%end%>
           <%end%>
         <label for="trigger" class="popup_trigger"></label>
-
-    <div class="popup_content_icon_image">
-      <%= image_tag @user.icon_image.url,class:"icon_image_enlarge"%>
-    </div>
-    
+      <div class="popup_content_icon_image">
+        <%= image_tag @user.icon_image.url,class:"icon_image_enlarge"%>
+      </div>
     </div>
   </div>
 
-  <!-- ユーザーネーム-->
-  <p class="pfl_user_name"><%=@user.name%></p>
-
-  <!-- 編集へのリンクアイコン-->
+    <!-- 編集へのリンクアイコン-->
   <% if current_user%>
     <% if current_user.id == @user.id%>
     <a href="/users/<%= current_user.id %>/edit">
@@ -57,10 +50,13 @@
     <%end%>
   <%end%>
 
+  <!-- ユーザーネーム-->
+  <p class="pfl_user_name"><%=@user.name%></p>
+
   <!-- SNSアイコン一覧表示-->
   <div class="sns_pp">
     <% if @user.twitter_id_1!=""%>
-    <div class="sns_outside">
+    <div class="sns_p">
       <p class="sns_text"><%= @user.twitter_comment_1 %></p>
       <div class="sns_outside twitter_outsidecolor">
         <a href="https://mobile.twitter.com/<%= @user.twitter_id_1 %>"> <span class="fab fa-twitter sns_inside twitter_insidecolor"></span></a>
@@ -68,7 +64,7 @@
     </div>
     <%end%>
     <% if @user.twitter_id_2!=""%>
-    <div class="sns_outside">
+    <div class="sns_p">
       <p class="sns_text"><%= @user.twitter_comment_2 %></p>
       <div class="sns_outside twitter_outsidecolor">
         <a href="https://mobile.twitter.com/<%= @user.twitter_id_2 %>"> <span class="fab fa-twitter sns_inside twitter_insidecolor"></span></a>
@@ -76,7 +72,7 @@
     </div>
     <%end%>
     <% if @user.twitter_id_3!=""%>
-    <div class="sns_outside">
+    <div class="sns_p">
       <p class="sns_text"><%= @user.twitter_comment_3 %></p>
       <div class="sns_outside twitter_outsidecolor">
         <a href="https://mobile.twitter.com/<%= @user.twitter_id_3 %>"> <span class="fab fa-twitter sns_inside twitter_insidecolor"></span></a>
@@ -84,7 +80,7 @@
     </div>
     <%end%>
     <% if @user.instagram_id_1!=""%>
-    <div class="sns_outside">
+    <div class="sns_p">
       <p class="sns_text"><%= @user.instagram_comment_1 %></p>
       <div class="sns_outside instagram_outsidecolor">
         <a href="https://www.instagram.com/<%= @user.instagram_id_1 %>"> <span class="fab fa-instagram sns_inside instagram_insidecolor"></span></a>
@@ -92,7 +88,7 @@
     </div>
     <%end%>
     <% if @user.instagram_id_2!=""%>
-    <div class="sns_outside">
+    <div class="sns_p">
       <p class="sns_text"><%= @user.instagram_comment_2 %></p>
       <div class="sns_outside instagram_outsidecolor">
         <a href="https://www.instagram.com/<%= @user.instagram_id_2 %>"> <span class="fab fa-instagram sns_inside instagram_insidecolor"></span></a>
@@ -100,7 +96,7 @@
     </div>
     <%end%>
     <% if @user.instagram_id_3!=""%>
-    <div class="sns_outside">
+    <div class="sns_p">
       <p class="sns_text"><%= @user.instagram_comment_3 %></p>
       <div class="sns_outside instagram_outsidecolor">
         <a href="https://www.instagram.com/<%= @user.instagram_id_3 %>"> <span class="fab fa-instagram sns_inside instagram_insidecolor"></span></a>
@@ -108,7 +104,7 @@
     </div>
     <%end%>
     <% if @user.facebook_id_1!=""%>
-    <div class="sns_outside">
+    <div class="sns_p">
       <p class="sns_text"><%= @user.facebook_comment_1 %></p>
       <div class="sns_outside facebook_outsidecolor">
         <a href="<%= @user.facebook_id_1 %>"> <span class="fab fa-facebook sns_inside facebook_insidecolor"></span></a>
@@ -116,7 +112,7 @@
     </div>
     <%end%>
     <% if @user.facebook_id_2!=""%>
-    <div class="sns_outside">
+    <div class="sns_p">
       <p class="sns_text"><%= @user.facebook_comment_3 %></p>
       <div class="sns_outside facebook_outsidecolor">
         <a href="<%= @user.facebook_id_3 %>"> <span class="fab fa-facebook sns_inside facebook_insidecolor"></span></a>
@@ -124,7 +120,7 @@
     </div>
     <%end%>
     <% if @user.facebook_id_3!=""%>
-    <div class="sns_outside">
+    <div class="sns_p">
       <p class="sns_text"><%= @user.facebook_comment_3 %></p>
       <div class="sns_outside facebook_outsidecolor">
         <a href="<%= @user.facebook_id_3 %>"> <span class="fab fa-facebook sns_inside facebook_insidecolor"></span></a>
@@ -132,7 +128,7 @@
     </div>
     <%end%>
     <% if @user.youtube_id_1!=""%>
-    <div class="sns_outside">
+    <div class="sns_p">
       <p class="sns_text"><%= @user.youtube_comment_1 %></p>
       <div class="sns_outside youtube_outsidecolor">
         <a href="<%= @user.youtube_id_1 %>"> <span class="fab fa-youtube sns_inside youtube_insidecolor"></span></a>
@@ -140,7 +136,7 @@
     </div>
     <%end%>
     <% if @user.youtube_id_2!=""%>
-    <div class="sns_outside">
+    <div class="sns_p">
       <p class="sns_text"><%= @user.youtube_comment_2 %></p>
       <div class="sns_outside youtube_outsidecolor">
         <a href="<%= @user.youtube_id_2 %>"> <span class="fab fa-youtube sns_inside youtube_insidecolor"></span></a>
@@ -148,7 +144,7 @@
     </div>
     <%end%>
     <% if @user.youtube_id_3!=""%>
-    <div class="sns_outside">
+    <div class="sns_p">
       <p class="sns_text"><%= @user.youtube_comment_3 %></p>
       <div class="sns_outside youtube_outsidecolor">
         <a href="<%= @user.youtube_id_3 %>"> <span class="fab fa-youtube sns_inside youtube_insidecolor"></span></a>
@@ -156,7 +152,7 @@
     </div>
     <%end%>
     <% if @user.tiktok_id_1!=""%>
-    <div class="sns_outside">
+    <div class="sns_p">
       <p class="sns_text"><%= @user.tiktok_comment_1 %></p>
       <div class="sns_outside tiktok_outsidecolor">
         <a href="<%= @user.tiktok_id_1 %>"> <span class="fab fa-tiktok sns_inside tiktok_insidecolor"></span></a>
@@ -164,7 +160,7 @@
     </div>
     <%end%>
     <% if @user.tiktok_id_2!=""%>
-    <div class="sns_outside">
+    <div class="sns_p">
       <p class="sns_text"><%= @user.tiktok_comment_2 %></p>
       <div class="sns_outside tiktok_outsidecolor">
         <a href="<%= @user.tiktok_id_2 %>"> <span class="fab fa-tiktok sns_inside tiktok_insidecolor"></span></a>
@@ -172,7 +168,7 @@
     </div>
     <%end%>
     <% if @user.tiktok_id_3!=""%>
-    <div class="sns_outside">
+    <div class="sns_p">
       <p class="sns_text"><%= @user.tiktok_comment_3 %></p>
       <div class="sns_outside tiktok_outsidecolor">
         <a href="<%= @user.tiktok_id_3 %>"> <span class="fab fa-tiktok sns_inside tiktok_insidecolor"></span></a>
@@ -197,7 +193,7 @@
   body {
     background-color: #<%=@user.background_color%>;
     height: auto;
-    margin-bottom:500px;
+    margin-bottom:150px;
   }
 
   /*Twitterアイコン 外側色*/

@@ -1,0 +1,90 @@
+/* SNSアイコン 親*/
+.sns_pp {
+  z-index: 1000px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  width: 100vw;
+  height: auto;
+  word-wrap: break-word;
+}
+
+/* SNSアイコン 子*/
+.sns_p {
+  display: inline-block;
+  margin: 5px;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  position: relative;
+}
+
+/* SNSアイコン外側 孫*/
+.sns_outside {
+  display: inline-block;
+  margin: 5px;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  position: relative;
+}
+
+/* SNSアイコン ひ孫*/
+.sns_inside {
+  font-size: 3.5em;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* SNSアイコン コメント */
+.sns_text {
+  height: auto;
+  font-size: 13px;
+  font-weight: bold;
+  color: gray;
+}
+
+/*SNSアイコンの上のスペース*/
+.space {
+  height: 40px;
+}
+
+@media screen and (max-width: 375px) {
+
+  /* SNSアイコン 親の親 ブロック*/
+  .sns_pp {
+    margin-top: 40px;
+  }
+
+  /* SNSアイコン 親*/
+  .sns_p {
+    margin: 1px;
+    width: 50px;
+    height: 50px;
+  }
+
+  /* SNSアイコン外側 親 インラインブロック*/
+  .sns_outside {
+    margin: -15px 1px 1px 1px;
+    width: 50px;
+    height: 50px;
+  }
+
+  /* SNSアイコン アイコン*/
+  .sns_inside {
+    padding-top: -10px;
+    font-size: 1.8em;
+  }
+
+  /* SNSアイコン コメント */
+  .sns_text {
+    font-size: 8px;
+  }
+
+}
