@@ -1,3 +1,36 @@
+ <%= form_with model: @link, local: true do |form| %>
+  <!-- ポップアップ リンク-->
+  <div class="popup_wrap">
+    <input id="trigger_link" type="checkbox">
+    <div class="popup_overlay">
+      <label for="trigger_link" class="popup_trigger"></label>
+      <div class="popup_content_p">
+
+    <!--リンクポップアップ選択画面 -->
+      <div class="popup_content_link">
+        <p class="popup_title">Link設定</p>
+        <div class="link_form_pp">
+          <div class="link_form_p">
+            <label  class="form_title">タイトル&emsp;</label>
+            <%= form.text_field :title,class:"link_form",maxlength: "1000"%>
+            <label class="form_title">ＵＲＬ&emsp;&emsp;</label>
+            <%= form.text_field :coment,class:"link_form",maxlength: "1000"%>
+            <div class="link_coment_form_p">
+             <label class="coment_form_title">コメント&emsp;</label>
+             <%= form.text_area :coment,class:"link_coment_form",maxlength: "1000"%>
+            </div>
+        </div>
+      </div>
+      <p><label for="trigger_link" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
+      <input class="OK" type="submit" value="保存" name="update">
+     </div>
+
+    </div>
+   </div>
+  </div>
+  
+ <% end %>
+
 <%= form_with(model: @user, local: true, multipart: true) do |form| %>
 <!-- ヘッダー画像-->
   <div class="header_image_p">
@@ -12,6 +45,7 @@
       <p><%= form.file_field :header_image, accept: "image/png,image/jpeg,image/gif",id:"header_image_upload"%></p>
     </label>
 
+  <!-- アイコン画像-->
     <label for="icon_image_upload" >
       <i class="fas fa-camera camera_icon"></i>
       <p class="black_overlay_icon"></p>
@@ -20,9 +54,6 @@
     </label>
 
   </div>
-
-  <!-- アイコン画像-->
-
 
     <!-- 背景色変更-->
   <div class="popup_wrap" >
@@ -59,9 +90,6 @@
     </label>
   </div>
 
-    <%= form.label :coment %>
-  <%= form.text_field :coment %>
-
   <!-- ポップアップ twitter-->
   <div class="popup_wrap">
     <input id="trigger_twitter" type="checkbox">
@@ -77,21 +105,21 @@
             </div>
           <div class="sns_acount_form_pp">
             <div class="sns_acount_form_p">
-              <label  class="sns_edit_p">アカウントのID&emsp;</label>
+              <label  class="form_title">アカウントのID&emsp;</label>
                <%= form.text_field :twitter_id_1,class:"sns_edit_form",maxlength: "1000"%>
-              <label class="sns_edit_p">コメントを追加&emsp;</label>
+              <label class="form_title">コメントを追加&emsp;</label>
                <%= form.text_field :twitter_comment_1,class:"sns_edit_form",maxlength: "1000"%>
             </div>
             <div class="sns_acount_form_p">
-              <label  class="sns_edit_p">アカウントのID&emsp;</label>
+              <label  class="form_title">アカウントのID&emsp;</label>
                <%= form.text_field :twitter_id_2,class:"sns_edit_form",maxlength: "1000"%>
-              <label class="sns_edit_p">コメントを追加&emsp;</label>
+              <label class="form_title">コメントを追加&emsp;</label>
                <%= form.text_field :twitter_comment_2,class:"sns_edit_form",maxlength: "1000"%>
             </div>
             <div class="sns_acount_form_p">
-              <label  class="sns_edit_p">アカウントのID&emsp;</label>
+              <label  class="form_title">アカウントのID&emsp;</label>
                <%= form.text_field :twitter_id_3,class:"sns_edit_form",maxlength: "1000"%>
-              <label class="sns_edit_p">コメントを追加&emsp;</label>
+              <label class="form_title">コメントを追加&emsp;</label>
                <%= form.text_field :twitter_comment_3,class:"sns_edit_form",maxlength: "1000"%>
             </div>
            </div>
@@ -154,21 +182,21 @@
         <p class="popup_title">Instagramリンク設定</p>
           <div class="sns_acount_form_pp">
             <div class="sns_acount_form_p">
-              <label  class="sns_edit_p">アカウントのID&emsp;</label>
+              <label  class="form_title">アカウントのID&emsp;</label>
                <%= form.text_field :instagram_id_1,class:"sns_edit_form",maxlength: "1000"%>
-              <label class="sns_edit_p">コメントを追加&emsp;</label>
+              <label class="form_title">コメントを追加&emsp;</label>
                <%= form.text_field :instagram_comment_1,class:"sns_edit_form",maxlength: "1000"%>
             </div>
             <div class="sns_acount_form_p">
-              <label  class="sns_edit_p">アカウントのID&emsp;</label>
+              <label  class="form_title">アカウントのID&emsp;</label>
                <%= form.text_field :instagram_id_2,class:"sns_edit_form",maxlength: "1000"%>
-              <label class="sns_edit_p">コメントを追加&emsp;</label>
+              <label class="form_title">コメントを追加&emsp;</label>
                <%= form.text_field :instagram_comment_2,class:"sns_edit_form",maxlength: "1000"%>
             </div>
             <div class="sns_acount_form_p">
-              <label  class="sns_edit_p">アカウントのID&emsp;</label>
+              <label  class="form_title">アカウントのID&emsp;</label>
                <%= form.text_field :instagram_id_3,class:"sns_edit_form",maxlength: "1000"%>
-              <label class="sns_edit_p">コメントを追加&emsp;</label>
+              <label class="form_title">コメントを追加&emsp;</label>
                <%= form.text_field :instagram_comment_3,class:"sns_edit_form",maxlength: "1000"%>
             </div>
            </div>
@@ -231,21 +259,21 @@
           <p class="popup_title">facebookリンク設定</p>
           <div class="sns_acount_form_pp">
             <div class="sns_acount_form_p">
-              <label  class="sns_edit_p">アカウントのURL&emsp;</label>
+              <label  class="form_title">アカウントのURL&emsp;</label>
                <%= form.text_field :facebook_id_1,class:"sns_edit_form",maxlength: "1000"%>
-              <label class="sns_edit_p">コメントを追加&emsp;&emsp;</label>
+              <label class="form_title">コメントを追加&emsp;&emsp;</label>
                <%= form.text_field :facebook_comment_1,class:"sns_edit_form",maxlength: "1000"%>
             </div>
             <div class="sns_acount_form_p">
-              <label  class="sns_edit_p">アカウントのURL&emsp;</label>
+              <label  class="form_title">アカウントのURL&emsp;</label>
                <%= form.text_field :facebook_id_2,class:"sns_edit_form",maxlength: "1000"%>
-              <label class="sns_edit_p">コメントを追加&emsp;&emsp;</label>
+              <label class="form_title">コメントを追加&emsp;&emsp;</label>
                <%= form.text_field :facebook_comment_2,class:"sns_edit_form",maxlength: "1000"%>
             </div>
             <div class="sns_acount_form_p">
-              <label  class="sns_edit_p">アカウントのURL&emsp;</label>
+              <label  class="form_title">アカウントのURL&emsp;</label>
                <%= form.text_field :facebook_id_3,class:"sns_edit_form",maxlength: "1000"%>
-              <label class="sns_edit_p">コメントを追加&emsp;&emsp;</label>
+              <label class="form_title">コメントを追加&emsp;&emsp;</label>
                <%= form.text_field :facebook_comment_3,class:"sns_edit_form",maxlength: "1000"%>
             </div>
            </div>
@@ -309,21 +337,21 @@
           <p class="popup_title">youtubeリンク設定</p>
           <div class="sns_acount_form_pp">
             <div class="sns_acount_form_p">
-              <label  class="sns_edit_p">アカウントのURL&emsp;</label>
+              <label  class="form_title">アカウントのURL&emsp;</label>
                <%= form.text_field :youtube_id_1,class:"sns_edit_form",maxlength: "1000"%>
-              <label class="sns_edit_p">コメントを追加&emsp;&emsp;</label>
+              <label class="form_title">コメントを追加&emsp;&emsp;</label>
                <%= form.text_field :youtube_comment_1,class:"sns_edit_form",maxlength: "1000"%>
             </div>
             <div class="sns_acount_form_p">
-              <label  class="sns_edit_p">アカウントのURL&emsp;</label>
+              <label  class="form_title">アカウントのURL&emsp;</label>
                <%= form.text_field :youtube_id_2,class:"sns_edit_form",maxlength: "1000"%>
-              <label class="sns_edit_p">コメントを追加&emsp;&emsp;</label>
+              <label class="form_title">コメントを追加&emsp;&emsp;</label>
                <%= form.text_field :youtube_comment_2,class:"sns_edit_form",maxlength: "1000"%>
             </div>
             <div class="sns_acount_form_p">
-              <label  class="sns_edit_p">アカウントのURL&emsp;</label>
+              <label  class="form_title">アカウントのURL&emsp;</label>
                <%= form.text_field :youtube_id_3,class:"sns_edit_form",maxlength: "1000"%>
-              <label class="sns_edit_p">コメントを追加&emsp;&emsp;</label>
+              <label class="form_title">コメントを追加&emsp;&emsp;</label>
                <%= form.text_field :youtube_comment_3,class:"sns_edit_form",maxlength: "1000"%>
             </div>
            </div>
@@ -386,21 +414,21 @@
           <p class="popup_title">Tiktokリンク設定</p>
            <div class="sns_acount_form_pp">
             <div class="sns_acount_form_p">
-              <label  class="sns_edit_p">アカウントのURL&emsp;</label>
+              <label  class="form_title">アカウントのURL&emsp;</label>
                <%= form.text_field :tiktok_id_1,class:"sns_edit_form",maxlength: "1000"%>
-              <label class="sns_edit_p">コメントを追加&emsp;&emsp;</label>
+              <label class="form_title">コメントを追加&emsp;&emsp;</label>
                <%= form.text_field :tiktok_comment_1,class:"sns_edit_form",maxlength: "1000"%>
             </div>
             <div class="sns_acount_form_p">
-              <label  class="sns_edit_p">アカウントのURL&emsp;</label>
+              <label  class="form_title">アカウントのURL&emsp;</label>
                <%= form.text_field :tiktok_id_2,class:"sns_edit_form",maxlength: "1000"%>
-              <label class="sns_edit_p">コメントを追加&emsp;&emsp;</label>
+              <label class="form_title">コメントを追加&emsp;&emsp;</label>
                <%= form.text_field :tiktok_comment_2,class:"sns_edit_form",maxlength: "1000"%>
             </div>
             <div class="sns_acount_form_p">
-              <label  class="sns_edit_p">アカウントのURL&emsp;</label>
+              <label  class="form_title">アカウントのURL&emsp;</label>
                <%= form.text_field :tiktok_id_3,class:"sns_edit_form",maxlength: "1000"%>
-              <label class="sns_edit_p">コメントを追加&emsp;&emsp;</label>
+              <label class="form_title">コメントを追加&emsp;&emsp;</label>
                <%= form.text_field :tiktok_comment_3,class:"sns_edit_form",maxlength: "1000"%>
             </div>
            </div>

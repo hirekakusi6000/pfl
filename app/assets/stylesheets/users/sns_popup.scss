@@ -1,6 +1,7 @@
 /*アカウント設定 親の親 ブロック*/
 .sns_acount_form_pp {
   margin: 25px 25px 0px 25px;
+  height: 240px;
 }
 
 /*アカウント設定 親 ブロック*/
@@ -32,7 +33,7 @@
   z-index: 1001;
 }
 
-/*SNSアイコン外側 ポップアップをクリックして表示*/
+/*SNSアイコン色変更 ポップアップをクリックして表示*/
 .popup_wrap input:checked~.popup_content_c {
   opacity: 1;
   transform: scale(1);

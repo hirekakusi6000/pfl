@@ -3,7 +3,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
   <!-- ヘッダー画像-->
   <div class="header_image_p">
     <% if @user.header_image? %>
@@ -53,9 +52,13 @@
   <!-- ユーザーネーム-->
   <p class="pfl_user_name"><%=@user.name%></p>
 
-      <% @links.each do |link| %>
-     <%= link.coment%>
-    <%end%>
+  <!-- リンク一覧-->
+    <% @users.each do |user| %>
+      <div class="index_icon_p" ontouchstart="">
+        <a href="/users/<%= user.id %>"><img src="<%= user.icon_image %>"></a>
+        <p  class="index_user_name_p"><a class="index_user_name" href="/user/<%= user.id %>/pfl"><%= user.name %></a></p>
+      </div>
+    <% end %>
 
   <!-- SNSアイコン一覧表示-->
   <div class="sns_pp">
@@ -189,8 +192,6 @@
   <!-- リンク一覧表示-->
   <div class="link_index_p">
   </div>
-
-</body>
 
 <style>
 

@@ -1,114 +1,69 @@
-/*リンク編集ポップアップ　クリックでポップアップを表示*/
-.popup_wrap input:checked~.popup_content_link {
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity 0.5s;
-  z-index: 1001000;
-}
-
-/* リンク　全体親　ブロック */
-.link_index_p {
-  width: 600px;
-  text-align: center;
-  margin: auto;
-}
-
-/* リンク　各親　ブロック */
-.link {
-  cursor: pointer;
-  text-align: center;
-  border-radius: 50px;
-  background-color: #FAFAFA;
-  padding: 5px 15px;
-  margin: 15px;
-}
-
-/* リンク　子　インライン */
-.link a {
-  text-decoration: none;
-  color: black;
-  font-size: 30px;
-}
-
-@media screen and (max-width: 375px) {
-
-  /* リンク　全体親　ブロック */
-  .link_index_p {
-    width: 300px;
-    text-align: center;
-    margin: auto;
-  }
-
-  /* リンク　各親　ブロック */
-  .link {
-    cursor: pointer;
-    text-align: center;
-    border-radius: 50px;
-    background-color: #FAFAFA;
-    padding: 5px 15px;
-    margin: 15px;
-  }
-
-  /* リンク　子　インライン */
-  .link a {
-    text-decoration: none;
-    color: black;
-    font-size: 15px;
-  }
-
-}
-
-/*リンク設定全体*/
-.link_edit_oya {
-  list-style: none;
-  text-align: left;
-  margin-top: 0px;
-  margin-bottom: 85px;
-  margin-left: 20px;
-  font-size: 15px;
-  height: 15px;
-  color: gray;
-}
-
-/*リンク　フォームの上のタイトル*/
-.link_edit {
-  margin-top: -5px;
-  padding-top: 0px;
-  padding-bottom: 7px;
-  height: 0px;
-  font-size: 12px;
-}
-
-/*リンク　フォーム*/
-.link_edit_from {
-  border: 0.5px solid gray;
-  border-radius: 3px;
-  color: #2E9AFE;
-  margin-bottom: 5px;
-  height: 25px;
-  width: 200px;
-}
-
-/*リンク編集　ポップアップ*/
+/*リンク編集 ポップアップ*/
 .popup_content_link {
-  margin-top: 0px;
-  padding-top: 50px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-  padding-right: 5px;
+  z-index: 100;
+  display: inline-block;
+  padding: 20px 15px 30px 15px;
   position: relative;
-  height: 560px;
-  width: 340px;
-  box-sizing: border-box;
+  align-self: center;
+  max-height: 400px;
+  min-height: 400px;
+  max-width: 420px;
+  min-width: 420px;
   background: white;
   transition: 0.5s;
-  line-height: 1.4em;
   border-radius: 10px;
-  z-index: 1000;
+  text-align: center;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   margin: auto;
+}
+
+/*最初の選択 ポップアップをクリックして表示*/
+.popup_wrap input:checked~.popup_content_link {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.5s;
+  z-index: 1001;
+}
+
+/*アカウント設定 親の親 ブロック*/
+.link_form_pp {
+  margin: 25px 25px 0px 25px;
+  height: 230px;
+}
+
+/*アカウント設定 親 ブロック*/
+.link_form_p {
+  font-size: 15px;
+  height: 80px;
+  width: 310px;
+  color: gray;
+}
+
+/*リンク設定 子 インライン*/
+.link_form {
+  width: 200px;
+  margin-top: 3px;
+}
+
+.link_coment_form_p {
+  position: relative;
+  text-align: right;
+  width: 295px;
+}
+
+.link_coment_form {
+  width: 200px;
+  height: 160px;
+  margin-top: 3px;
+}
+
+.coment_form_title {
+  width: auto;
+  position: absolute;
+  top: 0px;
+  left: 15px;
 }

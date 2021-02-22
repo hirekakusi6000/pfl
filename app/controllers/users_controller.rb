@@ -8,20 +8,17 @@ class UsersController < ApplicationController
 
   def show
     @user=User.find_by(id:params[:id])
-@links = Link.order(:id).includes(:user)
+    @users = Link.find(user_id:current_user.id)
   end
 
   def edit
     @user=User.find_by(id:current_user.id)
+    @link = Link.new
   end
 
   def update
     @user=User.find_by(id:current_user.id)
     @user.update!(user_params)
-
-    link = Link.new(link_params)
-    link.user_id = current_user.id
-    link.save!
 
     if params[:update]
       render("users/edit")
@@ -81,12 +78,6 @@ class UsersController < ApplicationController
       :tiktok_id_3,
       :tiktok_comment_3
     )
-  end
-
-    private
-
-  def link_params
-    params.require(:link).permit(:coment)
   end
 
 end

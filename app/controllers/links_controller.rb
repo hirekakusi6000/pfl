@@ -7,7 +7,7 @@ class LinksController < ApplicationController
     link = Link.new(link_params)
     link.user_id = current_user.id
     link.save!
-    redirect_to link
+    redirect_to("/users/#{current_user.id}/edit")
   end
 
   def show
@@ -21,7 +21,7 @@ class LinksController < ApplicationController
   private
 
   def link_params
-    params.require(:link).permit(:coment)
+    params.require(:link).permit(:coment,:title,:url)
   end
 
 end
