@@ -89,8 +89,31 @@
   left: 30px;
 }
 
-@media screen and (max-width: 375px) {
+/*画像編集ポップアップ時*/
+.icon_image_edit {
+  margin-top: 50px;
+  width: 180px;
+  height: 180px;
+  border-radius: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
 
+.image_select {
+  display: block;
+  width: auto;
+  height: 210px;
+  margin: 30px 30px 15px 30px;
+  background: #EFFBFB;
+  color: #01A9DB;
+  border-radius: 10px;
+  line-height: 210px;
+  font-size: 20px;
+  cursor: pointer;
+
+}
+
+@media screen and (max-width: 375px) {
 
   /*アイコン画像カメラアイコン 子 インラインブロック*/
   .camera_icon {

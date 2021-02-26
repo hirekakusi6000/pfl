@@ -16,6 +16,13 @@
   margin: 30px 30px;
 }
 
+.index_icon_p:hover {
+  text-decoration: none;
+  transition: all 0.5s;
+  opacity: 0.7;
+  transform: scale(1.03, 1.03);
+}
+
 /* アイコン 子 ブロック */
 .index_icon_p img {
   display: inline-block;

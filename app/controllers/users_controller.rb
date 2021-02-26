@@ -7,21 +7,22 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user=User.find_by(id:params[:id])
-    @users = Link.find(user_id:current_user.id)
+    @user = User.find_by(id:params[:id])
+    @links = Link.where(user_id:current_user.id)
   end
 
   def edit
-    @user=User.find_by(id:current_user.id)
+    @user = User.find_by(id:current_user.id)
+    @links = Link.where(user_id:current_user.id)
     @link = Link.new
   end
 
   def update
-    @user=User.find_by(id:current_user.id)
+    @user = User.find_by(id:current_user.id)
     @user.update!(user_params)
 
     if params[:update]
-      render("users/edit")
+      redirect_to("/users/#{@user.id}/edit")
     else
       redirect_to("/users/#{@user.id}")
     end
@@ -36,6 +37,8 @@ class UsersController < ApplicationController
       :pfl_text,
       :icon_image,
       :header_image,
+      :font_color,
+      :font_family,
       :background_color,
       :twitter_insidecolor,
       :twitter_outsidecolor,
@@ -76,7 +79,9 @@ class UsersController < ApplicationController
       :tiktok_id_2,
       :tiktok_comment_2,
       :tiktok_id_3,
-      :tiktok_comment_3
+      :tiktok_comment_3,
+      :link_background_color,
+      :link_font_color,
     )
   end
 

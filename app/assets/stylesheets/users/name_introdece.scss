@@ -1,0 +1,63 @@
+/*ポップアップ*/
+.name_introduce {
+  max-height: 470px;
+  min-height: 470px;
+  max-width: 500px;
+  min-width: 500px;
+}
+
+/*親の親 ブロック*/
+.name_introduce_form_pp {
+  margin: 0px 25px 0px 25px;
+  height: 230px;
+  text-align: left;
+  margin-bottom: 110px;
+}
+
+/*親 ブロック*/
+.name_introduce_form_p {
+  font-size: 15px;
+  color: gray;
+}
+
+.name_form {
+  width: 430px;
+  margin-top: 3px;
+}
+
+.introduce_form {
+  width: 430px;
+  height: 230px;
+}
+
+@media screen and (max-width: 375px) {
+
+  /*ポップアップ*/
+  .name_introduce {
+    max-height: 410px;
+    min-height: 410px;
+    max-width: 350px;
+    min-width: 350px;
+  }
+
+  /*親の親 ブロック*/
+  .name_introduce_form_pp {
+    margin: 0px 15px 15px 15px;
+    margin-bottom: 65px;
+  }
+
+  .name_form {
+    width: 290px;
+    margin-top: 3px;
+  }
+
+  .introduce_form {
+    width: 290px;
+    height: 180px;
+  }
+
+  .name_introduce_form_title {
+    margin-top: 5px;
+  }
+
+}

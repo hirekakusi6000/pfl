@@ -1,6 +1,6 @@
 /*背景色変更ポップアップ*/
-.popup_content {
-  z-index: 100;
+.popup_content_color {
+  z-index: 100000;
   display: inline-block;
   padding: 15px 20px 30px 20px;
   position: relative;
@@ -21,6 +21,10 @@
   margin: 2px;
   height: 24px;
   width: 24px;
+}
+
+.color_index_p:hover {
+  transform: scale(1.1, 1.1);
 }
 
 /*色一覧 子 */
@@ -44,7 +48,7 @@
 @media screen and (max-width: 375px) {
 
   /*背景色変更ポップアップ*/
-  .popup_content {
+  .popup_content_color {
     padding: 19px 15px 15px 15px;
     max-height: 290px;
     min-height: 290px;

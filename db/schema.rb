@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_21_092233) do
+ActiveRecord::Schema.define(version: 2021_02_24_103257) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,6 +80,10 @@ ActiveRecord::Schema.define(version: 2021_02_21_092233) do
     t.string "tiktok_insidecolor"
     t.string "sns_icons_clor"
     t.string "sns_icons_color"
+    t.string "font_color"
+    t.string "font_family"
+    t.string "link_background_color"
+    t.string "link_font_color"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

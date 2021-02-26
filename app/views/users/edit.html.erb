@@ -1,65 +1,37 @@
- <%= form_with model: @link, local: true do |form| %>
-  <!-- ポップアップ リンク-->
+<%= form_with(model: @user, local: true, multipart: true) do |form| %>
+
+   <!-- ユーザーネーム変更 ポップアップ-->
   <div class="popup_wrap">
-    <input id="trigger_link" type="checkbox">
+    <input id="trigger_name_edit" type="checkbox">
     <div class="popup_overlay">
-      <label for="trigger_link" class="popup_trigger"></label>
+      <label for="trigger_icon_image" class="popup_trigger"></label>
       <div class="popup_content_p">
-
-    <!--リンクポップアップ選択画面 -->
-      <div class="popup_content_link">
-        <p class="popup_title">Link設定</p>
-        <div class="link_form_pp">
-          <div class="link_form_p">
-            <label  class="form_title">タイトル&emsp;</label>
-            <%= form.text_field :title,class:"link_form",maxlength: "1000"%>
-            <label class="form_title">ＵＲＬ&emsp;&emsp;</label>
-            <%= form.text_field :coment,class:"link_form",maxlength: "1000"%>
-            <div class="link_coment_form_p">
-             <label class="coment_form_title">コメント&emsp;</label>
-             <%= form.text_area :coment,class:"link_coment_form",maxlength: "1000"%>
+        <div class="popup_content name_introduce">
+       
+          <p class="popup_title">名前・自己紹介</p>
+          <div class="name_introduce_form_pp">
+            <div class="name_introduce_form_p">
+                <div class="name_introduce_form_p">
+                  <label  class="name_introduce_form_title">名前</label>
+                  <p><%= form.text_field :name,class:"name_form",maxlength: "1000"%></p>
+                  <label class="name_introduce_form_title">自己紹介</label>
+                  <p><%= form.text_area :pfl_text,class:"introduce_form",maxlength: "1000"%></p>
+                </div>
+              </div>
             </div>
-        </div>
-      </div>
-      <p><label for="trigger_link" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
-      <input class="OK" type="submit" value="保存" name="update">
-     </div>
 
+       <p><label for="trigger_name_edit" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
+       <p><input class="OK" type="submit" value="保存" name="update"></p>
+     </div>
     </div>
    </div>
   </div>
-  
- <% end %>
 
-<%= form_with(model: @user, local: true, multipart: true) do |form| %>
-<!-- ヘッダー画像-->
-  <div class="header_image_p">
-    <label for="header_image_upload">
-    <% if @user.header_image? %>
-      <p><%= image_tag @user.header_image.url,class:"header_image"%></p>
-    <% else %>
-      <p class="default_header_image"></p>
-    <% end %>
-      <i class="fas fa-camera camera_header"></i>
-      <p class="black_overlay_header"></p>
-      <p><%= form.file_field :header_image, accept: "image/png,image/jpeg,image/gif",id:"header_image_upload"%></p>
-    </label>
-
-  <!-- アイコン画像-->
-    <label for="icon_image_upload" >
-      <i class="fas fa-camera camera_icon"></i>
-      <p class="black_overlay_icon"></p>
-      <%= form.file_field :icon_image, accept: "image/png,image/jpeg,image/gif",id:"icon_image_upload"%>
-       <%= image_tag @user.icon_image.url,class:"icon_image"%>
-    </label>
-
-  </div>
-
-    <!-- 背景色変更-->
+      <!-- 背景色変更-->
   <div class="popup_wrap" >
     <input id="trigger_background_color" type="checkbox" >
     <div class="popup_overlay">
-      <div class="popup_content">
+      <div class="popup_content_color">
         <p class="popup_title">背景色設定</p>
         <p><label for="trigger_background_color" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></p>
         <% @color_index.each do |color| %>
@@ -68,24 +40,210 @@
             <span class="color_index A<%= color%>"></span>
           </label>
         <%end%>
-
         <input class="OK" type="submit" value="保存" name="update">
-
       </div>
     </div>
   </div>
 
-  <div class="color_and_link_edit_btn_p">
-  <!-- 背景色編集ボタン-->
-    <label for="trigger_background_color">
-      <div class="color_and_link_edit_btn">
-        <p>背景色設定</p>
+  <!-- リンクデザイン ポップアップ-->
+  <div class="popup_wrap">
+    <input id="trigger_link_design" type="checkbox">
+    <div class="popup_overlay">
+      <label for="trigger_link_design" class="popup_trigger"></label>
+      <div class="popup_content_p">
+
+          <!-- リンクの文字色 ポップアップ-->
+        <div class="popup_wrap">
+          <input id="trigger_link_font_color" type="checkbox">
+          <div class="popup_content_c">
+            <p class="popup_title">リンクボタンの色</p>
+            <p><label for="trigger_link_font_color" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
+              <% @color_index.each do |color| %>
+              <%= form.radio_button :link_font_color, color,id:"link_font_color#{color}"%>
+              <label for="link_font_color<%= color%>" class="color_index_p">
+                  <span class="color_index link_font_color<%= color%>"></span>
+                </label>
+              <%end%>
+            <input class="OK" type="submit" value="保存" name="update">
+          </div>
+        </div>
+
+<!-- リンクボタンの色 ポップアップ-->
+        <div class="popup_wrap">
+          <input id="link_background_color" type="checkbox">
+          <div class="popup_content_c">
+            <p class="popup_title">リンクボタンの色</p>
+            <p><label for="link_background_color" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
+              <% @color_index.each do |color| %>
+              <%= form.radio_button :link_background_color, color,id:"link_background_color#{color}"%>
+              <label for="link_background_color<%= color%>" class="color_index_p">
+                  <span class="color_index link_background_color<%= color%>"></span>
+                </label>
+              <%end%>
+            <input class="OK" type="submit" value="保存" name="update">
+          </div>
+        </div>
+
+  <!-- フォントデザイン ポップアップ-->
+      <div class="popup_content_select">
+        <p class="popup_title font_popup_title">リンクデザイン</p>
+        <p><label for="trigger_link_design" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
+        <p><label for="trigger_link_font_color" class="open_btn_s">リンクの文字色</label></p>
+        <p><label for="link_background_color" class="open_btn_s">リンクボタンの色</label></p>
+      </div>
+
+    </div>
+   </div>
+  </div>
+
+<!-- フォントカラー ポップアップ-->
+  <div class="popup_wrap">
+    <input id="trigger_font_style" type="checkbox">
+    <div class="popup_overlay">
+      <label for="trigger_font_style" class="popup_trigger"></label>
+      <div class="popup_content_p">
+
+          <!-- フォント種類 ポップアップ-->
+         <div class="popup_wrap">
+          <input id="trigger_font_family" type="checkbox">
+          <div class="popup_content_c">
+            <p class="popup_title">フォント種類</p>
+            <p><label for="trigger_font_family" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
+
+            <div class="font_family_p">
+              <% @font_family_index.each do |font_family| %>
+                <%= form.radio_button :font_family, font_family,id:"#{font_family}"%>
+                <label for="<%= font_family%>" class="font_family_index_p">
+                 <p  class="font_family<%= font_family%>" style="cursor: pointer;">ふぉんと フォント 文字 Font</p>
+                </label>
+              <%end%>
+            </div>
+
+            <input class="OK" type="submit" value="保存" name="update">
+          </div>
+        </div>
+
+<!-- フォントカラー ポップアップ-->
+        <div class="popup_wrap">
+          <input id="trigger_font_color" type="checkbox">
+          <div class="popup_content_c">
+            <p class="popup_title">フォントカラー</p>
+            <p><label for="trigger_font_color" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
+              <% @color_index.each do |color| %>
+              <%= form.radio_button :font_color, color,id:"font_color#{color}"%>
+              <label for="font_color<%= color%>" class="color_index_p">
+                  <span class="color_index font_color<%= color%>"></span>
+                </label>
+              <%end%>
+            <input class="OK" type="submit" value="保存" name="update">
+          </div>
+        </div>
+
+  <!-- フォントデザイン ポップアップ-->
+      <div class="popup_content_select">
+        <p class="popup_title font_popup_title">フォントデザイン</p>
+        <p><label for="trigger_font_style" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
+        <p><label for="trigger_font_family" class="open_btn_s">フォントの種類</label></p>
+        <p><label for="trigger_font_color" class="open_btn_s">フォントカラー</label></p>
+      </div>
+
+    </div>
+   </div>
+  </div>
+
+ <!-- アイコンイメージ ポップアップ-->
+  <div class="popup_wrap">
+    <input id="trigger_icon_image" type="checkbox">
+    <div class="popup_overlay">
+      <label for="trigger_icon_image" class="popup_trigger"></label>
+      <div class="popup_content_p">
+        <div class="popup_content">
+       
+        <p class="popup_title">アイコン画像</p>
+        <label for="trigger_icon_image_update" style="display:block;">
+        <p class="image_select">画像を選択</p>
+        </label>
+        <%= form.file_field :icon_image, accept: "image/png,image/jpeg,image/gif",id:"trigger_icon_image_update"%>
+
+       <p><label for="trigger_icon_image" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
+       <input class="OK" type="submit" value="保存" name="update">
+     </div>
+    </div>
+   </div>
+  </div>
+
+   <!-- ヘッダーイメージ ポップアップ-->
+  <div class="popup_wrap">
+    <input id="trigger_header_image" type="checkbox">
+    <div class="popup_overlay">
+      <label for="trigger_icon_image" class="popup_trigger"></label>
+      <div class="popup_content_p">
+        <div class="popup_content">
+       
+        <p class="popup_title">ヘッダー画像</p>
+        <label for="trigger_header_image_upload" style="display:block;">
+        <p class="image_select">画像を選択</p>
+        </label>
+        <%= form.file_field :header_image, accept: "image/png,image/jpeg,image/gif",id:"trigger_header_image_upload"%>
+
+       <p><label for="trigger_header_image" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
+       <input class="OK" type="submit" value="保存" name="update">
+     </div>
+    </div>
+   </div>
+  </div>
+
+<!-- ヘッダーイメージ表示-->
+<label for="trigger_header_image">
+  <div class="header_image_p">
+
+    <% if @user.header_image? %>
+      <p><%= image_tag @user.header_image.url,class:"header_image"%></p>
+    <% else %>
+      <p class="default_header_image"></p>
+    <% end %>
+    <i class="fas fa-camera camera_header"></i>
+    <p class="black_overlay_header"></p>
+  
+  <!-- アイコンイメージ表示-->
+    <label for="trigger_icon_image" >
+      <i class="fas fa-camera camera_icon"></i>
+      <p class="black_overlay_icon"></p>
+      <%= image_tag @user.icon_image.url,class:"icon_image"%>
+    </label>
+
+  </div>
+</label>
+
+  <div class="trigger_btn_p">
+    <!-- ユーザーネーム編集ボタン-->
+    <label for="trigger_name_edit">
+      <div class="trigger_btn">
+        <p>名前・自己紹介</p>
       </div>
     </label>
-  <!-- リンク編集ボタン-->
+  <!-- 背景色編集ボタン-->
+    <label for="trigger_background_color">
+      <div class="trigger_btn">
+        <p>背景色</p>
+      </div>
+    </label>
+  <!-- フォントデザイン編集ボタン-->
+    <label for="trigger_font_style">
+      <div class="trigger_btn">
+        <p>フォントデザイン</p>
+      </div>
+    </label>
+  <!-- リンク追加ボタン-->
     <label for="trigger_link">
-      <div class="color_and_link_edit_btn">
-        <p>リンク設定</p>
+      <div class="trigger_btn">
+        <p>リンク追加</p>
+      </div>
+    </label>
+  <!-- リンクデザイン編集ボタン-->
+    <label for="trigger_link_design">
+      <div class="trigger_btn">
+        <p>リンクデザイン</p>
       </div>
     </label>
   </div>
@@ -142,6 +300,7 @@
       <input class="OK" type="submit" value="保存" name="update">
     </div>
   </div>
+
  <!-- 内側色-->
   <div class="popup_wrap">
     <input id="trigger_insidecolor" type="checkbox">
@@ -596,6 +755,40 @@
     background-color: #<%= color%>;
     }
   <%end%>
+  
+    <% @color_index.each do |color| %>
+    .font_color<%= color%>{
+    background-color: #<%= color%>;
+    }
+  <%end%>
+
+  /*フォント種類*/
+  <% @font_family_index.each do |font_family| %>
+    .font_family<%= font_family%>{
+      font-family: "<%= font_family%>";
+      display:inline;
+    }
+  <%end%>
+
+  /*リンクボタンカラー*/
+  <% @color_index.each do |color| %>
+    .link_background_color<%= color%>{
+      background-color: #<%= color%>;
+    }
+  <%end%>
+
+    /*リンクボタンカラー*/
+  <% @color_index.each do |color| %>
+    .link_font_color<%= color%>{
+      background-color: #<%= color%>;
+    }
+  <%end%>
+
+    /*リンクカラー*/
+  .link_title{
+    background-color: #<%= @user.link_background_color%>;
+    color: #<%= @user.link_font_color%>;
+  }
 
     body{
       background-color:  #<%= @user.background_color%>;
@@ -643,24 +836,76 @@
 
   </div>
 
-
-
-    <div class="edit_pp">
-      <!-- 名前編集フォーム-->  
-      <div class="name_form_p">
-        <p><%= form.text_field :name,class:"name_form"%></p>
-        <p class="form_title_name">名前</p>
-      </div>
-      <!-- プロフィールテキスト編集フォーム-->
-      <div class="self_introduction_p">
-        <p><%= form.text_area :pfl_text,class:"pfl_user_text_form"%></p>
-        <p class="form_title_pfl_text">自己紹介</p>
-      </div>
-      <!-- 保存・キャンセルボタン-->
-      <div class="update_cancel_btn_p">
-        <a class="cancel_btn" href="/users/<%= current_user.id %>">キャンセル</a>
-        <%= form.submit "保存",class:"update_btn"%>
-      </div>
-    </div>
-
 <%end%>
+
+ <!-- リンク一覧編集 仮表示-->
+<% @links.each do |link| %>  
+  <%= form_with(model: link, local: true, multipart: true) do |form| %>
+
+    <div class="popup_wrap">
+    <input id="trigger_<%= link%>" type="checkbox">
+    <div class="popup_overlay">
+      <label for="trigger_<%= link%>" class="popup_trigger"></label>
+      <div class="popup_content_p">
+      <div class="popup_content">
+        <p class="popup_title">リンク設定</p>
+
+      <div class="link_pp">
+          <p><%= form.text_field :title %></p>
+          <p><%= form.text_field :url %></p>
+          <p><%= form.text_area :coment %></p>
+      </div>
+      <%= link_to '削除', "/links/#{link.id}", method: :delete, data: {confirm: "削除しますか?"}  %>
+      <input  class="OK" type="submit" value="保存" name="update">
+      <p><label for="trigger_<%= link%>" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
+
+     </div>
+    </div>
+   </div>
+  </div>
+
+      <label for="trigger_<%= link%>">
+        <div class="link_pp">
+            <div class="link_title">
+            <p><%= link.title %></p>
+            </div>
+          </a>
+          <div class="link_coment">
+            <p><%= link.coment%></p>
+          </div>
+        </div>
+      </label>
+
+  <% end %>
+ <% end %>
+
+ <%= form_with(model: @link, local: true) do |form| %>
+
+ <!-- ポップアップ リンク追加-->
+  <div class="popup_wrap">
+    <input id="trigger_link" type="checkbox">
+    <div class="popup_overlay">
+      <label for="trigger_link" class="popup_trigger"></label>
+      <div class="popup_content_p">
+      <div class="popup_content">
+        <p class="popup_title">リンク追加</p>
+        <div class="link_form_pp">
+          <div class="link_form_p">
+            <label  class="form_title">タイトル&emsp;</label>
+            <%= form.text_field :title,class:"link_form",maxlength: "1000"%>
+            <label class="form_title">ＵＲＬ&emsp;&emsp;</label>
+            <%= form.text_field :url,class:"link_form",maxlength: "1000"%>
+          <div class="link_coment_form_p">
+            <label class="coment_form_title">コメント&emsp;</label>
+            <%= form.text_area :coment,class:"link_coment_form",maxlength: "1000"%>
+          </div>
+        </div>
+      </div>
+      <p><label for="trigger_link" class="edit_close_btn"><i class="fas fa-times-circle"></i></label></label></p>
+      <input class="OK" type="submit" value="保存" name="update">
+     </div>
+    </div>
+   </div>
+  </div>
+
+ <% end %>
