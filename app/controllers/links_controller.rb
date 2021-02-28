@@ -6,8 +6,17 @@ class LinksController < ApplicationController
   def create
     link = Link.new(link_params)
     link.user_id = current_user.id
-    link.save!
-    redirect_to("/users/#{current_user.id}/edit")
+    if link.save
+     flash[:notice] = "リンクを追加しました"
+     redirect_to("/users/#{current_user.id}/edit")
+    else
+     flash.now[:alert] = "投稿に失敗しました"
+     @user = User.find_by(id:current_user.id)
+    @links = Link.where(user_id:current_user.id)
+    @link = Link.new
+    
+     render template: "users/edit"
+    end
   end
 
   def show
@@ -33,7 +42,7 @@ class LinksController < ApplicationController
   private
 
   def link_params
-    params.require(:link).permit(:title)
+    params.require(:link).permit(:title,:url,:coment)
   end
 
 end

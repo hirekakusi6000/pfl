@@ -2,11 +2,10 @@
 .sns_pp {
   z-index: 1000px;
   text-align: center;
-  margin-top: 50px;
-  margin-bottom: 30px;
   width: 100vw;
   height: auto;
   word-wrap: break-word;
+  margin-bottom: 50px;
 }
 
 /* SNSアイコン 子*/
@@ -62,7 +61,7 @@
 
   /* SNSアイコン 親の親 ブロック*/
   .sns_pp {
-    margin-top: 40px;
+    margin-bottom: 0px;
   }
 
   /* SNSアイコン 親*/

@@ -48,9 +48,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# Make the error message Japanese
-gem 'rails-i18n'
-
 # べネーション機能
 gem 'kaminari'
 
@@ -61,7 +58,7 @@ gem 'ransack'
 gem 'devise'
 
 # 多言語対応(Rails 6)
-gem 'rails-i18n'
+gem 'rails-i18n', '~> 6.0'
 gem 'devise-i18n'
 
 # Bootstrap

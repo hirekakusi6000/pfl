@@ -7,3 +7,15 @@ ja:
         name: ニックネーム 
         email: メールアドレス
         password: パスワード
+
+ja:
+  activerecord:
+    models:
+      link: リンク
+    attributes:
+      link:
+        url: URL
+        title: リンクタイトル
+        coment: リンクコメント
+    errors:
+      messages:
