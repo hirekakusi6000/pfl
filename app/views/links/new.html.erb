@@ -1,8 +1,0 @@
-<h1>新規投稿</h1>
-
-<%= form_with model: @link, local: true do |form| %>
-  <%= form.label :coment %>
-  <%= form.text_field :coment %>
-  <%= form.submit "送信" %>
-<% end %>
-<%= current_user.name %>

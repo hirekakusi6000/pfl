@@ -1,9 +1,4 @@
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-
-  <!-- ヘッダー画像-->
+<!-- ヘッダー画像-->
   <div class="header_image_p">
     <% if @user.header_image? %>
       <p><%= image_tag @user.header_image.url,class:"header_image"%></p>
@@ -24,13 +19,13 @@
     <input id="trigger" type="checkbox">
       <div class="popup_overlay">
         <label for="trigger" class="close_btn">×</label>
-          <%= form_tag("/users/update", {multipart: true}) do %>
+
             <% if current_user%>
             <% if current_user.id==@user.id%>
-              <a href="/users/pfl_edit" class="image_edit">変更</a>
+              <a href="/users/<%= current_user.id%>/edit" class="image_edit">変更</a>
             <%end%>
             <%end%>
-          <%end%>
+
         <label for="trigger" class="popup_trigger"></label>
       <div class="popup_content_icon_image">
         <%= image_tag @user.icon_image.url,class:"icon_image_enlarge"%>
@@ -50,15 +45,7 @@
   <%end%>
 
   <!-- ユーザーネーム-->
-  <p class="pfl_user_name"><%=@user.name%></p>
-
-  <!-- リンク一覧-->
-    <% @users.each do |user| %>
-      <div class="index_icon_p" ontouchstart="">
-        <a href="/users/<%= user.id %>"><img src="<%= user.icon_image %>"></a>
-        <p  class="index_user_name_p"><a class="index_user_name" href="/user/<%= user.id %>/pfl"><%= user.name %></a></p>
-      </div>
-    <% end %>
+  <p class="pfl_user_name font_style"><%=@user.name%></p>
 
   <!-- SNSアイコン一覧表示-->
   <div class="sns_pp">
@@ -186,12 +173,22 @@
 
   <!-- プロフィール文章-->
   <div class="pfl_user_text_p">
-    <p class="pfl_user_text"><%=@user.pfl_text%></p>
+    <p class="pfl_user_text font_style"><%=@user.pfl_text%></p>
   </div>
 
   <!-- リンク一覧表示-->
-  <div class="link_index_p">
-  </div>
+    <% @links.each do |link| %>
+      <div class="link_pp">
+        <a href="<%= link.url%>"  id="a-no-both" style="color:inherit;text-decoration:none;">
+          <div class="link_title">
+           <p><%= link.title %></p>
+          </div>
+        </a>
+        <div class="link_coment">
+          <p><%= link.coment%></p>
+        </div>
+      </div>
+    <% end %>
 
 <style>
 
@@ -199,6 +196,14 @@
     background-color: #<%=@user.background_color%>;
     height: auto;
     margin-bottom:150px;
+    font-family: "<%= @user.font_family%>";
+    color: #<%= @user.font_color%>;
+  }
+
+   /*リンクカラー*/
+  .link_title{
+    background-color: #<%= @user.link_background_color%>;
+    color: #<%= @user.link_font_color%>;
   }
 
   /*Twitterアイコン 外側色*/

@@ -16,6 +16,10 @@
   @extend .alert-danger;
 }
 
+div.field_with_errors {
+  display: contents;
+}
+
 input[type="submit"] {
   border: none;
   cursor: pointer;
@@ -40,6 +44,11 @@ input[type="radio"] {
 
 /*ラジオボタン選択時にオレンジ*/
 input[type="radio"]:checked+label span {
+  border: 5px solid orange;
+}
+
+/*ラジオボタン選択時にオレンジ*/
+input[type="radio"]:checked+label p {
   border: 5px solid orange;
 }
 

@@ -31,6 +31,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-byebug'
 end
 
 group :development do
@@ -47,9 +48,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# Make the error message Japanese
-gem 'rails-i18n'
-
 # べネーション機能
 gem 'kaminari'
 
@@ -60,7 +58,7 @@ gem 'ransack'
 gem 'devise'
 
 # 多言語対応(Rails 6)
-gem 'rails-i18n'
+gem 'rails-i18n', '~> 6.0'
 gem 'devise-i18n'
 
 # Bootstrap
@@ -71,3 +69,6 @@ gem 'font-awesome-rails'
 
 # 画像投稿機能
 gem 'carrierwave', '~> 2.0'
+
+# URLバリデーション
+gem 'validate_url' # Library for validating urls in Rails

@@ -1,3 +1,58 @@
 // Place all the styles related to the links controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.link_pp {
+  height: auto;
+  width: 100vw;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.link_title {
+  height: auto;
+  min-height: 45px;
+  width: 400px;
+  background: white;
+  margin: 18px 10px 3px 10px;
+  padding: 5px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.link_title:hover {
+  transform: scale(1.03, 1.03);
+}
+
+.link_title p {
+  margin: 5px;
+}
+
+.link_coment {
+  height: auto;
+  min-height: 45px;
+  width: 400px;
+  margin: 18px 10px 3px 10px;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 375px) {
+
+  .link_title {
+    min-height: 45px;
+    width: 350px;
+    margin: 0px 10px 3px 10px;
+  }
+
+  .link_coment {
+    min-height: 45px;
+    width: 350px;
+    margin: 18px 10px 3px 10px;
+    font-size: 14px;
+  }
+
+}

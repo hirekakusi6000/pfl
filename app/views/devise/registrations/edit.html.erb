@@ -1,3 +1,4 @@
+<%= bootstrap_devise_error_messages! %>
 <div class="login_new_edit_pp">
  <div class="login_new_edit_p">
 
@@ -34,9 +35,8 @@
       </div>
     <% end %>
 
-    <p><%= t('.unhappy') %>? <%= link_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete %>.</p>
+    <p> <%= link_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete %></p>
 
-    <%= link_to t('.back'), :back %>
 
   </div>
 </div>

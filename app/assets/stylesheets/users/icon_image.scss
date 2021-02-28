@@ -79,18 +79,53 @@
   right: 50px;
 }
 
+.image_edit:hover {
+  text-decoration: none;
+  color: white;
+}
+
 /*画像拡大からの閉じる 子 インライン*/
 .close_btn {
-  font-size: 50px;
+  font-size: 40px;
   cursor: pointer;
   color: white;
   position: absolute;
-  top: 50px;
+  top: 60px;
   left: 30px;
+}
+
+/*画像編集ポップアップ時*/
+.icon_image_edit {
+  margin-top: 50px;
+  width: 180px;
+  height: 180px;
+  border-radius: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.image_select {
+  display: block;
+  width: auto;
+  height: 210px;
+  margin: 30px 30px 15px 30px;
+  background: #EFFBFB;
+  color: #01A9DB;
+  border-radius: 10px;
+  line-height: 210px;
+  font-size: 20px;
+  cursor: pointer;
+
 }
 
 @media screen and (max-width: 375px) {
 
+  /*画像拡大からの閉じる 子 インライン*/
+  .close_btn {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+  }
 
   /*アイコン画像カメラアイコン 子 インラインブロック*/
   .camera_icon {
@@ -120,7 +155,6 @@
   /*画像拡大からの編集*/
   .image_edit {
     font-size: 25px;
-    z-index: 11;
     position: absolute;
     top: 70px;
     right: 20px;
