@@ -8,7 +8,6 @@ class LinksController < ApplicationController
     @link = Link.new(link_params)
     
     if @link.save
-     @link.user_id = current_user.id
      flash[:notice] = "リンクを追加しました"
      redirect_to("/users/#{current_user.id}/edit")
     else
