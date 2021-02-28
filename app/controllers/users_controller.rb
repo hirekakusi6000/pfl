@@ -19,14 +19,15 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find_by(id:current_user.id)
-    @user.update!(user_params)
 
-    if params[:update]
-      redirect_to("/users/#{@user.id}/edit")
+    if @user.update(user_params)
+      flash[:notice] = "更新しました"
+      redirect_to("/users/#{current_user.id}/edit")
     else
-      redirect_to("/users/#{@user.id}")
+      @link = Link.new
+      @links = Link.where(user_id:current_user.id)
+      render template: "users/edit"
     end
-      @user.save
   end
 
  private

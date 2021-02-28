@@ -1,36 +1,42 @@
 class LinksController < ApplicationController
-    def new
+  
+  def new
     @link = Link.new
   end
 
   def create
-    link = Link.new(link_params)
-    link.user_id = current_user.id
-    if link.save
+    @link = Link.new(link_params)
+    
+    if @link.save
+     @link.user_id = current_user.id
      flash[:notice] = "リンクを追加しました"
      redirect_to("/users/#{current_user.id}/edit")
     else
-     flash.now[:alert] = "投稿に失敗しました"
      @user = User.find_by(id:current_user.id)
-    @links = Link.where(user_id:current_user.id)
-    @link = Link.new
-    
+     @links = Link.where(user_id:current_user.id)
      render template: "users/edit"
     end
   end
 
-  def show
-    @link = Link.find(params[:id])
+  def index
+    redirect_to("/users/#{current_user.id}/edit")
   end
 
-  def index
-    @links = Link.order(:id).includes(:user)
+  def show
+    redirect_to("/users/#{current_user.id}/edit")
   end
 
   def update
     @link = Link.find_by(id:params[:id])
-    @link.update!(link_params)
-    redirect_to("/users/#{current_user.id}/edit")
+
+    if @link.update(link_params)
+      flash[:notice] = "リンクを更新しました"
+      redirect_to("/users/#{current_user.id}/edit")
+    else
+      @user = User.find_by(id:current_user.id)
+      @links = Link.where(user_id:current_user.id)
+      render template: "users/edit"
+    end
   end
 
   def destroy

@@ -1,9 +1,17 @@
 <% if @link.errors.any? %>
-  <div>
-    <ul>
-      <% @link.errors.full_messages.each do |msg| %>
-        <li><span style="color: red;"><%= msg %></span></li>
-      <% end %>
-    </ul>
+  <div class="alert alert-danger" role="alert" style="margin-bottom:0px;">
+  <a href="#" class="close" data-dismiss="alert">×</a>
+    <% @link.errors.full_messages.each do |msg| %>
+        <p><%= msg %></p>
+    <% end %>
+  </div>
+<% end %>
+
+<% if @user.errors.any? %>
+  <div class="alert alert-danger" role="alert" style="margin-bottom:0px;">
+  <a href="#" class="close" data-dismiss="alert">×</a>
+    <% @user.errors.full_messages.each do |msg| %>
+        <p><%= msg %></p>
+    <% end %>
   </div>
 <% end %>

@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-  get 'links/index'
-  get 'links/show'
-  get 'links/new'
-  post 'links/create'
-  post 'links/edit'
-  post 'links/update'
-  get 'links/destroy'
   devise_for :users, controllers: { 
     sessions: 'users/sessions',
     registrations: 'users/registrations',

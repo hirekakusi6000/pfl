@@ -16,6 +16,10 @@
   @extend .alert-danger;
 }
 
+div.field_with_errors {
+  display: contents;
+}
+
 input[type="submit"] {
   border: none;
   cursor: pointer;

@@ -35,21 +35,22 @@
   border-radius: 5px;
 }
 
-.OK:hover {
-  transform: scale(1.03, 1.03);
-}
-
 /*✕ボタン*/
 .edit_close_btn {
   height: 15px;
   width: 15px;
   color: black;
   position: absolute;
-  top: 12px;
-  left: 12px;
+  top: 6px;
+  left: 6px;
   font-size: 30px;
   cursor: pointer;
   font-weight: bold;
+}
+
+.edit_close_btn:hover {
+  transition: all 0.3s;
+  opacity: 0.8;
 }
 
 /*ポップアップトリガーボタン 親の親 ブロック*/

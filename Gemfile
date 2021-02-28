@@ -69,3 +69,6 @@ gem 'font-awesome-rails'
 
 # 画像投稿機能
 gem 'carrierwave', '~> 2.0'
+
+# URLバリデーション
+gem 'validate_url' # Library for validating urls in Rails
