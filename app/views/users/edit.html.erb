@@ -1,5 +1,7 @@
 <%= render 'layouts/error_messages' %>
-<%= form_with(model: @user, local: true, multipart: true) do |form| %>
+
+<div class="profile_edit">
+ <%= form_with(model: @user, local: true, multipart: true) do |form| %>
 
    <!-- ユーザーネーム変更 ポップアップ-->
   <div class="popup_wrap">
@@ -14,15 +16,15 @@
             <div class="name_introduce_form_p">
                 <div class="name_introduce_form_p">
                   <label  class="name_introduce_form_title">名前</label>
-                  <p><%= form.text_field :name,class:"name_form",maxlength: "15"%></p>
+                  <p><%= form.text_field :name,class:"name_form",maxlength: "50",required: true %></p>
                   <label class="name_introduce_form_title">自己紹介</label>
                   <p><%= form.text_area :pfl_text,class:"introduce_form",maxlength: "10000"%></p>
                 </div>
               </div>
             </div>
 
-       <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
-       <p><input class="OK" type="submit" value="保存" name="update"></p>
+       <p><label class="edit_close_btn"  for="trigger_name_edit"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+       <p><input class="OK" type="submit" value="保存" name="edit_name_introduce"></p>
      </div>
     </div>
    </div>
@@ -34,14 +36,14 @@
     <div class="popup_overlay">
       <div class="popup_content_color">
         <p class="popup_title">背景色設定</p>
-        <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
+        <p><label class="edit_close_btn"  for="trigger_background_color"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
         <% @color_index.each do |color| %>
           <%= form.radio_button :background_color, color,id:"A#{color}"%>
           <label for="A<%= color%>" class="color_index_p">
             <span class="color_index A<%= color%>"></span>
           </label>
         <%end%>
-        <input class="OK" type="submit" value="保存" name="update">
+        <input class="OK" type="submit" value="保存" name="edit_background_color">
       </div>
     </div>
   </div>
@@ -57,40 +59,40 @@
         <div class="popup_wrap">
           <input id="trigger_link_font_color" type="checkbox">
           <div class="popup_content_c">
-            <p class="popup_title">リンクボタンの色</p>
-            <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
+            <p class="popup_title">リンクボタンの文字色</p>
+            <p><label class="edit_close_btn"  for="trigger_link_font_color"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
               <% @color_index.each do |color| %>
               <%= form.radio_button :link_font_color, color,id:"link_font_color#{color}"%>
               <label for="link_font_color<%= color%>" class="color_index_p">
                   <span class="color_index link_font_color<%= color%>"></span>
                 </label>
               <%end%>
-            <input class="OK" type="submit" value="保存" name="update">
+            <input class="OK" type="submit" value="保存" name="edit_link_font_color">
           </div>
         </div>
 
 <!-- リンクボタンの色 ポップアップ-->
         <div class="popup_wrap">
-          <input id="link_background_color" type="checkbox">
+          <input id="trigger_link_background_color" type="checkbox">
           <div class="popup_content_c">
             <p class="popup_title">リンクボタンの色</p>
-            <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
+            <p><label class="edit_close_btn"  for="trigger_link_background_color"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
               <% @color_index.each do |color| %>
               <%= form.radio_button :link_background_color, color,id:"link_background_color#{color}"%>
               <label for="link_background_color<%= color%>" class="color_index_p">
                   <span class="color_index link_background_color<%= color%>"></span>
                 </label>
               <%end%>
-            <input class="OK" type="submit" value="保存" name="update">
+            <input class="OK" type="submit" value="保存" name="edit_link_background_color">
           </div>
         </div>
 
   <!-- フォントデザイン ポップアップ-->
       <div class="popup_content_select">
         <p class="popup_title font_popup_title">リンクデザイン</p>
-        <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
+        <p><label class="edit_close_btn"  for="trigger_link_design"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
         <p><label for="trigger_link_font_color" class="open_btn_s">リンクの文字色</label></p>
-        <p><label for="link_background_color" class="open_btn_s">リンクボタンの色</label></p>
+        <p><label for="trigger_link_background_color" class="open_btn_s">リンクボタンの色</label></p>
       </div>
 
     </div>
@@ -107,20 +109,20 @@
           <!-- フォント種類 ポップアップ-->
          <div class="popup_wrap">
           <input id="trigger_font_family" type="checkbox">
-          <div class="popup_content_c">
+          <div class="popup_content_font_family">
             <p class="popup_title">フォント種類</p>
-            <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
+            <p><label class="edit_close_btn"  for="trigger_font_family"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
 
             <div class="font_family_p">
-              <% @font_family_index.each do |font_family| %>
-                <%= form.radio_button :font_family, font_family,id:"#{font_family}"%>
-                <label for="<%= font_family%>" class="font_family_index_p">
-                 <p  class="font_family<%= font_family%>" style="cursor: pointer;">ふぉんと フォント 文字 Font</p>
+              <% @font_family_index.each do |key,value| %>
+                <%= form.radio_button :font_family, value,id:"#{value}"%>
+                <label for="<%= value%>" class="font_family_index_p">
+                 <p  class="font_family<%= key%>">もじ モジ 文字 FONT font 123</p>
                 </label>
               <%end%>
             </div>
 
-            <input class="OK" type="submit" value="保存" name="update">
+            <input class="OK" type="submit" value="保存" name="edit_font_family">
           </div>
         </div>
 
@@ -129,21 +131,21 @@
           <input id="trigger_font_color" type="checkbox">
           <div class="popup_content_c">
             <p class="popup_title">フォントカラー</p>
-            <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
+            <p><label class="edit_close_btn"  for="trigger_font_color"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
               <% @color_index.each do |color| %>
               <%= form.radio_button :font_color, color,id:"font_color#{color}"%>
               <label for="font_color<%= color%>" class="color_index_p">
                   <span class="color_index font_color<%= color%>"></span>
                 </label>
               <%end%>
-            <input class="OK" type="submit" value="保存" name="update">
+            <input class="OK" type="submit" value="保存" name="edit_font_color">
           </div>
         </div>
 
   <!-- フォントデザイン ポップアップ-->
       <div class="popup_content_select">
         <p class="popup_title font_popup_title">フォントデザイン</p>
-        <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
+        <p><label class="edit_close_btn"  for="trigger_font_style"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
         <p><label for="trigger_font_family" class="open_btn_s">フォントの種類</label></p>
         <p><label for="trigger_font_color" class="open_btn_s">フォントカラー</label></p>
       </div>
@@ -166,8 +168,8 @@
         </label>
         <%= form.file_field :icon_image, accept: "image/png,image/jpeg,image/gif",id:"trigger_icon_image_update"%>
 
-       <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
-       <input class="OK" type="submit" value="保存" name="update">
+       <p><label class="edit_close_btn"  for="trigger_icon_image"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+       <input class="OK" type="submit" value="保存" name="edit_icon_image">
      </div>
     </div>
    </div>
@@ -177,7 +179,7 @@
   <div class="popup_wrap">
     <input id="trigger_header_image" type="checkbox">
     <div class="popup_overlay">
-      <label for="trigger_icon_image" class="popup_trigger"></label>
+      <label for="trigger_header_image" class="popup_trigger"></label>
       <div class="popup_content_p">
         <div class="popup_content">
        
@@ -187,25 +189,25 @@
         </label>
         <%= form.file_field :header_image, accept: "image/png,image/jpeg,image/gif",id:"trigger_header_image_upload"%>
 
-       <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
-       <input class="OK" type="submit" value="保存" name="update">
+       <p><label class="edit_close_btn"  for="trigger_header_image"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+       <input class="OK" type="submit" value="保存" name="edit_header_image">
      </div>
     </div>
    </div>
   </div>
 
 <!-- ヘッダーイメージ表示-->
-<label for="trigger_header_image">
-  <div class="header_image_p">
 
-    <% if @user.header_image? %>
-      <p><%= image_tag @user.header_image.url,class:"header_image"%></p>
-    <% else %>
-      <p class="default_header_image"></p>
-    <% end %>
-    <i class="fas fa-camera camera_header"></i>
-    <p class="black_overlay_header"></p>
-  
+  <div class="header_image_p">
+    <label for="trigger_header_image">
+      <% if @user.header_image? %>
+        <p><%= image_tag @user.header_image.url,class:"header_image"%></p>
+      <% else %>
+        <p class="default_header_image"></p>
+      <% end %>
+      <i class="fas fa-camera camera_header"></i>
+      <p class="black_overlay_header"></p>
+    </label>
   <!-- アイコンイメージ表示-->
     <label for="trigger_icon_image" >
       <i class="fas fa-camera camera_icon"></i>
@@ -214,7 +216,7 @@
     </label>
 
   </div>
-</label>
+
 
   <div class="trigger_btn_p">
     <!-- ユーザーネーム編集ボタン-->
@@ -270,8 +272,8 @@
                <%= form.text_field :twitter_comment_3,class:"sns_edit_form",maxlength: "1000"%>
             </div>
            </div>
-          <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
-          <input class="OK" type="submit" value="保存" name="update">
+          <p><label class="edit_close_btn"  for="trigger_acount"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+          <input class="OK" type="submit" value="保存" name="edit_twitter">
         </div>
       </div>
  <!-- 外側色-->
@@ -279,14 +281,14 @@
     <input id="trigger_outsidecolor" type="checkbox">
     <div class="popup_content_c">
       <p class="popup_title">Twitterの外側色</p>
-      <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
+      <p><label class="edit_close_btn"  for="trigger_outsidecolor"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
         <% @color_index.each do |color| %>
          <%= form.radio_button :twitter_outsidecolor, color,id:"C#{color}"%>
          <label for="C<%= color%>" class="color_index_p">
             <span class="color_index C<%= color%>"></span>
           </label>
         <%end%>
-      <input class="OK" type="submit" value="保存" name="update">
+      <input class="OK" type="submit" value="保存" name="edit_twitter_outsidecolor">
     </div>
   </div>
 
@@ -295,20 +297,20 @@
     <input id="trigger_insidecolor" type="checkbox">
     <div class="popup_content_c">
       <p class="popup_title">Twitterの内側色</p>
-      <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
+      <p><label class="edit_close_btn"  for="trigger_insidecolor"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
         <% @color_index.each do |color| %>
           <%= form.radio_button :twitter_insidecolor, color,id:"B#{color}"%>
           <label for="B<%= color%>" class="color_index_p">
             <span class="color_index B<%= color%>"></span>
           </label>
         <%end%>
-      <input class="OK" type="submit" value="保存" name="update">
+      <input class="OK" type="submit" value="保存" name="edit_twitter_insidecolor">
     </div>
   </div>
     <!-- twitterポップアップ選択画面 -->
       <div class="popup_content_select">
         <p class="popup_title">Twitter設定</p>
-        <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
+        <p><label class="edit_close_btn"  for="trigger_twitter"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
         <p><label for="trigger_acount" class="open_btn_s">Twitterのリンクを設定する</label></p>
         <p><label for="trigger_outsidecolor" class="open_btn_s">Twitterアイコンの色を設定(外側)</label></p>
         <p><label for="trigger_insidecolor" class="open_btn_s">Twitterアイコンの色を設定(内側)</label></p>
@@ -325,7 +327,7 @@
      <div class="popup_content_p">
     <!-- アカウント情報-->
     <div class="popup_wrap">
-      <input id="trigger_instagram_account" type="checkbox">
+      <input id="trigger_instagram_acount" type="checkbox">
       <div class="popup_content_acount">
         <p class="popup_title">Instagramリンク設定</p>
           <div class="sns_acount_form_pp">
@@ -348,8 +350,8 @@
                <%= form.text_field :instagram_comment_3,class:"sns_edit_form",maxlength: "1000"%>
             </div>
            </div>
-        <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn edit_close_btn"></i></a></label></p>
-        <input class="OK" type="submit" value="保存" name="update">
+        <p><label class="edit_close_btn"  for="trigger_instagram_acount"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+        <input class="OK" type="submit" value="保存" name="edit_instagram">
         </div>
     </div>
     <!-- 外側色設定-->
@@ -357,14 +359,14 @@
       <input id="trigger_instagram_outsidecolor" type="checkbox">
         <div class="popup_content_c">
           <p class="popup_title">Instagramの外側色</p>
-          <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
+          <p><label class="edit_close_btn"  for="trigger_instagram_outsidecolor"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
             <% @color_index.each do |color| %>
               <%= form.radio_button :instagram_outsidecolor, color,id:"IS#{color}"%>
               <label for="IS<%= color%>" class="color_index_p">
                 <span class="color_index IS<%= color%>"></span>
               </label>
             <%end%>
-        <input class="OK" type="submit" value="保存" name="update">
+        <input class="OK" type="submit" value="保存" name="edit_instagram_outsidecolor">
       </div>
     </div>
     <!-- 内側色設定-->
@@ -372,21 +374,21 @@
       <input id="trigger_instagram_insidecolor" type="checkbox">
         <div class="popup_content_c">
           <p class="popup_title">Instagramの内側色</p>
-          <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
+          <p><label class="edit_close_btn"  for="trigger_instagram_insidecolor"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
             <% @color_index.each do |color| %>
                 <%= form.radio_button :instagram_insidecolor, color,id:"IU#{color}"%>
                 <label for="IU<%= color%>" class="color_index_p">
                 <span class="color_index IU<%= color%>"></span>
               </label>
             <%end%>
-        <input class="OK" type="submit" value="保存" name="update">
+        <input class="OK" type="submit" value="保存" name="edit_instagram_insidecolor">
       </div>
     </div>
       <!-- instagramポップアップ 選択画面 -->
         <div class="popup_content_select">
           <p class="popup_title">Instagram設定</p>
-          <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
-          <p><label for="trigger_instagram_account" class="open_btn_s">Instagramのリンクを設定する</label></p>
+          <p><label class="edit_close_btn"  for="trigger_instagram"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+          <p><label for="trigger_instagram_acount" class="open_btn_s">Instagramのリンクを設定する</label></p>
           <p><label for="trigger_instagram_outsidecolor" class="open_btn_s">Instagramアイコンの色を設定(外側)</label></p>
           <p><label for="trigger_instagram_insidecolor" class="open_btn_s">Instagramアイコンの色を設定(内側)</label></p>
         </div>
@@ -402,7 +404,7 @@
       <div class="popup_content_p">
       <!-- アカウント情報-->
       <div class="popup_wrap">
-        <input id="trigger_facebook_account" type="checkbox">
+        <input id="trigger_facebook_acount" type="checkbox">
         <div class="popup_content_acount">
           <p class="popup_title">facebookリンク設定</p>
           <div class="sns_acount_form_pp">
@@ -425,8 +427,8 @@
                <%= form.text_field :facebook_comment_3,class:"sns_edit_form",maxlength: "1000"%>
             </div>
            </div>
-          <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
-          <input class="OK" type="submit" value="保存" name="update">
+          <p><label class="edit_close_btn"  for="trigger_facebook_acount"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+          <input class="OK" type="submit" value="保存" name="edit_facebook">
         </div>
       </div>
       <!-- 外側色-->
@@ -435,14 +437,14 @@
         <input id="trigger_facebook_outsidecolor" type="checkbox">
           <div class="popup_content_c">
             <p class="popup_title">facebookの外側色</p>
-            <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
+            <p><label class="edit_close_btn"  for="trigger_facebook_outsidecolor"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
               <% @color_index.each do |color| %>
                 <%= form.radio_button :facebook_outsidecolor, color,id:"FS#{color}"%>
                 <label for="FS<%= color%>" class="color_index_p">
                   <span class="color_index IS<%= color%>"></span>
                 </label>
               <%end%>
-          <input class="OK" type="submit" value="保存" name="update">
+          <input class="OK" type="submit" value="保存" name="edit_facebook_outsidecolor">
         </div>
       </div>
       <!-- 内側色-->
@@ -450,21 +452,21 @@
         <input id="trigger_facebook_insidecolor" type="checkbox">
         <div class="popup_content_c">
           <p class="popup_title">facebookの内側色</p>
-          <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
+          <p><label class="edit_close_btn"  for="trigger_facebook_insidecolor"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
             <% @color_index.each do |color| %>
               <%= form.radio_button :facebook_insidecolor, color,id:"FU#{color}"%>
               <label for="FU<%= color%>" class="color_index_p">
                 <span class="color_index IU<%= color%>"></span>
               </label>
             <%end%>
-          <input class="OK" type="submit" value="保存" name="update">
+          <input class="OK" type="submit" value="保存" name="edit_facebook_insidecolor">
         </div>
       </div>
       <!-- facebookポップアップ 選択画面 -->
       <div class="popup_content_select">
         <p class="popup_title">Facebook設定</p>
-        <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
-        <p><label for="trigger_facebook_account" class="open_btn_s">facebookのリンクを設定する</label></p>
+        <p><label class="edit_close_btn"  for="trigger_facebook"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+        <p><label for="trigger_facebook_acount" class="open_btn_s">facebookのリンクを設定する</label></p>
         <p><label for="trigger_facebook_outsidecolor" class="open_btn_s">facebookアイコンの色を設定(外側)</label></p>
         <p><label for="trigger_facebook_insidecolor" class="open_btn_s">facebookアイコンの色を設定(内側)</label></p>
       </div>
@@ -480,7 +482,7 @@
       <div class="popup_content_p">
       <!-- アカウント情報-->
       <div class="popup_wrap">
-        <input id="trigger_youtube_account" type="checkbox">
+        <input id="trigger_youtube_acount" type="checkbox">
         <div class="popup_content_acount">
           <p class="popup_title">youtubeリンク設定</p>
           <div class="sns_acount_form_pp">
@@ -503,8 +505,8 @@
                <%= form.text_field :youtube_comment_3,class:"sns_edit_form",maxlength: "1000"%>
             </div>
            </div>
-          <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
-          <input class="OK" type="submit" value="保存" name="update">
+          <p><label class="edit_close_btn"  for="trigger_youtube_acount"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+          <input class="OK" type="submit" value="保存" name="edit_youtube">
         </div>
       </div>
       <!-- 外側色-->
@@ -512,14 +514,14 @@
         <input id="trigger_youtube_outsidecolor" type="checkbox">
         <div class="popup_content_c">
           <p class="popup_title">Youtubeの外側色</p>
-          <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
+          <p><label class="edit_close_btn"  for="trigger_youtube_outsidecolor"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
             <% @color_index.each do |color| %>
               <%= form.radio_button :youtube_outsidecolor, color,id:"YS#{color}"%>
               <label for="YS<%= color%>" class="color_index_p">
                 <span class="color_index IS<%= color%>"></span>
               </label>
             <%end%>
-        <input class="OK" type="submit" value="保存" name="update">
+        <input class="OK" type="submit" value="保存" name="edit_youtube_outsidecolor">
         </div>
       </div>
       <!-- 内側色-->
@@ -527,21 +529,21 @@
         <input id="trigger_youtube_insidecolor" type="checkbox">
         <div class="popup_content_c">
         <p class="popup_title">Youtubeの内側色</p>
-        <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
+        <p><label class="edit_close_btn"  for="trigger_youtube_insidecolor"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
             <% @color_index.each do |color| %>
               <%= form.radio_button :youtube_insidecolor, color,id:"YU#{color}"%>
               <label for="YU<%= color%>" class="color_index_p">
               <span class="color_index IU<%= color%>"></span>
               </label>
             <%end%>
-          <input class="OK" type="submit" value="保存" name="update">
+          <input class="OK" type="submit" value="保存" name="edit_youtube_insidecolor">
         </div>
       </div>
       <!-- youtubeポップアップ 選択画面 -->
         <div class="popup_content_select">
           <p class="popup_title">Youtubeリンク設定</p>
-          <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
-          <p><label for="trigger_youtube_account" class="open_btn_s">Youtubeのリンクを設定する</label></p>
+          <p><label class="edit_close_btn"  for="trigger_youtube"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+          <p><label for="trigger_youtube_acount" class="open_btn_s">Youtubeのリンクを設定する</label></p>
           <p><label for="trigger_youtube_outsidecolor" class="open_btn_s">Youtubeアイコンの色を設定(外側)</label></p>
           <p><label for="trigger_youtube_insidecolor" class="open_btn_s">Youtubeアイコンの色を設定(内側)</label></p>
         </div>
@@ -557,7 +559,7 @@
       <div class="popup_content_p">
       <!-- アカウント情報-->
       <div class="popup_wrap">
-        <input id="trigger_tiktok_account" type="checkbox">
+        <input id="trigger_tiktok_acount" type="checkbox">
         <div class="popup_content_acount">
           <p class="popup_title">Tiktokリンク設定</p>
            <div class="sns_acount_form_pp">
@@ -580,8 +582,8 @@
                <%= form.text_field :tiktok_comment_3,class:"sns_edit_form",maxlength: "1000"%>
             </div>
            </div>
-          <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
-          <input class="OK" type="submit" value="保存" name="update">
+          <p><label class="edit_close_btn"  for="trigger_tiktok_acount"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+          <input class="OK" type="submit" value="保存" name="edit_tiktok">
         </div>
       </div>
       <!-- 外側色-->
@@ -589,14 +591,14 @@
         <input id="trigger_tiktok_outsidecolor" type="checkbox">
         <div class="popup_content_c">
           <p class="popup_title">Tiktokの外側色</p>
-          <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
+          <p><label class="edit_close_btn"  for="trigger_tiktok_outsidecolor"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
             <% @color_index.each do |color| %>
               <%= form.radio_button :tiktok_outsidecolor, color,id:"TS#{color}"%>
               <label for="TS<%= color%>" class="color_index_p">
                <span class="color_index IS<%= color%>"></span>
               </label>
             <%end%>
-          <input class="OK" type="submit" value="保存" name="update">
+          <input class="OK" type="submit" value="保存" name="edit_tiktok_outsidecolor">
         </div>
       </div>
         <!-- 内側色-->
@@ -604,21 +606,21 @@
           <input id="trigger_tiktok_insidecolor" type="checkbox">
           <div class="popup_content_c">
             <p class="popup_title">Tiktokの内側の色</p>
-            <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
+            <p><label class="edit_close_btn"  for="trigger_tiktok_insidecolor"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
               <% @color_index.each do |color| %>
                 <%= form.radio_button :tiktok_insidecolor, color,id:"TU#{color}"%>
                 <label for="TU<%= color%>" class="color_index_p">
                 <span class="color_index IU<%= color%>"></span>
                 </label>
               <%end%>
-            <input class="OK" type="submit" value="保存" name="update">
+            <input class="OK" type="submit" value="保存" name="edit_tiktok_insidecolor">
           </div>
          </div>
         <!-- tiktokポップアップ 選択画面 -->
         <div class="popup_content_select">
           <p class="popup_title">Tiktokリンク設定</p>
-          <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
-          <p><label for="trigger_tiktok_account" class="open_btn_s">Tiktokのリンクを設定する</label></p>
+          <p><label class="edit_close_btn"  for="trigger_tiktok"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+          <p><label for="trigger_tiktok_acount" class="open_btn_s">Tiktokのリンクを設定する</label></p>
           <p><label for="trigger_tiktok_outsidecolor" class="open_btn_s">Tiktokアイコンの色を設定(外側)</label></p>
           <p><label for="trigger_tiktok_insidecolor" class="open_btn_s">Tiktokアイコンの色を設定(内側)</label></p>
         </div>
@@ -626,7 +628,158 @@
     </div>
   </div>
 
+  <!-- SNSアイコン-->
+  <div class="sns_pp">
+
+    <label for="trigger_twitter">
+      <div class="sns_outside twitter_outsidecolor">
+         <p class="sns_text"></p>
+         <span class="fab fa-twitter sns_inside twitter_insidecolor"></span>
+      </div>
+    </label>
+
+    <label for="trigger_instagram">
+      <div class="sns_outside instagram_outsidecolor">
+       <p class="sns_text"></p>
+       <span class="fab fa-instagram sns_inside instagram_insidecolor"></span>
+      </div>
+    </label>
+
+    <label for="trigger_facebook">
+      <div class="sns_outside facebook_outsidecolor">
+        <p class="sns_text"></p>
+        <span class="fab fa-facebook sns_inside facebook_insidecolor"></span>
+      </div>
+    </label>
+
+    <label for="trigger_youtube">
+     <div class="sns_outside youtube_outsidecolor">
+        <p class="sns_text"></p>
+        <span class="fab fa-youtube sns_inside youtube_insidecolor"></span>
+      </div>
+    </label>
+
+    <label for="trigger_tiktok">
+     <div class="sns_outside tiktok_outsidecolor">
+       <p class="sns_text"></p>
+       <span class="fab fa-tiktok sns_inside tiktok_insidecolor"></span>
+      </div>
+    </label>
+
+  </div>
+
+<%end%>
+
+  <div class="trigger_btn_p">
+  <!-- リンク追加ボタン-->
+    <label for="trigger_link">
+      <div class="trigger_btn">
+        <p>リンク追加</p>
+      </div>
+    </label>
+  <!-- リンクデザイン編集ボタン-->
+    <label for="trigger_link_design">
+      <div class="trigger_btn">
+        <p>リンクデザイン</p>
+      </div>
+    </label>
+  </div>
+
+ <!-- リンク一覧編集 仮表示-->
+
+<% if @links.present? %>
+  <div class="link_edit_click">
+   <p>↓クリックで編集できます</p>
+  </div>
+<%end%>
+
+<% @links.each do |link| %>  
+  <%= form_with(model: link, local: true, multipart: true) do |form| %>
+
+    <div class="popup_wrap">
+    <input id="trigger_<%= link%>" type="checkbox">
+    <div class="popup_overlay">
+      <label for="trigger_<%= link%>" class="popup_trigger"></label>
+      <div class="popup_content_p">
+      <div class="popup_content">
+        <p class="popup_title">リンク設定</p>
+        <%= link_to '削除', "/links/#{link.id}",class:"link_destroy",method: :delete, data: {confirm: "削除しますか?"}  %>
+
+        <div class="link_form_pp">
+          <div class="link_form_p">
+            <label  class="form_title">タイトル&emsp;</label>
+            <%= form.text_field :title,class:"link_form",maxlength: "1000",required: true%>
+            <label class="form_title">ＵＲＬ&emsp;&emsp;</label>
+            <%= form.text_field :url,class:"link_form",maxlength: "1000",required: true%>
+          <div class="link_coment_form_p">
+            <label class="coment_form_title">コメント&emsp;</label>
+            <%= form.text_area :coment,class:"link_coment_form",maxlength: "1000"%>
+          </div>
+        </div>
+      </div>
+
+      <p><label class="edit_close_btn"  for="trigger_<%= link%>"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+      <input class="OK" type="submit" value="保存" name="edit_link">
+
+     </div>
+    </div>
+   </div>
+  </div>
+
+      
+  <div class="link_pp">
+      <label for="trigger_<%= link%>">
+        <div class="link_title">
+        <p><%= link.title %></p>
+        </div>
+      </label>
+    <div class="link_coment">
+      <p><%= link.coment%></p>
+    </div>
+  </div>
+
+  <% end %>
+ <% end %>
+
+ <%= form_with(model: @link, local: true) do |form| %>
+
+ <!-- ポップアップ リンク追加-->
+  <div class="popup_wrap">
+    <input id="trigger_link" type="checkbox">
+    <div class="popup_overlay">
+      <label for="trigger_link" class="popup_trigger"></label>
+      <div class="popup_content_p">
+      <div class="popup_content">
+        <p class="popup_title">リンク追加</p>
+        <div class="link_form_pp">
+          <div class="link_form_p">
+            <label  class="form_title">タイトル&emsp;</label>
+            <%= form.text_field :title,class:"link_form",maxlength: "1000",required: true %>
+            <label class="form_title">ＵＲＬ&emsp;&emsp;</label>
+            <%= form.text_field :url,class:"link_form",maxlength: "1000",required: true %>
+          <div class="link_coment_form_p">
+            <label class="coment_form_title">コメント&emsp;</label>
+            <%= form.text_area :coment,class:"link_coment_form",maxlength: "1000"%>
+          </div>
+        </div>
+      </div>
+      <p><label class="edit_close_btn"  for="trigger_link"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+      <input class="OK" type="submit" value="保存" name="add_link">
+     </div>
+    </div>
+   </div>
+  </div>
+
+ <% end %>
+
+</div>
+
   <style media="screen">
+  .profile_edit{
+    background-color: #<%=@user.background_color%>;
+    height: auto;
+    padding-bottom:100px;
+  }
 
   /*Twitterアイコン 外側色*/
   .twitter_outsidecolor{
@@ -752,10 +905,11 @@
   <%end%>
 
   /*フォント種類*/
-  <% @font_family_index.each do |font_family| %>
-    .font_family<%= font_family%>{
-      font-family: "<%= font_family%>";
-      display:inline;
+  <% @font_family_index.each do |key,value| %>
+    .font_family<%= key%>{
+      font-family: <%= value%>;
+      cursor: pointer;
+      margin:0px;
     }
   <%end%>
 
@@ -779,148 +933,5 @@
     color: #<%= @user.link_font_color%>;
   }
 
-    body{
-      background-color:  #<%= @user.background_color%>;
-    }
-
 </style>
-
-  <!-- SNSアイコン-->
-  <div class="sns_pp">
-
-    <label for="trigger_twitter">
-      <div class="sns_outside twitter_outsidecolor">
-         <p class="sns_text"></p>
-         <span class="fab fa-twitter sns_inside twitter_insidecolor"></span>
-      </div>
-    </label>
-
-    <label for="trigger_instagram">
-      <div class="sns_outside instagram_outsidecolor">
-       <p class="sns_text"></p>
-       <span class="fab fa-instagram sns_inside instagram_insidecolor"></span>
-      </div>
-    </label>
-
-    <label for="trigger_facebook">
-      <div class="sns_outside facebook_outsidecolor">
-        <p class="sns_text"></p>
-        <span class="fab fa-facebook sns_inside facebook_insidecolor"></span>
-      </div>
-    </label>
-
-    <label for="trigger_youtube">
-     <div class="sns_outside youtube_outsidecolor">
-        <p class="sns_text"></p>
-        <span class="fab fa-youtube sns_inside youtube_insidecolor"></span>
-      </div>
-    </label>
-
-    <label for="trigger_tiktok">
-     <div class="sns_outside tiktok_outsidecolor">
-       <p class="sns_text"></p>
-       <span class="fab fa-tiktok sns_inside tiktok_insidecolor"></span>
-      </div>
-    </label>
-
-  </div>
-
-<%end%>
-
-  <div class="trigger_btn_p">
-  <!-- リンク追加ボタン-->
-    <label for="trigger_link">
-      <div class="trigger_btn">
-        <p>リンク追加</p>
-      </div>
-    </label>
-  <!-- リンクデザイン編集ボタン-->
-    <label for="trigger_link_design">
-      <div class="trigger_btn">
-        <p>リンクデザイン</p>
-      </div>
-    </label>
-  </div>
-
- <!-- リンク一覧編集 仮表示-->
-<% @links.each do |link| %>  
-  <%= form_with(model: link, local: true, multipart: true) do |form| %>
-
-    <div class="popup_wrap">
-    <input id="trigger_<%= link%>" type="checkbox">
-    <div class="popup_overlay">
-      <label for="trigger_<%= link%>" class="popup_trigger"></label>
-      <div class="popup_content_p">
-      <div class="popup_content">
-        <p class="popup_title">リンク設定</p>
-        <%= link_to '削除', "/links/#{link.id}",class:"link_destroy",method: :delete, data: {confirm: "削除しますか?"}  %>
-
-        <div class="link_form_pp">
-          <div class="link_form_p">
-            <label  class="form_title">タイトル&emsp;</label>
-            <%= form.text_field :title,class:"link_form",maxlength: "1000"%>
-            <label class="form_title">ＵＲＬ&emsp;&emsp;</label>
-            <%= form.text_field :url,class:"link_form",maxlength: "1000"%>
-          <div class="link_coment_form_p">
-            <label class="coment_form_title">コメント&emsp;</label>
-            <%= form.text_area :coment,class:"link_coment_form",maxlength: "1000"%>
-          </div>
-        </div>
-      </div>
-
-      <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
-      <input  class="OK" type="submit" value="保存" name="update">
-
-     </div>
-    </div>
-   </div>
-  </div>
-
-      
-  <div class="link_pp">
-      <label for="trigger_<%= link%>">
-        <div class="link_title">
-        <p><%= link.title %></p>
-        </div>
-      </label>
-    <div class="link_coment">
-      <p><%= link.coment%></p>
-    </div>
-  </div>
-
-  <% end %>
- <% end %>
-
- <%= form_with(model: @link, local: true) do |form| %>
-
- <!-- ポップアップ リンク追加-->
-  <div class="popup_wrap">
-    <input id="trigger_link" type="checkbox">
-    <div class="popup_overlay">
-      <label for="trigger_link" class="popup_trigger"></label>
-      <div class="popup_content_p">
-      <div class="popup_content">
-        <p class="popup_title">リンク追加</p>
-        <div class="link_form_pp">
-          <div class="link_form_p">
-            <label  class="form_title">タイトル&emsp;</label>
-            <%= form.text_field :title,class:"link_form",maxlength: "1000"%>
-            <label class="form_title">ＵＲＬ&emsp;&emsp;</label>
-            <%= form.text_field :url,class:"link_form",maxlength: "1000"%>
-          <div class="link_coment_form_p">
-            <label class="coment_form_title">コメント&emsp;</label>
-            <%= form.text_area :coment,class:"link_coment_form",maxlength: "1000"%>
-          </div>
-        </div>
-      </div>
-      <p><label class="edit_close_btn"><a href="#"><i class="fas fa-times-circle edit_close_btn"></i></a></label></p>
-      <input class="OK" type="submit" value="保存" name="update">
-     </div>
-    </div>
-   </div>
-  </div>
-
- <% end %>
-
- <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'], ENT_QUOTES, 'UTF-8'); ?>">
 

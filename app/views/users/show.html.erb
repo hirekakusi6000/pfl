@@ -1,3 +1,4 @@
+<div class="introduce">
 <!-- ヘッダー画像-->
   <div class="header_image_p">
     <% if @user.header_image? %>
@@ -32,6 +33,13 @@
       </div>
     </div>
   </div>
+
+<!-- 一覧ページへのリンクアイコン-->
+  <a href="/users">
+    <div class="pen_p back_index">
+      <i class="fas fa-chevron-left"></i>
+    </div>
+  </a>
 
     <!-- 編集へのリンクアイコン-->
   <% if current_user%>
@@ -190,14 +198,19 @@
       </div>
     <% end %>
 
+</div>
+
 <style>
+
+   .introduce {
+    height: auto;
+    padding-bottom:100px;
+    font-family: <%= @user.font_family%>;
+    color: #<%= @user.font_color%>;
+  }
 
   body {
     background-color: #<%=@user.background_color%>;
-    height: auto;
-    margin-bottom:150px;
-    font-family: "<%= @user.font_family%>";
-    color: #<%= @user.font_color%>;
   }
 
    /*リンクカラー*/
