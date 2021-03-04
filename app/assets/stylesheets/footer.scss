@@ -21,15 +21,13 @@
 
 .footer_p:hover {
   text-decoration: none;
-  transition: all 0.5s;
-  opacity: 0.7;
-  transform: scale(1.03, 1.03);
+  transform: scale(1.05, 1.05);
 }
 
 /* フッター 子 ブロック */
 .footer_p p {
   height: 24px;
-  margin: 0px 40px 0px;
+  margin: 0px 40px 3px;
   text-decoration: none;
 }
 
@@ -37,19 +35,19 @@
 .footer_icon {
   display: inline-block;
   font-size: 22px;
-  color: gray;
+  color: #A4A4A4;
   text-decoration: none;
 }
 
 .footer_icon:hover {
-  color: gray;
+  color: #A4A4A4;
   text-decoration: none;
 }
 
 /* フッター テキスト インライン */
 .footer_font {
   text-decoration: none;
-  color: gray;
+  color: #A4A4A4;
   font-size: 11px;
   font-weight: bold;
   font-family: sans-serif;
@@ -57,10 +55,9 @@
 }
 
 .footer_font:hover {
-  color: gray;
+  color: #A4A4A4;
   text-decoration: none;
   transition: all 0.5s;
-  opacity: 0.7;
 }
 
 @media screen and (max-width: 375px) {

@@ -1,19 +1,23 @@
-/* 検索フォーム 親の親 ブロック */
+/* 検索フォーム 親の親  */
 .input_group_p {
   margin: 30px;
   width: 250px;
 }
 
-/* アイコン 親の親 ブロック */
+/* アイコン 親の親  */
 .index_icon_pp {
   text-align: center;
   margin-bottom: 100px;
 }
 
-/* アイコン 親 インラインブロック */
+/* アイコン 親  */
 .index_icon_p {
+  text-align: center;
   display: inline-block;
-  margin: 30px 30px;
+  margin: 30px;
+  width: 100px;
+  height: 100px;
+  margin: 10px 10px 40px 10px;
 }
 
 .index_icon_p:hover {
@@ -23,26 +27,33 @@
   transform: scale(1.03, 1.03);
 }
 
-/* アイコン 子 ブロック */
+/* アイコン 子  */
 .index_icon_p img {
   display: inline-block;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   border-radius: 100%;
   box-shadow: 0 2px 6px #c1ced7;
   object-fit: cover;
 }
 
-/* ユーザーネーム 親 ブロック */
+/* ユーザーネーム 親  */
 .index_user_name_p {
-  margin-top: 10px;
+  overflow: hidden;
 }
 
-/* ユーザーネーム 子 ブロック */
+/* ユーザーネーム 子  */
 .index_user_name {
   color: black;
   font-weight: bold;
   text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  font-size: 12px;
 }
 
 
@@ -61,32 +72,22 @@
 
 @media screen and (max-width: 375px) {
 
-  /* 検索フォーム 親の親 ブロック */
+  /* 検索フォーム 親の親  */
   .input_group_p {
-    margin: 40px 30px 0px 30px;
+    margin: 30px;
     width: 220px;
   }
 
-  /* アイコン 親 ブロック */
+  /* アイコン 親  */
   .index_icon_p {
-    width: 85px;
-    height: 85px;
+    width: 80px;
+    height: 80px;
     margin: 10px 10px 40px 10px;
   }
 
-  /* アイコン 子 インラインブロック */
+  /* アイコン 子  */
   .index_icon_p img {
-    width: 85px;
-    height: 85px;
-  }
-
-  /* ユーザーネーム 親 ブロック */
-  .index_user_name_p {
-    margin-top: 5px;
-  }
-
-  /* ユーザーネーム インラインブロック */
-  .index_user_name {
-    font-size: 12px;
+    width: 80px;
+    height: 80px;
   }
 }

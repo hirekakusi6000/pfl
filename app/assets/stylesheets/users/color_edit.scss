@@ -35,16 +35,6 @@
   width: 24px;
 }
 
-/*各ポップアップタイトル 子 ブロック*/
-.popup_title {
-  display: inline-block;
-  font-weight: bold;
-  height: 15px;
-  width: 200px;
-  font-size: 20px;
-  margin-bottom: 15px;
-}
-
 @media screen and (max-width: 375px) {
 
   /*背景色変更ポップアップ*/
@@ -71,13 +61,4 @@
     width: 20px;
   }
 
-  /*各色編集ポップアップタイトル 子 ブロック*/
-  .popup_title {
-    display: inline-block;
-    font-weight: bold;
-    height: 5px;
-    width: 200px;
-    font-size: 20px;
-    margin-bottom: 25px;
-  }
 }

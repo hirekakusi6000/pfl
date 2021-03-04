@@ -1,17 +1,15 @@
 /* SNSアイコン 親*/
 .sns_pp {
-  z-index: 1000px;
   text-align: center;
   width: 100vw;
   height: auto;
   word-wrap: break-word;
-  margin-bottom: 50px;
+  margin-bottom: 26px;
 }
 
 /* SNSアイコン 子*/
 .sns_p {
   display: inline-block;
-  margin: 5px;
   border-radius: 100%;
   width: 100px;
   height: 100px;
@@ -22,10 +20,9 @@
 /* SNSアイコン外側 孫*/
 .sns_outside {
   display: inline-block;
-  margin: 5px;
   border-radius: 100%;
-  width: 100px;
-  height: 100px;
+  width: 85px;
+  height: 85px;
   cursor: pointer;
   position: relative;
 }
@@ -36,7 +33,7 @@
 
 /* SNSアイコン ひ孫*/
 .sns_inside {
-  font-size: 3.5em;
+  font-size: 3em;
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -50,6 +47,7 @@
   height: auto;
   font-size: 13px;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 /*SNSアイコンの上のスペース*/
@@ -59,23 +57,17 @@
 
 @media screen and (max-width: 375px) {
 
-  /* SNSアイコン 親の親 ブロック*/
-  .sns_pp {
-    margin-bottom: 0px;
-  }
-
   /* SNSアイコン 親*/
   .sns_p {
-    margin: 1px;
-    width: 50px;
-    height: 50px;
+    margin: 3px;
+    width: 60px;
+    height: 60px;
   }
 
-  /* SNSアイコン外側 親 インラインブロック*/
+  /* SNSアイコン外側 親*/
   .sns_outside {
-    margin: -15px 1px 1px 1px;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
   }
 
   /* SNSアイコン アイコン*/
@@ -86,7 +78,7 @@
 
   /* SNSアイコン コメント */
   .sns_text {
-    font-size: 8px;
+    font-size: 10px;
   }
 
 }

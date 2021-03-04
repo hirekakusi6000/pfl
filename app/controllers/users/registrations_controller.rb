@@ -15,6 +15,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     unless @user.valid?
       render "devise/registrations/new" and return
     end
+    @user.font_color = "585858"
     @user.twitter_outsidecolor = "E0F2F7"
     @user.twitter_insidecolor = "FFFFFF"
     @user.instagram_outsidecolor = "F8E0F1"

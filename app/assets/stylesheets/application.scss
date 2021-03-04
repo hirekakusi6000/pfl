@@ -5,6 +5,9 @@
 
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css?family=Sawarabi+Mincho');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono');
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
 
 /* フラッシュ */
 .alert-notice {
@@ -63,5 +66,4 @@ p {
 
 body {
   height: auto;
-  margin-bottom: 80px;
 }

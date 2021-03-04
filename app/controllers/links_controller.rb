@@ -6,9 +6,9 @@ class LinksController < ApplicationController
 
   def create
     @link = Link.new(link_params)
+    @link.user_id = current_user.id
     
     if @link.save
-     @link.user_id = current_user.id
      flash[:notice] = "リンクを追加しました"
      redirect_to("/users/#{current_user.id}/edit")
     else
