@@ -14,6 +14,7 @@ class LinksController < ApplicationController
     else
      @user = User.find_by(id:current_user.id)
      @links = Link.where(user_id:current_user.id)
+     @twitters = Twitter.where(user_id:current_user.id)
      render template: "users/edit"
     end
   end

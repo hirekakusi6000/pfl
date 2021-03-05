@@ -14,7 +14,10 @@ class UsersController < ApplicationController
   def edit
     @user = User.find_by(id:current_user.id)
     @links = Link.where(user_id:current_user.id)
+    @twitters = Twitter.where(user_id:current_user.id)    
     @link = Link.new
+    @twitter = Twitter.new
+    
   end
 
   def update

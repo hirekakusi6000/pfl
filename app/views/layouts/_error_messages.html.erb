@@ -15,3 +15,12 @@
     <% end %>
   </div>
 <% end %>
+
+<% if @twitter.errors.any? %>
+  <div class="alert alert-danger" role="alert" style="margin-bottom:0px;">
+  <a href="#" class="close" data-dismiss="alert">×</a>
+    <% @twitter.errors.full_messages.each do |msg| %>
+        <p><%= msg %></p>
+    <% end %>
+  </div>
+<% end %>
