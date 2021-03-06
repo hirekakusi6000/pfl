@@ -35,7 +35,7 @@ class LinksController < ApplicationController
       redirect_to("/users/#{current_user.id}/edit")
     else
       @user = User.find_by(id:current_user.id)
-      @links = Link.where(user_id:current_user.id)
+      @links = Link.where(user_id:current_user.id).order(id: "ASC") 
       render template: "users/edit"
     end
   end

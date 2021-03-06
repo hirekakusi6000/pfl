@@ -1,26 +1,3 @@
-.popup_content_font_family {
-  opacity: 0;
-  z-index: 100;
-  display: inline-block;
-  padding: 15px 20px 30px 20px;
-  position: relative;
-  align-self: center;
-  max-height: 460px;
-  min-height: 460px;
-  max-width: 420px;
-  min-width: 420px;
-  background: white;
-  transition: 0.5s;
-  border-radius: 10px;
-  text-align: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-}
-
 /*SNSアイコン色変更 ポップアップをクリックして表示*/
 .popup_wrap input:checked~.popup_content_font_family {
   opacity: 1;
@@ -38,14 +15,6 @@
 }
 
 @media screen and (max-width: 375px) {
-
-  .popup_content_font_family {
-    padding: 19px 15px 15px 15px;
-    max-height: 470px;
-    min-height: 470px;
-    max-width: 360px;
-    min-width: 360px;
-  }
 
   .font_popup_title {
     margin-bottom: 60px;

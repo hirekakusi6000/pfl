@@ -5,10 +5,40 @@
   height: auto;
   word-wrap: break-word;
   margin-bottom: 26px;
+
 }
 
 /* SNSアイコン 子*/
 .sns_p {
+  display: inline-block;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  position: relative;
+  position: relative;
+}
+
+.plus_icon_p {
+  border-radius: 100%;
+  background: white;
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  width: 37px;
+  height: 37px;
+}
+
+.plus_icon {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  font-size: 29px;
+  color: #D8D8D8;
+}
+
+/*form_with */
+.foo {
   display: inline-block;
   border-radius: 100%;
   width: 100px;

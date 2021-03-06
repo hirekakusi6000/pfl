@@ -8,9 +8,19 @@ class TwittersController < ApplicationController
     redirect_to("/users/#{current_user.id}/edit")
   end
 
+  def destroy
+    twitter = Twitter.find(params[:id])
+    twitter.destroy
+    redirect_to("/users/#{current_user.id}/edit")
+  end
+
   def create
     @twitter = Twitter.new(account_params)
     @twitter.user_id = current_user.id
+    @twitter.outsidecolor = "A9D0F5"
+    @twitter.insidecolor = "FFFFFF"
+    
+    
     
     if @twitter.save
      flash[:notice] = "リンクを追加しました"
@@ -18,9 +28,7 @@ class TwittersController < ApplicationController
     else
      @user = User.find_by(id:current_user.id)
      @links = Link.where(user_id:current_user.id)
-     @twitters = Twitter.where(user_id:current_user.id)
-     @link = Link.new
-     @twitter = Twitter.new
+     @twitters = Twitter.where(user_id:current_user.id).order(id: "ASC") 
      render template: "users/edit"
     end
   end

@@ -241,21 +241,11 @@
 
 <%end%>
 
-<!-- twitterリンク追加-->
+<!-- SNSリンク追加-->
 <div class="sns_pp">
   <%= render 'twitters/new' %>
-</div>
-  <!-- SNSアイコン-->
-  <div class="sns_pp">
 
-    <label for="trigger_twitter">
-      <div class="sns_outside twitter_outsidecolor">
-         <p class="sns_text"></p>
-         <span class="fab fa-twitter sns_inside twitter_insidecolor"></span>
-      </div>
-    </label>
-
-    <label for="trigger_instagram">
+      <label for="trigger_instagram">
       <div class="sns_outside instagram_outsidecolor">
        <p class="sns_text"></p>
        <span class="fab fa-instagram sns_inside instagram_insidecolor"></span>
@@ -282,12 +272,16 @@
        <span class="fab fa-tiktok sns_inside tiktok_insidecolor"></span>
       </div>
     </label>
+</div>
 
+<% if @twitters.present? %>
+  <div class="link_edit_click">
+   <p>↓クリックで編集できます</p>
   </div>
+<%end%>
 
-
+<!-- SNS一覧編集-->
 <div class="sns_pp">
-  <!-- twitterリンク編集-->
   <%= render 'twitters/edit' %>
 </div>
 
@@ -402,16 +396,6 @@
     padding-bottom:100px;
   }
 
-  /*Twitterアイコン 外側色*/
-  .twitter_outsidecolor{
-  background-color: #<%= @user.twitter_outsidecolor%>;
-  }
-
-  /*Twitterアイコン 内側色*/
-  .twitter_insidecolor{
-  color: #<%= @user.twitter_insidecolor%>;
-  }
-
   /*instagramアイコン 外側色*/
   .instagram_outsidecolor{
   background-color: #<%= @user.instagram_outsidecolor%>;
@@ -453,17 +437,6 @@
   }
 
   /*色一覧*/
-  <% @color_index.each do |color| %>
-    .C<%= color%>{
-    background-color: #<%= color%>;
-    }
-  <%end%>
-
-  <% @color_index.each do |color| %>
-    .B<%= color%>{
-    background-color: #<%= color%>;
-    }
-  <%end%>
 
   <% @color_index.each do |color| %>
     .A<%= color%>{

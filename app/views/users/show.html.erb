@@ -57,30 +57,9 @@
 
   <!-- SNSアイコン一覧表示-->
   <div class="sns_pp">
-    <% if @user.twitter_id_1?%>
-    <div class="sns_p">
-      <p class="sns_text"><%= @user.twitter_comment_1 %></p>
-      <div class="sns_outside twitter_outsidecolor">
-        <a href="https://mobile.twitter.com/<%= @user.twitter_id_1 %>"> <span class="fab fa-twitter sns_inside twitter_insidecolor"></span></a>
-      </div>
-    </div>
-    <%end%>
-    <% if @user.twitter_id_2?%>
-    <div class="sns_p">
-      <p class="sns_text"><%= @user.twitter_comment_2 %></p>
-      <div class="sns_outside twitter_outsidecolor">
-        <a href="https://mobile.twitter.com/<%= @user.twitter_id_2 %>"> <span class="fab fa-twitter sns_inside twitter_insidecolor"></span></a>
-      </div>
-    </div>
-    <%end%>
-    <% if @user.twitter_id_3?%>
-    <div class="sns_p">
-      <p class="sns_text"><%= @user.twitter_comment_3 %></p>
-      <div class="sns_outside twitter_outsidecolor">
-        <a href="https://mobile.twitter.com/<%= @user.twitter_id_3 %>"> <span class="fab fa-twitter sns_inside twitter_insidecolor"></span></a>
-      </div>
-    </div>
-    <%end%>
+
+    <%= render 'twitters/index' %>
+
     <% if @user.instagram_id_1?%>
     <div class="sns_p">
       <p class="sns_text"><%= @user.instagram_comment_1 %></p>

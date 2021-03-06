@@ -9,12 +9,13 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(id:params[:id])
     @links = Link.where(user_id:params[:id])
+    @twitters = Twitter.where(user_id:current_user.id).order(id: "ASC")   
   end
 
   def edit
     @user = User.find_by(id:current_user.id)
     @links = Link.where(user_id:current_user.id)
-    @twitters = Twitter.where(user_id:current_user.id)    
+    @twitters = Twitter.where(user_id:current_user.id).order(id: "ASC")   
     @link = Link.new
     @twitter = Twitter.new
     
