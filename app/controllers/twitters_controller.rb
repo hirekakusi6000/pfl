@@ -19,9 +19,7 @@ class TwittersController < ApplicationController
     @twitter.user_id = current_user.id
     @twitter.outsidecolor = "A9D0F5"
     @twitter.insidecolor = "FFFFFF"
-    
-    
-    
+
     if @twitter.save
      flash[:notice] = "リンクを追加しました"
      redirect_to("/users/#{current_user.id}/edit")
@@ -29,6 +27,7 @@ class TwittersController < ApplicationController
      @user = User.find_by(id:current_user.id)
      @links = Link.where(user_id:current_user.id)
      @twitters = Twitter.where(user_id:current_user.id).order(id: "ASC") 
+     @link = Link.new
      render template: "users/edit"
     end
   end
