@@ -6,12 +6,16 @@
 
   <div class="index_icon_pp">
     <% @users.each do |user| %>
-      <div class="index_icon_p" ontouchstart="">
-        <p><a href="/users/<%= user.id %>"><img src="<%= user.icon_image %>"></a></p>
-        <p  class="index_user_name_p"><a class="index_user_name" href="/user/<%= user.id %>/pfl"><%= user.name %></a></p>
+      <div class="index_icon_p">
+        <% if user.icon_image? %>
+          <p><a href="/users/<%= user.id %>"><img src="<%= user.icon_image %>"></a></p>
+        <% else %>
+          <p><a href="/users/<%= user.id %>"><i class="fas fa-user index_default_icon"></i></a></p>
+        <% end %>
+        <p class="index_user_name_p"><a class="index_user_name" href="/users/<%= user.id %>"><%= user.name %></a></p>
       </div>
     <% end %>
-  </div>
+   </div>
 
   <div class="paginate">
     <%= paginate @users %>
