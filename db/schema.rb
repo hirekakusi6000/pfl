@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_04_152423) do
+ActiveRecord::Schema.define(version: 2021_03_07_051528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,28 @@ ActiveRecord::Schema.define(version: 2021_03_04_152423) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "facebooks", force: :cascade do |t|
+    t.string "account"
+    t.string "comment"
+    t.string "outsidecolor"
+    t.string "insidecolor"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_facebooks_on_user_id"
+  end
+
+  create_table "instagrams", force: :cascade do |t|
+    t.string "account", null: false
+    t.string "comment"
+    t.string "outsidecolor"
+    t.string "insidecolor"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_instagrams_on_user_id"
+  end
+
   create_table "links", force: :cascade do |t|
     t.string "title"
     t.string "url"
@@ -49,6 +71,17 @@ ActiveRecord::Schema.define(version: 2021_03_04_152423) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_links_on_user_id"
+  end
+
+  create_table "tiktoks", force: :cascade do |t|
+    t.string "account", null: false
+    t.string "comment"
+    t.string "outsidecolor"
+    t.string "insidecolor"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_tiktoks_on_user_id"
   end
 
   create_table "twitters", force: :cascade do |t|
@@ -75,48 +108,6 @@ ActiveRecord::Schema.define(version: 2021_03_04_152423) do
     t.string "icon_image"
     t.string "header_image"
     t.string "background_color"
-    t.string "twitter_id_1"
-    t.string "twitter_id_2"
-    t.string "twitter_id_3"
-    t.string "twitter_comment_1"
-    t.string "twitter_comment_2"
-    t.string "twitter_comment_3"
-    t.string "twitter_outsidecolor"
-    t.string "twitter_insidecolor"
-    t.string "instagram_id_1"
-    t.string "instagram_id_2"
-    t.string "instagram_id_3"
-    t.string "instagram_comment_1"
-    t.string "instagram_comment_2"
-    t.string "instagram_comment_3"
-    t.string "instagram_outsidecolor"
-    t.string "instagram_insidecolor"
-    t.string "facebook_id_1"
-    t.string "facebook_id_2"
-    t.string "facebook_id_3"
-    t.string "facebook_comment_1"
-    t.string "facebook_comment_2"
-    t.string "facebook_comment_3"
-    t.string "facebook_outsidecolor"
-    t.string "facebook_insidecolor"
-    t.string "youtube_id_1"
-    t.string "youtube_id_2"
-    t.string "youtube_id_3"
-    t.string "youtube_comment_1"
-    t.string "youtube_comment_2"
-    t.string "youtube_comment_3"
-    t.string "youtube_outsidecolor"
-    t.string "youtube_insidecolor"
-    t.string "tiktok_id_1"
-    t.string "tiktok_id_2"
-    t.string "tiktok_id_3"
-    t.string "tiktok_comment_1"
-    t.string "tiktok_comment_2"
-    t.string "tiktok_comment_3"
-    t.string "tiktok_outsidecolor"
-    t.string "tiktok_insidecolor"
-    t.string "sns_icons_clor"
-    t.string "sns_icons_color"
     t.string "font_color"
     t.string "font_family"
     t.string "link_background_color"
@@ -125,6 +116,21 @@ ActiveRecord::Schema.define(version: 2021_03_04_152423) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "youtubes", force: :cascade do |t|
+    t.string "account"
+    t.string "comment"
+    t.string "outsidecolor"
+    t.string "insidecolor"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_youtubes_on_user_id"
+  end
+
+  add_foreign_key "facebooks", "users"
+  add_foreign_key "instagrams", "users"
   add_foreign_key "links", "users"
+  add_foreign_key "tiktoks", "users"
   add_foreign_key "twitters", "users"
+  add_foreign_key "youtubes", "users"
 end

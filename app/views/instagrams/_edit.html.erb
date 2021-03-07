@@ -1,0 +1,110 @@
+<% @instagrams.each do |instagram| %>  
+  <%= form_with(model: instagram, local: true, multipart: true,class:"foo") do |form| %>
+<!-- ポップアップ instagram-->
+  <div class="popup_wrap">
+    <input id="trigger_<%= instagram%>" type="checkbox">
+    <div class="popup_overlay">
+      <label for="trigger_<%= instagram%>" class="popup_trigger"></label>
+      <div class="popup_content_p">
+      <!-- アカウント情報-->
+      <div class="popup_wrap">
+        <input id="trigger_acount<%= instagram%>" type="checkbox">
+          <div class="popup_content_acount edit_sns_popup">
+            <div class="sns_acount_popup_title">
+             <p class="popup_title" style="margin-bottom:27px;">instagramリンク設定</p>
+            </div>
+          <div class="sns_acount_form_pp" style="height:80px;">
+            <div class="sns_acount_form_p">
+              <label  class="form_title">アカウントのID&emsp;</label>
+               <%= form.text_field :account,class:"sns_edit_form",maxlength: "100",required: true%>
+              <label class="form_title">コメントを追加&emsp;</label>
+               <%= form.text_field :comment,class:"sns_edit_form",maxlength: "100"%>
+            </div>
+           </div>
+          <p><label class="edit_close_btn"  for="trigger_acount<%= instagram%>"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+          <input class="OK" type="submit" value="保存" name="account">
+        </div>
+      </div>
+ <!-- 外側色-->
+  <div class="popup_wrap">
+    <input id="trigger_outsidecolor<%= instagram%>" type="checkbox">
+    <div class="popup_content_c">
+      <p class="popup_title">instagramの外側色</p>
+      <p><label class="edit_close_btn"  for="trigger_outsidecolor<%= instagram%>"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+        <% @color_index.each do |color| %>
+         <%= form.radio_button :outsidecolor, color,id:"C#{instagram.account}#{color}"%>
+         <label for="C<%= instagram.account%><%= color%>" class="color_index_p">
+            <span class="color_index C<%= instagram.account%><%= color%>"></span>
+          </label>
+        <%end%>
+      <input class="OK" type="submit" value="保存" name="outsidecolor">
+    </div>
+  </div>
+
+ <!-- 内側色-->
+  <div class="popup_wrap">
+    <input id="trigger_insidecolor<%= instagram%>" type="checkbox">
+    <div class="popup_content_c">
+      <p class="popup_title">instagramの内側色</p>
+      <p><label class="edit_close_btn"  for="trigger_insidecolor<%= instagram%>"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+        <% @color_index.each do |color| %>
+          <%= form.radio_button :insidecolor, color,id:"B#{instagram.account}#{color}"%>
+          <label for="B<%= instagram.account%><%= color%>" class="color_index_p">
+            <span class="color_index B<%= instagram.account%><%= color%>"></span>
+          </label>
+        <%end%>
+      <input class="OK" type="submit" value="保存" name="insidecolor">
+    </div>
+  </div>
+    <!-- instagramポップアップ選択画面 -->
+      <div class="popup_content_select">
+        <p class="popup_title">instagram設定</p>
+        <%= link_to '削除', "/instagrams/#{instagram.id}",class:"link_destroy",method: :delete, data: {confirm: "削除しますか?"}  %>
+        <p><label class="edit_close_btn"  for="trigger_<%= instagram%>"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+        <p><label for="trigger_acount<%= instagram%>" class="open_btn_s">instagramのリンク・コメントを編集</label></p>
+        <p><label for="trigger_outsidecolor<%= instagram%>" class="open_btn_s">instagramアイコンの色を設定(外側)</label></p>
+        <p><label for="trigger_insidecolor<%= instagram%>" class="open_btn_s">instagramアイコンの色を設定(内側)</label></p>
+      </div>
+    </div>
+   </div>
+  </div>
+
+  <% if @instagram.account!="" %>
+    <label for="trigger_<%= instagram%>">
+    <div class="sns_p">
+      <p class="sns_text"><%= instagram.comment %></p>
+      <div class="sns_outside instagram_outsidecolor<%= instagram.outsidecolor%>">
+        <span class="fab fa-instagram sns_inside instagram_insidecolor<%= instagram.insidecolor%>"></span>
+      </div>
+    </div>
+    </label>
+  <%end%>
+
+<style>
+
+    /*instagramアイコン 外側色*/
+  .instagram_outsidecolor<%= instagram.outsidecolor%>{
+  background-color: #<%= instagram.outsidecolor%>;
+  }
+
+  /*instagramアイコン 内側色*/
+  .instagram_insidecolor<%= instagram.insidecolor%>{
+  color: #<%= instagram.insidecolor%>;
+  }
+
+  <% @color_index.each do |color| %>
+    .C<%= instagram.account%><%= color%>{
+    background-color: #<%= color%>;
+    }
+  <%end%>
+
+  <% @color_index.each do |color| %>
+    .B<%= instagram.account%><%= color%>{
+    background-color: #<%= color%>;
+    }
+  <%end%>
+
+</style>
+
+  <% end %>
+ <% end %>

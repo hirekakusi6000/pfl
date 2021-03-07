@@ -1,4 +1,7 @@
 class LinksController < ApplicationController
+
+  before_action :set_items, only: %i[update create]
+  before_action :set_new_item, only: %i[update create]
   
   def new
     @link = Link.new
@@ -13,8 +16,8 @@ class LinksController < ApplicationController
      redirect_to("/users/#{current_user.id}/edit")
     else
      @user = User.find_by(id:current_user.id)
-     @links = Link.where(user_id:current_user.id)
-     @twitters = Twitter.where(user_id:current_user.id)
+     @twitter = Twitter.new
+     @instagram = Instagram.new
      render template: "users/edit"
     end
   end
@@ -35,7 +38,6 @@ class LinksController < ApplicationController
       redirect_to("/users/#{current_user.id}/edit")
     else
       @user = User.find_by(id:current_user.id)
-      @links = Link.where(user_id:current_user.id)
       render template: "users/edit"
     end
   end

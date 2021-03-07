@@ -1,13 +1,13 @@
- <!-- ポップアップ Twitter追加-->
-  <%= form_with(model: @twitter, local: true,class:"foo") do |form| %>
+ <!-- ポップアップ instagram追加-->
+  <%= form_with(model: @instagram, local: true,class:"foo") do |form| %>
 
   <div class="popup_wrap">
-    <input id="trigger_twitter" type="checkbox">
+    <input id="trigger_instagram" type="checkbox">
     <div class="popup_overlay">
-      <label for="trigger_twitter" class="popup_trigger"></label>
+      <label for="trigger_instagram" class="popup_trigger"></label>
       <div class="popup_content_p">
       <div class="popup_content add_sns_popup">
-        <p class="popup_title" style="margin-bottom:27px;">Twitterリンク追加</p>
+        <p class="popup_title" style="margin-bottom:27px;">instagramリンク追加</p>
         <div class="sns_acount_form_pp" style="height:80px;">
            <div class="sns_acount_form_p">
 
@@ -18,20 +18,20 @@
 
          </div>
       </div>
-      <p><label class="edit_close_btn"  for="trigger_twitter"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
-      <input class="OK" type="submit" value="保存" name="add_twitter">
+      <p><label class="edit_close_btn"  for="trigger_instagram"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+      <input class="OK" type="submit" value="保存" name="add_instagram">
      </div>
     </div>
    </div>
   </div>
 
-  <label for="trigger_twitter">
-  <div class="sns_outside" style="background:#A9D0F5;">
+  <label for="trigger_instagram">
+  <div class="sns_outside" style="background:#F5A9E1;">
       <p class="sns_text"></p>
       <div class="plus_icon_p">
         <i class="fas fa-plus-circle plus_icon"></i>
       </div>
-      <span class="fab fa-twitter sns_inside" style="color:white;"></span>
+      <span class="fab fa-instagram sns_inside" style="color:white;"></span>
   </div>
 </label>
 

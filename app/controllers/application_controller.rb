@@ -10,6 +10,35 @@ class ApplicationController < ActionController::Base
     @font_family_index = {a:"ＭＳ 明朝,HiraMinProN-W3",b:"SimSun,cursive",c:"Impact,fantasy",d:"游ゴシック,Hiragino Sans",e:"Sawarabi Mincho,monospace",f:"alba super,HiraKakuProN-W6",g:"Lucida Console,HiraKakuProN-W3",h:"Courier New,Helvetica Neue",i:"BatangChe,Gurmukhi MN",j:"monospace,Georgia"}
   end
 
+  def set_new_item
+    @link = Link.new
+    @twitter = Twitter.new
+    @instagram = Instagram.new
+    @facebook = Facebook.new
+    @youtube = Youtube.new
+    @tiktok = Tiktok.new 
+  end
+
+  def set_show_items
+    @links = Link.where(user_id:params[:id])
+    @twitters = Twitter.where(user_id:params[:id]).order(id: "ASC") 
+    @instagrams = Instagram.where(user_id:params[:id]).order(id: "ASC")
+    @facebooks = Facebook.where(user_id:params[:id]).order(id: "ASC")
+    @youtubes = Youtube.where(user_id:params[:id]).order(id: "ASC")
+    @tiktoks = Tiktok.where(user_id:params[:id]).order(id: "ASC")
+  end
+
+  def set_items
+    if user_signed_in?
+      @links = Link.where(user_id:current_user.id)
+      @twitters = Twitter.where(user_id:current_user.id).order(id: "ASC") 
+      @instagrams = Instagram.where(user_id:current_user.id).order(id: "ASC")
+      @facebooks = Facebook.where(user_id:current_user.id).order(id: "ASC")
+      @youtubes = Youtube.where(user_id:current_user.id).order(id: "ASC")
+      @tiktoks = Tiktok.where(user_id:current_user.id).order(id: "ASC")
+    end
+  end
+
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected

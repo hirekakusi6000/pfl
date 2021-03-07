@@ -24,3 +24,39 @@
     <% end %>
   </div>
 <% end %>
+
+<% if @instagram.errors.any? %>
+  <div class="alert alert-danger" role="alert" style="margin-bottom:0px;">
+  <a href="#" class="close" data-dismiss="alert">×</a>
+    <% @instagram.errors.full_messages.each do |msg| %>
+        <p><%= msg %></p>
+    <% end %>
+  </div>
+<% end %>
+
+<% if @tiktok.errors.any? %>
+  <div class="alert alert-danger" role="alert" style="margin-bottom:0px;">
+  <a href="#" class="close" data-dismiss="alert">×</a>
+    <% @tiktok.errors.full_messages.each do |msg| %>
+        <p><%= msg %></p>
+    <% end %>
+  </div>
+<% end %>
+
+<% if @youtube.errors.any? %>
+  <div class="alert alert-danger" role="alert" style="margin-bottom:0px;">
+  <a href="#" class="close" data-dismiss="alert">×</a>
+    <% @youtube.errors.full_messages.each do |msg| %>
+        <p><%= msg %></p>
+    <% end %>
+  </div>
+<% end %>
+
+<% if @facebook.errors.any? %>
+  <div class="alert alert-danger" role="alert" style="margin-bottom:0px;">
+  <a href="#" class="close" data-dismiss="alert">×</a>
+    <% @facebook.errors.full_messages.each do |msg| %>
+        <p><%= msg %></p>
+    <% end %>
+  </div>
+<% end %>
