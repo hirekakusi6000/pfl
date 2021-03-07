@@ -1,6 +1,6 @@
 class HomesController < ApplicationController
  
-  # 1ページの表示数
+  # 1ページの表示数 
   PER_PAGE = 50
   
   def top
