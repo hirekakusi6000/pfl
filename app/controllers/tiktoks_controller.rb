@@ -1,4 +1,4 @@
-class TwittersController < ApplicationController
+class TiktoksController < ApplicationController
 
   before_action :set_items, only: %i[update create]
   before_action :set_new_item, only: %i[update create]
@@ -12,18 +12,18 @@ class TwittersController < ApplicationController
   end
 
   def destroy
-    twitter = Twitter.find(params[:id])
-    twitter.destroy
+    tiktok = Tiktok.find(params[:id])
+    tiktok.destroy
     redirect_to("/users/#{current_user.id}/edit")
   end
 
   def create
-    @twitter = Twitter.new(account_params)
-    @twitter.user_id = current_user.id
-    @twitter.outsidecolor = "A9D0F5"
-    @twitter.insidecolor = "FFFFFF"
+    @tiktok = Tiktok.new(account_params)
+    @tiktok.user_id = current_user.id
+    @tiktok.outsidecolor = "000000"
+    @tiktok.insidecolor = "FFFFFF"
 
-    if @twitter.save
+    if @tiktok.save
      flash[:notice] = "リンクを追加しました"
      redirect_to("/users/#{current_user.id}/edit")
     else
@@ -33,21 +33,21 @@ class TwittersController < ApplicationController
   end
 
     def update
-    @twitter = Twitter.find_by(id:params[:id])
+    @tiktok = Tiktok.find_by(id:params[:id])
 
      if params[:account]
-      @twitter.update(account_params)
+      @tiktok.update(account_params)
       update = 0
      elsif params[:outsidecolor]
-      @twitter.update(outsidecolor_params)
+      @tiktok.update(outsidecolor_params)
       update = 0
      elsif params[:insidecolor]
-      @twitter.update(insidecolor_params)
+      @tiktok.update(insidecolor_params)
       update = 0
      end
 
     if update = 0
-      flash[:notice] = "Twitterリンク設定を更新しました"
+      flash[:notice] = "tiktokリンク設定を更新しました"
       redirect_to("/users/#{current_user.id}/edit")
     else
       render template: "users/edit"
@@ -57,16 +57,15 @@ class TwittersController < ApplicationController
     private
 
   def account_params
-    params.require(:twitter).permit(:account,:comment)
+    params.require(:tiktok).permit(:account,:comment)
   end
 
   def outsidecolor_params
-    params.require(:twitter).permit(:outsidecolor)
+    params.require(:tiktok).permit(:outsidecolor)
   end
 
   def insidecolor_params
-    params.require(:twitter).permit(:insidecolor)
+    params.require(:tiktok).permit(:insidecolor)
   end
 
 end
-

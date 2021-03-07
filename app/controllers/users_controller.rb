@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+
+  before_action :set_items, only: %i[show edit update]
+  before_action :set_new_item, only: %i[edit update create]
+  before_action :set_show_items, only: %i[show]
+
   # 1ページの表示数
   PER_PAGE = 20
   def index
@@ -8,17 +13,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id:params[:id])
-    @links = Link.where(user_id:params[:id])
-    @twitters = Twitter.where(user_id:params[:id]).order(id: "ASC")   
   end
 
   def edit
     @user = User.find_by(id:current_user.id)
-    @links = Link.where(user_id:current_user.id)
-    @twitters = Twitter.where(user_id:current_user.id).order(id: "ASC")   
-    @link = Link.new
-    @twitter = Twitter.new
-    
   end
 
   def update
@@ -54,8 +52,6 @@ class UsersController < ApplicationController
       flash[:notice] = "更新しました"
       redirect_to("/users/#{current_user.id}/edit")
     else
-      @link = Link.new
-      @links = Link.where(user_id:current_user.id)
       render template: "users/edit"
     end
   end

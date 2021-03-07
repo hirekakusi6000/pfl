@@ -6,6 +6,9 @@ class HomesController < ApplicationController
   def top
     @q = User.ransack(params[:q])
     @users = @q.result.order("created_at DESC").page(params[:page]).per(PER_PAGE)
+    if user_signed_in?
+      redirect_to("/users/#{current_user.id}")
+    end
   end
 
 end

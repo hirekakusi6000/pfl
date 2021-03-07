@@ -8,9 +8,13 @@
     <% end %>
     <!-- アイコン-->
       <label for="trigger" class="open_btn">
-        <div class="icon_image_p">
+        <% if @user.icon_image? %>
           <%= image_tag @user.icon_image.url,class:"icon_image"%>
-        </div>
+        <% else %>
+          <div class="default_icon_image_p">
+            <i class="fas fa-user default_icon"></i>
+          </div>
+        <% end %>
       </label>
     <!-- アイコン-->
   </div>
@@ -57,9 +61,11 @@
 
   <!-- SNSアイコン一覧表示-->
   <div class="sns_pp">
-
     <%= render 'twitters/index' %>
-
+    <%= render 'instagrams/index' %>
+    <%= render 'facebooks/index' %>
+    <%= render 'youtubes/index' %>
+    <%= render 'tiktoks/index' %>
   </div>
 
   <!-- プロフィール文章-->

@@ -321,7 +321,6 @@
 
 .open_btn_s:hover {
   text-decoration: none;
-  transition: all 0.5s;
   opacity: 0.7;
   transform: scale(1.03, 1.03);
 }
@@ -428,12 +427,6 @@
     text-align: center;
     font-weight: bold;
     padding-top: 9px
-  }
-
-  .open_btn_s:hover {
-    text-decoration: none;
-    transition: all 0.5s;
-    opacity: 0.7;
   }
 
   /*保存ボタン*/

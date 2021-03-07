@@ -244,17 +244,25 @@
 <!-- SNSリンク追加-->
 <div class="sns_pp">
   <%= render 'twitters/new' %>
+  <%= render 'instagrams/new' %>
+  <%= render 'facebooks/new' %>
+  <%= render 'youtubes/new' %>
+  <%= render 'tiktoks/new' %>
 </div>
 
-<% if @twitters.present? %>
+<% if @twitters.present? or @instagrams.present? or @facebooks.present? or @youtubes.present? or @tiktoks.present?%>
   <div class="link_edit_click">
-   <p>↓クリックで編集できます</p>
+   <p>↓ クリックでデザイン・リンクを編集できます</p>
   </div>
 <%end%>
 
 <!-- SNS一覧編集-->
 <div class="sns_pp">
   <%= render 'twitters/edit' %>
+  <%= render 'instagrams/edit' %>
+  <%= render 'facebooks/edit' %>
+  <%= render 'youtubes/edit' %>
+  <%= render 'tiktoks/edit' %>
 </div>
 
   <div class="trigger_btn_p">

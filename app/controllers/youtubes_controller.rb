@@ -1,4 +1,4 @@
-class TwittersController < ApplicationController
+class YoutubesController < ApplicationController
 
   before_action :set_items, only: %i[update create]
   before_action :set_new_item, only: %i[update create]
@@ -12,18 +12,18 @@ class TwittersController < ApplicationController
   end
 
   def destroy
-    twitter = Twitter.find(params[:id])
-    twitter.destroy
+    youtube = Youtube.find(params[:id])
+    youtube.destroy
     redirect_to("/users/#{current_user.id}/edit")
   end
 
   def create
-    @twitter = Twitter.new(account_params)
-    @twitter.user_id = current_user.id
-    @twitter.outsidecolor = "A9D0F5"
-    @twitter.insidecolor = "FFFFFF"
+    @youtube = Youtube.new(account_params)
+    @youtube.user_id = current_user.id
+    @youtube.outsidecolor = "F7819F"
+    @youtube.insidecolor = "FFFFFF"
 
-    if @twitter.save
+    if @youtube.save
      flash[:notice] = "リンクを追加しました"
      redirect_to("/users/#{current_user.id}/edit")
     else
@@ -33,21 +33,21 @@ class TwittersController < ApplicationController
   end
 
     def update
-    @twitter = Twitter.find_by(id:params[:id])
+    @youtube = Youtube.find_by(id:params[:id])
 
      if params[:account]
-      @twitter.update(account_params)
+      @youtube.update(account_params)
       update = 0
      elsif params[:outsidecolor]
-      @twitter.update(outsidecolor_params)
+      @youtube.update(outsidecolor_params)
       update = 0
      elsif params[:insidecolor]
-      @twitter.update(insidecolor_params)
+      @youtube.update(insidecolor_params)
       update = 0
      end
 
     if update = 0
-      flash[:notice] = "Twitterリンク設定を更新しました"
+      flash[:notice] = "youtubeリンク設定を更新しました"
       redirect_to("/users/#{current_user.id}/edit")
     else
       render template: "users/edit"
@@ -57,16 +57,15 @@ class TwittersController < ApplicationController
     private
 
   def account_params
-    params.require(:twitter).permit(:account,:comment)
+    params.require(:youtube).permit(:account,:comment)
   end
 
   def outsidecolor_params
-    params.require(:twitter).permit(:outsidecolor)
+    params.require(:youtube).permit(:outsidecolor)
   end
 
   def insidecolor_params
-    params.require(:twitter).permit(:insidecolor)
+    params.require(:youtube).permit(:insidecolor)
   end
 
 end
-
