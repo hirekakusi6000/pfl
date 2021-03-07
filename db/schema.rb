@@ -117,7 +117,7 @@ ActiveRecord::Schema.define(version: 2021_03_07_051528) do
   end
 
   create_table "youtubes", force: :cascade do |t|
-    t.string "account"
+    t.string "account", null: false
     t.string "comment"
     t.string "outsidecolor"
     t.string "insidecolor"
