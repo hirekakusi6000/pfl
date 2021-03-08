@@ -43,8 +43,11 @@ class UsersController < ApplicationController
      elsif params[:edit_link_font_color]
       @user.update(edit_link_font_color)
       update = 0
-    elsif params[:edit_link_background_color]
+     elsif params[:edit_link_background_color]
       @user.update(edit_link_background_color)
+      update = 0
+     elsif params[:open_status]
+      @user.update(open_status_params)
       update = 0
      end
 
@@ -104,6 +107,12 @@ def edit_link_font_color
  def edit_link_background_color
   params.require(:user).permit(
     :link_background_color
+  )
+ end
+
+ def open_status_params
+    params.require(:user).permit(
+    :open_status
   )
  end
 

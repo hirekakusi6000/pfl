@@ -252,6 +252,13 @@
   min-width: 420px;
 }
 
+.open_status_popup {
+  max-height: 240px;
+  min-height: 240px;
+  max-width: 420px;
+  min-width: 420px;
+}
+
 .edit_sns_popup {
   max-height: 270px;
   min-height: 270px;
@@ -397,6 +404,12 @@
     min-height: 260px;
   }
 
+  .open_status_popup {
+    max-height: 215px;
+    min-height: 215px;
+    max-width: 340px;
+    min-width: 340px;
+  }
 
   .add_link_popup {
     max-height: 390px;

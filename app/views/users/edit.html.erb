@@ -154,6 +154,27 @@
    </div>
   </div>
 
+  <!-- プロフィール公開設定 ポップアップ-->
+  <div class="popup_wrap">
+    <input id="trigger_open_status" type="checkbox">
+    <div class="popup_overlay">
+      <label for="trigger_header_image" class="popup_trigger"></label>
+      <div class="popup_content_p">
+        <div class="popup_content open_status_popup">
+       
+        <p class="popup_title" style="padding-bottom:50px;">公開設定</p>
+           <div class="custom-control custom-switch" style="text-align:center;">
+            <%= form.check_box :open_status,checked_value:"0",unchecked_value:"1",class:"custom-control-input",id:"customSwitch1"%>
+            <label class="custom-control-label" for="customSwitch1">ユーザーの一覧ページに表示する</label>
+          </div>
+
+       <p><label class="edit_close_btn"  for="trigger_open_status"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+       <input class="OK" type="submit" value="保存" name="open_status">
+     </div>
+    </div>
+   </div>
+  </div>
+
  <!-- アイコンイメージ ポップアップ-->
   <div class="popup_wrap">
     <input id="trigger_icon_image" type="checkbox">
@@ -217,7 +238,6 @@
 
   </div>
 
-
   <div class="trigger_btn_p">
     <!-- ユーザーネーム編集ボタン-->
     <label for="trigger_name_edit">
@@ -235,6 +255,12 @@
     <label for="trigger_font_style">
       <div class="trigger_btn">
         <p>フォントデザイン</p>
+      </div>
+    </label>
+ <!-- 公開設定ボタン-->
+    <label for="trigger_open_status">
+      <div class="trigger_btn">
+        <p>公開設定</p>
       </div>
     </label>
   </div>

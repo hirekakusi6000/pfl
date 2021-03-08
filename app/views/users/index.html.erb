@@ -8,6 +8,7 @@
 
   <div class="index_icon_pp">
     <% @users.each do |user| %>
+    <% if user.open_status == 1 %>
       <div class="index_icon_p">
         <% if user.icon_image? %>
           <p><a href="/users/<%= user.id %>"><img src="<%= user.icon_image %>"></a></p>
@@ -17,7 +18,8 @@
         <p class="index_user_name_p"><a class="index_user_name" href="/users/<%= user.id %>"><%= user.name %></a></p>
       </div>
     <% end %>
-   </div>
+   <% end %>
+  </div>
 
   <div class="paginate">
     <%= paginate @users %>
