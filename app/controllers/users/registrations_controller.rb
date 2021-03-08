@@ -16,7 +16,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render "devise/registrations/new" and return
     end
     @user.font_color = "585858"
-    @user.edit_link_background_color = "FAFAFA"
+    @user.link_background_color = "FAFAFA"
     sign_in(:user, @user)
     redirect_to("/users/#{@user.id}")
   end
