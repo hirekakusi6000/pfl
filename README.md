@@ -45,4 +45,5 @@ TwitterやfacebookなどのSNSのリンクを、このアプリのプロフィ�
 ![無題478_20210308224303](https://user-images.githubusercontent.com/76430700/110329607-2e7b9980-8060-11eb-8e0e-3a22e334570b.png)
 - SNSアイコンとして表示されるリンク以外も無制限に追加することができます。リンクを設定して追加すると、プロフィールにリンクボタンが表示されます。
 　リンクボタンとリンクボタンの中の文字の色も55色から選択できます。
- ![IMG_6545](https://user-images.githubusercontent.com/76430700/110331002-d80f5a80-8061-11eb-827d-83f98cbf90c5.PNG)
+ ![IMG_6574](https://user-images.githubusercontent.com/76430700/110331041-e65d7680-8061-11eb-81a1-c9acd0df47b8.PNG)
+
