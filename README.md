@@ -1,24 +1,24 @@
-# README
+## kakikukeko-app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## URL
 
-Things you may want to cover:
+https://kakikukeko-pfl.herokuapp.com/
 
-* Ruby version
+## 開発環境
 
-* System dependencies
+- Rails 6.1.1
+- ruby 2.7.2
+- psql (PostgreSQL) 13.1
+- HTML,CSS
 
-* Configuration
+## サービス概要
 
-* Database creation
 
-* Database initialization
+## コンセプト
 
-* How to run the test suite
+ユーザー満足度の高いアプリを作りたいと思い、以下の点をを行いながら作成いたしました。
+- 既存のサービスではどのようにユーザーがサービスを使用しているのかを調査
+- 既存のサービスを使用しているユーザーに、欲しい機能をヒアリング
+- 既存のサービスのユーザーの年齢層や性別をチェックして、どのような機能を入れたら喜ばれるのかを予想して実装
+- 実際に知り合いに使ってみてもらって、良かった点と気になった点をヒアリング
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
