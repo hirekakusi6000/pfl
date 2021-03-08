@@ -40,4 +40,7 @@ TwitterやfacebookなどのSNSを、このアプリのプロフィールにお�
 - プロフィールのフォントカラー選択機能（55色から選べます）
 - プロフィールのフォントの種類選択機能（10種類のフォントから選べます）
 - 公開設定機能（リンクを知っている人ではないとプロフィールを閲覧できない用に設定できます）
-- Twitter、instagram、facebook、youtube、tiktokのリンクを
+- Twitter、instagram、facebook、youtube、tiktokのリンクを無制限に追加することができます。![Uploading 20.jpg…]()
+![IMG_6559](https://user-images.githubusercontent.com/76430700/110328766-17887780-805f-11eb-91e8-16d7776cef11.PNG)
+
+- 
