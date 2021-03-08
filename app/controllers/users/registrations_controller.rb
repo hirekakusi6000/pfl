@@ -16,17 +16,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render "devise/registrations/new" and return
     end
     @user.font_color = "585858"
-    @user.twitter_outsidecolor = "E0F2F7"
-    @user.twitter_insidecolor = "FFFFFF"
-    @user.instagram_outsidecolor = "F8E0F1"
-    @user.instagram_insidecolor = "FFFFFF"
-    @user.facebook_outsidecolor = "ECE0F8"
-    @user.facebook_insidecolor = "FFFFFF"
-    @user.youtube_outsidecolor = "F8E0E0"
-    @user.youtube_insidecolor = "FFFFFF"
-    @user.tiktok_outsidecolor = "000000"
-    @user.tiktok_insidecolor = "FFFFFF"
-    @user.save
+    @user.edit_link_background_color = "FAFAFA"
     sign_in(:user, @user)
     redirect_to("/users/#{@user.id}")
   end
