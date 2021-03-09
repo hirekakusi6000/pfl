@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'tiktoks/_new'
-  get 'tiktoks/_edit'
-  get 'tiktoks/_index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users, controllers: { 
@@ -9,7 +6,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     passwords: 'users/passwords'
   }
-  get "/" => "homes#top"
+  root  "homes#top"
   post "links/:id/update" => "links#update"  
   delete "/links/:id" => "links#destroy"
   post "twitters/:id/update" => "twitters#update"  
