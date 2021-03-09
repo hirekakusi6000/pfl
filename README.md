@@ -31,7 +31,7 @@ TwitterやfacebookなどのSNSのリンクを、このアプリのプロフィ�
 
 又、既存のサービスでは、TwitterなどのSNSのリンクやアカウントIDを登録するとプロフィールに登録したTwitterのアイコンが下記の画像のように表れて、登録したSNSアカウントへのリンクボタンになります。
 しかし、既存のサービスでは各SNSのアカウントリンクを１つまでしか登録できないため、同じSNSで複数アカウントを持っている人や、好きなアイドルのアカウントのリンクなども一緒にのせたい人にはあまり優しくありません。
-そこで、無制限にTwitter、Instagram、youtbe、facebook、tiktokのアカウントを登録できる機能を実装いたしました。
+そこで、無制限にTwitter、Instagram、Youtbe、Facebook、Tiktokのアカウントを登録できる機能を実装いたしました。
 ![IMG_65431](https://user-images.githubusercontent.com/76430700/110473292-b7a6d500-8121-11eb-9804-8707115d02b4.png)
 
 ## プロフィール作成サイトを選んだ理由
