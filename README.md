@@ -2,7 +2,7 @@
 
 ## 🌐 App URL
 
-https://kakikukeko-.herokuapp.com/
+https://kakikukeko-app.herokuapp.com/
 
 ## 💻 開発環境
 
