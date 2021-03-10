@@ -13,4 +13,10 @@ class User < ApplicationRecord
   validates :name,length: { maximum: 50 }
   mount_uploader :icon_image, ImageUploader
   mount_uploader :header_image, ImageUploader
+
+  def self.guest
+    find_or_create_by!(email: 'guestuser@example.com',name: "ゲスト") do |user|
+      user.password = SecureRandom.urlsafe_base64
+    end
+  end
 end

@@ -7,41 +7,17 @@ ja:
       link: リンク
     attributes:
       link:
-         title: タイトル
-         url: URL
-         coment: コメント
+        title: タイトル
+        url: URL
+        coment: コメント
       user:
-          name: 名前
-          twitter_id_1: TwitterのID
-          twitter_comment_1: Twitterアイコンのコメント
-          twitter_id_2: TwitterのID
-          twitter_comment_2: Twitterアイコンのコメント
-          twitter_id_3: TwitterのID
-          twitter_comment_3: Twitterアイコンのコメント
-          instagram_id_1: InstagramのID
-          instagram_comment_1: Instagramアイコンのコメント
-          instagram_id_2: InstagramのID
-          instagram_comment_2: Instagramアイコンのコメント
-          instagram_id_3: InstagramのID
-          instagram_comment_3: Instagramアイコンのコメント
-          facebook_id_1: FacebookのURL
-          facebook_comment_1: Facebookアイコンのコメント
-          facebook_id_2: FacebookのURL
-          facebook_comment_2: Facebookアイコンのコメント
-          facebook_id_3: FacebookのURL
-          facebook_comment_3: Facebookアイコンのコメント
-          youtube_id_1: YoutubeのURL
-          youtube_comment_1: Youtubeアイコンのコメント
-          youtube_id_2: YoutubeのURL
-          youtube_comment_2: Youtubeアイコンのコメント
-          youtube_id_3: YoutubeのURL
-          youtube_comment_3: Youtubeアイコンのコメント
-          tiktok_id_1: TiktokのURL
-          tiktok_comment_1: Tiktokアイコンのコメント
-          tiktok_id_2: TiktokのURL
-          tiktok_comment_2: Tiktokアイコンのコメント
-          tiktok_id_3: TiktokのURL
-          tiktok_comment_3: Tiktokアイコンのコメント
+        name: 名前
+      twitter:
+        account: このTwitterアカウント
+      instagram:
+        account: このInstagramアカウント
+    　facebook:
+        account: このFacebookアカウント
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
