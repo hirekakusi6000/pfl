@@ -1,0 +1,24 @@
+<% @links.each do |link| %>
+
+  <div class="link_pp">
+    <a href="<%= link.url%>"  id="a-no-both" style="color:inherit;text-decoration:none;">
+      <div class="link_title background_color<%= link.title%>">
+        <p class="font_color<%= link.title%>"><%= link.title %></p>
+      </div>
+    </a>
+    <div class="link_coment">
+      <p><%= link.coment%></p>
+    </div>
+  </div>
+
+  <style>
+  .background_color<%= link.title%>{
+  background-color: #<%= link.background_color%>;
+  }
+
+  .font_color<%= link.title%>{
+  color: #<%= link.font_color%>;
+  }
+  </style>
+
+<% end %>

@@ -74,23 +74,11 @@
   </div>
 
   <!-- リンク一覧表示-->
-    <% @links.each do |link| %>
-      <div class="link_pp">
-        <a href="<%= link.url%>"  id="a-no-both" style="color:inherit;text-decoration:none;">
-          <div class="link_title">
-           <p><%= link.title %></p>
-          </div>
-        </a>
-        <div class="link_coment">
-          <p><%= link.coment%></p>
-        </div>
-      </div>
-    <% end %>
+  <%= render 'links/index' %>
 
 </div>
 
 <style>
-
    .introduce {
     height: auto;
     padding-bottom:100px;
@@ -101,12 +89,4 @@
   body {
     background-color: #<%=@user.background_color%>;
   }
-
-   /*リンクカラー*/
-  .link_title{
-    background-color: #<%= @user.link_background_color%>;
-    color: #<%= @user.link_font_color%>;
-  }
-
-
 </style>

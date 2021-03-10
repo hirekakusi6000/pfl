@@ -1,54 +1,112 @@
- <!-- リンク一覧編集-->
-<% if @links.present? %>
-  <div class="link_edit_click">
-   <p>↓ クリックでリンクを編集できます</p>
-  </div>
-<%end%>
-
 <% @links.each do |link| %>  
   <%= form_with(model: link, local: true, multipart: true) do |form| %>
-
-    <div class="popup_wrap">
+<!-- ポップアップ link-->
+  <div class="popup_wrap">
     <input id="trigger_<%= link%>" type="checkbox">
     <div class="popup_overlay">
       <label for="trigger_<%= link%>" class="popup_trigger"></label>
       <div class="popup_content_p">
-      <div class="popup_content">
-        <p class="popup_title">リンク設定</p>
-        <%= link_to '削除', "/links/#{link.id}",class:"link_destroy",method: :delete, data: {confirm: "削除しますか?"}  %>
-
+      <!-- アカウント情報-->
+      <div class="popup_wrap">
+        <input id="trigger_acount<%= link%>" type="checkbox">
+          <div class="popup_content_acount add_link_popup">
+            <div class="sns_acount_popup_title">
+             <p class="popup_title" style="margin-bottom:27px;">リンク設定</p>
+            </div>
+            
         <div class="link_form_pp">
           <div class="link_form_p">
             <label  class="form_title">タイトル&emsp;</label>
-            <%= form.text_field :title,class:"link_form",maxlength: "1000",required: true%>
+            <%= form.text_field :title,class:"link_form",maxlength: "1000",required: true %>
             <label class="form_title">ＵＲＬ&emsp;&emsp;</label>
-            <%= form.text_field :url,class:"link_form",maxlength: "1000",required: true%>
+            <%= form.text_field :title,class:"link_form",maxlength: "1000",required: true %>
           <div class="link_coment_form_p">
             <label class="coment_form_title">コメント&emsp;</label>
             <%= form.text_area :coment,class:"link_coment_form",maxlength: "1000"%>
           </div>
         </div>
+        </div>
+
+          <p><label class="edit_close_btn"  for="trigger_acount<%= link%>"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+          <input class="OK" type="submit" value="保存" name="edit_link">
+        </div>
       </div>
+ <!-- 外側色-->
+  <div class="popup_wrap">
+    <input id="trigger_background_color<%= link%>" type="checkbox">
+    <div class="popup_content_c">
+      <p class="popup_title">linkの外側色</p>
+      <p><label class="edit_close_btn"  for="trigger_background_color<%= link%>"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+        <% @color_index.each do |color| %>
+         <%= form.radio_button :background_color, color,id:"background_color#{link.title}#{color}"%>
+         <label for="background_color<%= link.title%><%= color%>" class="color_index_p">
+            <span class="color_index background_color<%= link.title%><%= color%>"></span>
+          </label>
+        <%end%>
+      <input class="OK" type="submit" value="保存" name="background_color">
+    </div>
+  </div>
 
-      <p><label class="edit_close_btn"  for="trigger_<%= link%>"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
-      <input class="OK" type="submit" value="保存" name="edit_link">
-
-     </div>
+ <!-- 内側色-->
+  <div class="popup_wrap">
+    <input id="trigger_font_color<%= link%>" type="checkbox">
+    <div class="popup_content_c">
+      <p class="popup_title">linkの内側色</p>
+      <p><label class="edit_close_btn"  for="trigger_font_color<%= link%>"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+        <% @color_index.each do |color| %>
+          <%= form.radio_button :font_color, color,id:"font_color#{link.title}#{color}"%>
+          <label for="font_color<%= link.title%><%= color%>" class="color_index_p">
+            <span class="color_index font_color<%= link.title%><%= color%>"></span>
+          </label>
+        <%end%>
+      <input class="OK" type="submit" value="保存" name="font_color">
+    </div>
+  </div>
+    <!-- linkポップアップ選択画面 -->
+      <div class="popup_content_select">
+        <p class="popup_title">link設定</p>
+        <%= link_to '削除', "/links/#{link.id}",class:"link_destroy",method: :delete, data: {confirm: "削除しますか?"}  %>
+        <p><label class="edit_close_btn"  for="trigger_<%= link%>"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+        <p><label for="trigger_acount<%= link%>" class="open_btn_s">リンク情報</label></p>
+        <p><label for="trigger_background_color<%= link%>" class="open_btn_s">リンクボタンの色</label></p>
+        <p><label for="trigger_font_color<%= link%>" class="open_btn_s">リンクボタンの文字の色</label></p>
+      </div>
     </div>
    </div>
   </div>
 
-      
   <div class="link_pp">
       <label for="trigger_<%= link%>">
-        <div class="link_title">
-        <p><%= link.title %></p>
+        <div class="link_title background_color<%= link.title%>">
+        <p class="font_color<%= link.title%>"><%= link.title %></p>
         </div>
       </label>
     <div class="link_coment">
       <p><%= link.coment%></p>
     </div>
   </div>
+
+<style>
+  .background_color<%= link.title%>{
+  background-color: #<%= link.background_color%>;
+  }
+
+  .font_color<%= link.title%>{
+  color: #<%= link.font_color%>;
+  }
+
+  <% @color_index.each do |color| %>
+    .background_color<%= link.title%><%= color%>{
+    background-color: #<%= color%>;
+    }
+  <%end%>
+
+  <% @color_index.each do |color| %>
+    .font_color<%= link.title%><%= color%>{
+    background-color: #<%= color%>;
+    }
+  <%end%>
+</style>
 
   <% end %>
  <% end %>
