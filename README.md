@@ -1,10 +1,10 @@
-## kakikukeko-app
+# kakikukeko-app
 
-## URL
+## 🌐 App URL
 
 https://kakikukeko-pfl.herokuapp.com/
 
-## 開発環境
+## 💻 開発環境
 
 - Rails 6.1.1
 - ruby 2.7.2
@@ -17,7 +17,7 @@ https://kakikukeko-pfl.herokuapp.com/
 TwitterやfacebookなどのSNSのリンクを、このアプリのプロフィールにお洒落にまとめることができ、
 このアプリのリンク1つでシェアできるようになります。
 
-## コンセプト
+## 💬 コンセプト
 
 ユーザー満足度の高いアプリを作りたいと思い、以下の点を行いながら作成いたしました。  
 - 既存のサービスではどのようにユーザーがサービスを利用しているのかを調査  
