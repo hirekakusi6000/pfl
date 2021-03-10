@@ -60,7 +60,8 @@ TwitterやfacebookなどのSNSのリンクを、このアプリのプロフィ�
 ![無題478_20210308231559](https://user-images.githubusercontent.com/76430700/110333074-83211380-8064-11eb-868f-f482d056c2ac.png)
 
 ## ER図
-image_2021_3_10.png (211.07 KB)
+![image_2021_3_10](https://user-images.githubusercontent.com/76430700/110628499-6ca2c580-81e6-11eb-9029-bff0677959b1.png)
+
 
 ## 良かった点
 
