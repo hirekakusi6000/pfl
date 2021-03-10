@@ -18,7 +18,7 @@
   width: 400px;
   background: white;
   margin: 18px 10px 3px 10px;
-  padding: 5px;
+  padding: 3px;
   border-radius: 50px;
   cursor: pointer;
   font-size: 20px;
@@ -34,24 +34,20 @@
 
 .link_coment {
   height: auto;
-  min-height: 45px;
   width: 400px;
-  margin: 18px 10px 3px 10px;
   font-size: 16px;
 }
 
 @media screen and (max-width: 480px) {
 
   .link_title {
-    min-height: 45px;
-    width: 350px;
+    min-height: 30px;
+    width: 300px;
     margin: 0px 10px 3px 10px;
   }
 
   .link_coment {
-    min-height: 45px;
-    width: 350px;
-    margin: 18px 10px 3px 10px;
+    width: 300px;
     font-size: 14px;
   }
 

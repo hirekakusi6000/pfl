@@ -1,5 +1,6 @@
 <% @links.each do |link| %>  
   <%= form_with(model: link, local: true, multipart: true) do |form| %>
+  <%hex = SecureRandom.hex(10)%>
 <!-- ポップアップ link-->
   <div class="popup_wrap">
     <input id="trigger_<%= link%>" type="checkbox">
@@ -14,18 +15,18 @@
              <p class="popup_title" style="margin-bottom:20px;">リンク設定</p>
             </div>
             
-        <div class="link_form_pp">
-          <div class="link_form_p">
-            <label  class="form_title">タイトル&emsp;</label>
-            <%= form.text_field :title,class:"link_form",maxlength: "1000",required: true %>
-            <label class="form_title">ＵＲＬ&emsp;&emsp;</label>
-            <%= form.text_field :url,class:"link_form",maxlength: "1000",required: true %>
-          <div class="link_coment_form_p">
-            <label class="coment_form_title">コメント&emsp;</label>
-            <%= form.text_area :coment,class:"link_coment_form",maxlength: "1000"%>
-          </div>
-        </div>
-        </div>
+            <div class="link_form_pp">
+              <div class="link_form_p">
+                <label  class="form_title">タイトル&emsp;</label>
+                <%= form.text_field :title,class:"link_form",maxlength: "1000",required: true %>
+                <label class="form_title">ＵＲＬ&emsp;&emsp;</label>
+                <%= form.text_field :url,class:"link_form",maxlength: "1000",required: true %>
+              <div class="link_coment_form_p">
+                <label class="coment_form_title">コメント&emsp;</label>
+                <%= form.text_area :coment,class:"link_coment_form",maxlength: "1000"%>
+              </div>
+            </div>
+            </div>
 
           <p><label class="edit_close_btn"  for="trigger_acount<%= link%>"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
           <input class="OK" type="submit" value="保存" name="edit_link">
@@ -38,9 +39,9 @@
       <p class="popup_title">リンクの外側色</p>
       <p><label class="edit_close_btn"  for="trigger_background_color<%= link%>"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
         <% @color_index.each do |color| %>
-         <%= form.radio_button :background_color, color,id:"background_color#{link.title}#{color}"%>
-         <label for="background_color<%= link.title%><%= color%>" class="color_index_p">
-            <span class="color_index background_color<%= link.title%><%= color%>"></span>
+         <%= form.radio_button :background_color, color,id:"background_color#{hex}#{color}"%>
+         <label for="background_color<%= hex%><%= color%>" class="color_index_p">
+            <span class="color_index background_color<%= hex%><%= color%>"></span>
           </label>
         <%end%>
       <input class="OK" type="submit" value="保存" name="background_color">
@@ -54,9 +55,9 @@
       <p class="popup_title">リンクの内側色</p>
       <p><label class="edit_close_btn"  for="trigger_font_color<%= link%>"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
         <% @color_index.each do |color| %>
-          <%= form.radio_button :font_color, color,id:"font_color#{link.title}#{color}"%>
-          <label for="font_color<%= link.title%><%= color%>" class="color_index_p">
-            <span class="color_index font_color<%= link.title%><%= color%>"></span>
+          <%= form.radio_button :font_color, color,id:"font_color#{hex}#{color}"%>
+          <label for="font_color<%= hex%><%= color%>" class="color_index_p">
+            <span class="color_index font_color<%= hex%><%= color%>"></span>
           </label>
         <%end%>
       <input class="OK" type="submit" value="保存" name="font_color">
@@ -77,8 +78,8 @@
 
   <div class="link_pp">
       <label for="trigger_<%= link%>">
-        <div class="link_title background_color<%= link.title%>">
-        <p class="font_color<%= link.title%>"><%= link.title %></p>
+        <div class="link_title background_color<%= hex%>">
+        <p class="font_color<%= hex%>"><%= link.title %></p>
         </div>
       </label>
     <div class="link_coment">
@@ -87,22 +88,22 @@
   </div>
 
 <style>
-  .background_color<%= link.title%>{
+  .background_color<%= hex%>{
   background-color: #<%= link.background_color%>;
   }
 
-  .font_color<%= link.title%>{
+  .font_color<%= hex%>{
   color: #<%= link.font_color%>;
   }
 
   <% @color_index.each do |color| %>
-    .background_color<%= link.title%><%= color%>{
+    .background_color<%= hex%><%= color%>{
     background-color: #<%= color%>;
     }
   <%end%>
 
   <% @color_index.each do |color| %>
-    .font_color<%= link.title%><%= color%>{
+    .font_color<%= hex%><%= color%>{
     background-color: #<%= color%>;
     }
   <%end%>

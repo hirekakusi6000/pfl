@@ -1,5 +1,6 @@
 <% @tiktoks.each do |tiktok| %>  
   <%= form_with(model: tiktok, local: true, multipart: true,class:"foo") do |form| %>
+  <%hex = SecureRandom.hex(10)%>
 <!-- ポップアップ tiktok-->
   <div class="popup_wrap">
     <input id="trigger_<%= tiktok%>" type="checkbox">
@@ -32,9 +33,9 @@
       <p class="popup_title">Tiktokの外側色</p>
       <p><label class="edit_close_btn"  for="trigger_outsidecolor<%= tiktok%>"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
         <% @color_index.each do |color| %>
-         <%= form.radio_button :outsidecolor, color,id:"C#{tiktok.account}#{color}"%>
-         <label for="C<%= tiktok.account%><%= color%>" class="color_index_p">
-            <span class="color_index C<%= tiktok.account%><%= color%>"></span>
+         <%= form.radio_button :outsidecolor, color,id:"C#{hex}#{color}"%>
+         <label for="C<%= hex%><%= color%>" class="color_index_p">
+            <span class="color_index C<%= hex%><%= color%>"></span>
           </label>
         <%end%>
       <input class="OK" type="submit" value="保存" name="outsidecolor">
@@ -48,9 +49,9 @@
       <p class="popup_title">Tiktokの内側色</p>
       <p><label class="edit_close_btn"  for="trigger_insidecolor<%= tiktok%>"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
         <% @color_index.each do |color| %>
-          <%= form.radio_button :insidecolor, color,id:"B#{tiktok.account}#{color}"%>
-          <label for="B<%= tiktok.account%><%= color%>" class="color_index_p">
-            <span class="color_index B<%= tiktok.account%><%= color%>"></span>
+          <%= form.radio_button :insidecolor, color,id:"B#{hex}#{color}"%>
+          <label for="B<%= hex%><%= color%>" class="color_index_p">
+            <span class="color_index B<%= hex%><%= color%>"></span>
           </label>
         <%end%>
       <input class="OK" type="submit" value="保存" name="insidecolor">
@@ -93,13 +94,13 @@
   }
 
   <% @color_index.each do |color| %>
-    .C<%= tiktok.account%><%= color%>{
+    .C<%= hex%><%= color%>{
     background-color: #<%= color%>;
     }
   <%end%>
 
   <% @color_index.each do |color| %>
-    .B<%= tiktok.account%><%= color%>{
+    .B<%= hex%><%= color%>{
     background-color: #<%= color%>;
     }
   <%end%>

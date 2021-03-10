@@ -1,5 +1,6 @@
 <% @youtubes.each do |youtube| %>  
   <%= form_with(model: youtube, local: true, multipart: true,class:"foo") do |form| %>
+  <%hex = SecureRandom.hex(10)%>
 <!-- ポップアップ youtube-->
   <div class="popup_wrap">
     <input id="trigger_<%= youtube%>" type="checkbox">
@@ -32,9 +33,9 @@
       <p class="popup_title">Youtubeの外側色</p>
       <p><label class="edit_close_btn"  for="trigger_outsidecolor<%= youtube%>"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
         <% @color_index.each do |color| %>
-         <%= form.radio_button :outsidecolor, color,id:"C#{youtube.account}#{color}"%>
-         <label for="C<%= youtube.account%><%= color%>" class="color_index_p">
-            <span class="color_index C<%= youtube.account%><%= color%>"></span>
+         <%= form.radio_button :outsidecolor, color,id:"C#{hex}#{color}"%>
+         <label for="C<%= hex%><%= color%>" class="color_index_p">
+            <span class="color_index C<%= hex%><%= color%>"></span>
           </label>
         <%end%>
       <input class="OK" type="submit" value="保存" name="outsidecolor">
@@ -48,9 +49,9 @@
       <p class="popup_title">Youtubeの内側色</p>
       <p><label class="edit_close_btn"  for="trigger_insidecolor<%= youtube%>"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
         <% @color_index.each do |color| %>
-          <%= form.radio_button :insidecolor, color,id:"B#{youtube.account}#{color}"%>
-          <label for="B<%= youtube.account%><%= color%>" class="color_index_p">
-            <span class="color_index B<%= youtube.account%><%= color%>"></span>
+          <%= form.radio_button :insidecolor, color,id:"B#{hex}#{color}"%>
+          <label for="B<%= hex%><%= color%>" class="color_index_p">
+            <span class="color_index B<%= hex%><%= color%>"></span>
           </label>
         <%end%>
       <input class="OK" type="submit" value="保存" name="insidecolor">
@@ -93,13 +94,13 @@
   }
 
   <% @color_index.each do |color| %>
-    .C<%= youtube.account%><%= color%>{
+    .C<%= hex%><%= color%>{
     background-color: #<%= color%>;
     }
   <%end%>
 
   <% @color_index.each do |color| %>
-    .B<%= youtube.account%><%= color%>{
+    .B<%= hex%><%= color%>{
     background-color: #<%= color%>;
     }
   <%end%>

@@ -18,7 +18,7 @@ class LinksController < ApplicationController
   end
 
   def create
-    @link = Link.new(add_params)
+    @link = Link.new(add_link_params)
     @link.user_id = current_user.id
     @link.background_color = "FAFAFA"
     @link.font_color = "2E2E2E"
@@ -36,7 +36,7 @@ class LinksController < ApplicationController
     @link = Link.find_by(id:params[:id])
 
      if params[:edit_link]
-      @link.update(add_params)
+      @link.update(add_link_params)
       update = 0
      elsif params[:background_color]
       @link.update(background_color_params)
@@ -56,7 +56,7 @@ class LinksController < ApplicationController
 
     private
 
-  def add_params
+  def add_link_params
     params.require(:link).permit(:url,:coment,:title)
   end
 
