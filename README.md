@@ -39,6 +39,7 @@ https://kakikukeko-app.herokuapp.com/
 
 ## 🔍 機能一覧
 - ユーザー登録、ログイン機能、アカウント情報設定機能（device）
+- ゲストログイン機能
 - ユーザー検索機能（ransack）
 - べネーション機能（kaminari）
 - 画像投稿機能（carrierwave）
