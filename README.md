@@ -7,7 +7,7 @@ https://kakikukeko-pfl.herokuapp.com/
 ## 💻 開発環境
 
 - Rails 6.1.1
-- ruby 2.7.2
+- Ruby 2.7.2
 - psql (PostgreSQL) 13.1
 - HTML,CSS
 
