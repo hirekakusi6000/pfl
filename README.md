@@ -2,7 +2,7 @@
 
 ## 🌐 App URL
 
-https://kakikukeko-pfl.herokuapp.com/
+https://kakikukeko-.herokuapp.com/
 
 ## 💻 開発環境
 
