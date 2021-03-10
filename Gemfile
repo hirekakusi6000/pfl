@@ -75,3 +75,6 @@ gem 'validate_url' # Library for validating urls in Rails
 
 # 管理者画面
 gem 'activeadmin'
+
+# ER図
+gem "rails-erd"

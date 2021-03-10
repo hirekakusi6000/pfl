@@ -147,7 +147,6 @@
 
 /*ポップアップをクリックして表示*/
 .popup_wrap input:checked~.popup_content_select {
-  opacity: 1;
   transform: scale(1);
   transition: opacity 0.5s;
   z-index: 1001;
