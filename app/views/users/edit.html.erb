@@ -291,56 +291,20 @@
   <%= render 'tiktoks/edit' %>
 </div>
 
-  <div class="trigger_btn_p">
-  <!-- リンク追加ボタン-->
-    <label for="trigger_link">
-      <div class="trigger_btn">
-        <p>リンク追加</p>
-      </div>
-    </label>
-  <!-- リンクデザイン編集ボタン-->
-    <label for="trigger_link_design">
-      <div class="trigger_btn">
-        <p>リンクデザイン</p>
-      </div>
-    </label>
+<!-- リンク追加-->
+<%= render 'links/new' %>
+
+ <!-- リンク一覧編集-->
+<% if @links.present? %>
+  <div class="link_edit_click">
+   <p>↓ クリックでデザイン・リンクを編集できます</p>
   </div>
-
-  <%= form_with(model: @link, local: true) do |form| %>
-
- <!-- ポップアップ リンク追加-->
-  <div class="popup_wrap">
-    <input id="trigger_link" type="checkbox">
-    <div class="popup_overlay">
-      <label for="trigger_link" class="popup_trigger"></label>
-      <div class="popup_content_p">
-      <div class="popup_content add_link_popup">
-        <p class="popup_title">リンク追加</p>
-        <div class="link_form_pp">
-          <div class="link_form_p">
-            <label  class="form_title">タイトル&emsp;</label>
-            <%= form.text_field :title,class:"link_form",maxlength: "1000",required: true %>
-            <label class="form_title">ＵＲＬ&emsp;&emsp;</label>
-            <%= form.text_field :url,class:"link_form",maxlength: "1000",required: true %>
-          <div class="link_coment_form_p">
-            <label class="coment_form_title">コメント&emsp;</label>
-            <%= form.text_area :coment,class:"link_coment_form",maxlength: "1000"%>
-          </div>
-        </div>
-      </div>
-      <p><label class="edit_close_btn"  for="trigger_link"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
-      <input class="OK" type="submit" value="保存" name="add_link">
-     </div>
-    </div>
-   </div>
-  </div>
-
- <% end %>
+<%end%>
 
 <!-- リンク一覧編集-->
-  <%= render 'links/edit' %>
+<%= render 'links/edit' %>
 
-  <style media="screen">
+<style>
   .profile_edit{
     background-color: #<%=@user.background_color%>;
     height: auto;
@@ -348,7 +312,6 @@
   }
 
   /*色一覧*/
-
   <% @color_index.each do |color| %>
     .A<%= color%>{
     background-color: #<%= color%>;
@@ -417,26 +380,6 @@
       margin:0px;
     }
   <%end%>
-
-  /*リンクボタンカラー*/
-  <% @color_index.each do |color| %>
-    .link_background_color<%= color%>{
-      background-color: #<%= color%>;
-    }
-  <%end%>
-
-    /*リンクボタンカラー*/
-  <% @color_index.each do |color| %>
-    .link_font_color<%= color%>{
-      background-color: #<%= color%>;
-    }
-  <%end%>
-
-    /*リンクカラー*/
-  .link_title{
-    background-color: #<%= @user.link_background_color%>;
-    color: #<%= @user.link_font_color%>;
-  }
 
 </style>
 

@@ -1,0 +1,39 @@
+<!-- ポップアップ link追加-->
+  <%= form_with(model: @link, local: true,class:"foo") do |form| %>
+
+  <div class="popup_wrap">
+    <input id="trigger_link" type="checkbox">
+    <div class="popup_overlay">
+      <label for="trigger_link" class="popup_trigger"></label>
+
+      <div class="popup_content add_link_popup">
+        <p class="popup_title">リンク追加</p>
+        <div class="link_form_pp">
+          <div class="link_form_p">
+            <label  class="form_title">タイトル&emsp;</label>
+            <%= form.text_field :title,class:"link_form",maxlength: "1000",required: true %>
+            <label class="form_title">ＵＲＬ&emsp;&emsp;</label>
+            <%= form.text_field :url,class:"link_form",maxlength: "1000",required: true %>
+          <div class="link_coment_form_p">
+            <label class="coment_form_title">コメント&emsp;</label>
+            <%= form.text_area :coment,class:"link_coment_form",maxlength: "1000"%>
+          </div>
+        </div>
+      </div>
+
+      <p><label class="edit_close_btn"  for="trigger_link"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+      <input class="OK" type="submit" value="保存" name="add_link">
+     </div>
+    </div>
+   </div>
+
+  <!-- リンク追加ボタン-->
+  <div class="trigger_btn_p">
+    <label for="trigger_link">
+      <div class="trigger_btn">
+        <p>リンク追加</p>
+      </div>
+    </label>
+  </div>
+
+ <% end %>
