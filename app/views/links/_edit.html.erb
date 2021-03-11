@@ -32,11 +32,11 @@
           <input class="OK" type="submit" value="保存" name="edit_link">
         </div>
       </div>
- <!-- 外側色-->
+ <!-- リンクボタンの色-->
   <div class="popup_wrap">
     <input id="trigger_background_color<%= link%>" type="checkbox">
     <div class="popup_content_c">
-      <p class="popup_title">リンクの外側色</p>
+      <p class="popup_title">リンクボタンの色</p>
       <p><label class="edit_close_btn"  for="trigger_background_color<%= link%>"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
         <% @color_index.each do |color| %>
          <%= form.radio_button :background_color, color,id:"background_color#{hex}#{color}"%>
@@ -48,11 +48,11 @@
     </div>
   </div>
 
- <!-- 内側色-->
+ <!-- リンクボタンの文字の色-->
   <div class="popup_wrap">
     <input id="trigger_font_color<%= link%>" type="checkbox">
     <div class="popup_content_c">
-      <p class="popup_title">リンクの内側色</p>
+      <p class="popup_title">リンクボタンの文字の色</p>
       <p><label class="edit_close_btn"  for="trigger_font_color<%= link%>"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
         <% @color_index.each do |color| %>
           <%= form.radio_button :font_color, color,id:"font_color#{hex}#{color}"%>
@@ -63,7 +63,7 @@
       <input class="OK" type="submit" value="保存" name="font_color">
     </div>
   </div>
-    <!-- linkポップアップ選択画面 -->
+    <!-- リンクボタンの文字の色 -->
       <div class="popup_content_select">
         <p class="popup_title">リンク設定</p>
         <%= link_to '削除', "/links/#{link.id}",class:"link_destroy",method: :delete, data: {confirm: "削除しますか?"}  %>

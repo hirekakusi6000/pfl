@@ -244,6 +244,23 @@
   margin: auto;
 }
 
+/*背景色変更ポップアップ*/
+.popup_content_color {
+  z-index: 100000;
+  display: inline-block;
+  padding: 15px 23px 30px 23px;
+  position: relative;
+  align-self: center;
+  max-height: 310px;
+  min-height: 310px;
+  max-width: 420px;
+  min-width: 420px;
+  background: white;
+  transition: 0.5s;
+  border-radius: 10px;
+  text-align: center;
+}
+
 .add_sns_popup {
   max-height: 270px;
   min-height: 270px;
@@ -333,6 +350,15 @@
 
 @media screen and (max-width: 480px) {
 
+  /*背景色変更ポップアップ*/
+  .popup_content_color {
+    padding: 19px 27px 15px 27px;
+    max-height: 290px;
+    min-height: 290px;
+    max-width: 360px;
+    min-width: 360px;
+  }
+
   .popup_content_font_family {
     padding: 19px 15px 15px 15px;
     max-height: 470px;
@@ -360,7 +386,7 @@
   }
 
   .popup_content_c {
-    padding: 19px 15px 15px 15px;
+    padding: 19px 27px 15px 27px;
     max-height: 290px;
     min-height: 290px;
     max-width: 360px;

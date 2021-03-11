@@ -24,6 +24,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
     @user.font_color = "585858"
     @user.background_color = "EFFBFB"
+    @user.font_family = "ＭＳ 明朝,HiraMinProN-W3"
     @user.save
     sign_in(:user, @user)
     redirect_to("/users/#{@user.id}")

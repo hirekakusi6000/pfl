@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-
   before_action :set_items, only: %i[show edit update]
   before_action :set_new_item, only: %i[edit update create]
   before_action :set_show_items, only: %i[show]
+  before_action :set_designs, only: %i[show edit]
 
   # 1ページの表示数
   PER_PAGE = 20

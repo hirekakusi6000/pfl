@@ -12,12 +12,15 @@ ja:
         coment: コメント
       user:
         name: 名前
-      twitter:
-        account: このTwitterアカウント
-      instagram:
-        account: このInstagramアカウント
-    　facebook:
-        account: このFacebookアカウント
+      facebook:
+        account: URL 
+        coment: コメント
+      youtube:
+        account: URL 
+        coment: コメント
+      tiktok:
+        account: URL 
+        coment: コメント
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

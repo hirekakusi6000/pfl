@@ -1,4 +1,7 @@
 class InstagramsController < ApplicationController
+  before_action :set_items, only: %i[update create]
+  before_action :set_new_item, only: %i[update create]
+  before_action :set_designs, only: %i[update create]
 
   def index
     redirect_to("/users/#{current_user.id}/edit")
