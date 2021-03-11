@@ -57,7 +57,7 @@ https://kakikukeko-app.herokuapp.com/
 ## ER図
 ![image_2021_3_10](https://user-images.githubusercontent.com/76430700/110628499-6ca2c580-81e6-11eb-9029-bff0677959b1.png)
 
-[テーブル設計](https://docs.google.com/spreadsheets/d/13P-5MeE7ZZ1ZR2DLBxzS01MRNf-DVC8XF1ZidiUwb-0/edit#gid=0)
+## [テーブル設計](https://docs.google.com/spreadsheets/d/13P-5MeE7ZZ1ZR2DLBxzS01MRNf-DVC8XF1ZidiUwb-0/edit#gid=0)
 
 
 ## 良かった点と反省点
