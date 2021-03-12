@@ -1,0 +1,37 @@
+<div class="introduce">
+  <!-- 一覧ページへのリンクアイコン-->
+    <a href="/subprofiles">
+      <div class="pen_p back_index">
+        <i class="fas fa-chevron-left"></i>
+      </div>
+    </a>
+
+      <!-- 編集へのリンクアイコン-->
+    <% if current_user%>
+      <% if current_user.id == @subprofile.user_id%>
+      <a href="/subprofiles/<%= @subprofile.id %>/edit">
+        <div class="pen_p">
+          <i class="fa fa-edit pen"></i>
+        </div>
+      </a>
+      <%end%>
+    <%end%>
+
+  <div class="subprofile_pp">
+    <p class="subprofile_title"><%=@subprofile.title%></p>
+    <p class="subprofile_pfl_text" style="font-size:16px;"><%= @subprofile.pfl_text %></p>
+  </div>
+</div>
+
+<style>
+ body{
+     background-color: #<%=@subprofile.background_color%>;
+  }
+
+     .introduce {
+    height: auto;
+    padding-bottom:100px;
+    font-family: <%= @subprofile.font_family%>;
+    color: #<%= @subprofile.font_color%>;
+  }
+</style>

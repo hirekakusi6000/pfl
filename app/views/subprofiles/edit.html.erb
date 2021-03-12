@@ -1,36 +1,32 @@
-<%= render 'layouts/error_messages' %>
-
 <div class="profile_edit">
- <%= form_with(model: @user, local: true, multipart: true) do |form| %>
 
-   <!-- ユーザーネーム変更 ポップアップ-->
+<%= form_with(model: @subprofile, local: true, multipart: true) do |form| %>
+   <!-- 見出し・本文変更 ポップアップ-->
   <div class="popup_wrap">
     <input id="trigger_name_edit" type="checkbox">
     <div class="popup_overlay">
       <label for="trigger_icon_image" class="popup_trigger"></label>
       <div class="popup_content_p">
         <div class="popup_content name_introduce">
-       
-          <p class="popup_title">名前・自己紹介</p>
+          <p class="popup_title">見出し・本文</p>
           <div class="name_introduce_form_pp">
             <div class="name_introduce_form_p">
                 <div class="name_introduce_form_p">
-                  <label  class="name_introduce_form_title">名前</label>
-                  <p><%= form.text_field :name,class:"name_form",maxlength: "50",required: true %></p>
-                  <label class="name_introduce_form_title">自己紹介</label>
+                  <label  class="name_introduce_form_title">見出し</label>
+                  <p><%= form.text_field :title,class:"name_form",maxlength: "50",required: true %></p>
+                  <label class="name_introduce_form_title">本文</label>
                   <p><%= form.text_area :pfl_text,class:"introduce_form",maxlength: "10000"%></p>
                 </div>
               </div>
             </div>
-
        <p><label class="edit_close_btn"  for="trigger_name_edit"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
-       <p><input class="OK" type="submit" value="保存" name="edit_name_introduce"></p>
+       <p><input class="OK" type="submit" value="保存" name="edit_title_pfl_text"></p>
      </div>
     </div>
    </div>
   </div>
 
-      <!-- 背景色変更-->
+  <!-- 背景色変更-->
   <div class="popup_wrap" >
     <input id="trigger_background_color" type="checkbox" >
     <div class="popup_overlay">
@@ -124,77 +120,14 @@
    </div>
   </div>
 
- <!-- アイコンイメージ ポップアップ-->
-  <div class="popup_wrap">
-    <input id="trigger_icon_image" type="checkbox">
-    <div class="popup_overlay">
-      <label for="trigger_icon_image" class="popup_trigger"></label>
-      <div class="popup_content_p">
-        <div class="popup_content image_popup">
-       
-        <p class="popup_title">アイコン画像</p>
-        <label for="trigger_icon_image_update" style="display:block;">
-        <p class="image_select">画像を選択</p>
-        </label>
-        <%= form.file_field :icon_image, accept: "image/png,image/jpeg,image/gif",id:"trigger_icon_image_update"%>
-
-       <p><label class="edit_close_btn"  for="trigger_icon_image"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
-       <input class="OK" type="submit" value="保存" name="edit_icon_image">
-     </div>
+  <div class="trigger_btn_p" style="padding-top:50px;">
+  <!-- 見出し・本文変更ボタン-->
+  <label for="trigger_name_edit">
+    <div class="trigger_btn">
+      <p>見出し・本文</p>
     </div>
-   </div>
-  </div>
-
-   <!-- ヘッダーイメージ ポップアップ-->
-  <div class="popup_wrap">
-    <input id="trigger_header_image" type="checkbox">
-    <div class="popup_overlay">
-      <label for="trigger_header_image" class="popup_trigger"></label>
-      <div class="popup_content_p">
-        <div class="popup_content image_popup">
-       
-        <p class="popup_title">ヘッダー画像</p>
-        <label for="trigger_header_image_upload" style="display:block;">
-        <p class="image_select">画像を選択</p>
-        </label>
-        <%= form.file_field :header_image, accept: "image/png,image/jpeg,image/gif",id:"trigger_header_image_upload"%>
-
-       <p><label class="edit_close_btn"  for="trigger_header_image"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
-       <input class="OK" type="submit" value="保存" name="edit_header_image">
-     </div>
-    </div>
-   </div>
-  </div>
-
-<!-- ヘッダーイメージ表示-->
-
-  <div class="header_image_p">
-    <label for="trigger_header_image">
-      <% if @user.header_image? %>
-        <p><%= image_tag @user.header_image.url,class:"header_image"%></p>
-      <% else %>
-        <p class="default_header_image"></p>
-      <% end %>
-      <i class="fas fa-camera camera_header"></i>
-      <p class="black_overlay_header"></p>
-    </label>
-  <!-- アイコンイメージ表示-->
-    <label for="trigger_icon_image" >
-      <i class="fas fa-camera camera_icon"></i>
-      <p class="black_overlay_icon"></p>
-      <%= image_tag @user.icon_image.url,class:"icon_image"%>
-    </label>
-
-  </div>
-
-  <div class="trigger_btn_p">
-    <!-- ユーザーネーム編集ボタン-->
-    <label for="trigger_name_edit">
-      <div class="trigger_btn">
-        <p>名前・自己紹介</p>
-      </div>
-    </label>
-  <!-- 背景色編集ボタン-->
+  </label>
+    <!-- 背景色編集ボタン-->
     <label for="trigger_background_color">
       <div class="trigger_btn">
         <p>背景色</p>
@@ -216,101 +149,21 @@
 
 <%end%>
 
-<!-- SNSリンク追加-->
-<div class="sns_pp">
-  <%= render 'twitters/new' %>
-  <%= render 'instagrams/new' %>
-  <%= render 'facebooks/new' %>
-  <%= render 'youtubes/new' %>
-  <%= render 'tiktoks/new' %>
 </div>
-
-<% if @twitters.present? or @instagrams.present? or @facebooks.present? or @youtubes.present? or @tiktoks.present?%>
-  <div class="link_edit_click">
-   <p>↓ クリックでデザイン・リンクを編集できます</p>
-  </div>
-<%end%>
-
-<!-- SNS一覧編集-->
-<div class="sns_pp">
-  <%= render 'twitters/edit' %>
-  <%= render 'instagrams/edit' %>
-  <%= render 'facebooks/edit' %>
-  <%= render 'youtubes/edit' %>
-  <%= render 'tiktoks/edit' %>
-</div>
-
-<!-- リンク追加-->
-<%= render 'links/new' %>
-
- <!-- リンク一覧編集-->
-<% if @links.present? %>
-  <div class="link_edit_click">
-   <p>↓ クリックでデザイン・リンクを編集できます</p>
-  </div>
-<%end%>
-
-<!-- リンク一覧編集-->
-<%= render 'links/edit' %>
 
 <style>
   .profile_edit{
-    background-color: #<%=@user.background_color%>;
     height: auto;
     padding-bottom:100px;
+  }
+
+  body{
+     background-color: #<%=@subprofile.background_color%>;
   }
 
   /*色一覧*/
   <% @color_index.each do |color| %>
     .A<%= color%>{
-    background-color: #<%= color%>;
-    }
-  <%end%>
-
-  <% @color_index.each do |color| %>
-    .IS<%= color%>{
-    background-color: #<%= color%>;
-    }
-  <%end%>
-
-  <% @color_index.each do |color| %>
-    .IU<%= color%>{
-    background-color: #<%= color%>;
-    }
-  <%end%>
-
-  <% @color_index.each do |color| %>
-    .FS<%= color%>{
-    background-color: #<%= color%>;
-    }
-  <%end%>
-
-  <% @color_index.each do |color| %>
-    .FU<%= color%>{
-    background-color: #<%= color%>;
-    }
-  <%end%>
-
-  <% @color_index.each do |color| %>
-    .YS<%= color%>{
-    background-color: #<%= color%>;
-    }
-  <%end%>
-
-  <% @color_index.each do |color| %>
-    .YU<%= color%>{
-    background-color: #<%= color%>;
-    }
-  <%end%>
-
-  <% @color_index.each do |color| %>
-    .TS<%= color%>{
-    background-color: #<%= color%>;
-    }
-  <%end%>
-
-  <% @color_index.each do |color| %>
-    .TU<%= color%>{
     background-color: #<%= color%>;
     }
   <%end%>
@@ -331,4 +184,3 @@
   <%end%>
 
 </style>
-

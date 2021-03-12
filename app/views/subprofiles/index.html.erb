@@ -1,0 +1,14 @@
+  <div class="link_pp">
+    <a href="/subprofiles/new" style="color:inherit;text-decoration:none;">
+      <div class="link_title new_subprofile_btn">
+        <i class="fas fa-plus-circle new_subprofile_plus_icon">  サブプロフィールを追加</i>
+      </div>
+    </a>
+    <% @subprofiles.each do |subprofile| %>
+    <a href="/subprofiles/<%= subprofile.id%>" style="color:inherit;text-decoration:none;">
+      <div class="link_title new_subprofile_btn">
+        <i class="new_subprofile_plus_icon"><%= subprofile.title%></i>
+      </div>
+    </a>
+    <%end%>
+  </div>

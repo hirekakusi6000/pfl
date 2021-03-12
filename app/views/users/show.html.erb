@@ -73,6 +73,17 @@
     <p class="pfl_user_text font_style"><%=@user.pfl_text%></p>
   </div>
 
+<!-- サブプロフィールリンク一覧表示-->
+  <div class="link_pp">
+   <% @subprofiles.each do |subprofile| %>
+    <a href="/subprofiles/<%= subprofile.id%>" style="color:inherit;text-decoration:none;">
+      <div class="link_title new_subprofile_btn">
+        <i class="new_subprofile_plus_icon"><%= subprofile.title%></i>
+      </div>
+    </a>
+   <%end%>
+  </div>
+
   <!-- リンク一覧表示-->
   <%= render 'links/index' %>
 

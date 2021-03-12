@@ -17,6 +17,7 @@ class ApplicationController < ActionController::Base
     @facebook = Facebook.new
     @youtube = Youtube.new
     @tiktok = Tiktok.new 
+    @subprofile = Subprofile.new     
   end
 
   def set_show_items
@@ -26,6 +27,7 @@ class ApplicationController < ActionController::Base
     @facebooks = Facebook.where(user_id:params[:id]).order(id: "ASC")
     @youtubes = Youtube.where(user_id:params[:id]).order(id: "ASC")
     @tiktoks = Tiktok.where(user_id:params[:id]).order(id: "ASC")
+    @subprofiles = Subprofile.where(user_id:params[:id]).order(id: "ASC")
   end
 
   def set_items
@@ -36,6 +38,7 @@ class ApplicationController < ActionController::Base
       @facebooks = Facebook.where(user_id:current_user.id).order(id: "ASC")
       @youtubes = Youtube.where(user_id:current_user.id).order(id: "ASC")
       @tiktoks = Tiktok.where(user_id:current_user.id).order(id: "ASC")
+      @subprofiles = Subprofile.where(user_id:current_user.id).order(id: "ASC")
     end
   end
 
