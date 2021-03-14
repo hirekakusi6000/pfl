@@ -40,12 +40,6 @@ class UsersController < ApplicationController
      elsif params[:edit_font_family]
       @user.update(edit_font_family)
       update = 0
-     elsif params[:edit_link_font_color]
-      @user.update(edit_link_font_color)
-      update = 0
-     elsif params[:edit_link_background_color]
-      @user.update(edit_link_background_color)
-      update = 0
      elsif params[:open_status]
       @user.update(open_status_params)
       update = 0
@@ -95,18 +89,6 @@ def edit_font_color
  def edit_font_family
   params.require(:user).permit(
     :font_family
-  )
- end
-
-def edit_link_font_color
-  params.require(:user).permit(
-    :link_font_color
-  )
- end
- 
- def edit_link_background_color
-  params.require(:user).permit(
-    :link_background_color
   )
  end
 

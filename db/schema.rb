@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_10_075951) do
+ActiveRecord::Schema.define(version: 2021_03_12_101650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,22 @@ ActiveRecord::Schema.define(version: 2021_03_10_075951) do
     t.index ["user_id"], name: "index_links_on_user_id"
   end
 
+  create_table "subprofiles", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "pfl_text"
+    t.string "font_color"
+    t.string "background_color"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "link_background_color"
+    t.string "link_font_color"
+    t.integer "open_status", default: 1, null: false
+    t.string "font_family"
+    t.string "comment"
+    t.index ["user_id"], name: "index_subprofiles_on_user_id"
+  end
+
   create_table "tiktoks", force: :cascade do |t|
     t.string "account", null: false
     t.string "comment"
@@ -131,6 +147,7 @@ ActiveRecord::Schema.define(version: 2021_03_10_075951) do
   add_foreign_key "facebooks", "users"
   add_foreign_key "instagrams", "users"
   add_foreign_key "links", "users"
+  add_foreign_key "subprofiles", "users"
   add_foreign_key "tiktoks", "users"
   add_foreign_key "twitters", "users"
   add_foreign_key "youtubes", "users"

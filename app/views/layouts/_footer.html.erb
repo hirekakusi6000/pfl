@@ -13,8 +13,8 @@
           <p><a class="footer_font" href="/users/<%= current_user.id%>/edit">編集</a></p>
         </div>
         <div class="footer_p" ontouchstart="" ontouchstart="">
-          <p><%= link_to "", destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "fas fa-sign-out-alt footer_icon"%></p>
-          <p><%= link_to "ログアウト",destroy_user_session_path, method: :delete, data: { confirm: "ログアウトしますか？" }, class: "footer_font" %></p>
+          <p><%= link_to "", "/subprofiles",class: "fas fa-copy footer_icon"%></p>
+          <p><%= link_to "サブプロフ","/subprofiles", class: "footer_font" %></p>
         </div>
       <%else%>
         <div class="footer_p" ontouchstart="">

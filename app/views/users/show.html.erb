@@ -73,6 +73,34 @@
     <p class="pfl_user_text font_style"><%=@user.pfl_text%></p>
   </div>
 
+  <!-- サブプロフィール一覧表示-->
+<div class="link_pp">
+  <% @subprofiles.each do |subprofile| %>
+  <% if subprofile.open_status == 1 %>
+   <%hex = SecureRandom.hex(10)%>
+    <a href="/subprofiles/<%= subprofile.id%>" style="color:inherit;text-decoration:none;">
+      <div class="link_title subprofile_link_btn_background_color<%= hex%>">
+        <p class="subprofile_link_btn_font_color<%= hex%>"><%= subprofile.title%></p>
+      </div>
+    </a>
+    <div class="link_coment">
+      <p style="margin-top:10px;"><%= subprofile.comment%></p>
+    </div>         
+
+ <style>
+  .subprofile_link_btn_background_color<%= hex%>{
+  background-color: #<%= subprofile.link_background_color%>;
+  }
+
+  .subprofile_link_btn_font_color<%= hex%>{
+  color: #<%= subprofile.link_font_color%>;
+  }
+  </style>
+
+  <%end%>
+ <%end%>
+</div>
+
   <!-- リンク一覧表示-->
   <%= render 'links/index' %>
 
@@ -89,4 +117,5 @@
   body {
     background-color: #<%=@user.background_color%>;
   }
+
 </style>

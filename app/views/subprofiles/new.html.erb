@@ -1,0 +1,25 @@
+<%= form_with(model: @subprofile, local: true,class:"foo") do |form| %>
+
+  <div class="new_subprofile_pp">
+    <div class="new_subprofile_p">
+      <p class="new_subprofile_title">サブプロフィール</p>
+      <p><%= form.text_field :title,class:"name_form",maxlength: "50",style:"margin-top:30px;",required: true,placeholder:"   見出し"%></p>
+      <p><%= form.text_area :pfl_text,class:"introduce_form",maxlength: "10000",style:"height:400px;",required: true,placeholder:"   本文"%></p>
+      <div class="custom-control custom-switch" style="text-align:center;">
+        <%= form.check_box :open_status,checked_value:"0",unchecked_value:"1",class:"custom-control-input",id:"customSwitch1"%>
+        <label class="custom-control-label" for="customSwitch1">メインプロフィールにリンクを表示</label>
+      </div>
+      <div class="subprofile_btn_p">
+       <%= link_to "キャンセル","/subprofiles", class: "subprofile_btn",style:"padding-top:7px;"%>
+       <%= form.submit "保存する", class: "subprofile_btn"%>
+      </div>
+    </div>
+  </div>
+
+<%end%>
+
+<style>
+  body{
+    background:#F2F2F2;
+  }
+</style>

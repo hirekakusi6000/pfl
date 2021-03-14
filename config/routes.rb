@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   delete "/youtubes/:id" => "youtubes#destroy"
   post "tiktoks/:id/update" => "tiktoks#update"  
   delete "/tiktoks/:id" => "tiktoks#destroy"
+  post "subprofiles/:id/update" => "subprofiles#update"
+  delete "/subprofiles/:id" => "subprofiles#destroy"
   resources :users, only: [:index, :show, :edit, :update]
   resources :links
   resources :twitters
@@ -30,4 +32,5 @@ Rails.application.routes.draw do
   resources :facebooks
   resources :youtubes
   resources :tiktoks
+  resources :subprofiles
 end

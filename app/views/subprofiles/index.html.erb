@@ -1,0 +1,45 @@
+<div class="subprofiles_pp" >
+  <a href="/subprofiles/new" style="color:inherit;text-decoration:none;">
+    <div class="new_subprofile_btn">
+      <i class="fas fa-plus-circle new_subprofile_plus_icon">  サブプロフィールを追加</i>
+    </div>
+  </a>
+
+  <% @subprofiles.each do |subprofile| %>
+   <%hex = SecureRandom.hex(10)%>
+   <div class="subprofile_p">
+    <a href="/subprofiles/<%= subprofile.id%>" style="color:inherit;text-decoration:none;">
+      <div class="link_title subprofile_link_btn subprofile_link_btn_background_color<%= hex%>">
+        <p><i class="new_subprofile_plus_icon subprofile_link_btn_font_color<%= hex%>"><%= subprofile.title%></i></p>
+      </div>
+    </a>
+    <div class="link_coment">
+      <p style="margin-top:10px;"><%= subprofile.comment%></p>
+    </div>
+    <div class="subprofile_btn_p">
+     <%= link_to "/subprofiles/#{subprofile.id}",method: :delete, data: {confirm: "削除しますか?"}, class: "subprofile_btn_index",style:"background:#FA5858;" do %>
+      <i class="fas fa-trash-alt"> 削除する</i>
+     <%end%>
+     <%= link_to "/subprofiles/#{subprofile.id}/edit", class: "subprofile_btn_index" do %>
+      <i class="fas fa-edit"> 編集する</i>
+     <%end%>
+    </div>
+
+ <style>
+  .subprofile_link_btn_background_color<%= hex%>{
+  background-color: #<%= subprofile.link_background_color%>;
+  }
+
+  .subprofile_link_btn_font_color<%= hex%>{
+  color: #<%= subprofile.link_font_color%>;
+  }
+
+  body{
+    background:#F2F2F2;
+    padding-bottom:100px;
+  }
+  </style>
+
+   </div>  
+ <%end%>
+</div>
