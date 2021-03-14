@@ -12,7 +12,7 @@ class SubprofilesController < ApplicationController
 
     if @subprofile.save
      flash[:notice] = "サブプロフィールを追加しました"
-     redirect_to("/subprofiles")
+     redirect_to("/subprofiles/#{@subprofile.id}")
     else
      @user = User.find_by(id:current_user.id)
      render template: "subprofiles/new"

@@ -191,7 +191,7 @@
         <p class="popup_title">リンク設定</p>
         <%= link_to '削除', "/subprofiles/#{@subprofile.id}",class:"link_destroy",method: :delete, data: {confirm: "削除しますか?"}  %>
         <p><label class="edit_close_btn"  for="trigger_link"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
-        <p><label for="trigger_acountlink" class="open_btn_s">リンク情報</label></p>
+        <p><label for="trigger_acountlink" class="open_btn_s">リンクの下に表示されるコメント</label></p>
         <p><label for="trigger_background_colorlink" class="open_btn_s">リンクボタンの色</label></p>
         <p><label for="trigger_font_colorlink" class="open_btn_s">リンクボタンの文字の色</label></p>
       </div>
@@ -199,7 +199,7 @@
    </div>
   </div>
 
-  <div class="trigger_btn_p" style="padding:100px;">
+  <div class="trigger_btn_p subprofile_trigger_btn_p">
   <!-- 見出し・本文変更ボタン-->
   <label for="trigger_name_edit">
     <div class="trigger_btn">
