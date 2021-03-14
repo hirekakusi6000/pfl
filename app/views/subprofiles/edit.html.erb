@@ -120,7 +120,79 @@
    </div>
   </div>
 
-  <div class="trigger_btn_p" style="padding-top:50px;">
+  <!-- リンクボタン-->
+  <div class="popup_wrap">
+    <input id="trigger_link" type="checkbox">
+    <div class="popup_overlay">
+      <label for="trigger_link" class="popup_trigger"></label>
+      <div class="popup_content_p">
+      <!-- リンクコメント-->
+      <div class="popup_wrap">
+        <input id="trigger_acountlink" type="checkbox">
+          <div class="popup_content_acount subprofile_comment">
+            <div class="sns_acount_popup_title">
+             <p class="popup_title" style="margin-bottom:30px;">コメント</p>
+            </div>
+            
+            <div class="subprofile_form_pp">
+              <div class="subprofile_form_p">
+                <div class="link_coment_form_p">
+                  <label class="coment_form_title">コメント</label>
+                  <%= form.text_area :comment,class:"link_coment_form",maxlength: "1000"%>
+                </div>
+             </div>
+            </div>
+
+          <p><label class="edit_close_btn"  for="trigger_acountlink"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+          <input class="OK" type="submit" value="保存" name="edit_comment">
+        </div>
+      </div>
+
+ <!-- リンクボタンの色-->
+  <div class="popup_wrap">
+    <input id="trigger_background_colorlink" type="checkbox">
+    <div class="popup_content_c">
+      <p class="popup_title">リンクボタンの色</p>
+      <p><label class="edit_close_btn"  for="trigger_background_colorlink"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+        <% @color_index.each do |color| %>
+         <%= form.radio_button :link_background_color, color,id:"link_background_color#{color}"%>
+         <label for="link_background_color<%= color%>" class="color_index_p">
+            <span class="color_index link_background_color<%= color%>"></span>
+          </label>
+        <%end%>
+      <input class="OK" type="submit" value="保存" name="linK_background_color">
+    </div>
+  </div>
+
+ <!-- リンクボタンの文字の色-->
+  <div class="popup_wrap">
+    <input id="trigger_font_colorlink" type="checkbox">
+    <div class="popup_content_c">
+      <p class="popup_title">リンクの文字の色</p>
+      <p><label class="edit_close_btn"  for="trigger_font_colorlink"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+        <% @color_index.each do |color| %>
+          <%= form.radio_button :link_font_color, color,id:"link_font_color#{color}"%>
+          <label for="link_font_color<%= color%>" class="color_index_p">
+            <span class="color_index link_font_color<%= color%>"></span>
+          </label>
+        <%end%>
+      <input class="OK" type="submit" value="保存" name="linK_font_color">
+    </div>
+  </div>
+    <!-- リンクボタンの文字の色 -->
+      <div class="popup_content_select">
+        <p class="popup_title">リンク設定</p>
+        <%= link_to '削除', "/subprofiles/#{@subprofile.id}",class:"link_destroy",method: :delete, data: {confirm: "削除しますか?"}  %>
+        <p><label class="edit_close_btn"  for="trigger_link"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+        <p><label for="trigger_acountlink" class="open_btn_s">リンク情報</label></p>
+        <p><label for="trigger_background_colorlink" class="open_btn_s">リンクボタンの色</label></p>
+        <p><label for="trigger_font_colorlink" class="open_btn_s">リンクボタンの文字の色</label></p>
+      </div>
+    </div>
+   </div>
+  </div>
+
+  <div class="trigger_btn_p" style="padding:100px;">
   <!-- 見出し・本文変更ボタン-->
   <label for="trigger_name_edit">
     <div class="trigger_btn">
@@ -143,6 +215,12 @@
     <label for="trigger_open_status">
       <div class="trigger_btn">
         <p>公開設定</p>
+      </div>
+    </label>
+  <!-- リンク設定ボタン-->
+    <label for="trigger_link">
+      <div class="trigger_btn">
+        <p class="font_color">リンクボタンの設定</p></p>
       </div>
     </label>
   </div>
@@ -168,7 +246,7 @@
     }
   <%end%>
   
-    <% @color_index.each do |color| %>
+  <% @color_index.each do |color| %>
     .font_color<%= color%>{
     background-color: #<%= color%>;
     }
@@ -180,6 +258,18 @@
       font-family: <%= value%>;
       cursor: pointer;
       margin:0px;
+    }
+  <%end%>
+
+  <% @color_index.each do |color| %>
+    .link_background_color<%= color%>{
+    background-color: #<%= color%>;
+    }
+  <%end%>
+
+    <% @color_index.each do |color| %>
+    .link_font_color<%= color%>{
+    background-color: #<%= color%>;
     }
   <%end%>
 

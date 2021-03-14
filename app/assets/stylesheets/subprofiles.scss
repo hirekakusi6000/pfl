@@ -1,11 +1,24 @@
-.new_subprofile_btn {
-  box-shadow: 0 2px 6px #c1ced7;
+.subprofiles_p {
+  max-width: 480px;
+  min-width: 480px;
   text-align: center;
+  background: white;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+}
 
+.new_subprofile_btn {
+  background: #585858;
+  color: white;
+  width: 300px;
+  border-radius: 10px;
+  margin: 30px;
+}
 
-
-
-
+.subprofile_link_btn {
+  display: inline-block;
+  border: 1px solid #E6E6E6;
 }
 
 .new_subprofile_plus_icon {
@@ -45,6 +58,28 @@
 }
 
 .subprofile_btn:hover {
+  color: white;
+  text-decoration: none;
+  text-decoration: none;
+  transition: all 0.5s;
+  opacity: 0.7;
+}
+
+.subprofile_btn_index {
+  margin: 5px 0px 5px 5px;
+  font-weight: bold;
+  border-radius: 100px;
+  width: 120px;
+  height: 35px;
+  background: #58ACFA;
+  color: white;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 11px 7px 6px 7px;
+  font-size: 14px;
+}
+
+.subprofile_btn_index:hover {
   color: white;
   text-decoration: none;
   text-decoration: none;
