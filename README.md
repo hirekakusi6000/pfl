@@ -38,7 +38,9 @@ https://kakikukeko-app.herokuapp.com/
 ![IMG_65431](https://user-images.githubusercontent.com/76430700/110473292-b7a6d500-8121-11eb-9804-8707115d02b4.png)
 
 ## 🔍 機能一覧
--　基本機能
+- 基本機能
+  - 「インストール済みのRuby」と「使用中のバージョン」は `rbenv versions` で確認できます
+  - Ruby のバージョンごとに gem をインストールする必要があります
  - ユーザー登録、ログイン機能、アカウント情報設定機能（device）
  - ゲストログイン機能
  - ユーザー検索機能（ransack）
