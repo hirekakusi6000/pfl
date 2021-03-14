@@ -6,8 +6,9 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     passwords: 'users/passwords'
   }
-  root  "homes#top"
+  
   get "/" => "homes#top"
+  get "/homes/about" => "homes#about"
   devise_scope :user do
   post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
