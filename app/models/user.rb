@@ -17,7 +17,7 @@ class User < ApplicationRecord
   mount_uploader :header_image, ImageUploader
 
   def self.guest
-    find_or_create_by!(email: 'guestuser@example.com',name: "ゲスト") do |user|
+    find_or_create_by!(email: 'guestuser@example.com',name: "ゲスト",pfl_text: 'text') do |user|
       user.password = SecureRandom.urlsafe_base64
     end
   end
