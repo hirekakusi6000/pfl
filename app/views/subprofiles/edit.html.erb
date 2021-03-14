@@ -1,5 +1,12 @@
 <div class="profile_edit">
 
+<!-- 一覧ページへのリンクアイコン-->
+<a href="/subprofiles/<%= @subprofile.id%>">
+  <div class="pen_p back_index">
+    <i class="fas fa-chevron-left"></i>
+  </div>
+</a>
+
 <%= form_with(model: @subprofile, local: true, multipart: true) do |form| %>
    <!-- 見出し・本文変更 ポップアップ-->
   <div class="popup_wrap">
