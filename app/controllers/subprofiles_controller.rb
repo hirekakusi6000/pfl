@@ -65,10 +65,8 @@ class SubprofilesController < ApplicationController
   end
 
   # 1ページの表示数
-  PER_PAGE = 20
   def index
-    @q = Subprofile.ransack(params[:q])
-    @subprofiles = @q.result.order("created_at DESC").page(params[:page]).per(PER_PAGE)
+    @subprofiles = Subprofile.where(user_id:current_user.id).order(id: "ASC")
   end
 
   def destroy
