@@ -5,5 +5,5 @@ class Youtube < ApplicationRecord
   validates :user_id, {presence: true}
   # httpsのみ許可
   validates :account, url: { schemes: ['https'],message: 'が空欄又は不正です' }
-  validates :comment,length: { maximum: 200 }
+  validates :comment,length: { maximum: 100 }
 end
