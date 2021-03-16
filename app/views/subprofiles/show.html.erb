@@ -1,12 +1,6 @@
 <div class="introduce">
-  <!-- 一覧ページへのリンクアイコン-->
-    <a href="/subprofiles">
-      <div class="pen_p back_index">
-        <i class="fas fa-chevron-left"></i>
-      </div>
-    </a>
 
-      <!-- 編集へのリンクアイコン-->
+      <!-- editページへのリンクアイコン-->
     <% if current_user%>
       <% if current_user.id == @subprofile.user_id%>
       <a href="/subprofiles/<%= @subprofile.id %>/edit">
@@ -14,6 +8,18 @@
           <i class="fa fa-edit pen"></i>
         </div>
       </a>
+      <!-- indexページへのリンクアイコン-->
+      <a href="/subprofiles">
+        <div class="pen_p back_index">
+          <i class="fas fa-copy"></i>
+        </div>
+      </a>
+      <%else%>
+      <%= link_to :back do %>
+        <div class="pen_p back_index">
+          <i class="fas fa-chevron-left"></i>
+        </div>
+      <% end %>
       <%end%>
     <%end%>
 
