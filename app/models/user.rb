@@ -11,7 +11,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :name, presence: true 
-  validates :pfl_text, presence: true,length: { maximum: 5000 }
+  validates :pfl_text, length: { maximum: 5000 }
   validates :name,length: { maximum: 50 }
   mount_uploader :icon_image, ImageUploader
   mount_uploader :header_image, ImageUploader
@@ -19,7 +19,6 @@ class User < ApplicationRecord
   def self.guest
     find_or_create_by!(email: "guestuser@example.com") do |user|
       user.password = SecureRandom.urlsafe_base64
-      user.pfl_text = "text"
       user.name = "ゲスト"
     end
   end
