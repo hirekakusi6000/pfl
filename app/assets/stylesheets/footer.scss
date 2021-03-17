@@ -52,6 +52,12 @@
   font-weight: bold;
   font-family: sans-serif;
   text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 
 .footer_font:hover {
