@@ -45,11 +45,13 @@ https://kakikukekoapp.herokuapp.com/
 
 ## 🔍 機能一覧
 
-|  基本機能  |　gem等  |　追加説明  |
-|  ユーザー登録、ログイン機能、アカウント情報設定機能（device）  |　ransack  |  |
-|  ゲストログイン機能  |　 | |
-|  べネーション機能  |　kaminari  | |
-|  管理者画面  |　activeadmin  | |
+|  基本機能  |  gem等  |　追加説明  |
+| ---- | ---- | ---- |
+|  ユーザー登録、ログイン機能、アカウント情報設定機能  |  device  |  TD  |
+|  ゲストログイン機能  |    |    |
+|  べネーション機能 |  kaminari  |    |
+|  検索機能 |  ransack  |    |
+|  管理者画面  |  activeadmin  |    |
 
 - プロフィールカスタム機能
   - 画像投稿機能（AWS S3 + carrierwave）
