@@ -1,27 +1,31 @@
 <div class="introduce">
 
-      <!-- editページへのリンクアイコン-->
-    <% if current_user%>
-      <% if current_user.id == @subprofile.user_id%>
+  <% if current_user%>
+    <% if current_user.id == @subprofile.user_id%>
       <a href="/subprofiles/<%= @subprofile.id %>/edit">
         <div class="pen_p">
           <i class="fa fa-edit pen"></i>
         </div>
       </a>
-      <!-- indexページへのリンクアイコン-->
       <a href="/subprofiles">
         <div class="pen_p back_index">
           <i class="fas fa-copy"></i>
         </div>
       </a>
-      <%else%>
+    <%else%>
       <%= link_to :back do %>
         <div class="pen_p back_index">
           <i class="fas fa-chevron-left"></i>
         </div>
       <% end %>
-      <%end%>
     <%end%>
+   <%else%>
+    <%= link_to :back do %>
+      <div class="pen_p back_index">
+        <i class="fas fa-chevron-left"></i>
+      </div>
+    <% end %>
+  <%end%>
 
   <div class="show_subprofile_pp">
     <p class="show_subprofile_title"><%=@subprofile.title%></p>
