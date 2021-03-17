@@ -50,6 +50,11 @@ https://kakikukekoapp.herokuapp.com/
   - ユーザー検索機能（ransack）
   - べネーション機能（kaminari）
   - 管理者画面（activeadmin）
+  - 
+|  TH  |  基本機能  |
+| ---- | ---- |
+|  TD  |  TD  |
+|  TD  |  TD  |
 
 - プロフィールカスタム機能
   - 画像投稿機能（AWS S3 + carrierwave）
