@@ -70,9 +70,8 @@ https://kakikukekoapp.herokuapp.com/
 | ---- | ---- |
 |  サブプロフィール追加機能  | 複数のサブプロフィールを追加可能。<br> デザインもメインのプロフィールと同じように設定ができ、<br>メインプロフィールにサブプロフィールのリンクを<br>表示するように設定可能。  |
 
- ![IMG_6573](https://user-images.githubusercontent.com/76430700/110329971-97631180-8060-11eb-9cbc-5c3631e409d4.png)
-![無題478_20210308224303](https://user-images.githubusercontent.com/76430700/110329607-2e7b9980-8060-11eb-8e0e-3a22e334570b.png)
-![無題478_20210308231559](https://user-images.githubusercontent.com/76430700/110333074-83211380-8064-11eb-868f-f482d056c2ac.png)
+![無題480_20210318212712](https://user-images.githubusercontent.com/76430700/111626369-4063f600-8831-11eb-8bc7-de4c87853631.png)
+![無題480_20210318212941](https://user-images.githubusercontent.com/76430700/111626375-41952300-8831-11eb-8c7f-c8638e872219.png)
 
 ## ER図
 ![image_2021_3_14](https://user-images.githubusercontent.com/76430700/111061013-70836000-84e4-11eb-9015-5fc5c4dad9c4.png)
