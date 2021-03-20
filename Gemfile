@@ -56,7 +56,7 @@ gem 'kaminari'
 gem 'ransack'
 
 # ログイン機能
-gem 'devise'
+gem 'devise', git: "https://github.com/heartcombo/devise.git",  branch: "ca-omniauth-2"
 
 # 多言語対応(Rails 6)
 gem 'rails-i18n', '~> 6.0'
@@ -79,3 +79,7 @@ gem 'activeadmin'
 
 # ER図
 gem "rails-erd"
+
+# Twitter API取得用
+gem 'omniauth', '~> 1.9.1'
+gem 'omniauth-twitter'

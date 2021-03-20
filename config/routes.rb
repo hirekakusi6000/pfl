@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { 
     sessions: 'users/sessions',
     registrations: 'users/registrations',
-    passwords: 'users/passwords'
+    passwords: 'users/passwords',
+    # このpathを通して外部API認証が行われる。
+    :omniauth_callbacks => 'users/omniauth_callbacks'
   }
   
   get "/" => "homes#top"
