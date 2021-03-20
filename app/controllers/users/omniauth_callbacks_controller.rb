@@ -32,7 +32,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     callback_from :twitter
   end
 
-  private
+private
   # コールバック時に行う処理
   def callback_from(provider)
     provider = provider.to_s
