@@ -1,9 +1,9 @@
 <div class='fixed-top'>
   <nav class="navbar navbar-expand-lg navbar-light color" style="border-bottom:1px solid gray;" >
     <% if user_signed_in? %>
-      <a class="navbar-brand header_title" style="color: black;" href="/">✦kakikukeko</a>
+      <a class="navbar-brand header_title" style="color: black;" href="/users/<%= current_user.id%>">✦kakikukeko</a>
     <%else%>
-      <a class="navbar-brand header_title" style="color: black;" href="#">✦kakikukeko</a>
+      <a class="navbar-brand header_title" style="color: black;" href="/">✦kakikukeko</a>
     <%end%>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
