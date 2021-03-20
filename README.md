@@ -5,7 +5,7 @@ TwitterやfacebookなどのSNSのリンクを、このアプリのプロフィ�
 ![無題479_20210318210215](https://user-images.githubusercontent.com/76430700/111623489-cd0cb500-882d-11eb-8bf5-c7096f88278f.png)
 
 ## 🌐 App URL
-https://kakikukekoapp.herokuapp.com/
+https://kakikukekoapp.herokuapp.com/  
 ※利用規約とプライバシーポリシーのページへのリンクはヘッダーにあります。
 
 ## 💻 開発環境
