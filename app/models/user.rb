@@ -25,28 +25,19 @@ class User < ApplicationRecord
     end
   end
 
-  # Twitter認証ログイン用
-  # ユーザーの情報があれば探し、無ければ作成する
   def self.find_for_oauth(auth)
-    user = User.find_by(uid: auth.uid, provider: auth.provider)
+    user = User.where(uid: auth.uid, provider: auth.provider).first
 
-    #変数に値を入れるときに、変数がnilかfalseのときのみ値を入れる
-    user ||= User.create!(
-      uid: auth.uid,
-      provider: auth.provider,
-      name: auth[:info][:name],
-      email: User.dummy_email(auth),
-      password: Devise.friendly_token[0, 20]
-    )
+    #userがnilの場合は、新しく作成する
+    unless user
+      user = User.create(
+        uid:      auth.uid,
+        provider: auth.provider,
+        email:    User.dummy_email(auth),
+        password: Devise.friendly_token[0, 20]
+      )
+    end
 
-    user
-  end
-
-  #メールアドレスでの認証も実装している場合は、OAuthでの認証時もメールアドレスを保存する必要有
-  #emailはダミー用のアドレスを作成して代用
-  #email中に時間まで記載しているのは、認証後に退会などで論理削除された後も再度認証ログインできるように
-  def self.dummy_email(auth)
-    "#{Time.now.strftime('%Y%m%d%H%M%S').to_i}-#{auth.uid}-#{auth.provider}@example.com"
   end
 
 end

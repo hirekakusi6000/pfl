@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     passwords: 'users/passwords',
     # このpathを通して外部API認証が行われる。
-    :omniauth_callbacks => 'users/omniauth_callbacks'
+    omniauth_callbacks: 'users/omniauth_callbacks'
   }
   
   get "/" => "homes#top"
