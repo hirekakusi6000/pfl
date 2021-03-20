@@ -14,4 +14,10 @@ class HomesController < ApplicationController
   def about
   end
 
+  def service
+  end
+
+  def privacy
+  end
+
 end

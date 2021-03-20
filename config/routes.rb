@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   
   get "/" => "homes#top"
   get "/homes/about" => "homes#about"
+  get "/homes/service" => "homes#service"
+  get "/homes/privacy" => "homes#privacy"
   devise_scope :user do
   post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
