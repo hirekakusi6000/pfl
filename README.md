@@ -50,6 +50,7 @@ https://kakikukekoapp.herokuapp.com/
 |  実装内容  |　追加説明  |
 | ---- | ---- |
 |  ユーザー登録<br>ログイン機能<br>アカウント情報設定機能  |  deviceで実装  |
+|  Twitterアカウントでのログイン機能  |  omniauthとomniauth-twitterで実装|
 |  ゲストログイン機能  |    |
 |  べネーション機能 |  kaminariで実装  |
 |  検索機能 |  ransackで実装  |
@@ -80,6 +81,7 @@ https://kakikukekoapp.herokuapp.com/
 ## [テーブル設計](https://docs.google.com/spreadsheets/d/13P-5MeE7ZZ1ZR2DLBxzS01MRNf-DVC8XF1ZidiUwb-0/edit#gid=0)
 
 ## 追加予定機能
-- Twitterアカウントでのログイン機能
+- Twitterアカウントでログインした際にTwitterのアイコンも引き継がれるように設定
 - 画像トリミング機能
 - AWSデプロイ
+- ご意見箱実装
