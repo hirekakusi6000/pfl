@@ -11,7 +11,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          # 外部API認証用
-         :omniauthable, omniauth_providers: [:twitter]
+         :omniauthable
   validates :name, presence: true 
   validates :pfl_text, length: { maximum: 5000 }
   validates :name,length: { maximum: 50 }
