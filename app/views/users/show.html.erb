@@ -19,6 +19,12 @@
     <!-- アイコン-->
   </div>
 
+  <% if @user.uid != nil %>
+    <img src="<%= @user[:icon_image] %>" >
+  <% else %>
+    <%= image_tag @user.image.to_s %>
+  <% end %>
+
   <!-- アイコン拡大-->
   <div class="popup_wrap">
     <input id="trigger" type="checkbox">
