@@ -83,3 +83,6 @@ gem "rails-erd"
 # Twitter API取得用
 gem 'omniauth', '~> 1.9.1'
 gem 'omniauth-twitter'
+
+# .envファイルをデプロイ先でも使えるように
+gem 'dotenv-rails'
