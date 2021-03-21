@@ -13,6 +13,7 @@ https://kakikukekoapp.herokuapp.com/
 - psql (PostgreSQL) 13.1
 - HTML,CSS
 - AWS S3
+- Twitter API
 
 ## 💬 コンセプト
 ### プロフィール作成サイトを選んだ理由
