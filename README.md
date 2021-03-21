@@ -63,6 +63,7 @@ https://kakikukekoapp.herokuapp.com/
 |  実装内容  |　追加説明  |
 | ---- | ---- |
 |  アイコン・ヘッダー画像設定機能  |  AWS S3 + carrierwaveで実装  |
+|  Twitterのプロフィール引き継ぎ機能  |  Twitter APIで実装  |
 | 背景色設定機能  |  55色  |
 | 文字の色の選択機能 |  55色  |
 | 文字の種類の選択機能  |  10種類  |
