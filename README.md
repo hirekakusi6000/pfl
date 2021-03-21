@@ -6,8 +6,7 @@ TwitterやfacebookなどのSNSのリンクを、このアプリのプロフィ�
 
 ## 🌐 App URL
 https://kakikukekoapp.herokuapp.com/  
-※利用規約とプライバシーポリシーのページへのリンクはヘッダーにあります。
-
+※利用規約とプライバシーポリシーは、ヘッダーにあるリンクからご覧頂けます。
 ## 💻 開発環境
 - Rails 6.1.1
 - Ruby 2.7.2
