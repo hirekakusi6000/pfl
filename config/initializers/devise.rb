@@ -9,7 +9,7 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-  config.omniauth :twitter, ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET'], scope: 'email', oauth_callback: "https://kakikukekoapp.herokuapp.com/users/auth/twitter/callback"
+  config.omniauth :twitter, ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET'], scope: 'email', oauth_callback: "http://127.0.0.1:3000/users/auth/twitter/callback"
 
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing

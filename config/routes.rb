@@ -2,11 +2,10 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users, controllers: { 
+    omniauth_callbacks: 'users/omniauth_callbacks',# このpathを通して外部API認証が行われる。
     sessions: 'users/sessions',
     registrations: 'users/registrations',
-    passwords: 'users/passwords',
-    # このpathを通して外部API認証が行われる。
-    omniauth_callbacks: 'users/omniauth_callbacks'
+    passwords: 'users/passwords'
   }
   
   get "/" => "homes#top"

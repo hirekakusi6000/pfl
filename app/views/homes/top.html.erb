@@ -5,7 +5,7 @@
     <p><%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %></p>
     <!-- Twitterログイン-->
     <div style="text-align:center;margin-bottom:30px;">
-      <%= link_to user_twitter_omniauth_authorize_path,method: :post do %>
+      <%= link_to "/users/auth/twitter" do %>
         <div class="twitter_sigin_btn_p">
          <span class="fab fa-twitter" style="color:white;">   Twitter ログイン</span>
         </div>
