@@ -6,7 +6,8 @@ TwitterやfacebookなどのSNSのリンクを、このアプリのプロフィ�
 
 ## 🌐 App URL
 https://kakikukekoapp.herokuapp.com/  
-※利用規約とプライバシーポリシーのページへのリンクはヘッダーにあります。
+※利用規約とプライバシーポリシーは、ヘッダーにあるリンクからご覧頂けます。  
+※モバイル版の使用率を考慮して、モバイル版のデザインを優先して作成しておりますので、スマホからでもご利用いただけます。
 
 ## 💻 開発環境
 - Rails 6.1.1
@@ -14,6 +15,7 @@ https://kakikukekoapp.herokuapp.com/
 - psql (PostgreSQL) 13.1
 - HTML,CSS
 - AWS S3
+- Twitter API
 
 ## 💬 コンセプト
 ### プロフィール作成サイトを選んだ理由
@@ -51,6 +53,7 @@ https://kakikukekoapp.herokuapp.com/
 |  実装内容  |　追加説明  |
 | ---- | ---- |
 |  ユーザー登録<br>ログイン機能<br>アカウント情報設定機能  |  deviceで実装  |
+|  Twitterアカウントでのログイン機能  |  Twitter APIで実装 gemはomniauthとomniauth-twitterを使用|
 |  ゲストログイン機能  |    |
 |  べネーション機能 |  kaminariで実装  |
 |  検索機能 |  ransackで実装  |
@@ -60,6 +63,7 @@ https://kakikukekoapp.herokuapp.com/
 |  実装内容  |　追加説明  |
 | ---- | ---- |
 |  アイコン・ヘッダー画像設定機能  |  AWS S3 + carrierwaveで実装  |
+|  Twitterのプロフィール引き継ぎ機能  |  Twitter APIで実装  |
 | 背景色設定機能  |  55色  |
 | 文字の色の選択機能 |  55色  |
 | 文字の種類の選択機能  |  10種類  |
@@ -81,6 +85,7 @@ https://kakikukekoapp.herokuapp.com/
 ## [テーブル設計](https://docs.google.com/spreadsheets/d/13P-5MeE7ZZ1ZR2DLBxzS01MRNf-DVC8XF1ZidiUwb-0/edit#gid=0)
 
 ## 追加予定機能
-- Twitterアカウントでのログイン機能
+- Twitterアカウントでログインした際にTwitterのアイコンも引き継がれるように設定
 - 画像トリミング機能
 - AWSデプロイ
+- ご意見箱実装
