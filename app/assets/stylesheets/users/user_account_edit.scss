@@ -1,0 +1,32 @@
+.user_account_update_btn_p {
+  width: 280px;
+  height: auto;
+  padding: 0px 0px 0px 0px;
+  text-align: center;
+}
+
+.user_account_update_btn {
+  margin: 5px;
+  font-weight: bold;
+  border-radius: 100px;
+  width: 120px;
+  height: 40px;
+  background: #58ACFA;
+  color: white;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.user_account_update_btn:hover {
+  color: white;
+  text-decoration: none;
+  text-decoration: none;
+  transition: all 0.5s;
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 480px) {
+  .user_account_update_btn_p {
+    padding: 0px 10px 0px 0px;
+  }
+}
