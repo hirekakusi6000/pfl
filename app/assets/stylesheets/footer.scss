@@ -37,12 +37,12 @@
 .footer_icon {
   display: inline-block;
   font-size: 22px;
-  color: #A4A4A4;
+  color: black;
   text-decoration: none;
 }
 
 .footer_icon:hover {
-  color: #A4A4A4;
+  color: black;
   text-decoration: none;
 }
 
@@ -50,7 +50,7 @@
 .footer_font {
   width: 100px;
   text-decoration: none;
-  color: #A4A4A4;
+  color: black;
   font-size: 11px;
   font-weight: bold;
   font-family: sans-serif;
@@ -64,7 +64,7 @@
 }
 
 .footer_font:hover {
-  color: #A4A4A4;
+  color: black;
   text-decoration: none;
   transition: all 0.5s;
 }
@@ -73,7 +73,7 @@
 
   /* フッター 親の親 ブロック */
   .footer_pp {
-    height: 45px;
+    height: 48px;
   }
 
   /* フッター 親 ブロック */
@@ -85,7 +85,7 @@
   /* フッター 子 ブロック */
   .footer_p p {
     height: 19px;
-    margin: 0px 0px 0px;
+    margin: 0px 0px 3px 0px;
   }
 
   /* フッター アイコン インラインブロック */

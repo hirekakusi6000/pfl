@@ -11,16 +11,23 @@
   padding-top: 15px;
 }
 
+.input_group_pp {
+  width: 100vw;
+  text-align: center;
+}
+
 /* 検索フォーム 親の親  */
 .input_group_p {
+  display: inline-block;
   margin: 30px;
-  width: 250px;
+  width: 400px;
 }
 
 /* アイコン 親の親  */
 .index_icon_pp {
   text-align: center;
   margin-bottom: 100px;
+  margin-top: -20px;
 }
 
 /* アイコン 親  */
@@ -90,7 +97,7 @@
   /* 検索フォーム 親の親  */
   .input_group_p {
     margin: 30px;
-    width: 220px;
+    width: 300px;
   }
 
   /* アイコン 親  */

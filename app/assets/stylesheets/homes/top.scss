@@ -40,7 +40,6 @@
 .top_coment_p .login {
   color: white;
   background: #2E2E2E;
-  margin-bottom: 50px;
 }
 
 .top_coment_p .login:hover {
@@ -66,7 +65,17 @@
   opacity: 0.7;
 }
 
+.top_users_index_title {
+  font-weight: bold;
+  font-size: 18px;
+  color: #848484;
+}
+
 @media screen and (max-width: 375px) {
+  .top_coment_p {
+    text-align: center;
+    margin-top: 50px;
+  }
 
   /* トップページ見出し 子 ブロック */
   .top_coment {

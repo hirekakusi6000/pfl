@@ -1,0 +1,24 @@
+<div class="index_icon_pp">
+  <% @users.each do |user| %>
+    <% if user.open_status == 1 %>
+      <div class="index_icon_p">
+        <% if user.icon_image? %>
+          <p><a href="/users/<%= user.id %>"><img src="<%= user.icon_image %>"></a></p>
+        <% else %>
+          <p><a href="/users/<%= user.id %>"><i class="fas fa-user index_default_icon"></i></a></p>
+        <% end %>
+        <p class="index_user_name_p"><a class="index_user_name" href="/users/<%= user.id %>"><%= user.name %></a></p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<% if @users[0] == nil %>
+  <div style="width:100vw;text-align:center;">
+   <p style="font-size:16px;font-weight: bold;">検索内容に一致するユーザーが見つかりません</p>
+  </div>
+<%end%>
+
+<div class="paginate">
+  <%= paginate @users %>
+</div>

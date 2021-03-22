@@ -1,3 +1,5 @@
+<% if @user != nil %>
+
 <div class="introduce">
 <!-- ヘッダー画像-->
   <div class="header_image_p">
@@ -121,3 +123,9 @@
   }
 
 </style>
+
+<%else%>
+  <div style="margin-top:100px;width:100vw;text-align:center;">
+   <p style="font-size:18px;font-weight: bold;">ユーザーが見つかりません</p>
+  </div>
+<%end%>

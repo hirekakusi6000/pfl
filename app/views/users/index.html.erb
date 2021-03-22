@@ -1,26 +1,11 @@
   <%= search_form_for @q do |f| %>
+   <div class="input_group_pp">
     <div class="input_group_p">
       <div class="input-group">
-        <%= f.search_field :name_cont, class: "form-control",placeholder:"ユーザー検索"%>
+        <%= f.search_field :name_cont, class: "form-control",placeholder:"ユーザー名で検索"%>
       </div>
     </div>
+   </div>
   <% end %>
 
-  <div class="index_icon_pp">
-    <% @users.each do |user| %>
-    <% if user.open_status == 1 %>
-      <div class="index_icon_p">
-        <% if user.icon_image? %>
-          <p><a href="/users/<%= user.id %>"><img src="<%= user.icon_image %>"></a></p>
-        <% else %>
-          <p><a href="/users/<%= user.id %>"><i class="fas fa-user index_default_icon"></i></a></p>
-        <% end %>
-        <p class="index_user_name_p"><a class="index_user_name" href="/users/<%= user.id %>"><%= user.name %></a></p>
-      </div>
-    <% end %>
-   <% end %>
-  </div>
-
-  <div class="paginate">
-    <%= paginate @users %>
-  </div>
+  <%= render 'users/index' %>
