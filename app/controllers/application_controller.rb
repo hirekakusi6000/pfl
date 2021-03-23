@@ -12,33 +12,21 @@ class ApplicationController < ActionController::Base
 
   def set_new_item
     @link = Link.new
-    @twitter = Twitter.new
-    @instagram = Instagram.new
-    @facebook = Facebook.new
-    @youtube = Youtube.new
-    @tiktok = Tiktok.new 
-    @subprofile = Subprofile.new     
+    @subprofile = Subprofile.new
+    @website = Website.new  
   end
 
   def set_show_items
     @links = Link.where(user_id:params[:id])
-    @twitters = Twitter.where(user_id:params[:id]).order(id: "ASC") 
-    @instagrams = Instagram.where(user_id:params[:id]).order(id: "ASC")
-    @facebooks = Facebook.where(user_id:params[:id]).order(id: "ASC")
-    @youtubes = Youtube.where(user_id:params[:id]).order(id: "ASC")
-    @tiktoks = Tiktok.where(user_id:params[:id]).order(id: "ASC")
     @subprofiles = Subprofile.where(user_id:params[:id]).order(id: "ASC")
+    @websites = Website.where(user_id:params[:id]).order(id: "ASC")
   end
 
   def set_items
     if user_signed_in?
       @links = Link.where(user_id:current_user.id)
-      @twitters = Twitter.where(user_id:current_user.id).order(id: "ASC") 
-      @instagrams = Instagram.where(user_id:current_user.id).order(id: "ASC")
-      @facebooks = Facebook.where(user_id:current_user.id).order(id: "ASC")
-      @youtubes = Youtube.where(user_id:current_user.id).order(id: "ASC")
-      @tiktoks = Tiktok.where(user_id:current_user.id).order(id: "ASC")
       @subprofiles = Subprofile.where(user_id:current_user.id).order(id: "ASC")
+      @websites = Website.where(user_id:current_user.id).order(id: "ASC")
     end
   end
 

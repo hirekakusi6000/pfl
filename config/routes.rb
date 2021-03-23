@@ -17,24 +17,12 @@ Rails.application.routes.draw do
   end
   post "links/:id/update" => "links#update"  
   delete "/links/:id" => "links#destroy"
-  post "twitters/:id/update" => "twitters#update"  
-  delete "/twitters/:id" => "twitters#destroy"
-  post "instagrams/:id/update" => "instagrams#update"  
-  delete "/instagrams/:id" => "instagrams#destroy"
-  post "facebooks/:id/update" => "facebooks#update"  
-  delete "/facebooks/:id" => "facebooks#destroy"
-  post "youtubes/:id/update" => "youtubes#update"  
-  delete "/youtubes/:id" => "youtubes#destroy"
-  post "tiktoks/:id/update" => "tiktoks#update"  
-  delete "/tiktoks/:id" => "tiktoks#destroy"
+  post "websites/:id/update" => "websites#update"  
+  delete "/websites/:id" => "websitess#destroy"
   post "subprofiles/:id/update" => "subprofiles#update"
   delete "/subprofiles/:id" => "subprofiles#destroy"
   resources :users, only: [:index, :show, :edit, :update]
   resources :links
-  resources :twitters
-  resources :instagrams
-  resources :facebooks
-  resources :youtubes
-  resources :tiktoks
+  resources :websites
   resources :subprofiles
 end

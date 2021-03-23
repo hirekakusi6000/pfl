@@ -1,0 +1,171 @@
+ <!-- ポップアップ Twitter追加-->
+<%= form_with(model: @website, local: true) do |form| %>
+  <div class="popup_wrap">
+    <input id="trigger_twitter" type="checkbox">
+    <div class="popup_overlay">
+      <label for="trigger_twitter" class="popup_trigger"></label>
+      <div class="popup_content_p">
+      <div class="popup_content add_sns_popup">
+        <p class="popup_title" style="margin-bottom:27px;">Twitterリンク追加</p>
+        <div class="sns_acount_form_pp" style="height:80px;">
+           <div class="sns_acount_form_p">
+            <label class="form_title">アカウントのID&emsp;</label>
+            <%= form.text_field :account,class:"sns_edit_form",maxlength: "100",required: true%>
+            <label class="form_title">コメントを追加&emsp;</label>
+            <%= form.text_field :comment,class:"sns_edit_form",maxlength: "100"%>
+         </div>
+      </div>
+      <p><label class="edit_close_btn"  for="trigger_twitter"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+      <input class="OK" type="submit" value="保存" name="add_twitter">
+     </div>
+    </div>
+   </div>
+  </div>
+ <% end %>
+
+<%= form_with(model: @website, local: true) do |form| %>
+ <!-- ポップアップ instagram追加-->
+    <div class="popup_wrap">
+    <input id="trigger_instagram" type="checkbox">
+    <div class="popup_overlay">
+      <label for="trigger_instagram" class="popup_trigger"></label>
+      <div class="popup_content_p">
+      <div class="popup_content add_sns_popup">
+        <p class="popup_title" style="margin-bottom:27px;">instagramリンク追加</p>
+        <div class="sns_acount_form_pp" style="height:80px;">
+           <div class="sns_acount_form_p">
+            <label class="form_title">アカウントのID&emsp;</label>
+            <%= form.text_field :account,class:"sns_edit_form",maxlength: "100",required: true%>
+            <label class="form_title">コメントを追加&emsp;</label>
+            <%= form.text_field :comment,class:"sns_edit_form",maxlength: "100"%>
+         </div>
+      </div>
+      <p><label class="edit_close_btn"  for="trigger_instagram"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+      <input class="OK" type="submit" value="保存" name="add_instagram">
+     </div>
+    </div>
+   </div>
+  </div>
+ <% end %>
+
+<%= form_with(model: @website, local: true) do |form| %>
+<!-- ポップアップ facebook追加-->
+  <div class="popup_wrap">
+    <input id="trigger_facebook" type="checkbox">
+    <div class="popup_overlay">
+      <label for="trigger_facebook" class="popup_trigger"></label>
+      <div class="popup_content_p">
+      <div class="popup_content add_sns_popup">
+        <p class="popup_title" style="margin-bottom:27px;">facebookリンク追加</p>
+        <div class="sns_acount_form_pp" style="height:80px;">
+           <div class="sns_acount_form_p">
+            <label class="form_title">アカウントのURL&nbsp;</label>
+            <%= form.text_field :account,class:"sns_edit_form",maxlength: "100",required: true%>
+            <label class="form_title">コメントを追加&emsp;</label>
+            <%= form.text_field :comment,class:"sns_edit_form",maxlength: "100"%>
+         </div>
+      </div>
+      <p><label class="edit_close_btn"  for="trigger_facebook"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+      <input class="OK" type="submit" value="保存" name="add_facebook">
+     </div>
+    </div>
+   </div>
+  </div>
+  <% end %>
+
+<%= form_with(model: @website, local: true) do |form| %>
+   <!-- ポップアップ youtube追加-->
+  <div class="popup_wrap">
+    <input id="trigger_youtube" type="checkbox">
+    <div class="popup_overlay">
+      <label for="trigger_youtube" class="popup_trigger"></label>
+      <div class="popup_content_p">
+      <div class="popup_content add_sns_popup">
+        <p class="popup_title" style="margin-bottom:27px;">Youtubeリンク追加</p>
+        <div class="sns_acount_form_pp" style="height:80px;">
+           <div class="sns_acount_form_p">
+            <label class="form_title">アカウントのURL&nbsp;</label>
+            <%= form.text_field :account,class:"sns_edit_form",maxlength: "100",required: true%>
+            <label class="form_title">コメントを追加&emsp;</label>
+            <%= form.text_field :comment,class:"sns_edit_form",maxlength: "100"%>
+         </div>
+      </div>
+      <p><label class="edit_close_btn"  for="trigger_youtube"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+      <input class="OK" type="submit" value="保存" name="add_youtube">
+     </div>
+    </div>
+   </div>
+  </div>
+<% end %>
+
+<%= form_with(model: @website, local: true) do |form| %>
+   <!-- ポップアップ tiktok追加-->
+  <div class="popup_wrap">
+    <input id="trigger_tiktok" type="checkbox">
+    <div class="popup_overlay">
+      <label for="trigger_tiktok" class="popup_trigger"></label>
+      <div class="popup_content_p">
+      <div class="popup_content add_sns_popup">
+        <p class="popup_title" style="margin-bottom:27px;">Tiktokリンク追加</p>
+        <div class="sns_acount_form_pp" style="height:80px;">
+           <div class="sns_acount_form_p">
+            <label class="form_title">アカウントのURL&nbsp;</label>
+            <%= form.text_field :account,class:"sns_edit_form",maxlength: "100",required: true%>
+            <label class="form_title">コメントを追加&emsp;</label>
+            <%= form.text_field :comment,class:"sns_edit_form",maxlength: "100"%>
+         </div>
+      </div>
+      <p><label class="edit_close_btn"  for="trigger_tiktok"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+      <input class="OK" type="submit" value="保存" name="add_tiktok">
+     </div>
+    </div>
+   </div>
+  </div>
+<% end %>
+
+  <label for="trigger_twitter">
+    <div class="sns_outside" style="background:#A9D0F5;margin:10px;">
+        <p class="sns_text"></p>
+        <div class="plus_icon_p">
+          <i class="fas fa-plus-circle plus_icon"></i>
+        </div>
+        <span class="fab fa-twitter sns_inside" style="color:white;"></span>
+    </div>
+  </label>
+  <label for="trigger_instagram">
+    <div class="sns_outside" style="background:#F5A9E1;margin:10px;">
+        <p class="sns_text"></p>
+        <div class="plus_icon_p">
+          <i class="fas fa-plus-circle plus_icon"></i>
+        </div>
+        <span class="fab fa-instagram sns_inside" style="color:white;"></span>
+    </div>
+  </label>
+  <label for="trigger_facebook">
+    <div class="sns_outside" style="background:#D0A9F5;margin:10px;">
+        <p class="sns_text"></p>
+        <div class="plus_icon_p">
+          <i class="fas fa-plus-circle plus_icon"></i>
+        </div>
+        <span class="fab fa-facebook sns_inside" style="color:white;"></span>
+    </div>
+  </label>
+  <label for="trigger_youtube">
+    <div class="sns_outside" style="background:#F7819F;margin:10px;">
+        <p class="sns_text"></p>
+        <div class="plus_icon_p">
+          <i class="fas fa-plus-circle plus_icon"></i>
+        </div>
+        <span class="fab fa-youtube sns_inside" style="color:white;"></span>
+    </div>
+  </label>
+  <label for="trigger_tiktok">
+    <div class="sns_outside" style="background:#000000;margin:10px;">
+        <p class="sns_text"></p>
+        <div class="plus_icon_p">
+          <i class="fas fa-plus-circle plus_icon"></i>
+        </div>
+        <span class="fab fa-tiktok sns_inside" style="color:white;"></span>
+    </div>
+  </label>
+

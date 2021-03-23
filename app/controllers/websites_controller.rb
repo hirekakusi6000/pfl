@@ -21,23 +21,23 @@ class WebsitesController < ApplicationController
     @website = Website.new(account_params)
     @website.user_id = current_user.id
 
-    if params[:twitter]
+    if params[:add_twitter]
       @website.type = "twitter"
       @website.outsidecolor = "A9D0F5"
       @website.insidecolor = "FFFFFF"
-    elsif params[:instagram]
-      @website.type = "twitter"
+    elsif params[:add_instagram]
+      @website.type = "instagram"
       @website.outsidecolor = "F5A9E1"
       @website.insidecolor = "FFFFFF"
-    elsif params[:facebook]
+    elsif params[:add_facebook]
       @website.type = "facebook"
       @website.outsidecolor = "D0A9F5"
       @website.insidecolor = "FFFFFF"
-    elsif params[:youtube]
+    elsif params[:add_youtube]
       @website.type = "youtube"
       @website.outsidecolor = "F7819F"
       @website.insidecolor = "FFFFFF"
-    elsif params[:tiktok]
+    elsif params[:add_tiktok]
       @website.type = "tiktok"
       @website.outsidecolor = "000000"
       @website.insidecolor = "FFFFFF"

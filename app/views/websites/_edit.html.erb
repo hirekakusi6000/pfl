@@ -1,0 +1,111 @@
+<% @websites.each do |website| %>  
+  <%= form_with(model: website, local: true, multipart: true,class:"foo") do |form| %>
+  <%hex = SecureRandom.hex(10)%>
+  <!-- ポップアップ website-->
+  <div class="popup_wrap">
+    <input id="trigger_<%= website%>" type="checkbox">
+    <div class="popup_overlay">
+      <label for="trigger_<%= website%>" class="popup_trigger"></label>
+      <div class="popup_content_p">
+      <!-- アカウント情報--> 
+      <div class="popup_wrap">
+        <input id="trigger_acount<%= website%>" type="checkbox">
+          <div class="popup_content_acount edit_sns_popup">
+            <div class="sns_acount_popup_title">
+             <p class="popup_title" style="margin-bottom:27px;"><%= website.type %>リンク設定</p>
+            </div>
+          <div class="sns_acount_form_pp" style="height:80px;">
+            <div class="sns_acount_form_p">
+              <label  class="form_title">アカウントのID&emsp;</label>
+               <%= form.text_field :account,class:"sns_edit_form",maxlength: "100",required: true%>
+              <label class="form_title">コメントを追加&emsp;</label>
+               <%= form.text_field :comment,class:"sns_edit_form",maxlength: "100"%>
+            </div>
+           </div>
+          <p><label class="edit_close_btn"  for="trigger_acount<%= website%>"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+          <input class="OK" type="submit" value="保存" name="account">
+        </div>
+      </div>
+ <!-- 外側色-->
+  <div class="popup_wrap">
+    <input id="trigger_outsidecolor<%= website%>" type="checkbox">
+    <div class="popup_content_c">
+      <p class="popup_title"><%= website.type %>の外側色</p>
+      <p><label class="edit_close_btn"  for="trigger_outsidecolor<%= website%>"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+        <% @color_index.each do |color| %>
+         <%= form.radio_button :outsidecolor, color,id:"C#{hex}#{color}"%>
+         <label for="C<%= hex%><%= color%>" class="color_index_p">
+            <span class="color_index C<%= hex%><%= color%>"></span>
+          </label>
+        <%end%>
+      <input class="OK" type="submit" value="保存" name="outsidecolor">
+    </div>
+  </div>
+
+ <!-- 内側色-->
+  <div class="popup_wrap">
+    <input id="trigger_insidecolor<%= website%>" type="checkbox">
+    <div class="popup_content_c">
+      <p class="popup_title"><%= website.type %>の内側色</p>
+      <p><label class="edit_close_btn"  for="trigger_insidecolor<%= website%>"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+        <% @color_index.each do |color| %>
+          <%= form.radio_button :insidecolor, color,id:"B#{hex}#{color}"%>
+          <label for="B<%= hex%><%= color%>" class="color_index_p">
+            <span class="color_index B<%= hex%><%= color%>"></span>
+          </label>
+        <%end%>
+      <input class="OK" type="submit" value="保存" name="insidecolor">
+    </div>
+  </div>
+    <!-- websiteポップアップ選択画面 -->
+      <div class="popup_content_select">
+        <p class="popup_title"><%= website.type %>設定</p>
+        <%= link_to '削除', "/websites/#{website.id}",class:"link_destroy",method: :delete, data: {confirm: "削除しますか?"}  %>
+        <p><label class="edit_close_btn"  for="trigger_<%= website%>"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
+        <p><label for="trigger_acount<%= website%>" class="open_btn_s"><%= website.type %>のリンク・コメントを編集</label></p>
+        <p><label for="trigger_outsidecolor<%= website%>" class="open_btn_s"><%= website.type %>アイコンの色を設定(外側)</label></p>
+        <p><label for="trigger_insidecolor<%= website%>" class="open_btn_s"><%= website.type %>アイコンの色を設定(内側)</label></p>
+      </div>
+    </div>
+   </div>
+  </div>
+
+  <% if @website.account!="" %>
+    <label for="trigger_<%= website%>">
+    <div class="sns_p">
+      <p class="sns_text"><%= website.comment %></p>
+      <div class="sns_outside website_outsidecolor<%= website.outsidecolor%>">
+        <span class="fab fa-<%= website.type %> sns_inside website_insidecolor<%= website.insidecolor%>"></span>
+      </div>
+    </div>
+    </label>
+  <%end%>
+
+<style>
+
+    /*websiteアイコン 外側色*/
+  .website_outsidecolor<%= website.outsidecolor%>{
+  background-color: #<%= website.outsidecolor%>;
+  }
+
+  /*websiteアイコン 内側色*/
+  .website_insidecolor<%= website.insidecolor%>{
+  color: #<%= website.insidecolor%>;
+  }
+
+  <% @color_index.each do |color| %>
+    .C<%= hex%><%= color%>{
+    background-color: #<%= color%>;
+    }
+  <%end%>
+
+  <% @color_index.each do |color| %>
+    .B<%= hex%><%= color%>{
+    background-color: #<%= color%>;
+    }
+  <%end%>
+
+</style>
+
+  <% end %>
+ <% end %>
