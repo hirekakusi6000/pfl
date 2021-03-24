@@ -57,21 +57,20 @@ class WebsitesController < ApplicationController
 
      if params[:account]
       @website.update(account_params)
-      update = 1
+      flash[:notice] = "リンク設定を更新しました"
+      redirect_to("/users/#{current_user.id}/edit")
      elsif params[:outsidecolor]
       @website.update(outsidecolor_params)
-      update = 1
+      flash[:notice] = "リンク設定を更新しました"
+      redirect_to("/users/#{current_user.id}/edit")
      elsif params[:insidecolor]
       @website.update(insidecolor_params)
-      update = 1
+      flash[:notice] = "リンク設定を更新しました"
+      redirect_to("/users/#{current_user.id}/edit")
+     else
+      render template: "users/edit"
      end
 
-    if update = 1
-      flash[:notice] = "websiteリンク設定を更新しました"
-      redirect_to("/users/#{current_user.id}/edit")
-    else
-      render template: "users/edit"
-    end
   end
 
     private
