@@ -13,7 +13,6 @@ class ApplicationController < ActionController::Base
   def set_new_item
     @link = Link.new
     @subprofile = Subprofile.new
-    @status = "edit_page"
     @website = Website.new
   end
 

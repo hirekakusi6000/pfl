@@ -1,13 +1,14 @@
 <% @websites.each do |website| %>
 
- <%account = Website.new(sns:website.type, account:website.account)%> 
+ <% url = Website.new() %>
+ <% url.url(website) %>
 
   <% if website.account!="" %>
     <label for="trigger_<%= website%>">
     <div class="sns_p">
       <p class="sns_text"><%= website.comment %></p>
       <div class="sns_outside website_outsidecolor<%= website.outsidecolor%>">
-        <a href="<%= account.url %>"><span class="fab fa-<%= website.type %> sns_inside website_insidecolor<%= website.insidecolor%>"></span></a>
+        <a href="<%= website.account %>"><span class="fab fa-<%= website.type %> sns_inside website_insidecolor<%= website.insidecolor%>"></span></a>
       </div>
     </div>
     </label>

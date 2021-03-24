@@ -16,7 +16,7 @@
             </div>
           <div class="sns_acount_form_pp" style="height:80px;">
             <div class="sns_acount_form_p">
-              <label  class="form_title">アカウントの<%= website.type == "twitter" or website.type == "instagram" ? "ID" : "URL"%>&emsp;</label>
+              <label  class="form_title">アカウントの<%= website.type == "instagram" || website.type == "twitter" ? "ID" : "URL"%>&emsp;</label>
                <%= form.text_field :account,class:"sns_edit_form",maxlength: "100",required: true%>
               <label class="form_title">コメントを追加&emsp;</label>
                <%= form.text_field :comment,class:"sns_edit_form",maxlength: "100"%>

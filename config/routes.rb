@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   post "links/:id/update" => "links#update"  
   delete "/links/:id" => "links#destroy"
   post "websites/:id/update" => "websites#update"  
-  delete "/websites/:id" => "websitess#destroy"
+  delete "/websites/:id" => "websites#destroy"
   post "subprofiles/:id/update" => "subprofiles#update"
   delete "/subprofiles/:id" => "subprofiles#destroy"
   resources :users, only: [:index, :show, :edit, :update]
