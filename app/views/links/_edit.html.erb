@@ -38,7 +38,7 @@
     <div class="popup_content_c">
       <p class="popup_title">リンクボタンの色</p>
       <p><label class="edit_close_btn"  for="trigger_background_color<%= link%>"><i class="fas fa-times-circle edit_close_btn"></i></label></p>
-        <% @color_index.each do |color| %>
+         <% @color_index.each do |color| %>
          <%= form.radio_button :background_color, color,id:"background_color#{hex}#{color}"%>
          <label for="background_color<%= hex%><%= color%>" class="color_index_p">
             <span class="color_index background_color<%= hex%><%= color%>"></span>
