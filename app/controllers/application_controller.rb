@@ -19,14 +19,14 @@ class ApplicationController < ActionController::Base
   def set_show_items
     @links = Link.where(user_id:params[:id])
     @subprofiles = Subprofile.where(user_id:params[:id]).order(id: "ASC")
-    @websites = Website.where(user_id:params[:id]).order(id: "ASC")
+    @websites = Website.where(user_id:params[:id]).order(type: "ASC")
   end
 
   def set_items
     if user_signed_in?
       @links = Link.where(user_id:current_user.id)
       @subprofiles = Subprofile.where(user_id:current_user.id).order(id: "ASC")
-      @websites = Website.where(user_id:current_user.id).order(id: "ASC")
+      @websites = Website.where(user_id:current_user.id).order(type: "ASC")
     end
   end
 
