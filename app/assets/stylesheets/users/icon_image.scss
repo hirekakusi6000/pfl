@@ -1,8 +1,8 @@
 .default_icon_image_p {
   z-index: 5;
   display: inline-block;
-  width: 180px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
   border-radius: 100%;
   object-fit: cover;
   position: absolute;
@@ -16,7 +16,7 @@
 
 .default_icon {
   margin-top: 25px;
-  font-size: 120px;
+  font-size: 90px;
   color: white;
 }
 
@@ -24,8 +24,8 @@
 .icon_image {
   z-index: 5;
   display: inline-block;
-  width: 180px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
   border-radius: 100%;
   object-fit: cover;
   position: absolute;
@@ -46,7 +46,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, 200%);
+  transform: translate(-50%, 160%);
 }
 
 /*アイコン画像オーバーレイ 子 */
@@ -55,8 +55,8 @@
   background-color: black;
   opacity: 0.3;
   cursor: pointer;
-  width: 180px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
   border-radius: 100%;
   object-fit: none;
   position: absolute;

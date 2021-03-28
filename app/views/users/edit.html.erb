@@ -182,7 +182,13 @@
     <label for="trigger_icon_image" >
       <i class="fas fa-camera camera_icon"></i>
       <p class="black_overlay_icon"></p>
-      <%= image_tag @user.icon_image.url,class:"icon_image"%>
+        <% if @user.icon_image? %>
+          <%= image_tag @user.icon_image.url,class:"icon_image"%>
+        <% else %>
+          <div class="default_icon_image_p">
+            <i class="fas fa-user default_icon"></i>
+          </div>
+        <% end %>
     </label>
 
   </div>
