@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :subprofiles, dependent: :destroy
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         # 外部API認証用
+         #  外部API認証用
          :omniauthable
   validates :name, presence: true 
   validates :pfl_text, length: { maximum: 5000 }
