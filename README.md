@@ -79,8 +79,7 @@ https://kakikukekoapp.herokuapp.com/
 ![無題480_20210318212941](https://user-images.githubusercontent.com/76430700/111626375-41952300-8831-11eb-8c7f-c8638e872219.png)
 
 ## ER図
-![image_2021_3_14](https://user-images.githubusercontent.com/76430700/111061013-70836000-84e4-11eb-9015-5fc5c4dad9c4.png)
-
+![image_2021_3_28](https://user-images.githubusercontent.com/76430700/112745574-75680980-8fe4-11eb-95d2-9efee80ebb47.png)
 
 ## [テーブル設計](https://docs.google.com/spreadsheets/d/13P-5MeE7ZZ1ZR2DLBxzS01MRNf-DVC8XF1ZidiUwb-0/edit#gid=0)
 
