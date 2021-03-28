@@ -20,7 +20,7 @@ https://kakikukekoapp.herokuapp.com/
 ## 💬 コンセプト
 ### プロフィール作成サイトを選んだ理由
 現職ではVBA（マクロ作成言語）で業務で使用するマクロを作成しており、実際に使用する方へのヒアリングとコミュニケーションの重要性を知っております。   
-プロフィール作成サービスは、身近に既存のサービスを利用している方が多く、ヒアリングしながら作成できるため、プロフィール作成サービスを選ぶことにいたしました。
+プロフィール作成サービスは、身近に既存のサービスを利用している方が多く、ヒアリングを繰り返しながら作成できるため、プロフィール作成サービスを選ぶことにいたしました。
 
 ### ユーザー満足度の高いアプリを作るために、ヒアリングと調査を繰り返しながら作成いたしました。  
 - 既存のサービスではどのようにユーザーがサービスを利用しているのかを調査  
@@ -79,8 +79,7 @@ https://kakikukekoapp.herokuapp.com/
 ![無題480_20210318212941](https://user-images.githubusercontent.com/76430700/111626375-41952300-8831-11eb-8c7f-c8638e872219.png)
 
 ## ER図
-![image_2021_3_14](https://user-images.githubusercontent.com/76430700/111061013-70836000-84e4-11eb-9015-5fc5c4dad9c4.png)
-
+![image_2021_3_28](https://user-images.githubusercontent.com/76430700/112745574-75680980-8fe4-11eb-95d2-9efee80ebb47.png)
 
 ## [テーブル設計](https://docs.google.com/spreadsheets/d/13P-5MeE7ZZ1ZR2DLBxzS01MRNf-DVC8XF1ZidiUwb-0/edit#gid=0)
 
