@@ -28,11 +28,20 @@
 }
 
 /*プロフィール文章 親 */
-.pfl_user_text_p {
+.pfl_user_name_p {
   text-align: center;
   width: 100vw;
   margin: auto;
 }
+
+/*プロフィール文章 親 */
+.pfl_user_text_p {
+  text-align: center;
+  max-width: 500px;
+  min-width: 500px;
+  margin: auto;
+}
+
 
 /*ユーザーネーム 単体 */
 .pfl_user_name {
