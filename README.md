@@ -54,6 +54,7 @@ https://kakikukekoapp.herokuapp.com/
 | ---- | ---- |
 |  ユーザー登録<br>ログイン機能<br>アカウント情報設定機能  |  deviceで実装  |
 |  Twitterアカウントでのログイン機能  |  Twitter APIで実装 gemはomniauthとomniauth-twitterを使用|
+|  Twitterの名前及びemaliを変更したらkakikukekoにも自動反映  |  |
 |  ゲストログイン機能  |    |
 |  べネーション機能 |  kaminariで実装  |
 |  検索機能 |  ransackで実装  |
